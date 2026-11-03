@@ -26,6 +26,11 @@ import {
   Layers,
   Search,
   Check,
+  X,
+  Play,
+  DollarSign,
+  Music,
+  Gift,
 } from "lucide-react";
 
 interface VideoItem {
@@ -96,6 +101,12 @@ export default function ChannelLevelSystem({
   const totalVideosCount = typeof channelStats?.videoCount === "number"
     ? channelStats.videoCount
     : parseInt(String(channelStats?.videoCount || "67"), 10);
+
+  // In-app Video Preview modal state
+  const [playingVideo, setPlayingVideo] = useState<VideoItem | null>(null);
+
+  // Monetization Calculator state
+  const [calcDailyViews, setCalcDailyViews] = useState<number>(5000);
 
   // Fallback catalog list if empty
   const defaultVideos: VideoItem[] = [
@@ -351,7 +362,7 @@ export default function ChannelLevelSystem({
           icon: "Zap",
         },
       ],
-      tacticalGameplan: "Package catalog into 30-minute and 1-hour themed seamless mixes (e.g. 'Late Night Drive Hindi Afro House') to multiply watch hours and trigger massive browse feed expansions.",
+      tacticalGameplan: "Package catalog into 30-minute and 1-hour themed seamless mixes to multiply watch hours and trigger massive browse feed expansions.",
     },
     {
       level: 4,
@@ -430,7 +441,7 @@ export default function ChannelLevelSystem({
           icon: "Users",
         },
       ],
-      tacticalGameplan: "Collaborate with independent vocalists and submit stems to international Afro House DJs to secure external playlist placements and cross-channel traffic.",
+      tacticalGameplan: "Collaborate with independent vocalists and submit stems to international Afro House DJs to secure external playlist placements.",
     },
     {
       level: 5,
@@ -504,13 +515,8 @@ export default function ChannelLevelSystem({
     },
   ];
 
-  // Active level calculation:
-  // Level 1: 0 - 10K
-  // Level 2: 10K - 30K
-  // Level 3: 30K - 100K
-  // Level 4: 100K - 500K
-  // Level 5: 500K+
-  let currentLevelNum = 2; // Default based on 27,471 views
+  // Current Level
+  let currentLevelNum = 2;
   if (totalViews < 10000) currentLevelNum = 1;
   else if (totalViews < 30000) currentLevelNum = 2;
   else if (totalViews < 100000) currentLevelNum = 3;
@@ -520,8 +526,6 @@ export default function ChannelLevelSystem({
   const [selectedLevelNum, setSelectedLevelNum] = useState<number>(currentLevelNum);
   const selectedLevel = levelsData.find((l) => l.level === selectedLevelNum) || levelsData[1];
 
-  // Current level progress calculation:
-  // Level 2 is from 10,000 to 30,000 views (span of 20,000)
   const levelMin = currentLevelNum === 1 ? 0 : currentLevelNum === 2 ? 10000 : currentLevelNum === 3 ? 30000 : currentLevelNum === 4 ? 100000 : 500000;
   const levelMax = currentLevelNum === 1 ? 10000 : currentLevelNum === 2 ? 30000 : currentLevelNum === 3 ? 100000 : currentLevelNum === 4 ? 500000 : 1000000;
   const currentLevelProgressPct = Math.min(
@@ -536,11 +540,9 @@ export default function ChannelLevelSystem({
   const [searchQuery, setSearchQuery] = useState<string>("");
 
   const filteredVideos = videos.filter((v) => {
-    // Search match
     if (searchQuery.trim() && !v.title.toLowerCase().includes(searchQuery.toLowerCase())) {
       return false;
     }
-    // Tier match
     if (tierFilter === "boss") return v.views >= 1000;
     if (tierFilter === "elite") return v.views >= 500 && v.views < 1000;
     if (tierFilter === "fighter") return v.views >= 100 && v.views < 500;
@@ -548,13 +550,100 @@ export default function ChannelLevelSystem({
     return true;
   });
 
+  // Producer Achievements Cabinet List
+  const producerBadges = [
+    {
+      id: "badge_1",
+      title: "Bedroom Beatmaker",
+      tier: "🥉 Bronze",
+      status: "unlocked",
+      xp: "+500 XP",
+      criteria: "Launch channel & drop initial 10 catalog beats",
+      icon: Disc,
+      color: "border-amber-500/40 text-amber-300 bg-amber-950/20",
+    },
+    {
+      id: "badge_2",
+      title: "Bollywood Afro Pioneer",
+      tier: "🥈 Silver",
+      status: "unlocked",
+      xp: "+1,000 XP",
+      criteria: "15+ tracks released in the signature 124 BPM Afro/Deep House style",
+      icon: Flame,
+      color: "border-cyan-500/40 text-cyan-300 bg-cyan-950/20",
+    },
+    {
+      id: "badge_3",
+      title: "1,000 Views Boss Squad",
+      tier: "👑 Gold",
+      status: "unlocked",
+      xp: "+2,000 XP",
+      criteria: "Hold 4 tracks with >1,000 views (Deedar De, Aao Na, In The Night, Kalyani)",
+      icon: Crown,
+      color: "border-purple-500/40 text-purple-300 bg-purple-950/20",
+    },
+    {
+      id: "badge_4",
+      title: "Midnight Cruiser (Night Peak)",
+      tier: "🌙 Special",
+      status: "unlocked",
+      xp: "+1,500 XP",
+      criteria: "Clock 48+ views/hr surge during late night 8:30 PM - 1:30 AM IST",
+      icon: Clock,
+      color: "border-blue-500/40 text-blue-300 bg-blue-950/20",
+    },
+    {
+      id: "badge_5",
+      title: "Marathon Mix Master",
+      tier: "🎧 Gold",
+      status: "unlocked",
+      xp: "+1,000 XP",
+      criteria: "Deliver continuous 18-minute DJ mix (accumulated ~35 hours watch time)",
+      icon: Radio,
+      color: "border-emerald-500/40 text-emerald-300 bg-emerald-950/20",
+    },
+    {
+      id: "badge_6",
+      title: "5K Megahit Slayer",
+      tier: "🌟 Platinum",
+      status: "progress",
+      xp: "+5,000 XP",
+      criteria: "Push Deedar De to 5,000 views (Currently 4,618 / 5,000 — 92.4%!)",
+      icon: Star,
+      color: "border-amber-400/50 text-amber-200 bg-amber-950/30",
+    },
+    {
+      id: "badge_7",
+      title: "Century Club (100+ v/hr)",
+      tier: "🏆 Diamond",
+      status: "locked",
+      xp: "+10,000 XP",
+      criteria: "Sustain 100+ views in a single hour during peak clubbing weekend hours",
+      icon: Trophy,
+      color: "border-zinc-800 text-zinc-500 bg-zinc-900/50",
+    },
+    {
+      id: "badge_8",
+      title: "Monetized Electronic Label",
+      tier: "💎 Master",
+      status: "locked",
+      xp: "+25,000 XP",
+      criteria: "Unlock YouTube Partner Program (1,000 subs + 4,000 watch hours)",
+      icon: DollarSign,
+      color: "border-zinc-800 text-zinc-500 bg-zinc-900/50",
+    },
+  ];
+
+  // Projected Monthly Earnings calculation based on CPM
+  // Indian electronic music streaming average CPM: ₹150 - ₹220 per 1,000 views
+  const estimatedMonthlyRupees = Math.round((calcDailyViews * 30 * 185) / 1000);
+
   return (
     <div className="space-y-6">
       {/* ============================================================== */}
       {/* 1. CHANNEL HERO HUD: CURRENT LEVEL PROGRESSION */}
       {/* ============================================================== */}
       <div className="p-6 md:p-8 rounded-3xl bg-[#12131a] border border-cyan-500/30 shadow-2xl relative overflow-hidden">
-        {/* Glow backdrop */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-rose-500/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -579,7 +668,7 @@ export default function ChannelLevelSystem({
           {/* XP & Next Level Countdown Pill */}
           <div className="bg-[#171926] border border-cyan-500/40 p-4 rounded-2xl shadow-xl text-center min-w-[240px] w-full lg:w-auto">
             <div className="flex items-center justify-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-cyan-400 mb-0.5">
-              <Zap className="w-3.5 h-3.5 text-amber-400 animate-pulse" /> NEXT RANK COUNTDOWN
+              <Zap className="w-3.5 h-3.5 text-yellow-400 animate-pulse" /> NEXT RANK COUNTDOWN
             </div>
             <div className="text-2xl md:text-3xl font-black text-white">
               {viewsNeededForNextLevel.toLocaleString()}{" "}
@@ -692,7 +781,6 @@ export default function ChannelLevelSystem({
                     : "bg-[#15161e] border-zinc-800/80 hover:border-zinc-700 text-zinc-400"
                 }`}
               >
-                {/* Level status indicator badge */}
                 <div className="flex items-center justify-between mb-2">
                   <span
                     className={`text-[10px] font-black uppercase px-2 py-0.5 rounded-md ${
@@ -717,7 +805,6 @@ export default function ChannelLevelSystem({
                   </span>
                 </div>
 
-                {/* Progress bar inside mini card */}
                 <div className="w-full bg-zinc-800/80 h-1.5 rounded-full mt-3 overflow-hidden">
                   <div
                     className={`h-full rounded-full ${
@@ -935,7 +1022,7 @@ export default function ChannelLevelSystem({
               </p>
             </div>
 
-            <div className="mt-4 pt-3 border-t border-zinc-800/70">
+            <div className="mt-4 pt-3 border-t border-zinc-800/70 space-y-2">
               <div className="flex justify-between text-[11px] font-semibold text-zinc-400 mb-1.5">
                 <span>Target: 1,000 Views</span>
                 <span className="text-cyan-400 font-bold">99.0%</span>
@@ -943,14 +1030,12 @@ export default function ChannelLevelSystem({
               <div className="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
                 <div className="bg-cyan-400 h-full rounded-full" style={{ width: "99.0%" }} />
               </div>
-              <a
-                href="https://www.youtube.com/watch?v=lQl3dRGivOI"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-3.5 w-full py-2 px-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 hover:text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-all border border-zinc-700/60"
+              <button
+                onClick={() => setPlayingVideo({ id: "lQl3dRGivOI", title: "BHAR LE TU [124 BPM]", views: 990, likes: 14 })}
+                className="w-full py-2 px-3 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-md"
               >
-                <PlayCircle className="w-4 h-4 text-cyan-400" /> Listen & Boost on YouTube
-              </a>
+                <Play className="w-3.5 h-3.5 fill-white" /> Preview Beat In-App 🎧
+              </button>
             </div>
           </div>
 
@@ -977,7 +1062,7 @@ export default function ChannelLevelSystem({
               </p>
             </div>
 
-            <div className="mt-4 pt-3 border-t border-zinc-800/70">
+            <div className="mt-4 pt-3 border-t border-zinc-800/70 space-y-2">
               <div className="flex justify-between text-[11px] font-semibold text-zinc-400 mb-1.5">
                 <span>Milestone: 5,000 Views</span>
                 <span className="text-purple-400 font-bold">92.4%</span>
@@ -985,14 +1070,12 @@ export default function ChannelLevelSystem({
               <div className="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
                 <div className="bg-purple-500 h-full rounded-full" style={{ width: "92.4%" }} />
               </div>
-              <a
-                href="https://www.youtube.com/watch?v=BuvPDZawk9M"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-3.5 w-full py-2 px-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 hover:text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-all border border-zinc-700/60"
+              <button
+                onClick={() => setPlayingVideo({ id: "BuvPDZawk9M", title: "DEEDAR DE [124 BPM]", views: 4618, likes: 28 })}
+                className="w-full py-2 px-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-md"
               >
-                <PlayCircle className="w-4 h-4 text-purple-400" /> Listen on YouTube
-              </a>
+                <Play className="w-3.5 h-3.5 fill-white" /> Preview Beat In-App 🎧
+              </button>
             </div>
           </div>
 
@@ -1019,7 +1102,7 @@ export default function ChannelLevelSystem({
               </p>
             </div>
 
-            <div className="mt-4 pt-3 border-t border-zinc-800/70">
+            <div className="mt-4 pt-3 border-t border-zinc-800/70 space-y-2">
               <div className="flex justify-between text-[11px] font-semibold text-zinc-400 mb-1.5">
                 <span>Milestone: 1,000 Views</span>
                 <span className="text-emerald-400 font-bold">80.0%</span>
@@ -1027,88 +1110,179 @@ export default function ChannelLevelSystem({
               <div className="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
                 <div className="bg-emerald-500 h-full rounded-full" style={{ width: "80.0%" }} />
               </div>
-              <a
-                href="https://www.youtube.com/watch?v=o68amPUakwU"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-3.5 w-full py-2 px-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 hover:text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-all border border-zinc-700/60"
+              <button
+                onClick={() => setPlayingVideo({ id: "o68amPUakwU", title: "DIL LAGA LIYA [124 BPM]", views: 800, likes: 19 })}
+                className="w-full py-2 px-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-md"
               >
-                <PlayCircle className="w-4 h-4 text-emerald-400" /> Listen on YouTube
-              </a>
+                <Play className="w-3.5 h-3.5 fill-white" /> Preview Beat In-App 🎧
+              </button>
             </div>
           </div>
         </div>
       </div>
 
       {/* ============================================================== */}
-      {/* 5. TRACK TIERS (HOW TRACKS FEED INTO CHANNEL LEVEL) */}
+      {/* 5. 🏅 PRODUCER TROPHY CABINET & BADGES */}
       {/* ============================================================== */}
-      <div className="p-6 md:p-7 rounded-3xl bg-[#141418] border border-zinc-800/90 shadow-xl">
-        <h3 className="text-base font-bold text-white flex items-center gap-2 mb-1">
-          <Layers className="w-5 h-5 text-zinc-300" />
-          <span>TRACK TIER LADDER (How Releases Power Channel XP)</span>
-        </h3>
-        <p className="text-xs text-zinc-400 mb-5">
-          Every track in your catalog advances through 4 tiers as it gains stream momentum:
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
-          <div className="p-4 rounded-2xl bg-[#191924] border border-purple-500/30">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-md bg-purple-500/20 text-purple-300 border border-purple-500/40">
-                👑 BOSS TIER
-              </span>
-              <span className="text-xs font-black text-purple-400">{bossVideos.length} Tracks</span>
+      <div className="p-6 md:p-7 rounded-3xl bg-[#141418] border border-amber-500/30 shadow-xl relative overflow-hidden">
+        <div className="flex items-center justify-between gap-3 mb-4">
+          <div>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-[10px] font-black uppercase tracking-wider mb-1">
+              <Trophy className="w-3 h-3 text-amber-400" /> HALL OF FAME
             </div>
-            <h5 className="font-bold text-white text-sm">&gt; 1,000 Views</h5>
-            <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
-              Proven evergreen hits. Anchors channel authority and feeds algorithmic traffic to new uploads.
+            <h3 className="text-lg font-black text-white flex items-center gap-2">
+              PRODUCER TROPHY CABINET (Achievements Unlocked)
+            </h3>
+            <p className="text-xs text-zinc-400">
+              Specialized milestones that acknowledge your sound design, catalog consistency, and algorithmic dominance:
             </p>
           </div>
+          <span className="text-xs font-black text-amber-400 bg-amber-950/80 px-3 py-1.5 rounded-xl border border-amber-500/40 hidden sm:inline-block">
+            5 OF 8 UNLOCKED (62.5%)
+          </span>
+        </div>
 
-          <div className="p-4 rounded-2xl bg-[#191924] border border-emerald-500/30">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
-                🥇 ELITE TIER
-              </span>
-              <span className="text-xs font-black text-emerald-400">{eliteVideos.length} Tracks</span>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {producerBadges.map((badge) => {
+            const Icon = badge.icon;
+            const isUnlocked = badge.status === "unlocked";
+            const isProgress = badge.status === "progress";
+
+            return (
+              <div
+                key={badge.id}
+                className={`p-4 rounded-2xl border transition-all flex flex-col justify-between ${
+                  isUnlocked
+                    ? `${badge.color} shadow-md`
+                    : isProgress
+                    ? "bg-[#181622] border-amber-400/50 shadow-md ring-1 ring-amber-400/20"
+                    : "bg-[#14151e] border-zinc-800/80 text-zinc-500"
+                }`}
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-black/40 border border-white/10 text-white">
+                      {badge.tier}
+                    </span>
+                    <span className="text-[10px] font-black text-emerald-400">
+                      {badge.xp}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-2.5 my-1.5">
+                    <div className={`p-2 rounded-xl ${isUnlocked ? "bg-white/10" : "bg-zinc-800"}`}>
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <h5 className="text-xs font-black text-white">
+                      {badge.title}
+                    </h5>
+                  </div>
+
+                  <p className="text-[11px] text-zinc-300 mt-1 leading-relaxed">
+                    {badge.criteria}
+                  </p>
+                </div>
+
+                <div className="mt-3 pt-2 border-t border-white/10 flex items-center justify-between text-[10px] font-bold">
+                  {isUnlocked && (
+                    <span className="text-emerald-400 flex items-center gap-1">
+                      <CheckCircle2 className="w-3 h-3" /> Unlocked & Claimed
+                    </span>
+                  )}
+                  {isProgress && (
+                    <span className="text-amber-300 flex items-center gap-1">
+                      <Sparkles className="w-3 h-3" /> 92.4% In Progress
+                    </span>
+                  )}
+                  {!isUnlocked && !isProgress && (
+                    <span className="text-zinc-500 flex items-center gap-1">
+                      <Lock className="w-3 h-3" /> Locked
+                    </span>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* ============================================================== */}
+      {/* 6. 💵 YOUTUBE MONETIZATION & ROYALTY CALCULATOR */}
+      {/* ============================================================== */}
+      <div className="p-6 md:p-7 rounded-3xl bg-gradient-to-r from-[#141a24] via-[#111422] to-[#161224] border border-emerald-500/30 shadow-xl">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-5">
+          <div>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[10px] font-black uppercase tracking-wider mb-1">
+              <DollarSign className="w-3 h-3 text-emerald-400" /> REVENUE PROJECTIONS
             </div>
-            <h5 className="font-bold text-white text-sm">500 – 1,000 Views</h5>
-            <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
-              Prime candidates for algorithmic push. High retention signals trigger browse recommendations.
+            <h3 className="text-lg font-black text-white flex items-center gap-2">
+              YOUTUBE PARTNER PROGRAM (YPP) & ROYALTY CALCULATOR
+            </h3>
+            <p className="text-xs text-zinc-400">
+              Track progress to full monetization and project your monthly earnings based on daily stream volume:
             </p>
           </div>
+        </div>
 
-          <div className="p-4 rounded-2xl bg-[#191924] border border-amber-500/30">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/40">
-                🥈 FIGHTER TIER
-              </span>
-              <span className="text-xs font-black text-amber-400">{fighterVideos.length} Tracks</span>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          {/* Milestone 1: 1,000 Subs */}
+          <div className="p-4 rounded-2xl bg-[#0f1420] border border-zinc-800">
+            <span className="text-[11px] font-bold text-zinc-400 uppercase tracking-wider block">YPP Subscriber Requirement</span>
+            <div className="text-xl font-black text-white mt-1">
+              {subscriberCount} <span className="text-xs text-emerald-400 font-bold">/ 1,000 Subs (6.6%)</span>
             </div>
-            <h5 className="font-bold text-white text-sm">100 – 500 Views</h5>
-            <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
-              Gaining traction in search results and specialized genre playlists. Generating regular daily plays.
-            </p>
+            <div className="w-full bg-zinc-800 h-1.5 rounded-full mt-2 overflow-hidden">
+              <div className="bg-emerald-400 h-full rounded-full" style={{ width: `${Math.min(100, (subscriberCount / 1000) * 100)}%` }} />
+            </div>
+            <span className="text-[10px] text-zinc-400 mt-1.5 block">{1000 - subscriberCount} subscribers to monetization lock</span>
           </div>
 
-          <div className="p-4 rounded-2xl bg-[#191924] border border-zinc-700/50">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 border border-zinc-700">
-                🥉 ROOKIE TIER
-              </span>
-              <span className="text-xs font-black text-zinc-400">{rookieVideos.length} Tracks</span>
+          {/* Milestone 2: 4,000 Watch Hours */}
+          <div className="p-4 rounded-2xl bg-[#0f1420] border border-zinc-800">
+            <span className="text-[11px] font-bold text-zinc-400 uppercase tracking-wider block">YPP Watch Hours Requirement</span>
+            <div className="text-xl font-black text-white mt-1">
+              ~140 <span className="text-xs text-amber-400 font-bold">/ 4,000 Hours (3.5%)</span>
             </div>
-            <h5 className="font-bold text-white text-sm">&lt; 100 Views</h5>
-            <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
-              Initial seeding phase. YouTube is testing titles and thumbnails across initial test impressions.
-            </p>
+            <div className="w-full bg-zinc-800 h-1.5 rounded-full mt-2 overflow-hidden">
+              <div className="bg-amber-400 h-full rounded-full" style={{ width: "3.5%" }} />
+            </div>
+            <span className="text-[10px] text-zinc-400 mt-1.5 block">Continuous 18-min mixes fast-track watch hours</span>
+          </div>
+
+          {/* Estimated Monthly Earnings Calculator */}
+          <div className="p-4 rounded-2xl bg-[#141e24] border border-emerald-500/40 flex flex-col justify-between">
+            <div>
+              <span className="text-[11px] font-bold text-emerald-300 uppercase tracking-wider block">Estimated Monthly Streaming Revenue</span>
+              <div className="text-2xl font-black text-white mt-1">
+                ₹{estimatedMonthlyRupees.toLocaleString()}{" "}
+                <span className="text-xs text-emerald-400 font-semibold">/ month</span>
+              </div>
+              <span className="text-[10px] text-zinc-400 mt-0.5 block">
+                At {calcDailyViews.toLocaleString()} views/day (CPM: ₹185 / 1K views)
+              </span>
+            </div>
+
+            <div className="mt-3 flex flex-wrap gap-1">
+              {[1000, 5000, 10000, 25000].map((v) => (
+                <button
+                  key={v}
+                  onClick={() => setCalcDailyViews(v)}
+                  className={`px-2 py-1 rounded-lg text-[10px] font-bold transition-all ${
+                    calcDailyViews === v
+                      ? "bg-emerald-500 text-black shadow-sm"
+                      : "bg-zinc-800 text-zinc-400 hover:text-white"
+                  }`}
+                >
+                  {v >= 1000 ? `${v / 1000}K/day` : v}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       {/* ============================================================== */}
-      {/* 6. CATALOG RELEASES GRID WITH TIER FILTER & SEARCH */}
+      {/* 7. CATALOG RELEASES DIRECTORY WITH PREVIEW & SEARCH */}
       {/* ============================================================== */}
       <div className="p-6 md:p-7 rounded-3xl bg-[#141418] border border-zinc-800/90 shadow-xl">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-5">
@@ -1118,11 +1292,10 @@ export default function ChannelLevelSystem({
               <span>CATALOG RELEASES DIRECTORY ({filteredVideos.length} of {videos.length})</span>
             </h3>
             <p className="text-xs text-zinc-400 mt-0.5">
-              Filter and search tracks to inspect individual tier status and progression:
+              Tap any track to preview the beat directly inside the app:
             </p>
           </div>
 
-          {/* Search bar */}
           <div className="relative w-full md:w-64">
             <Search className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
             <input
@@ -1158,8 +1331,8 @@ export default function ChannelLevelSystem({
           ))}
         </div>
 
-        {/* Track Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 max-h-[500px] overflow-y-auto pr-1 custom-scrollbar">
+        {/* Track Grid with In-App Preview */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 max-h-[520px] overflow-y-auto pr-1 custom-scrollbar">
           {filteredVideos.map((video) => {
             const views = video.views || 0;
             let tierLabel = "Rookie (<100)";
@@ -1222,16 +1395,14 @@ export default function ChannelLevelSystem({
                       style={{ width: `${Math.max(5, progressPct)}%` }}
                     />
                   </div>
-                  <div className="flex items-center justify-between text-[10px] text-zinc-400 mt-2">
+                  <div className="flex items-center justify-between text-[10px] text-zinc-400 mt-2 gap-2">
                     <span>{video.likes || 0} likes</span>
-                    <a
-                      href={`https://www.youtube.com/watch?v=${video.id}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-cyan-400 hover:text-cyan-300 flex items-center gap-0.5 font-medium"
+                    <button
+                      onClick={() => setPlayingVideo(video)}
+                      className="px-2.5 py-1 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 text-[10px] font-bold flex items-center gap-1 border border-cyan-500/30 transition-all"
                     >
-                      Listen <ArrowUpRight className="w-3 h-3" />
-                    </a>
+                      <Play className="w-2.5 h-2.5 fill-cyan-300" /> Preview Beat
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1239,6 +1410,63 @@ export default function ChannelLevelSystem({
           })}
         </div>
       </div>
+
+      {/* ============================================================== */}
+      {/* 8. IN-APP FLOATING AUDIO/VIDEO PREVIEW MODAL */}
+      {/* ============================================================== */}
+      {playingVideo && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="w-full max-w-lg bg-[#141622] border border-cyan-500/40 rounded-3xl p-5 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+            <div className="flex items-start justify-between gap-3 mb-3">
+              <div>
+                <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 text-[9px] font-bold uppercase tracking-wider mb-1">
+                  <Music className="w-3 h-3" /> NOW PLAYING IN-APP
+                </div>
+                <h4 className="text-sm font-bold text-white line-clamp-1">
+                  {playingVideo.title}
+                </h4>
+                <span className="text-[10px] text-zinc-400">
+                  {playingVideo.views.toLocaleString()} views • {playingVideo.likes || 0} likes
+                </span>
+              </div>
+              <button
+                onClick={() => setPlayingVideo(null)}
+                className="p-1.5 rounded-full bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white transition-all"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Responsive 16:9 Embedded YouTube Player */}
+            <div className="w-full aspect-video rounded-2xl overflow-hidden bg-black border border-zinc-800 shadow-inner">
+              <iframe
+                src={`https://www.youtube.com/embed/${playingVideo.id}?autoplay=1&rel=0`}
+                title={playingVideo.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full border-0"
+              />
+            </div>
+
+            <div className="mt-4 flex items-center justify-between text-xs">
+              <a
+                href={`https://www.youtube.com/watch?v=${playingVideo.id}`}
+                target="_blank"
+                rel="noreferrer"
+                className="text-cyan-400 hover:text-cyan-300 flex items-center gap-1 font-semibold text-xs"
+              >
+                Open in YouTube App <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+              <button
+                onClick={() => setPlayingVideo(null)}
+                className="px-4 py-1.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-semibold text-xs transition-all"
+              >
+                Close Player
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

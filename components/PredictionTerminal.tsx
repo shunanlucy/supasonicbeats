@@ -28,6 +28,7 @@ import {
   ShieldAlert,
   Flame,
   ChevronRight,
+  Gift,
 } from "lucide-react";
 import {
   AreaChart,
@@ -313,6 +314,22 @@ export default function PredictionTerminal({
   const [tradeType, setTradeType] = useState<"CALL (BUY)" | "PUT (SELL)">("CALL (BUY)");
   const [stakeAmount, setStakeAmount] = useState<number>(500);
   const [tradeSuccessNotice, setTradeSuccessNotice] = useState<string | null>(null);
+  const [streakClaimed, setStreakClaimed] = useState<boolean>(false);
+  const [streakToast, setStreakToast] = useState<string | null>(null);
+
+  const handleClaimDailyStreak = () => {
+    if (streakClaimed) return;
+    setTradingData((prev: any) => ({
+      ...prev,
+      portfolio: {
+        ...prev.portfolio,
+        currentBalance: (prev.portfolio?.currentBalance || 16450) + 250,
+      },
+    }));
+    setStreakClaimed(true);
+    setStreakToast("🎉 +250 SB COINS CLAIMED! Daily streak bonus credited to your wallet.");
+    setTimeout(() => setStreakToast(null), 5000);
+  };
 
   useEffect(() => {
     fetch("/api/paper-trading")
@@ -419,6 +436,42 @@ export default function PredictionTerminal({
             </div>
           </div>
         </div>
+
+        {/* Daily Login Streak Reward Pill */}
+        <div className="mt-3 flex items-center justify-between p-2.5 rounded-xl bg-gradient-to-r from-amber-500/15 via-purple-500/10 to-cyan-500/15 border border-amber-500/30">
+          <div className="flex items-center gap-2">
+            <div className="p-1.5 rounded-lg bg-amber-500/20 text-amber-400">
+              <Gift className="w-4 h-4 animate-bounce" />
+            </div>
+            <div>
+              <span className="text-[10px] font-black uppercase text-amber-300 block tracking-wider">
+                Daily Login Streak • Day 1
+              </span>
+              <span className="text-[11px] text-slate-300 font-medium">
+                Claim your daily +250 SB Coins trading reward!
+              </span>
+            </div>
+          </div>
+
+          <button
+            onClick={handleClaimDailyStreak}
+            disabled={streakClaimed}
+            className={`px-3 py-1.5 rounded-xl font-bold text-xs transition-all shadow-md ${
+              streakClaimed
+                ? "bg-zinc-800 text-emerald-400 border border-emerald-500/30 cursor-default"
+                : "bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-black animate-pulse"
+            }`}
+          >
+            {streakClaimed ? "✓ CLAIMED TODAY" : "CLAIM +250 SB"}
+          </button>
+        </div>
+
+        {/* Toast notification */}
+        {streakToast && (
+          <div className="mt-2 p-2.5 rounded-xl bg-emerald-500/20 border border-emerald-500/50 text-emerald-300 text-xs font-bold text-center animate-in fade-in slide-in-from-top duration-300">
+            {streakToast}
+          </div>
+        )}
       </div>
 
       {/* ============================================================== */}
