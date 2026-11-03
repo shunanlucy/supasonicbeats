@@ -32,6 +32,7 @@ import {
   Music,
   Gift,
 } from "lucide-react";
+import AlgorithmBatchLadder from "@/components/AlgorithmBatchLadder";
 
 interface VideoItem {
   id: string;
@@ -101,6 +102,9 @@ export default function ChannelLevelSystem({
   const totalVideosCount = typeof channelStats?.videoCount === "number"
     ? channelStats.videoCount
     : parseInt(String(channelStats?.videoCount || "67"), 10);
+
+  // View Mode: 'batches' (Algorithm Impression Batches) vs 'levels' (Channel RPG Roadmap)
+  const [activeViewMode, setActiveViewMode] = useState<"batches" | "levels">("batches");
 
   // In-app Video Preview modal state
   const [playingVideo, setPlayingVideo] = useState<VideoItem | null>(null);
@@ -641,8 +645,49 @@ export default function ChannelLevelSystem({
   return (
     <div className="space-y-6">
       {/* ============================================================== */}
-      {/* 1. CHANNEL HERO HUD: CURRENT LEVEL PROGRESSION */}
+      {/* 0. VIEW MODE SWITCHER: BATCHES VS RPG LEVELS */}
       {/* ============================================================== */}
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between p-3 rounded-2xl bg-[#141418] border border-zinc-800/90 gap-3 shadow-xl">
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            onClick={() => setActiveViewMode("batches")}
+            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              activeViewMode === "batches"
+                ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-lg shadow-cyan-900/40"
+                : "text-zinc-400 hover:text-white hover:bg-zinc-800/40"
+            }`}
+          >
+            <Layers className="w-4 h-4 text-cyan-300" />
+            🔬 Algorithm Impression Batches (&lt;250, 250-800, 800-2.5K, &gt;2.5K)
+          </button>
+          <button
+            onClick={() => setActiveViewMode("levels")}
+            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              activeViewMode === "levels"
+                ? "bg-gradient-to-r from-amber-500 to-rose-600 text-white shadow-lg shadow-amber-900/40"
+                : "text-zinc-400 hover:text-white hover:bg-zinc-800/40"
+            }`}
+          >
+            <Trophy className="w-4 h-4 text-amber-300" />
+            🏆 Channel RPG Roadmap & Levels
+          </button>
+        </div>
+        <div className="text-[11px] text-zinc-400 flex items-center gap-1.5 px-3 py-1.5 bg-zinc-900/80 rounded-xl border border-zinc-800/60 self-start sm:self-auto">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span>Catalog: <strong className="text-white font-bold">{videos.length} Tracks Live</strong></span>
+        </div>
+      </div>
+
+      {activeViewMode === "batches" ? (
+        <AlgorithmBatchLadder
+          catalogVideos={videos}
+          onPlayVideo={(v) => setPlayingVideo(v)}
+        />
+      ) : (
+        <>
+          {/* ============================================================== */}
+          {/* 1. CHANNEL HERO HUD: CURRENT LEVEL PROGRESSION */}
+          {/* ============================================================== */}
       <div className="p-6 md:p-8 rounded-3xl bg-[#12131a] border border-cyan-500/30 shadow-2xl relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-rose-500/5 rounded-full blur-3xl pointer-events-none" />
@@ -1410,6 +1455,8 @@ export default function ChannelLevelSystem({
           })}
         </div>
       </div>
+      </>
+      )}
 
       {/* ============================================================== */}
       {/* 8. IN-APP FLOATING AUDIO/VIDEO PREVIEW MODAL */}

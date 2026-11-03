@@ -69,7 +69,8 @@ async function handleMessage(msg) {
   const mainMenuKeyboard = [
     [{ text: "📊 Live Stats" }, { text: "🏆 Channel Level" }],
     [{ text: "🔥 Top Movers" }, { text: "⚔️ Boss Battles" }],
-    [{ text: "📈 Market Predictions" }, { text: "🌐 Open Studio App" }],
+    [{ text: "🔬 Impression Batches" }, { text: "📈 Market Predictions" }],
+    [{ text: "🌐 Open Studio App" }],
   ];
 
   const snapshot = getLatestSnapshot();
@@ -84,6 +85,7 @@ Aap mujhse live channel metrics pooch sakte hain ya neeche diye gaye buttons tap
 
 • \`/stats\` — Live Views & Subscribers
 • \`/level\` — Channel RPG Level & Quests
+• \`/batches\` — Algorithm Impression Batches (<250, 250-800, 800-2.5K, >2.5K)
 • \`/movers\` — Fastest Growing Tracks Today
 • \`/boss\` — Active Boss Battles Near Promotion
 • \`/predict\` — BeatExchange Market Predictions
@@ -164,6 +166,43 @@ Level 3 unlock hote hi YouTube Music *Topic* channel aur *Day-One Browse Homepag
    👉 *200 views bache hain* 1K Club mein enter karne ke liye!
 
 In tracks ko boost karte hi Channel Level 3 unlock hoga!`;
+    await sendTelegramReply(chatId, reply, mainMenuKeyboard);
+    return;
+  }
+
+  // 5.5 ALGORITHM IMPRESSION BATCHES
+  if (lowerText === "/batches" || lowerText === "🔬 impression batches" || lowerText === "batches" || lowerText === "batch") {
+    const reply = `🔬 *YOUTUBE ALGORITHM IMPRESSION BATCHES (73 TRACKS)* ⚡
+
+YouTube impression distribution tiers ke hisab se catalog performance:
+
+🔥 *Batch 4 (>2,500v • Autopilot Pool)*: 2 Tracks
+• 👑 *#1 DEEDAR DE*: \`4,634 views\` • \`772 v/day\` (Record-breaker, Batch 1 in 18h!)
+• ⚡ *#2 AAO NA*: \`2,505 views\` • \`312 v/day\`
+
+🚀 *Batch 3 (800-2,500v • Breakout Pool)*: 8 Tracks
+• *#1 IN THE NIGHT*: \`1,658 views\`
+• *#2 KALYANI*: \`1,207 views\`
+• *#3 UP WALI LAIKI*: \`1,200 views\`
+• *#4 BHAR LE TU*: \`992 views\` • *ETA to Batch 4: <12 Hours (Only 8 views left!)*
+• *#5 KAISA NASHA*: \`963 views\`
+• *#6 SO SWAEZY*: \`814 views\`
+• *#7 PAAS AA*: \`809 views\`
+• *#8 DIL LAGA LIYA*: \`807 views\`
+
+⚡ *Batch 2 (250-800v • Momentum Pool)*: 17 Tracks
+• *#1 DANGEROUS ADRENALINE*: \`788 views\`
+• *#2 DIKHA TERA MOVE*: \`774 views\`
+• *#3 ZARA ZARA*: \`606 views\`
+• *#4 DHEERE SE*: \`585 views\`
+• *#5 MAJBOOR*: \`490 views\` • *163 v/day (Batch 1 in 36h! ETA Batch 3: 24h)*
+
+🌱 *Batch 1 (<250v • Seed Pool)*: 46 Tracks
+• *Top Seed*: RAAT MERI (\`141 views\`)
+• *18 MIN MIX*: \`124 views\` (ETA to Batch 2: 3-4 Days)
+• *TU MIL JAAYE*: \`5 views\` (Fresh Initial Seed)
+
+👉 Live Interactive Batch Ladder: https://supasonicbeats.vercel.app`;
     await sendTelegramReply(chatId, reply, mainMenuKeyboard);
     return;
   }

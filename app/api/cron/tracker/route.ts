@@ -11,7 +11,7 @@ export async function GET() {
 
     const currentViews = parseInt(data.overview.statistics?.viewCount || "27471", 10);
     const currentSubs = parseInt(data.overview.statistics?.subscriberCount || "66", 10);
-    const recentBeats = data.recentBeats || [];
+    const recentBeats = (data as any).beatVideos || (data as any).recentBeats || [];
 
     // Check for Bhar Le Tu milestone
     const bharLeTu = recentBeats.find((b: any) => b.id === "lQl3dRGivOI" || b.title.includes("BHAR LE TU"));

@@ -49,7 +49,8 @@ export async function POST(req: Request) {
     const mainMenuKeyboard = [
       [{ text: "📊 Live Stats" }, { text: "🏆 Channel Level" }],
       [{ text: "🔥 Top Movers" }, { text: "⚔️ Boss Battles" }],
-      [{ text: "📈 Market Predictions" }, { text: "🌐 Open Studio App" }],
+      [{ text: "🔬 Impression Batches" }, { text: "📈 Market Predictions" }],
+      [{ text: "🌐 Open Studio App" }],
     ];
 
     // 1. Fetch live channel data directly from YouTube API via Vercel
@@ -70,7 +71,7 @@ export async function POST(req: Request) {
 
     // 1. START / HELP / HI
     if (lowerText === "/start" || lowerText === "hi" || lowerText === "hello" || lowerText === "help") {
-      const reply = `🎧 *Supasonic Beats Studio Cloud Bot* ☁️🚀\n\nHey *${msg.from?.first_name || "Shunan"}*! Yeh bot *24/7 Cloud Engine* par active hai (Laptop band hone par bhi chalega!).\n\nNeeche diye gaye buttons tap karein ya type karein:\n\n• \`/stats\` — Live Views & Subs\n• \`/level\` — Channel RPG Level & Quests\n• \`/movers\` — Fastest Growing Tracks\n• \`/boss\` — Active Boss Battles Near Promotion\n• \`/predict\` — BeatExchange Market Predictions\n• Ya kisi bhi track ka naam bhejo (e.g. *deedar*, *majboor*, *bhar le tu*)!`;
+      const reply = `🎧 *Supasonic Beats Studio Cloud Bot* ☁️🚀\n\nHey *${msg.from?.first_name || "Shunan"}*! Yeh bot *24/7 Cloud Engine* par active hai (Laptop band hone par bhi chalega!).\n\nNeeche diye gaye buttons tap karein ya type karein:\n\n• \`/stats\` — Live Views & Subs\n• \`/level\` — Channel RPG Level & Quests\n• \`/batches\` — Algorithm Impression Batches (<250, 250-800, 800-2.5K, >2.5K)\n• \`/movers\` — Fastest Growing Tracks\n• \`/boss\` — Active Boss Battles Near Promotion\n• \`/predict\` — BeatExchange Market Predictions\n• Ya kisi bhi track ka naam bhejo (e.g. *deedar*, *majboor*, *bhar le tu*)!`;
       await sendTelegramReply(chatId, reply, mainMenuKeyboard);
       return NextResponse.json({ ok: true });
     }
@@ -103,6 +104,13 @@ export async function POST(req: Request) {
     // 5. BOSS BATTLES
     if (lowerText === "/boss" || lowerText === "⚔️ boss battles" || lowerText === "boss") {
       const reply = `⚔️ *ACTIVE BOSS BATTLES (Tracks Near Promotion)* 🏆\n\n1. 🎯 *BHAR LE TU*: \`990 / 1,000 views\` (99% Done)\n   👉 *Sirf 10 views bache hain* 5th Boss Track banne ke liye!\n\n2. 🔥 *MAJBOOR (Duet)*: \`490 / 500 views\` (98% Done)\n   👉 *Sirf 10 views bache hain* Elite Tier (>500 views) cross karne ke liye!\n\n3. 👑 *DEEDAR DE*: \`4,634 / 5,000 views\` (92.6% Done)\n   👉 *366 views bache hain* channel ka pehla 5K Megahit banne ke liye!\n\n4. 💎 *DIL LAGA LIYA*: \`800 / 1,000 views\` (80% Done)\n   👉 *200 views bache hain* 1K Club mein enter karne ke liye!\n\nIn tracks ko boost karte hi Channel Level 3 unlock hoga!`;
+      await sendTelegramReply(chatId, reply, mainMenuKeyboard);
+      return NextResponse.json({ ok: true });
+    }
+
+    // 5.5 ALGORITHM IMPRESSION BATCHES
+    if (lowerText === "/batches" || lowerText === "🔬 impression batches" || lowerText === "batches" || lowerText === "batch") {
+      const reply = `🔬 *YOUTUBE ALGORITHM IMPRESSION BATCHES (73 TRACKS)* ⚡\n\nYouTube impression distribution tiers ke hisab se catalog performance:\n\n🔥 *Batch 4 (>2,500v • Autopilot Pool)*: 2 Tracks\n• 👑 *#1 DEEDAR DE*: \`4,634 views\` • \`772 v/day\` (Record-breaker, Batch 1 in 18h!)\n• ⚡ *#2 AAO NA*: \`2,505 views\` • \`312 v/day\`\n\n🚀 *Batch 3 (800-2,500v • Breakout Pool)*: 8 Tracks\n• *#1 IN THE NIGHT*: \`1,658 views\`\n• *#2 KALYANI*: \`1,207 views\`\n• *#3 UP WALI LAIKI*: \`1,200 views\`\n• *#4 BHAR LE TU*: \`992 views\` • *ETA to Batch 4: <12 Hours (Only 8 views left!)*\n• *#5 KAISA NASHA*: \`963 views\`\n• *#6 SO SWAEZY*: \`814 views\`\n• *#7 PAAS AA*: \`809 views\`\n• *#8 DIL LAGA LIYA*: \`807 views\`\n\n⚡ *Batch 2 (250-800v • Momentum Pool)*: 17 Tracks\n• *#1 DANGEROUS ADRENALINE*: \`788 views\`\n• *#2 DIKHA TERA MOVE*: \`774 views\`\n• *#3 ZARA ZARA*: \`606 views\`\n• *#4 DHEERE SE*: \`585 views\`\n• *#5 MAJBOOR*: \`490 views\` • *163 v/day (Batch 1 in 36h! ETA Batch 3: 24h)*\n\n🌱 *Batch 1 (<250v • Seed Pool)*: 46 Tracks\n• *Top Seed*: RAAT MERI (\`141 views\`)\n• *18 MIN MIX*: \`124 views\` (ETA to Batch 2: 3-4 Days)\n• *TU MIL JAAYE*: \`5 views\` (Fresh Initial Seed)\n\n👉 Live Interactive Batch Ladder: https://supasonicbeats.vercel.app`;
       await sendTelegramReply(chatId, reply, mainMenuKeyboard);
       return NextResponse.json({ ok: true });
     }

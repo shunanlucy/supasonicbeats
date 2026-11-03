@@ -59,6 +59,7 @@ import {
 } from "recharts";
 import PredictionTerminal from "@/components/PredictionTerminal";
 import ChannelLevelSystem from "@/components/ChannelLevelSystem";
+import AlgorithmBatchLadder from "@/components/AlgorithmBatchLadder";
 
 export default function Dashboard() {
   const [authState, setAuthState] = useState<{
@@ -75,10 +76,10 @@ export default function Dashboard() {
   const [dataLoading, setDataLoading] = useState<boolean>(false);
   const [analyticsData, setAnalyticsData] = useState<any>(null);
 
-  // Tabs: levels | prediction | audience | live | competitor | trends | ctr | audit | builder | velocity | epk | beats
+  // Tabs: levels | prediction | audience | live | competitor | trends | ctr | audit | builder | velocity | epk | beats | batches
   const [activeTab, setActiveTab] = useState<
-    "levels" | "prediction" | "audience" | "live" | "competitor" | "trends" | "ctr" | "audit" | "builder" | "velocity" | "epk" | "beats"
-  >("prediction");
+    "levels" | "prediction" | "audience" | "live" | "competitor" | "trends" | "ctr" | "audit" | "builder" | "velocity" | "epk" | "beats" | "batches"
+  >("levels");
   const [levelTierFilter, setLevelTierFilter] = useState<"all" | "boss" | "elite" | "fighter" | "rookie">("all");
 
   // Audience & Subscriber Loyalty state
@@ -554,6 +555,16 @@ export default function Dashboard() {
             <Flame className="w-3.5 h-3.5 text-amber-300" /> Catalog Movers & Levels
           </button>
           <button
+            onClick={() => setActiveTab("batches")}
+            className={`px-3.5 py-1.5 rounded-xl flex items-center gap-1.5 whitespace-nowrap transition-all font-semibold ${
+              activeTab === "batches"
+                ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-md shadow-cyan-900/40"
+                : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/40"
+            }`}
+          >
+            <Layers className="w-3.5 h-3.5 text-cyan-300" /> 🔬 Batches & Speed
+          </button>
+          <button
             onClick={() => setActiveTab("prediction")}
             className={`px-3.5 py-1.5 rounded-xl flex items-center gap-1.5 whitespace-nowrap transition-all font-semibold ${
               activeTab === "prediction"
@@ -669,9 +680,10 @@ export default function Dashboard() {
         {/* Mobile/Compact Horizontal Navigation Tabs */}
         <div className="flex xl:hidden overflow-x-auto pb-2 gap-2 text-xs scrollbar-none">
           {[
+            { id: "batches", label: "🔬 Batches", icon: Layers },
+            { id: "levels", label: "🏆 Level-Up", icon: Flame },
             { id: "prediction", label: "🎮 Market Game", icon: TrendingUp },
             { id: "live", label: "📡 Live Radar", icon: RadioTower },
-            { id: "levels", label: "🏆 Level-Up", icon: Flame },
             { id: "audience", label: "👥 Audience", icon: Users },
             { id: "audit", label: "🩺 Audit", icon: Stethoscope },
             { id: "builder", label: "🎛️ Title & BPM", icon: Wand2 },
@@ -694,6 +706,15 @@ export default function Dashboard() {
             );
           })}
         </div>
+
+        {/* ============================================================== */}
+        {/* TAB: 🔬 ALGORITHM IMPRESSION BATCHES & GRADUATION SPEED */}
+        {/* ============================================================== */}
+        {activeTab === "batches" && (
+          <AlgorithmBatchLadder
+            catalogVideos={allCatalogVideos}
+          />
+        )}
 
         {/* ============================================================== */}
         {/* TAB: 🏆 CHANNEL RPG LEVEL PROGRESSION & QUEST SYSTEM */}
