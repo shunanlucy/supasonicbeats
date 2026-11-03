@@ -1,0 +1,1843 @@
+{
+  "overview": {
+    "viewCount": "20665",
+    "subscriberCount": "47",
+    "hiddenSubscriberCount": false,
+    "videoCount": "64"
+  },
+  "latest10": [
+    {
+      "kind": "youtube#video",
+      "etag": "j1gZBVstyS4BXGen3wLViGmH5Dk",
+      "id": "pgJIMI4Ihzw",
+      "snippet": {
+        "publishedAt": "2026-10-29T18:49:22Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "30 October 2026",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i9.ytimg.com/vi/pgJIMI4Ihzw/default.jpg?sqp=CKSRkdcG&rs=AOn4CLCfPf67c5ryTNRJkQuaCkkSGQPejg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i9.ytimg.com/vi/pgJIMI4Ihzw/mqdefault.jpg?sqp=CKSRkdcG&rs=AOn4CLBtgHD8PZ0gqLHkq5nNELbKoS0TQw",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i9.ytimg.com/vi/pgJIMI4Ihzw/hqdefault.jpg?sqp=CKSRkdcG&rs=AOn4CLCws489R8s1962PXA1NtDHK-j6oHQ",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i9.ytimg.com/vi/pgJIMI4Ihzw/sddefault.jpg?sqp=CKSRkdcG&rs=AOn4CLAHgsmkEFLYvKre8fgiU7m9090sQw",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i9.ytimg.com/vi/pgJIMI4Ihzw/maxresdefault.jpg?sqp=CKSRkdcG&rs=AOn4CLAkyhtrXl8moyiMJCMPFwaV4Bat4A",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "localized": {
+          "title": "30 October 2026",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "duration": "PT3M49S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": true
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "private",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "0",
+        "likeCount": "0",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "XeQ95QxoMn9PUSbDMWMaj_VA85c",
+      "id": "tkr8sk4CaAY",
+      "snippet": {
+        "publishedAt": "2026-10-29T15:00:19Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "OBSESSION 🤍 | Soulful Duet × Acoustic Pop | Supasonic Beats #Shorts",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/tkr8sk4CaAY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/tkr8sk4CaAY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/tkr8sk4CaAY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/tkr8sk4CaAY/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/tkr8sk4CaAY/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "de",
+        "localized": {
+          "title": "OBSESSION 🤍 | Soulful Duet × Acoustic Pop | Supasonic Beats #Shorts",
+          "description": ""
+        },
+        "defaultAudioLanguage": "hi"
+      },
+      "contentDetails": {
+        "duration": "PT16S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": false
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "0",
+        "likeCount": "0",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "6NW5xKkrZqTcTSeSnXhFSBAIFjY",
+      "id": "o68amPUakwU",
+      "snippet": {
+        "publishedAt": "2026-10-29T13:10:48Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "DIL LAGA LIYA | Hindi Deep House Remix X Bass And Beats | Afro House [124 BPM]",
+        "description": "DIL LAGA LIYA is an electrifying 124 BPM Hindi Deep House Remix, Bass and Beats, and Afro House club banger by Supasonic Beats. Built for lovers of heavy car sub-bass, hypnotic tribal percussions, and sweet seductive Hindi female vocals—perfect for late-night highway drives and rooftop party sets.\n\nPlug in your earphones, turn up the car subwoofers, and let the 124 BPM \"Dil Laga Liya\" groove take over your night playlist! 🌙🔊🔥\n\n⏱️ Track Timestamps (03:57 Club Mix):\n00:00 - Sweet Female Vocal Hook & Ambient Intro\n00:25 - 124 BPM Tribal Drum & Sub-Bass Build\n00:50 - First Heavy Deep House Bass Drop (Dil Laga Liya)\n01:30 - Seductive Vocal Verse (Madhosh Yeh Fizayein...)\n02:00 - Rising Pre-Chorus Tension\n02:20 - Main Peak Bass & Beats Drop (Tujhe Apna Bana Liya)\n03:00 - Melodic Breakdown & Whispered Vocal Bridge\n03:25 - Final Euphoric Climax Drop\n03:45 - Hypnotic Afro Groove Outro\n\n🎧 Perfect For:\n• Late Night Highway & City Car Drives (2 AM Vibes)\n• Car Subwoofer & Heavy Bass Boosted Audio Testing\n• VIP Nightclubs, Beach Clubs & Rooftop House Parties\n• High-Energy Gym, Workout & 124 BPM Cardio Sessions\n• Fans of Deep House Hindi Song Remixes & Hindi Songs With Bass and Beats\n\n💿 Song Information:\n• Track Title: Dil Laga Liya (Deep House Remix x Bass & Beats)\n• Artist / Producer: Supasonic Beats\n• Genre: Hindi Deep House Remix x Bass and Beats x Afro House\n• Tempo / BPM: 124 BPM (Heavy Rolling Sub-Bass Groove)\n• Language: Hindi\n• Release Year: 2026\n\n📜 Lyrics:\n\"Sun zara... kya kiya...\nTere bin ek pal bhi na jiya...\nHaan dil laga liya, tujhe apna bana liya\nMaine ishq mein khud ko bhula diya\nHaan dil laga liya, yeh chain gawa diya\nTeri meethi nazar ne fida kiya...\"\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎵 PRODUCTION & CREDITS:\n• Music, Composition & Arrangement: Supasonic Beats\n• Mix & Master: Supasonic Beats Studio\n• Label & Copyright: Supasonic Beats Official\n\n📌 CONNECT WITH SUPASONIC BEATS:\n• YouTube: https://www.youtube.com/@SupasonicBeatsOfficial\n• Instagram: https://instagram.com/supasonicbeats\n• Facebook: https://facebook.com/supasonicbeats\n• TikTok: https://tiktok.com/@supasonicbeats\n\n🔔 Subscribe & hit the bell icon to never miss an official drop!\n🎧 Best experienced with quality headphones or car subwoofers.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your destination for next-gen Hindi Deep House Remixes, Afro House, Commercial Club Bangers, and Hindi Songs With Bass And Beats.\n\n🔍 Related Search Terms & Viral Vibes:\ndil laga liya, dil laga liya maine tumse pyaar karke, deep house hindi song remix, hindi songs with bass and beats, dil laga liya deep house, dil laga liya afro house, 124 bpm hindi club mix, supasonic beats, hindi deep house remix 2026, bass and beats hindi songs, car bass hindi songs, late night drive music hindi, hindi club bangers 2026.\n\n#DilLagaLiya #DeepHouseHindiRemix #HindiSongsWithBassAndBeats #AfroHouse #SupasonicBeats #124BPM #ClubBangers #LateNightDriveMusic #HindiCarBass #BassBoostedHindiSongs #DeepHouseMix #ViralSong2026 #BollywoodAfroHouse",
+        "thumbnails": {
+          "default": {
+            "url": "https://i9.ytimg.com/vi/o68amPUakwU/default.jpg?sqp=CKSRkdcG&rs=AOn4CLCuuztfCD32EyjCBlNT5A6bL6IPag",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i9.ytimg.com/vi/o68amPUakwU/mqdefault.jpg?sqp=CKSRkdcG&rs=AOn4CLCeaGrakmZFvjQ5_-R5Slg-bzN1ig",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i9.ytimg.com/vi/o68amPUakwU/hqdefault.jpg?sqp=CKSRkdcG&rs=AOn4CLCXCjbf8lgwewrZovJIGcSTb1h8ug",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i9.ytimg.com/vi/o68amPUakwU/sddefault.jpg?sqp=CKSRkdcG&rs=AOn4CLDfz8Q3-cDq6hMxdBqWV8dkWOGWqA",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i9.ytimg.com/vi/o68amPUakwU/maxresdefault.jpg?sqp=CKSRkdcG&rs=AOn4CLDFwS29daqbo0U2qDjO1Z6ktY96_w",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "tags": [
+          "dil laga liya",
+          "deep house hindi song remix",
+          "hindi songs with bass and beats",
+          "dil laga liya deep house",
+          "dil laga liya afro house",
+          "124 bpm",
+          "124 bpm hindi club mix",
+          "supasonic beats",
+          "dil laga liya maine tumse pyaar karke",
+          "hindi deep house remix",
+          "hindi songs with bass",
+          "bass and beats hindi songs",
+          "124 bpm deep house",
+          "afro house hindi",
+          "club bangers",
+          "car bass hindi songs",
+          "late night drive music hindi",
+          "bass boosted hindi songs",
+          "hindi club mix 2026",
+          "female vocal deep house"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "localized": {
+          "title": "DIL LAGA LIYA | Hindi Deep House Remix X Bass And Beats | Afro House [124 BPM]",
+          "description": "DIL LAGA LIYA is an electrifying 124 BPM Hindi Deep House Remix, Bass and Beats, and Afro House club banger by Supasonic Beats. Built for lovers of heavy car sub-bass, hypnotic tribal percussions, and sweet seductive Hindi female vocals—perfect for late-night highway drives and rooftop party sets.\n\nPlug in your earphones, turn up the car subwoofers, and let the 124 BPM \"Dil Laga Liya\" groove take over your night playlist! 🌙🔊🔥\n\n⏱️ Track Timestamps (03:57 Club Mix):\n00:00 - Sweet Female Vocal Hook & Ambient Intro\n00:25 - 124 BPM Tribal Drum & Sub-Bass Build\n00:50 - First Heavy Deep House Bass Drop (Dil Laga Liya)\n01:30 - Seductive Vocal Verse (Madhosh Yeh Fizayein...)\n02:00 - Rising Pre-Chorus Tension\n02:20 - Main Peak Bass & Beats Drop (Tujhe Apna Bana Liya)\n03:00 - Melodic Breakdown & Whispered Vocal Bridge\n03:25 - Final Euphoric Climax Drop\n03:45 - Hypnotic Afro Groove Outro\n\n🎧 Perfect For:\n• Late Night Highway & City Car Drives (2 AM Vibes)\n• Car Subwoofer & Heavy Bass Boosted Audio Testing\n• VIP Nightclubs, Beach Clubs & Rooftop House Parties\n• High-Energy Gym, Workout & 124 BPM Cardio Sessions\n• Fans of Deep House Hindi Song Remixes & Hindi Songs With Bass and Beats\n\n💿 Song Information:\n• Track Title: Dil Laga Liya (Deep House Remix x Bass & Beats)\n• Artist / Producer: Supasonic Beats\n• Genre: Hindi Deep House Remix x Bass and Beats x Afro House\n• Tempo / BPM: 124 BPM (Heavy Rolling Sub-Bass Groove)\n• Language: Hindi\n• Release Year: 2026\n\n📜 Lyrics:\n\"Sun zara... kya kiya...\nTere bin ek pal bhi na jiya...\nHaan dil laga liya, tujhe apna bana liya\nMaine ishq mein khud ko bhula diya\nHaan dil laga liya, yeh chain gawa diya\nTeri meethi nazar ne fida kiya...\"\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎵 PRODUCTION & CREDITS:\n• Music, Composition & Arrangement: Supasonic Beats\n• Mix & Master: Supasonic Beats Studio\n• Label & Copyright: Supasonic Beats Official\n\n📌 CONNECT WITH SUPASONIC BEATS:\n• YouTube: https://www.youtube.com/@SupasonicBeatsOfficial\n• Instagram: https://instagram.com/supasonicbeats\n• Facebook: https://facebook.com/supasonicbeats\n• TikTok: https://tiktok.com/@supasonicbeats\n\n🔔 Subscribe & hit the bell icon to never miss an official drop!\n🎧 Best experienced with quality headphones or car subwoofers.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your destination for next-gen Hindi Deep House Remixes, Afro House, Commercial Club Bangers, and Hindi Songs With Bass And Beats.\n\n🔍 Related Search Terms & Viral Vibes:\ndil laga liya, dil laga liya maine tumse pyaar karke, deep house hindi song remix, hindi songs with bass and beats, dil laga liya deep house, dil laga liya afro house, 124 bpm hindi club mix, supasonic beats, hindi deep house remix 2026, bass and beats hindi songs, car bass hindi songs, late night drive music hindi, hindi club bangers 2026.\n\n#DilLagaLiya #DeepHouseHindiRemix #HindiSongsWithBassAndBeats #AfroHouse #SupasonicBeats #124BPM #ClubBangers #LateNightDriveMusic #HindiCarBass #BassBoostedHindiSongs #DeepHouseMix #ViralSong2026 #BollywoodAfroHouse"
+        }
+      },
+      "contentDetails": {
+        "duration": "PT3M57S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": true
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "private",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "0",
+        "likeCount": "0",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "ai9TdacDVCqj4iVBN48FIISu2kc",
+      "id": "fUa9G_l3VkM",
+      "snippet": {
+        "publishedAt": "2026-10-29T13:00:39Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "CHURA LIYA | Deep House x Club Bangers | Afro House | Supasonic Beats [124 BPM]",
+        "description": "CHURA LIYA is an electrifying 124 BPM Hindi Afro House, Deep House, and Club Bangers experience by Supasonic Beats. Reimagining one of Bollywood's most timeless romantic hooks with hypnotic rolling sub-basslines, bouncy organic tribal percussions, and seductive airy female vocals, this club anthem bridges nostalgic romance with modern electronic energy.\n\nPlug in your earphones, turn up the car subwoofers, and let the 124 BPM \"Chura Liya\" groove take over your night drive! 🌙🔊🔥\n\n⏱️ Track Timestamps (04:30 Club Mix):\n00:00 - Midnight Synth & Shakers Intro\n00:35 - Vocal Verse (Khamosh Thi Ye Raatein...)\n01:10 - Main 124 BPM Afro House Drop (Chura Liya Hai Tumne)\n02:05 - Melodic Breakdown & Deep Sub Pulse\n02:35 - Second Heavy Rolling Club Banger Drop\n03:30 - Emotional Bridge & Rising Tension\n04:00 - Peak Climax Drop & Dancefloor Energy\n04:25 - Midnight Tribal Outro\n\n🎧 Perfect For:\n• Late Night Highway Drives & Car Subwoofer Audio Testing\n• VIP Nightclubs, Beach Clubs & Rooftop House Parties\n• Viral Couple Reels, TikToks & Aesthetic Night Drive Edits\n• High-Energy Gym, Cardio & 124 BPM Workout Sessions\n• Audiophile Headphone Immersion & Chillout Sets\n\n💿 Song Information:\n• Track Title: Chura Liya\n• Artist / Producer: Supasonic Beats\n• Genre: Hindi Afro House x Deep House x Club Bangers\n• Tempo / BPM: 124 BPM (Heavy Rolling Sub-Bass Groove)\n• Vibe: Seductive, Nostalgic Romance, High-Energy Club Banger\n• Release Year: 2026\n\n📜 Lyrics:\n\"Chura liya hai tumne jo dil ko,\nNazar nahi churana sanam...\nBadalke meri tum zindagani,\nKahin badal na jaana sanam...\nHaan chura liya... o chura liya...\"\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎵 PRODUCTION & CREDITS:\n• Music, Composition & Arrangement: Supasonic Beats\n• Mix & Master: Supasonic Beats Studio\n• Label & Copyright: Supasonic Beats Official\n\n📌 CONNECT WITH SUPASONIC BEATS:\n• YouTube: https://www.youtube.com/@SupasonicBeatsOfficial\n• Instagram: https://instagram.com/supasonicbeats\n• Facebook: https://facebook.com/supasonicbeats\n• TikTok: https://tiktok.com/@supasonicbeats\n\n🔔 Subscribe & hit the bell icon to never miss an official drop!\n🎧 Best experienced with quality headphones or car subwoofers.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your destination for next-gen Hindi Afro House, Deep House Club Bangers, and Commercial Electronic Dance Music.\n\n🔍 Related Search Terms & Viral Vibes:\nchura liya, chura liya hai tumne jo dil ko, chura liya afro house, chura liya deep house, chura liya remix 2026, deep house x club bangers, afro house club bangers, hindi afro house, 124 bpm afro house, modern afro house, deep afro house, bollywood afro house, supasonic beats, late night car drive music, club bangers hindi, viral afro house.\n\n#ChuraLiya #AfroHouse #DeepHouse #ClubBangers #SupasonicBeats #HindiAfroHouse #DeepHouseHindiRemix #LateNightDrive #CarBass #124BPM #ViralSong2026 #DanceMusic #BollywoodAfroHouse",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/fUa9G_l3VkM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/fUa9G_l3VkM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/fUa9G_l3VkM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/fUa9G_l3VkM/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/fUa9G_l3VkM/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "tags": [
+          "chura liya",
+          "chura liya hai tumne jo dil ko",
+          "chura liya afro house",
+          "chura liya deep house",
+          "chura liya remix 2026",
+          "deep house x club bangers",
+          "afro house club bangers",
+          "hindi afro house",
+          "124 bpm afro house",
+          "modern afro house",
+          "deep afro house",
+          "bollywood afro house",
+          "organic house",
+          "supasonic beats",
+          "late night car drive music",
+          "club bangers hindi",
+          "tribal house hindi",
+          "viral afro house",
+          "indian electronic music",
+          "chura liya song"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "CHURA LIYA | Deep House x Club Bangers | Afro House | Supasonic Beats [124 BPM]",
+          "description": "CHURA LIYA is an electrifying 124 BPM Hindi Afro House, Deep House, and Club Bangers experience by Supasonic Beats. Reimagining one of Bollywood's most timeless romantic hooks with hypnotic rolling sub-basslines, bouncy organic tribal percussions, and seductive airy female vocals, this club anthem bridges nostalgic romance with modern electronic energy.\n\nPlug in your earphones, turn up the car subwoofers, and let the 124 BPM \"Chura Liya\" groove take over your night drive! 🌙🔊🔥\n\n⏱️ Track Timestamps (04:30 Club Mix):\n00:00 - Midnight Synth & Shakers Intro\n00:35 - Vocal Verse (Khamosh Thi Ye Raatein...)\n01:10 - Main 124 BPM Afro House Drop (Chura Liya Hai Tumne)\n02:05 - Melodic Breakdown & Deep Sub Pulse\n02:35 - Second Heavy Rolling Club Banger Drop\n03:30 - Emotional Bridge & Rising Tension\n04:00 - Peak Climax Drop & Dancefloor Energy\n04:25 - Midnight Tribal Outro\n\n🎧 Perfect For:\n• Late Night Highway Drives & Car Subwoofer Audio Testing\n• VIP Nightclubs, Beach Clubs & Rooftop House Parties\n• Viral Couple Reels, TikToks & Aesthetic Night Drive Edits\n• High-Energy Gym, Cardio & 124 BPM Workout Sessions\n• Audiophile Headphone Immersion & Chillout Sets\n\n💿 Song Information:\n• Track Title: Chura Liya\n• Artist / Producer: Supasonic Beats\n• Genre: Hindi Afro House x Deep House x Club Bangers\n• Tempo / BPM: 124 BPM (Heavy Rolling Sub-Bass Groove)\n• Vibe: Seductive, Nostalgic Romance, High-Energy Club Banger\n• Release Year: 2026\n\n📜 Lyrics:\n\"Chura liya hai tumne jo dil ko,\nNazar nahi churana sanam...\nBadalke meri tum zindagani,\nKahin badal na jaana sanam...\nHaan chura liya... o chura liya...\"\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎵 PRODUCTION & CREDITS:\n• Music, Composition & Arrangement: Supasonic Beats\n• Mix & Master: Supasonic Beats Studio\n• Label & Copyright: Supasonic Beats Official\n\n📌 CONNECT WITH SUPASONIC BEATS:\n• YouTube: https://www.youtube.com/@SupasonicBeatsOfficial\n• Instagram: https://instagram.com/supasonicbeats\n• Facebook: https://facebook.com/supasonicbeats\n• TikTok: https://tiktok.com/@supasonicbeats\n\n🔔 Subscribe & hit the bell icon to never miss an official drop!\n🎧 Best experienced with quality headphones or car subwoofers.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your destination for next-gen Hindi Afro House, Deep House Club Bangers, and Commercial Electronic Dance Music.\n\n🔍 Related Search Terms & Viral Vibes:\nchura liya, chura liya hai tumne jo dil ko, chura liya afro house, chura liya deep house, chura liya remix 2026, deep house x club bangers, afro house club bangers, hindi afro house, 124 bpm afro house, modern afro house, deep afro house, bollywood afro house, supasonic beats, late night car drive music, club bangers hindi, viral afro house.\n\n#ChuraLiya #AfroHouse #DeepHouse #ClubBangers #SupasonicBeats #HindiAfroHouse #DeepHouseHindiRemix #LateNightDrive #CarBass #124BPM #ViralSong2026 #DanceMusic #BollywoodAfroHouse"
+        },
+        "defaultAudioLanguage": "hi"
+      },
+      "contentDetails": {
+        "duration": "PT4M30S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": true
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "64",
+        "likeCount": "1",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "1"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "1ja9E7QJJkTKxw42-4LhKn5H3OI",
+      "id": "_-zIwkH1XuU",
+      "snippet": {
+        "publishedAt": "2026-10-29T04:30:04Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "AAO NA 🎧🔥 | Deep House Remix × Bass & Beats | Supasonic Beats #Shorts",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/_-zIwkH1XuU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/_-zIwkH1XuU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/_-zIwkH1XuU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/_-zIwkH1XuU/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/_-zIwkH1XuU/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "AAO NA 🎧🔥 | Deep House Remix × Bass & Beats | Supasonic Beats #Shorts",
+          "description": ""
+        },
+        "defaultAudioLanguage": "en"
+      },
+      "contentDetails": {
+        "duration": "PT21S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": false
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "53",
+        "likeCount": "0",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "z5guIsz4IzCTUBnajab5qB2JBB0",
+      "id": "efzaRuhZAeU",
+      "snippet": {
+        "publishedAt": "2026-10-28T15:00:09Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "RAAT MERI 💃🔥 | Hindi Afro House × Dance Pop | Supasonic Beats #Shortsp",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/efzaRuhZAeU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/efzaRuhZAeU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/efzaRuhZAeU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/efzaRuhZAeU/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/efzaRuhZAeU/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "RAAT MERI 💃🔥 | Hindi Afro House × Dance Pop | Supasonic Beats #Shortsp",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "duration": "PT21S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": false
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "139",
+        "likeCount": "0",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "s23fEipgsW9_xsc5gWk6udlJnyE",
+      "id": "BuvPDZawk9M",
+      "snippet": {
+        "publishedAt": "2026-10-28T13:00:21Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "DEEDAR DE | Deep House x Club Bangers | Afro House | Supasonic Beats [124 BPM]",
+        "description": "DEEDAR DE is an intoxicating 124 BPM Hindi Afro House, Deep House, and Club Bangers experience by Supasonic Beats. Blending hypnotic rolling sub-basslines, bouncy organic tribal percussions, and sensual Hindi female vocals, this 4:24 club anthem captures the undeniable pull of late-night desire, romantic longing, and dancefloor electricity.\n\nPlug in your earphones, turn up the car subwoofers, and let the 124 BPM \"Deedar De\" groove run on loop! 🌙🔊🔥\n\n⏱️ Track Timestamps (04:24 Club Mix):\n00:00 - Midnight Atmosphere & Shakers Intro\n00:45 - Vocal Build & Pre-Chorus Tension (Dhadkan Kahe Meri...)\n01:15 - Main 124 BPM Afro House Drop (Deedar De)\n02:10 - Deep Melodic Breakdown & Intimacy\n02:40 - Second Heavy Rolling Club Banger Drop\n03:35 - Peak Dancefloor Energy & Final Climax Drop\n04:05 - Midnight Highway Tribal Outro (04:24)\n\n🎧 Perfect For:\n• Late Night Highway & City Car Drives (2 AM Subwoofer Testing)\n• VIP Club Nights, Rooftop Lounges & House Parties\n• Viral Dance Reels, TikToks & Aesthetic Nightclub Edits\n• High-Energy Gym, Cardio & 124 BPM Workout Playlists\n• High-Fidelity Headphone Immersion\n\n💿 Song Information:\n• Track Title: Deedar De\n• Artist / Producer: Supasonic Beats\n• Genre: Hindi Afro House x Deep House x Club Bangers\n• Tempo / BPM: 124 BPM (Heavy Rolling Sub-Bass Groove)\n• Vibe: Sensual, Hypnotic, Late Night Romance, Club Banger\n• Duration: 04:24\n• Release Year: 2026\n\n📜 Official Lyrics Highlight:\n\"Deedar de, deedar de...\nEk baar bas apna deedar de!\nYe dil fida hai tujhpe sanam,\nThoda sa toh ab pyaar de... Deedar de...\"\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎵 PRODUCTION & CREDITS:\n• Music, Composition & Arrangement: Supasonic Beats\n• Mix & Master: Supasonic Beats Studio\n• Label & Copyright: Supasonic Beats Official\n\n📌 CONNECT WITH SUPASONIC BEATS:\n• YouTube: https://www.youtube.com/@SupasonicBeatsOfficial\n• Instagram: https://instagram.com/supasonicbeats\n• Facebook: https://facebook.com/supasonicbeats\n• TikTok: https://tiktok.com/@supasonicbeats\n\n🔔 Subscribe & hit the bell icon to never miss an official drop!\n🎧 Best experienced with quality headphones or car subwoofers.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your destination for next-gen Hindi Afro House, Deep House Club Bangers, and Commercial Electronic Dance Music.\n\n🔍 Related Search Terms & Viral Vibes:\ndeedar de, deedar de song, deedar de deep house, deedar de afro house, deep house x club bangers, hindi afro house 2026, deep house hindi song remix, hindi songs with bass and beats, 124 bpm afro house, modern afro house, deep afro house, late night car drive music, supasonic beats, tribal house hindi, viral afro house.\n\n#DeedarDe #AfroHouse #DeepHouse #ClubBangers #SupasonicBeats #HindiAfroHouse #DeepHouseHindiRemix #LateNightDrive #CarBass #124BPM #ViralSong2026 #DanceMusic #ClubMix",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/BuvPDZawk9M/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/BuvPDZawk9M/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/BuvPDZawk9M/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/BuvPDZawk9M/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/BuvPDZawk9M/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "tags": [
+          "deedar de",
+          "deedar de supasonic beats",
+          "hindi afro house",
+          "deep house x club bangers",
+          "afro house club bangers",
+          "deep house hindi song remix",
+          "hindi songs with bass and beats",
+          "124 bpm afro house",
+          "deedar de song",
+          "modern afro house",
+          "deep afro house",
+          "organic house",
+          "sensual club groove",
+          "late night car drive music",
+          "club bangers hindi",
+          "supasonic beats",
+          "indian electronic music",
+          "tribal house hindi",
+          "night club music",
+          "viral afro house 2026"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "DEEDAR DE | Deep House x Club Bangers | Afro House | Supasonic Beats [124 BPM]",
+          "description": "DEEDAR DE is an intoxicating 124 BPM Hindi Afro House, Deep House, and Club Bangers experience by Supasonic Beats. Blending hypnotic rolling sub-basslines, bouncy organic tribal percussions, and sensual Hindi female vocals, this 4:24 club anthem captures the undeniable pull of late-night desire, romantic longing, and dancefloor electricity.\n\nPlug in your earphones, turn up the car subwoofers, and let the 124 BPM \"Deedar De\" groove run on loop! 🌙🔊🔥\n\n⏱️ Track Timestamps (04:24 Club Mix):\n00:00 - Midnight Atmosphere & Shakers Intro\n00:45 - Vocal Build & Pre-Chorus Tension (Dhadkan Kahe Meri...)\n01:15 - Main 124 BPM Afro House Drop (Deedar De)\n02:10 - Deep Melodic Breakdown & Intimacy\n02:40 - Second Heavy Rolling Club Banger Drop\n03:35 - Peak Dancefloor Energy & Final Climax Drop\n04:05 - Midnight Highway Tribal Outro (04:24)\n\n🎧 Perfect For:\n• Late Night Highway & City Car Drives (2 AM Subwoofer Testing)\n• VIP Club Nights, Rooftop Lounges & House Parties\n• Viral Dance Reels, TikToks & Aesthetic Nightclub Edits\n• High-Energy Gym, Cardio & 124 BPM Workout Playlists\n• High-Fidelity Headphone Immersion\n\n💿 Song Information:\n• Track Title: Deedar De\n• Artist / Producer: Supasonic Beats\n• Genre: Hindi Afro House x Deep House x Club Bangers\n• Tempo / BPM: 124 BPM (Heavy Rolling Sub-Bass Groove)\n• Vibe: Sensual, Hypnotic, Late Night Romance, Club Banger\n• Duration: 04:24\n• Release Year: 2026\n\n📜 Official Lyrics Highlight:\n\"Deedar de, deedar de...\nEk baar bas apna deedar de!\nYe dil fida hai tujhpe sanam,\nThoda sa toh ab pyaar de... Deedar de...\"\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎵 PRODUCTION & CREDITS:\n• Music, Composition & Arrangement: Supasonic Beats\n• Mix & Master: Supasonic Beats Studio\n• Label & Copyright: Supasonic Beats Official\n\n📌 CONNECT WITH SUPASONIC BEATS:\n• YouTube: https://www.youtube.com/@SupasonicBeatsOfficial\n• Instagram: https://instagram.com/supasonicbeats\n• Facebook: https://facebook.com/supasonicbeats\n• TikTok: https://tiktok.com/@supasonicbeats\n\n🔔 Subscribe & hit the bell icon to never miss an official drop!\n🎧 Best experienced with quality headphones or car subwoofers.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your destination for next-gen Hindi Afro House, Deep House Club Bangers, and Commercial Electronic Dance Music.\n\n🔍 Related Search Terms & Viral Vibes:\ndeedar de, deedar de song, deedar de deep house, deedar de afro house, deep house x club bangers, hindi afro house 2026, deep house hindi song remix, hindi songs with bass and beats, 124 bpm afro house, modern afro house, deep afro house, late night car drive music, supasonic beats, tribal house hindi, viral afro house.\n\n#DeedarDe #AfroHouse #DeepHouse #ClubBangers #SupasonicBeats #HindiAfroHouse #DeepHouseHindiRemix #LateNightDrive #CarBass #124BPM #ViralSong2026 #DanceMusic #ClubMix"
+        },
+        "defaultAudioLanguage": "hi"
+      },
+      "contentDetails": {
+        "duration": "PT4M24S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": true
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "298",
+        "likeCount": "4",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "1"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "6heDpwgAxVGAciFFvGhlrw7sZGo",
+      "id": "ogI1JF0i7lE",
+      "snippet": {
+        "publishedAt": "2026-10-28T04:43:17Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "IN THE NIGHT 🌙🔥 | Afro House × Deep House | Supasonic Beats #Shorts",
+        "description": "👍 Enjoyed the vibe? Hit the LIKE button, SHARE it with your night-drive squad, and drop a comment below!\n\n🔍 Related Search Terms & Viral Vibes:\nin the night no control, in the night no control song, in the night no control remix, in the night no control club mix, in the night afro house, in the night deep house, no control viral song, in the night bass boosted, late night drive music, car bass mix 2026, supasonic beats, afro house x deep house x club bangers, viral reels night drive song, dark club house music, hindi afro house, 126 bpm.\n\n#InTheNight #NoControl #AfroHouse #DeepHouse #ClubBangers #SupasonicBeats #InTheNightNoControl #LateNightDriveMusic #CarBassMix #ViralSong2026 #NightDriveSongs #DeepHouseMix #AfroHouseMix #PartyMusic #BassBoosted #126bpm",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ogI1JF0i7lE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ogI1JF0i7lE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ogI1JF0i7lE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/ogI1JF0i7lE/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/ogI1JF0i7lE/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "IN THE NIGHT 🌙🔥 | Afro House × Deep House | Supasonic Beats #Shorts",
+          "description": "👍 Enjoyed the vibe? Hit the LIKE button, SHARE it with your night-drive squad, and drop a comment below!\n\n🔍 Related Search Terms & Viral Vibes:\nin the night no control, in the night no control song, in the night no control remix, in the night no control club mix, in the night afro house, in the night deep house, no control viral song, in the night bass boosted, late night drive music, car bass mix 2026, supasonic beats, afro house x deep house x club bangers, viral reels night drive song, dark club house music, hindi afro house, 126 bpm.\n\n#InTheNight #NoControl #AfroHouse #DeepHouse #ClubBangers #SupasonicBeats #InTheNightNoControl #LateNightDriveMusic #CarBassMix #ViralSong2026 #NightDriveSongs #DeepHouseMix #AfroHouseMix #PartyMusic #BassBoosted #126bpm"
+        }
+      },
+      "contentDetails": {
+        "duration": "PT23S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": false
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "2",
+        "likeCount": "0",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "s3y4lVy3YdAdQto-R9natY118vo",
+      "id": "wE7QEsQ9IPI",
+      "snippet": {
+        "publishedAt": "2026-10-27T13:00:05Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "KALYANI | Deep House x Afro Grooves • Hindi Songs With Bass And Beats (120 BPM) | Supasonic Beats",
+        "description": "KALYANI is a hypnotic 120 BPM Deep House x Afro Grooves club mix by Supasonic Beats. Crafted for lovers of Deep House Hindi song remixes and Hindi songs with bass and beats, this Indian fusion banger blends massive rolling car sub-bass, organic Afro percussions, and airy Hindi-Malayalam female vocal hooks—built for late-night highway drives, house parties, and underground club vibes.\n\nPlug in your earphones, turn up the car subwoofers, and let the \"Teri Kalyani\" groove run on loop!\n\n⏱️ Track Timestamps:\n00:00 - Instant Sub-Bass & Atmospheric Vocal Intro\n00:35 - Main Chorus & 120 BPM Afro-Deep House Drop (Teri Kalyani)\n02:30 - Midnight Highway Club Outro Groove\n\n🎧 Perfect For:\n• Late Night Highway & City Car Drives (2 AM Loop Vibes)\n• Car Subwoofer & Heavy Bass Boosted Audio Testing\n• Viral Reels, Shorts & Royal Desi Aesthetic Edits\n• House Parties, VIP Clubbing & Lounge Nights\n• High-Energy Gym, Workout & 120 BPM Cardio Sessions\n\n💿 Song Information:\n• Track Title: Kalyani (Teri Kalyani - Deep House x Afro Grooves)\n• Artist / Producer: Supasonic Beats\n• Genre: Deep House x Afro Grooves x Indian Fusion Club Mix\n• Tempo: 120 BPM (Heavy Car Sub-Bass Groove)\n• Language: Hindi x Malayalam Fusion\n• Vocal Style: Airy, Natural & Reverb-Rich Female Vocals\n• Release Year: 2026\n\n📜 Official Lyrics Highlight:\n\"Kya guroor, choor hua, kyun jaane na...\nYe suroor, huzoor, tera hi hai saara...\nKho jaayein bas, teri hi, teri hi, teri raahein...\nAb haasil dil ko, ho hi gayi... Teri Kalyani...\"\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your ultimate destination for next-gen Deep House Hindi Song Remixes, Afro Grooves, Commercial Dance Pop, and Hindi Songs With Bass And Beats. We fuse infectious global club beats and heavy car sub-bass with soulful Indian melodies to create high-retention bangers for night riders, party lovers, and bass enthusiasts.\n\n🔔 Subscribe & Turn on Notifications so you never miss a beat:\nhttps://www.youtube.com/@SupasonicBeatsOfficial\n\n👍 Enjoyed the vibe? Hit the LIKE button, SHARE it with your night-drive squad, and drop a comment below!\n\n🔍 Related Search Terms & Viral Vibes:\nkalyani, teri kalyani, kalyani song, kalyani remix, kalyani deep house, kalyani afro house, deep house x afro grooves playlist, deep house hindi song remix, hindi songs with bass and beats, 120 bpm hindi club mix, shreya ghoshal, kalyani malayalam hindi song, kalyani car bass mix, supasonic beats, late night drive music hindi, bass boosted hindi songs, indian fusion deep house 2026.\n\n#Kalyani #TeriKalyani #DeepHouse #AfroGrooves #SupasonicBeats #DeepHouseHindiRemix #HindiSongsWithBassAndBeats #120BPM #AfroHouse #ClubBangers #LateNightDriveMusic #CarBassMix #IndianFusion #ViralSong2026 #BassBoosted #shreyaghoshal",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/wE7QEsQ9IPI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/wE7QEsQ9IPI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/wE7QEsQ9IPI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/wE7QEsQ9IPI/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/wE7QEsQ9IPI/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "tags": [
+          "kalyani",
+          "teri kalyani",
+          "kalyani song",
+          "kalyani remix",
+          "deep house x afro grooves",
+          "deep house hindi song remix",
+          "hindi songs with bass and beats",
+          "120 bpm",
+          "supasonic beats",
+          "kalyani deep house",
+          "kalyani afro house",
+          "kalyani malayalam hindi remix",
+          "120 bpm deep house",
+          "afro grooves playlist",
+          "hindi songs with bass",
+          "car bass hindi songs",
+          "late night drive music",
+          "bass boosted hindi songs",
+          "indian fusion club mix",
+          "female vocal deep house",
+          "club bangers 2026",
+          "shreya Ghoshal"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "KALYANI | Deep House x Afro Grooves • Hindi Songs With Bass And Beats (120 BPM) | Supasonic Beats",
+          "description": "KALYANI is a hypnotic 120 BPM Deep House x Afro Grooves club mix by Supasonic Beats. Crafted for lovers of Deep House Hindi song remixes and Hindi songs with bass and beats, this Indian fusion banger blends massive rolling car sub-bass, organic Afro percussions, and airy Hindi-Malayalam female vocal hooks—built for late-night highway drives, house parties, and underground club vibes.\n\nPlug in your earphones, turn up the car subwoofers, and let the \"Teri Kalyani\" groove run on loop!\n\n⏱️ Track Timestamps:\n00:00 - Instant Sub-Bass & Atmospheric Vocal Intro\n00:35 - Main Chorus & 120 BPM Afro-Deep House Drop (Teri Kalyani)\n02:30 - Midnight Highway Club Outro Groove\n\n🎧 Perfect For:\n• Late Night Highway & City Car Drives (2 AM Loop Vibes)\n• Car Subwoofer & Heavy Bass Boosted Audio Testing\n• Viral Reels, Shorts & Royal Desi Aesthetic Edits\n• House Parties, VIP Clubbing & Lounge Nights\n• High-Energy Gym, Workout & 120 BPM Cardio Sessions\n\n💿 Song Information:\n• Track Title: Kalyani (Teri Kalyani - Deep House x Afro Grooves)\n• Artist / Producer: Supasonic Beats\n• Genre: Deep House x Afro Grooves x Indian Fusion Club Mix\n• Tempo: 120 BPM (Heavy Car Sub-Bass Groove)\n• Language: Hindi x Malayalam Fusion\n• Vocal Style: Airy, Natural & Reverb-Rich Female Vocals\n• Release Year: 2026\n\n📜 Official Lyrics Highlight:\n\"Kya guroor, choor hua, kyun jaane na...\nYe suroor, huzoor, tera hi hai saara...\nKho jaayein bas, teri hi, teri hi, teri raahein...\nAb haasil dil ko, ho hi gayi... Teri Kalyani...\"\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your ultimate destination for next-gen Deep House Hindi Song Remixes, Afro Grooves, Commercial Dance Pop, and Hindi Songs With Bass And Beats. We fuse infectious global club beats and heavy car sub-bass with soulful Indian melodies to create high-retention bangers for night riders, party lovers, and bass enthusiasts.\n\n🔔 Subscribe & Turn on Notifications so you never miss a beat:\nhttps://www.youtube.com/@SupasonicBeatsOfficial\n\n👍 Enjoyed the vibe? Hit the LIKE button, SHARE it with your night-drive squad, and drop a comment below!\n\n🔍 Related Search Terms & Viral Vibes:\nkalyani, teri kalyani, kalyani song, kalyani remix, kalyani deep house, kalyani afro house, deep house x afro grooves playlist, deep house hindi song remix, hindi songs with bass and beats, 120 bpm hindi club mix, shreya ghoshal, kalyani malayalam hindi song, kalyani car bass mix, supasonic beats, late night drive music hindi, bass boosted hindi songs, indian fusion deep house 2026.\n\n#Kalyani #TeriKalyani #DeepHouse #AfroGrooves #SupasonicBeats #DeepHouseHindiRemix #HindiSongsWithBassAndBeats #120BPM #AfroHouse #ClubBangers #LateNightDriveMusic #CarBassMix #IndianFusion #ViralSong2026 #BassBoosted #shreyaghoshal"
+        }
+      },
+      "contentDetails": {
+        "duration": "PT3M3S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": true
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "923",
+        "likeCount": "3",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "1"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "cZVenJ5Yq0qxh8yLutMga8FTGiA",
+      "id": "87ndOuq346I",
+      "snippet": {
+        "publishedAt": "2026-10-26T23:30:22Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "OBSESSION - Hindi Indi R&B x Acoustic Pop Duet | Supasonic Beats [85 BPM]",
+        "description": "Supasonic Beats presents \"OBSESSION\" [85 BPM] — an intimate Hindi Indi R&B and Acoustic Pop Duet crafted for late-night drives, cozy evenings, and quiet heartfelt moments.\n\nExperience the journey in two soulful moods:\n✨ Version 1: Original Soulful (Smooth R&B groove, warm bass & vocal harmonies)\n🎸 Version 2: Acoustic Unplugged (Raw acoustic guitars & emotional dual vocals)\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏱️ TRACKLIST & TIMESTAMPS:\n0:00 - Version 1: Original Soulful\n1:55 - Version 2: Acoustic Unplugged\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n📜 LYRICS:\n\n[Verse 1 - Male]\nKhamosh raatein, kamre ka ye kona,\nTere bina ab kahin nahi hai sona.\nWo teri hansi ka halka sa nasha,\nJo dil ke har ek kone mein bas gaya.\n\n[Verse 2 - Female]\nBheed mein bhi bas tera hi chehra dikhe,\nLage ye saari kahani mein bas tu hi likhe.\nYe kaisa khumaar hai, kaisa yeh jaadu,\nTujhse hi shuru, tujhpe hi khatam har pal tu.\n\n[Chorus - Both]\nYeh obsession hai, ya tera nasha,\nHawaon mein ghula hai tera hi pata.\nTujhe paane ki zid mein, khud ko bhula diya,\nIs dil ne tujhko hi apna jahaan bana liya.\n\n[Bridge - Male & Female]\nWaqt tham sa gaya hai is pal mein yahan,\nTu hi meri manzil, tu hi mera jahan.\nAankhon mein aankhein daal ke ye kahin,\nTere bina ab jeena manzoor nahi.\n\n[Outro]\nObsession... tera nasha.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎵 TRACK DETAILS & CREDITS:\n• Track: OBSESSION\n• Tempo / BPM: 85 BPM\n• Genre: Indi R&B / Acoustic Pop Duet\n• Mood: Late Night / Romantic / Cozy Soul\n• Production, Composition & Mix: Supasonic Beats\n• Label: Supasonic Beats Official\n\n🎧 BEST EXPERIENCED WITH HEADPHONES\nTurn down the lights, put on your headphones, and feel the vibe.\n\n📌 Connect with Supasonic Beats:\n• Subscribe: https://www.youtube.com/@SupasonicBeatsOfficial\n• Instagram: @supasonicbeats\n\n#Obsession #IndiRnB #AcousticPop #HindiDuet #85BPM #SupasonicBeats #LateNightVibes #SoulfulAcoustic #HindiLoveSongs #UnpluggedDuet",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/87ndOuq346I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/87ndOuq346I/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/87ndOuq346I/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/87ndOuq346I/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/87ndOuq346I/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          },
+          "uhd": {
+            "url": "https://i.ytimg.com/vi/87ndOuq346I/uhddefault.jpg",
+            "width": 3840,
+            "height": 2160
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "tags": [
+          "obsession",
+          "obsession supasonic beats",
+          "hindi indi rnb",
+          "85 bpm hindi song",
+          "acoustic pop duet hindi",
+          "hindi romantic duet",
+          "late night acoustic hindi",
+          "hindi soul songs",
+          "obsession hindi song",
+          "indie pop hindi",
+          "cozy acoustic evening",
+          "romantic hindi songs 2026",
+          "supasonic beats",
+          "unplugged hindi songs",
+          "soulful acoustic duet",
+          "hindi rnb song",
+          "late night love songs",
+          "85 bpm acoustic",
+          "romantic car drive hindi",
+          "indie duet hindi"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "OBSESSION - Hindi Indi R&B x Acoustic Pop Duet | Supasonic Beats [85 BPM]",
+          "description": "Supasonic Beats presents \"OBSESSION\" [85 BPM] — an intimate Hindi Indi R&B and Acoustic Pop Duet crafted for late-night drives, cozy evenings, and quiet heartfelt moments.\n\nExperience the journey in two soulful moods:\n✨ Version 1: Original Soulful (Smooth R&B groove, warm bass & vocal harmonies)\n🎸 Version 2: Acoustic Unplugged (Raw acoustic guitars & emotional dual vocals)\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏱️ TRACKLIST & TIMESTAMPS:\n0:00 - Version 1: Original Soulful\n1:55 - Version 2: Acoustic Unplugged\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n📜 LYRICS:\n\n[Verse 1 - Male]\nKhamosh raatein, kamre ka ye kona,\nTere bina ab kahin nahi hai sona.\nWo teri hansi ka halka sa nasha,\nJo dil ke har ek kone mein bas gaya.\n\n[Verse 2 - Female]\nBheed mein bhi bas tera hi chehra dikhe,\nLage ye saari kahani mein bas tu hi likhe.\nYe kaisa khumaar hai, kaisa yeh jaadu,\nTujhse hi shuru, tujhpe hi khatam har pal tu.\n\n[Chorus - Both]\nYeh obsession hai, ya tera nasha,\nHawaon mein ghula hai tera hi pata.\nTujhe paane ki zid mein, khud ko bhula diya,\nIs dil ne tujhko hi apna jahaan bana liya.\n\n[Bridge - Male & Female]\nWaqt tham sa gaya hai is pal mein yahan,\nTu hi meri manzil, tu hi mera jahan.\nAankhon mein aankhein daal ke ye kahin,\nTere bina ab jeena manzoor nahi.\n\n[Outro]\nObsession... tera nasha.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎵 TRACK DETAILS & CREDITS:\n• Track: OBSESSION\n• Tempo / BPM: 85 BPM\n• Genre: Indi R&B / Acoustic Pop Duet\n• Mood: Late Night / Romantic / Cozy Soul\n• Production, Composition & Mix: Supasonic Beats\n• Label: Supasonic Beats Official\n\n🎧 BEST EXPERIENCED WITH HEADPHONES\nTurn down the lights, put on your headphones, and feel the vibe.\n\n📌 Connect with Supasonic Beats:\n• Subscribe: https://www.youtube.com/@SupasonicBeatsOfficial\n• Instagram: @supasonicbeats\n\n#Obsession #IndiRnB #AcousticPop #HindiDuet #85BPM #SupasonicBeats #LateNightVibes #SoulfulAcoustic #HindiLoveSongs #UnpluggedDuet"
+        },
+        "defaultAudioLanguage": "hi"
+      },
+      "contentDetails": {
+        "duration": "PT3M55S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": true
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "40",
+        "likeCount": "1",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "1"
+      }
+    }
+  ],
+  "top10": [
+    {
+      "kind": "youtube#video",
+      "etag": "-NB-TjnqKUmihu-V6mvVTzLmKrU",
+      "id": "UjthtKkgwWU",
+      "snippet": {
+        "publishedAt": "2026-10-25T20:30:00Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "AAO NA | Hindi Deep House Remix X Bass And Beats | Supasonic Beats [120 BPM]",
+        "description": "AAO NA is a hypnotic 120 BPM Deep House Hindi Song Remix and Afro-Club banger by Supasonic Beats. Crafted for lovers of Hindi songs with bass and beats, this 3:17 club mix blends heavy rolling car sub-bass, bouncy 120 BPM Afro-house percussions, and intoxicating reverb-drenched Hindi female vocals—built for 2 AM highway drives, house parties, and late-night lounge vibes.\n\nPlug in your earphones, turn up the car subwoofers, and let the \"Paas Aao Na\" groove take over your night playlist!\n\n⏱️ Track Timestamps:\n00:00 - Atmospheric Vocal Intro\n00:35 - Main Chorus & 120 BPM Deep House Bass Drop (Paas Aao Na)\n02:50 - Midnight Highway Outro Groove (03:17)\n\n🎧 Perfect For:\n• Late Night Highway & City Car Drives (2 AM Vibes)\n• Car Subwoofer & Heavy Bass Boosted Audio Testing\n• House Parties, VIP Clubbing & Lounge Nights\n• High-Energy Gym, Workout & 120 BPM Cardio Sessions\n• Fans of Deep House Hindi Song Remixes & Hindi Songs With Bass and Beats\n\n💿 Song Information:\n• Track Title: Aao Na (आओ ना - Deep House Club Mix)\n• Artist / Producer: Supasonic Beats\n• Genre: Deep House Hindi Remix x Afro House x Bass & Beats\n• Tempo: 120 BPM (Club & Car Bass Groove)\n• Language: Hindi\n• Vocal Style: Intimate, Breathy & Reverb-Rich Female Vocals\n• Duration: 03:17\n• Release Year: 2026\n\n📜 Official Lyrics Highlight:\n\"हल्की सी रात, धीमी सी आग\nसोया शहर, बस हम रहे जाग...\nपास आओ ना, अब दूर जाओ ना\nइस रात के नशे में, मुझको बहाओ ना\nछू लो ज़रा, धड़कन बढ़ाओ ना\nबाहों में अपनी, मुझको छुपाओ ना...\"\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your ultimate destination for next-gen Deep House Hindi Song Remixes, Afro House, Commercial Dance Pop, and Hindi Songs With Bass And Beats. We fuse infectious global club beats and heavy car sub-bass with soulful Hindi melodies to create high-retention bangers for night riders, party lovers, and bass enthusiasts.\n\n🔔 Subscribe & Turn on Notifications so you never miss a beat:\nhttps://www.youtube.com/@SupasonicBeatsOfficial\n\n👍 Enjoyed the vibe? Hit the LIKE button, SHARE it with your night-drive squad, and drop a comment below!\n\n🔍 Related Search Terms & Vibes:\naao na, paas aao na ab door jaao na, deep house hindi song remix, hindi songs with bass and beats, 120 bpm hindi club mix, aao na supasonic beats, hindi deep house mix 2026, afro house hindi song, bass boosted hindi songs, car bass hindi songs, late night drive music hindi, hindi club bangers 2026, female vocal deep house hindi.\n\n#AaoNa #DeepHouseHindiRemix #HindiSongsWithBassAndBeats #SupasonicBeats #120BPM #AfroHouse #DeepHouse #ClubBangers #LateNightDriveMusic #HindiCarBass #BassBoostedHindiSongs #DeepHouseMix #HindiRemix2026 #NightDriveSongs #CarMusicMix",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/UjthtKkgwWU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/UjthtKkgwWU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/UjthtKkgwWU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/UjthtKkgwWU/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/UjthtKkgwWU/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          },
+          "qhd": {
+            "url": "https://i.ytimg.com/vi/UjthtKkgwWU/qhddefault.jpg",
+            "width": 2560,
+            "height": 1440
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "tags": [
+          "aao na",
+          "deep house hindi song remix",
+          "hindi songs with bass and beats",
+          "120 bpm",
+          "120 bpm hindi club mix",
+          "supasonic beats",
+          "paas aao na",
+          "aao na deep house",
+          "hindi deep house remix",
+          "hindi songs with bass",
+          "bass and beats hindi songs",
+          "120 bpm deep house",
+          "afro house hindi",
+          "club bangers",
+          "car bass hindi songs",
+          "late night drive music hindi",
+          "bass boosted hindi songs",
+          "hindi club mix 2026",
+          "female vocal deep house",
+          "120 bpm workout music hindi"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "AAO NA | Hindi Deep House Remix X Bass And Beats | Supasonic Beats [120 BPM]",
+          "description": "AAO NA is a hypnotic 120 BPM Deep House Hindi Song Remix and Afro-Club banger by Supasonic Beats. Crafted for lovers of Hindi songs with bass and beats, this 3:17 club mix blends heavy rolling car sub-bass, bouncy 120 BPM Afro-house percussions, and intoxicating reverb-drenched Hindi female vocals—built for 2 AM highway drives, house parties, and late-night lounge vibes.\n\nPlug in your earphones, turn up the car subwoofers, and let the \"Paas Aao Na\" groove take over your night playlist!\n\n⏱️ Track Timestamps:\n00:00 - Atmospheric Vocal Intro\n00:35 - Main Chorus & 120 BPM Deep House Bass Drop (Paas Aao Na)\n02:50 - Midnight Highway Outro Groove (03:17)\n\n🎧 Perfect For:\n• Late Night Highway & City Car Drives (2 AM Vibes)\n• Car Subwoofer & Heavy Bass Boosted Audio Testing\n• House Parties, VIP Clubbing & Lounge Nights\n• High-Energy Gym, Workout & 120 BPM Cardio Sessions\n• Fans of Deep House Hindi Song Remixes & Hindi Songs With Bass and Beats\n\n💿 Song Information:\n• Track Title: Aao Na (आओ ना - Deep House Club Mix)\n• Artist / Producer: Supasonic Beats\n• Genre: Deep House Hindi Remix x Afro House x Bass & Beats\n• Tempo: 120 BPM (Club & Car Bass Groove)\n• Language: Hindi\n• Vocal Style: Intimate, Breathy & Reverb-Rich Female Vocals\n• Duration: 03:17\n• Release Year: 2026\n\n📜 Official Lyrics Highlight:\n\"हल्की सी रात, धीमी सी आग\nसोया शहर, बस हम रहे जाग...\nपास आओ ना, अब दूर जाओ ना\nइस रात के नशे में, मुझको बहाओ ना\nछू लो ज़रा, धड़कन बढ़ाओ ना\nबाहों में अपनी, मुझको छुपाओ ना...\"\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your ultimate destination for next-gen Deep House Hindi Song Remixes, Afro House, Commercial Dance Pop, and Hindi Songs With Bass And Beats. We fuse infectious global club beats and heavy car sub-bass with soulful Hindi melodies to create high-retention bangers for night riders, party lovers, and bass enthusiasts.\n\n🔔 Subscribe & Turn on Notifications so you never miss a beat:\nhttps://www.youtube.com/@SupasonicBeatsOfficial\n\n👍 Enjoyed the vibe? Hit the LIKE button, SHARE it with your night-drive squad, and drop a comment below!\n\n🔍 Related Search Terms & Vibes:\naao na, paas aao na ab door jaao na, deep house hindi song remix, hindi songs with bass and beats, 120 bpm hindi club mix, aao na supasonic beats, hindi deep house mix 2026, afro house hindi song, bass boosted hindi songs, car bass hindi songs, late night drive music hindi, hindi club bangers 2026, female vocal deep house hindi.\n\n#AaoNa #DeepHouseHindiRemix #HindiSongsWithBassAndBeats #SupasonicBeats #120BPM #AfroHouse #DeepHouse #ClubBangers #LateNightDriveMusic #HindiCarBass #BassBoostedHindiSongs #DeepHouseMix #HindiRemix2026 #NightDriveSongs #CarMusicMix"
+        }
+      },
+      "contentDetails": {
+        "duration": "PT3M18S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": true
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "2360",
+        "likeCount": "9",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "1"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "iRYujGmmyU5f5nF8l59YMj2L3Zo",
+      "id": "rC8QB0BZ9EU",
+      "snippet": {
+        "publishedAt": "2026-10-24T21:07:24Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "IN THE NIGHT (No Control) | Afro House x Deep House x Club Bangers | Supasonic Beats [126 BPM]",
+        "description": "IN THE NIGHT (No Control Vibe) is a high-energy Afro House, Deep House, and Club Bangers track by Supasonic Beats. Inspired by the viral \"In The Night No Control\" midnight aesthetic, this 3:15 club mix blends hypnotic rolling sub-bass, bouncy Afro percussions, and intoxicating vocals—crafted for 2 AM highway drives, house parties, and underground club nights.\n\nPlug in your earphones, turn up the car subwoofers, and let this midnight groove take over your night playlist!\n\n⏱️ Track Timestamps (03:15 Club Mix):\n00:00 - Midnight Vocal & Afro Groove Intro\n00:45 - Main Chorus & Deep House Bass Drop (In The Night)\n01:40 - Late Night Vibe & Rhythm Build-Up\n02:15 - Second High-Energy Club Banger Drop\n02:50 - Midnight Highway Outro Groove (03:15)\n\n🎧 Perfect For:\n• Late Night Highway & City Car Drives (2 AM No Control Vibes)\n• Viral Reels, Shorts & Aesthetic Night Drive Edits\n• House Parties, VIP Clubbing & Dance Floors\n• Car Subwoofer & Heavy Bass Boosted Audio Testing\n• High-Energy Gym, Workout & Night Cardio Sessions\n\n💿 Song Information:\n• Track Title: In The Night (No Control Club Mix)\n• Artist / Producer: Supasonic Beats\n• Genre: Afro House x Deep House x Club Bangers\n• Tempo / BPM: 126 BPM\n• Vibe: Dark Club Trance, Late Night Car Drive, House Party Banger\n• Duration: 03:15\n• Release Year: 2026\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your ultimate destination for next-gen Afro House, Deep House, Commercial Dance Pop, and Late Night Car Drive Music. We fuse infectious global club beats and heavy car bass with modern melodies to create high-retention bangers for night riders, party lovers, and bass enthusiasts.\n\n🔔 Subscribe & Turn on Notifications so you never miss a beat:\nhttps://www.youtube.com/@SupasonicBeatsOfficial\n\n👍 Enjoyed the vibe? Hit the LIKE button, SHARE it with your night-drive squad, and drop a comment below!\n\n🔍 Related Search Terms & Viral Vibes:\nin the night no control, in the night no control song, in the night no control remix, in the night no control club mix, in the night afro house, in the night deep house, no control viral song, in the night bass boosted, late night drive music, car bass mix 2026, supasonic beats, afro house x deep house x club bangers, viral reels night drive song, dark club house music, hindi afro house, 126 bpm.\n\n#InTheNight #NoControl #AfroHouse #DeepHouse #ClubBangers #SupasonicBeats #InTheNightNoControl #LateNightDriveMusic #CarBassMix #ViralSong2026 #NightDriveSongs #DeepHouseMix #AfroHouseMix #PartyMusic #BassBoosted #126bpm",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/rC8QB0BZ9EU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/rC8QB0BZ9EU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/rC8QB0BZ9EU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/rC8QB0BZ9EU/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/rC8QB0BZ9EU/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "tags": [
+          "in the night",
+          "in the night no control",
+          "no control song",
+          "in the night no control remix",
+          "afro house",
+          "deep house",
+          "club bangers",
+          "supasonic beats",
+          "in the night afro house",
+          "in the night deep house",
+          "in the night club mix",
+          "no control viral audio",
+          "late night drive music",
+          "car bass mix",
+          "night drive songs",
+          "hindi afro house",
+          "dark club music",
+          "house party bangers",
+          "viral car edit song",
+          "deep house mix 2026",
+          "In the night no control remix",
+          "Instagram viral song",
+          "126 bpm"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "IN THE NIGHT (No Control) | Afro House x Deep House x Club Bangers | Supasonic Beats [126 BPM]",
+          "description": "IN THE NIGHT (No Control Vibe) is a high-energy Afro House, Deep House, and Club Bangers track by Supasonic Beats. Inspired by the viral \"In The Night No Control\" midnight aesthetic, this 3:15 club mix blends hypnotic rolling sub-bass, bouncy Afro percussions, and intoxicating vocals—crafted for 2 AM highway drives, house parties, and underground club nights.\n\nPlug in your earphones, turn up the car subwoofers, and let this midnight groove take over your night playlist!\n\n⏱️ Track Timestamps (03:15 Club Mix):\n00:00 - Midnight Vocal & Afro Groove Intro\n00:45 - Main Chorus & Deep House Bass Drop (In The Night)\n01:40 - Late Night Vibe & Rhythm Build-Up\n02:15 - Second High-Energy Club Banger Drop\n02:50 - Midnight Highway Outro Groove (03:15)\n\n🎧 Perfect For:\n• Late Night Highway & City Car Drives (2 AM No Control Vibes)\n• Viral Reels, Shorts & Aesthetic Night Drive Edits\n• House Parties, VIP Clubbing & Dance Floors\n• Car Subwoofer & Heavy Bass Boosted Audio Testing\n• High-Energy Gym, Workout & Night Cardio Sessions\n\n💿 Song Information:\n• Track Title: In The Night (No Control Club Mix)\n• Artist / Producer: Supasonic Beats\n• Genre: Afro House x Deep House x Club Bangers\n• Tempo / BPM: 126 BPM\n• Vibe: Dark Club Trance, Late Night Car Drive, House Party Banger\n• Duration: 03:15\n• Release Year: 2026\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your ultimate destination for next-gen Afro House, Deep House, Commercial Dance Pop, and Late Night Car Drive Music. We fuse infectious global club beats and heavy car bass with modern melodies to create high-retention bangers for night riders, party lovers, and bass enthusiasts.\n\n🔔 Subscribe & Turn on Notifications so you never miss a beat:\nhttps://www.youtube.com/@SupasonicBeatsOfficial\n\n👍 Enjoyed the vibe? Hit the LIKE button, SHARE it with your night-drive squad, and drop a comment below!\n\n🔍 Related Search Terms & Viral Vibes:\nin the night no control, in the night no control song, in the night no control remix, in the night no control club mix, in the night afro house, in the night deep house, no control viral song, in the night bass boosted, late night drive music, car bass mix 2026, supasonic beats, afro house x deep house x club bangers, viral reels night drive song, dark club house music, hindi afro house, 126 bpm.\n\n#InTheNight #NoControl #AfroHouse #DeepHouse #ClubBangers #SupasonicBeats #InTheNightNoControl #LateNightDriveMusic #CarBassMix #ViralSong2026 #NightDriveSongs #DeepHouseMix #AfroHouseMix #PartyMusic #BassBoosted #126bpm"
+        }
+      },
+      "contentDetails": {
+        "duration": "PT3M17S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": true
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "1435",
+        "likeCount": "7",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "2"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "CyfRSUCdIHTuqcxRO0OT8wQxU74",
+      "id": "opj6VHo_Zy8",
+      "snippet": {
+        "publishedAt": "2026-10-14T10:30:27Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "UP Wali Laiki (यूपी वाली लइकी) | Desi Party Song | Supasonic Beats",
+        "description": "UP WALI LAIKI (यूपी वाली लइकी) is an electrifying Desi Party Song and Dance-Floor Club Banger by Supasonic Beats. Blending infectious modern electronic bass with pure desi folk grooves, this 2:51 track is designed to make weddings, club nights, and house parties explode.\n\nTurn up the volume, grab your party squad, and feel the UP desi swagger on full bass! 🔥💃\n\n⏱️ Track Timestamps (02:51 Desi Party Mix):\n00:00 - High-Energy Desi Intro & Beats\n00:35 - Main Hook & Bouncy Drop (UP Wali Laiki)\n01:20 - Desi Rhythm & Dance-Floor Groove\n02:00 - Peak Energy Club Drop\n02:35 - High-Power Outro Beat (02:51)\n\n🎧 Perfect For:\n• Weddings, Sangeet & Desi House Parties\n• Viral Instagram Reels, TikToks & Dance Challenge Edits\n• Car Audio & Heavy Bass Boosted Sound Systems\n• High-Energy Gym & Cardio Workout Playlists\n• Road Trips & Party Drives with Friends\n\n💿 Song Information:\n• Track Title: UP Wali Laiki (यूपी वाली लइकी)\n• Artist / Producer: Supasonic Beats\n• Genre: Desi Party Pop x Modern Dance Beats\n• Tempo / BPM: 128 BPM\n• Vibe: High Energy, Desi Swagger, Dance Floor Banger\n• Duration: 02:51\n• Release Year: 2026\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎵 PRODUCTION & CREDITS:\n• Music, Composition & Arrangement: Supasonic Beats\n• Mix & Master: Supasonic Beats Studio\n• Label & Copyright: Supasonic Beats Official\n\n📌 CONNECT WITH SUPASONIC BEATS:\n• YouTube: https://www.youtube.com/@SupasonicBeatsOfficial\n• Instagram: https://instagram.com/supasonicbeats\n• Facebook: https://facebook.com/supasonicbeats\n• TikTok: https://tiktok.com/@supasonicbeats\n\n🔔 Subscribe & hit the bell icon to never miss an official drop!\n🎧 Best experienced with quality headphones / subwoofers.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your destination for next-gen Desi Club Bangers, Hindi Deep House, Afro Grooves, and High-Energy Dance Music. We fuse traditional Indian rhythms with heavy modern production.\n\n🔍 Related Search Terms & Viral Vibes:\nup wali laiki, up wali laiki song, up wali ladki, desi party song, bhojpuri hindi party mix, supasonic beats, viral dance song 2026, wedding dance songs hindi, new hindi party song, bass boosted desi song, club mix hindi, dj party banger.\n\n#UPWaliLaiki #DesiPartySong #SupasonicBeats #DesiClubMix #DancePartySong #WeddingDanceSongs #BassBoosted #PartyAnthem2026",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/opj6VHo_Zy8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/opj6VHo_Zy8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/opj6VHo_Zy8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/opj6VHo_Zy8/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/opj6VHo_Zy8/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "tags": [
+          "up wali laiki",
+          "up wali laiki song",
+          "up wali laiki full song",
+          "up wali laiki supasonic beats",
+          "up wali ladki",
+          "up wali larki",
+          "यूपी वाली लइकी",
+          "यूपी वाली लड़की",
+          "desi party song",
+          "desi dance song",
+          "indian party music",
+          "party song",
+          "dance music",
+          "supasonic beats",
+          "up wali ladki se pyar ho gail",
+          "up waali laiki",
+          "bhojpuri pop song",
+          "bhojpuri party song",
+          "bhojpuri dance song",
+          "indian pop songs",
+          "up wali laiki se pyar hogayil",
+          "up wali laiki se pyar ho gail",
+          "up wali ladki se pyar ho gaya"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "UP Wali Laiki (यूपी वाली लइकी) | Desi Party Song | Supasonic Beats",
+          "description": "UP WALI LAIKI (यूपी वाली लइकी) is an electrifying Desi Party Song and Dance-Floor Club Banger by Supasonic Beats. Blending infectious modern electronic bass with pure desi folk grooves, this 2:51 track is designed to make weddings, club nights, and house parties explode.\n\nTurn up the volume, grab your party squad, and feel the UP desi swagger on full bass! 🔥💃\n\n⏱️ Track Timestamps (02:51 Desi Party Mix):\n00:00 - High-Energy Desi Intro & Beats\n00:35 - Main Hook & Bouncy Drop (UP Wali Laiki)\n01:20 - Desi Rhythm & Dance-Floor Groove\n02:00 - Peak Energy Club Drop\n02:35 - High-Power Outro Beat (02:51)\n\n🎧 Perfect For:\n• Weddings, Sangeet & Desi House Parties\n• Viral Instagram Reels, TikToks & Dance Challenge Edits\n• Car Audio & Heavy Bass Boosted Sound Systems\n• High-Energy Gym & Cardio Workout Playlists\n• Road Trips & Party Drives with Friends\n\n💿 Song Information:\n• Track Title: UP Wali Laiki (यूपी वाली लइकी)\n• Artist / Producer: Supasonic Beats\n• Genre: Desi Party Pop x Modern Dance Beats\n• Tempo / BPM: 128 BPM\n• Vibe: High Energy, Desi Swagger, Dance Floor Banger\n• Duration: 02:51\n• Release Year: 2026\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎵 PRODUCTION & CREDITS:\n• Music, Composition & Arrangement: Supasonic Beats\n• Mix & Master: Supasonic Beats Studio\n• Label & Copyright: Supasonic Beats Official\n\n📌 CONNECT WITH SUPASONIC BEATS:\n• YouTube: https://www.youtube.com/@SupasonicBeatsOfficial\n• Instagram: https://instagram.com/supasonicbeats\n• Facebook: https://facebook.com/supasonicbeats\n• TikTok: https://tiktok.com/@supasonicbeats\n\n🔔 Subscribe & hit the bell icon to never miss an official drop!\n🎧 Best experienced with quality headphones / subwoofers.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your destination for next-gen Desi Club Bangers, Hindi Deep House, Afro Grooves, and High-Energy Dance Music. We fuse traditional Indian rhythms with heavy modern production.\n\n🔍 Related Search Terms & Viral Vibes:\nup wali laiki, up wali laiki song, up wali ladki, desi party song, bhojpuri hindi party mix, supasonic beats, viral dance song 2026, wedding dance songs hindi, new hindi party song, bass boosted desi song, club mix hindi, dj party banger.\n\n#UPWaliLaiki #DesiPartySong #SupasonicBeats #DesiClubMix #DancePartySong #WeddingDanceSongs #BassBoosted #PartyAnthem2026"
+        }
+      },
+      "contentDetails": {
+        "duration": "PT2M51S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": true
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "1193",
+        "likeCount": "3",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "2"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "VpqrL4gzvnjyaKCyJ8lXSUdjlcw",
+      "id": "lQl3dRGivOI",
+      "snippet": {
+        "publishedAt": "2026-10-17T06:00:28Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "Bhar Le Tu | Hindi Deep House x Club Bangers | Supasonic Beats",
+        "description": "BHAR LE TU is a hypnotic Hindi Deep House and Club Bangers track by Supasonic Beats. Crafting the perfect balance between late-night romance and infectious electronic rhythms, this 2:33 club track blends rolling sub-bass, atmospheric vocal chops, and deep melodic synth lines.\n\nPlug in your earphones, turn up the car subwoofers, and let this midnight groove take over your night drive playlist! 🌙🎧\n\n⏱️ Track Timestamps (02:33 Club Mix):\n00:00 - Atmospheric Intro & Vocal Chops\n00:30 - Deep House Bass Drop (Bhar Le Tu)\n01:15 - Late Night Melodic Breakdown\n01:45 - Second Heavy Club Drop\n02:15 - Midnight Highway Outro (02:33)\n\n🎧 Perfect For:\n• Late Night Highway & City Car Drives (2 AM Chill Drive Vibes)\n• Viral Reels, Shorts & Aesthetic Night Drive Edits\n• House Parties, VIP Clubbing & Lounge Sessions\n• Car Subwoofer & Heavy Bass Audio Testing\n• Late Night Mood & Relaxing Electronic Playlists\n\n💿 Song Information:\n• Track Title: Bhar Le Tu\n• Artist / Producer: Supasonic Beats\n• Genre: Hindi Deep House x Club Bangers\n• Tempo / BPM: 124 BPM\n• Vibe: Late Night Romance, Deep House, Highway Bass\n• Duration: 02:33\n• Release Year: 2026\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎵 PRODUCTION & CREDITS:\n• Music, Composition & Arrangement: Supasonic Beats\n• Mix & Master: Supasonic Beats Studio\n• Label & Copyright: Supasonic Beats Official\n\n📌 CONNECT WITH SUPASONIC BEATS:\n• YouTube: https://www.youtube.com/@SupasonicBeatsOfficial\n• Instagram: https://instagram.com/supasonicbeats\n• Facebook: https://facebook.com/supasonicbeats\n• TikTok: https://tiktok.com/@supasonicbeats\n\n🔔 Subscribe & hit the bell icon to never miss an official drop!\n🎧 Best experienced with quality headphones / subwoofers.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your ultimate destination for next-gen Hindi Deep House, Afro House, and Late Night Car Bass Music. We fuse infectious club beats with soulful melodies.\n\n🔍 Related Search Terms & Viral Vibes:\nbhar le tu, bhar le tu song, bhar le tu remix, hindi deep house, hindi club bangers, late night car drive songs, car bass mix hindi, supasonic beats, deep house hindi song remix, 124 bpm hindi house, electronic hindi music 2026.\n\n#BharLeTu #HindiDeepHouse #ClubBangers #SupasonicBeats #LateNightDrive #CarBassMix #DeepHouseHindi #ElectronicMusic2026 #NightVibes",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/lQl3dRGivOI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/lQl3dRGivOI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/lQl3dRGivOI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/lQl3dRGivOI/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/lQl3dRGivOI/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "tags": [
+          "bhar le tu",
+          "bhar le tu song",
+          "bhar le tu supasonic beats",
+          "supasonic beats",
+          "hindi deep house",
+          "deep house hindi",
+          "hindi house music",
+          "hindi club music",
+          "club bangers",
+          "romantic house music",
+          "hindi romantic song",
+          "night drive music",
+          "late night music",
+          "desi house",
+          "indian electronic music",
+          "hindi dance music",
+          "house music",
+          "club music",
+          "late night drive",
+          "bollywood party songs",
+          "party songs",
+          "bollywood dance songs",
+          "Hindi Deep House",
+          "Club Bangers",
+          "Party Music Hindi",
+          "Night Drive Songs"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "Bhar Le Tu | Hindi Deep House x Club Bangers | Supasonic Beats",
+          "description": "BHAR LE TU is a hypnotic Hindi Deep House and Club Bangers track by Supasonic Beats. Crafting the perfect balance between late-night romance and infectious electronic rhythms, this 2:33 club track blends rolling sub-bass, atmospheric vocal chops, and deep melodic synth lines.\n\nPlug in your earphones, turn up the car subwoofers, and let this midnight groove take over your night drive playlist! 🌙🎧\n\n⏱️ Track Timestamps (02:33 Club Mix):\n00:00 - Atmospheric Intro & Vocal Chops\n00:30 - Deep House Bass Drop (Bhar Le Tu)\n01:15 - Late Night Melodic Breakdown\n01:45 - Second Heavy Club Drop\n02:15 - Midnight Highway Outro (02:33)\n\n🎧 Perfect For:\n• Late Night Highway & City Car Drives (2 AM Chill Drive Vibes)\n• Viral Reels, Shorts & Aesthetic Night Drive Edits\n• House Parties, VIP Clubbing & Lounge Sessions\n• Car Subwoofer & Heavy Bass Audio Testing\n• Late Night Mood & Relaxing Electronic Playlists\n\n💿 Song Information:\n• Track Title: Bhar Le Tu\n• Artist / Producer: Supasonic Beats\n• Genre: Hindi Deep House x Club Bangers\n• Tempo / BPM: 124 BPM\n• Vibe: Late Night Romance, Deep House, Highway Bass\n• Duration: 02:33\n• Release Year: 2026\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎵 PRODUCTION & CREDITS:\n• Music, Composition & Arrangement: Supasonic Beats\n• Mix & Master: Supasonic Beats Studio\n• Label & Copyright: Supasonic Beats Official\n\n📌 CONNECT WITH SUPASONIC BEATS:\n• YouTube: https://www.youtube.com/@SupasonicBeatsOfficial\n• Instagram: https://instagram.com/supasonicbeats\n• Facebook: https://facebook.com/supasonicbeats\n• TikTok: https://tiktok.com/@supasonicbeats\n\n🔔 Subscribe & hit the bell icon to never miss an official drop!\n🎧 Best experienced with quality headphones / subwoofers.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your ultimate destination for next-gen Hindi Deep House, Afro House, and Late Night Car Bass Music. We fuse infectious club beats with soulful melodies.\n\n🔍 Related Search Terms & Viral Vibes:\nbhar le tu, bhar le tu song, bhar le tu remix, hindi deep house, hindi club bangers, late night car drive songs, car bass mix hindi, supasonic beats, deep house hindi song remix, 124 bpm hindi house, electronic hindi music 2026.\n\n#BharLeTu #HindiDeepHouse #ClubBangers #SupasonicBeats #LateNightDrive #CarBassMix #DeepHouseHindi #ElectronicMusic2026 #NightVibes"
+        }
+      },
+      "contentDetails": {
+        "duration": "PT2M33S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": true
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "972",
+        "likeCount": "10",
+        "dislikeCount": "1",
+        "favoriteCount": "0",
+        "commentCount": "1"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "8JlGLXQRVC0ITt4yup5VmNGb-hM",
+      "id": "1v5PsqhH95k",
+      "snippet": {
+        "publishedAt": "2026-10-22T07:16:41Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "Kaisa Nasha | Hindi Afro House x Dance Pop | Supasonic Beats",
+        "description": "Kaisa Nasha by Supasonic Beats — Hindi Afro House x Dance Pop for your romantic party playlist.\n\nA little attraction, a little celebration, and a reason to keep dancing. Kaisa Nasha brings a romantic Hindi mood into a contemporary dance setting.\n\nMade for evening parties, festive gatherings, late-night listening and those moments when you just want to move with the music.\n\n🎧 Track: Kaisa Nasha\n🎵 Artist: Supasonic Beats\n💿 Extended Audio\n\n🎶 Explore more from Supasonic Beats:\n• Aao Paas https://youtu.be/UOxQN6_46Ek\n• Bhar Le Tu https://youtu.be/lQl3dRGivOI\n• Dheere Se https://youtu.be/siluURGPUBE\n• Aadhi Raat https://youtu.be/1_rcI_jlL2Q\n• Parchaiyon https://youtu.be/auEcj73axMA\n\nPerfect for: Hindi Afro House • Dance Pop • Hindi Dance Music • Romantic Dance Music • Desi Party Music • Club Groove • Hindi Electronic Music • Late Night Vibes\n\n🎶 Explore more from Supasonic Beats:\nPaas Aa, Aao Paas, Dheere Se and Aadhi Raat.\nFind them on our channel:\nhttps://www.youtube.com/@SupasonicBeatsOfficial\n\nKaunsa part repeat par sunoge? Apna favourite timestamp comment karo.\n\nLike, share and subscribe for more Hindi music from Supasonic Beats.\n\n#KaisaNasha #SupasonicBeats #AfroHouse #DancePop #HindiAfroHouse #HindiDanceMusic #HindiElectronicMusic #DesiHouse #RomanticMusic #PartyMusic #ClubMusic #DanceMusic",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1v5PsqhH95k/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1v5PsqhH95k/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1v5PsqhH95k/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/1v5PsqhH95k/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/1v5PsqhH95k/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "tags": [
+          "kaisa nasha",
+          "kaisa nasha song",
+          "kaisa nasha supasonic beats",
+          "कैसा नशा",
+          "kaisa nasha extended",
+          "hindi afro house",
+          "afro house",
+          "dance pop",
+          "hindi dance pop",
+          "hindi dance music",
+          "hindi electronic music",
+          "desi house",
+          "indian house music",
+          "romantic dance music",
+          "hindi party song",
+          "party music",
+          "club groove",
+          "club music",
+          "groovy music",
+          "late night vibes",
+          "hindi romantic songs",
+          "supasonic beats",
+          "supasonicbeatsofficial"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "Kaisa Nasha | Hindi Afro House x Dance Pop | Supasonic Beats",
+          "description": "Kaisa Nasha by Supasonic Beats — Hindi Afro House x Dance Pop for your romantic party playlist.\n\nA little attraction, a little celebration, and a reason to keep dancing. Kaisa Nasha brings a romantic Hindi mood into a contemporary dance setting.\n\nMade for evening parties, festive gatherings, late-night listening and those moments when you just want to move with the music.\n\n🎧 Track: Kaisa Nasha\n🎵 Artist: Supasonic Beats\n💿 Extended Audio\n\n🎶 Explore more from Supasonic Beats:\n• Aao Paas https://youtu.be/UOxQN6_46Ek\n• Bhar Le Tu https://youtu.be/lQl3dRGivOI\n• Dheere Se https://youtu.be/siluURGPUBE\n• Aadhi Raat https://youtu.be/1_rcI_jlL2Q\n• Parchaiyon https://youtu.be/auEcj73axMA\n\nPerfect for: Hindi Afro House • Dance Pop • Hindi Dance Music • Romantic Dance Music • Desi Party Music • Club Groove • Hindi Electronic Music • Late Night Vibes\n\n🎶 Explore more from Supasonic Beats:\nPaas Aa, Aao Paas, Dheere Se and Aadhi Raat.\nFind them on our channel:\nhttps://www.youtube.com/@SupasonicBeatsOfficial\n\nKaunsa part repeat par sunoge? Apna favourite timestamp comment karo.\n\nLike, share and subscribe for more Hindi music from Supasonic Beats.\n\n#KaisaNasha #SupasonicBeats #AfroHouse #DancePop #HindiAfroHouse #HindiDanceMusic #HindiElectronicMusic #DesiHouse #RomanticMusic #PartyMusic #ClubMusic #DanceMusic"
+        }
+      },
+      "contentDetails": {
+        "duration": "PT4M37S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": true
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "943",
+        "likeCount": "4",
+        "dislikeCount": "1",
+        "favoriteCount": "0",
+        "commentCount": "1"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "s3y4lVy3YdAdQto-R9natY118vo",
+      "id": "wE7QEsQ9IPI",
+      "snippet": {
+        "publishedAt": "2026-10-27T13:00:05Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "KALYANI | Deep House x Afro Grooves • Hindi Songs With Bass And Beats (120 BPM) | Supasonic Beats",
+        "description": "KALYANI is a hypnotic 120 BPM Deep House x Afro Grooves club mix by Supasonic Beats. Crafted for lovers of Deep House Hindi song remixes and Hindi songs with bass and beats, this Indian fusion banger blends massive rolling car sub-bass, organic Afro percussions, and airy Hindi-Malayalam female vocal hooks—built for late-night highway drives, house parties, and underground club vibes.\n\nPlug in your earphones, turn up the car subwoofers, and let the \"Teri Kalyani\" groove run on loop!\n\n⏱️ Track Timestamps:\n00:00 - Instant Sub-Bass & Atmospheric Vocal Intro\n00:35 - Main Chorus & 120 BPM Afro-Deep House Drop (Teri Kalyani)\n02:30 - Midnight Highway Club Outro Groove\n\n🎧 Perfect For:\n• Late Night Highway & City Car Drives (2 AM Loop Vibes)\n• Car Subwoofer & Heavy Bass Boosted Audio Testing\n• Viral Reels, Shorts & Royal Desi Aesthetic Edits\n• House Parties, VIP Clubbing & Lounge Nights\n• High-Energy Gym, Workout & 120 BPM Cardio Sessions\n\n💿 Song Information:\n• Track Title: Kalyani (Teri Kalyani - Deep House x Afro Grooves)\n• Artist / Producer: Supasonic Beats\n• Genre: Deep House x Afro Grooves x Indian Fusion Club Mix\n• Tempo: 120 BPM (Heavy Car Sub-Bass Groove)\n• Language: Hindi x Malayalam Fusion\n• Vocal Style: Airy, Natural & Reverb-Rich Female Vocals\n• Release Year: 2026\n\n📜 Official Lyrics Highlight:\n\"Kya guroor, choor hua, kyun jaane na...\nYe suroor, huzoor, tera hi hai saara...\nKho jaayein bas, teri hi, teri hi, teri raahein...\nAb haasil dil ko, ho hi gayi... Teri Kalyani...\"\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your ultimate destination for next-gen Deep House Hindi Song Remixes, Afro Grooves, Commercial Dance Pop, and Hindi Songs With Bass And Beats. We fuse infectious global club beats and heavy car sub-bass with soulful Indian melodies to create high-retention bangers for night riders, party lovers, and bass enthusiasts.\n\n🔔 Subscribe & Turn on Notifications so you never miss a beat:\nhttps://www.youtube.com/@SupasonicBeatsOfficial\n\n👍 Enjoyed the vibe? Hit the LIKE button, SHARE it with your night-drive squad, and drop a comment below!\n\n🔍 Related Search Terms & Viral Vibes:\nkalyani, teri kalyani, kalyani song, kalyani remix, kalyani deep house, kalyani afro house, deep house x afro grooves playlist, deep house hindi song remix, hindi songs with bass and beats, 120 bpm hindi club mix, shreya ghoshal, kalyani malayalam hindi song, kalyani car bass mix, supasonic beats, late night drive music hindi, bass boosted hindi songs, indian fusion deep house 2026.\n\n#Kalyani #TeriKalyani #DeepHouse #AfroGrooves #SupasonicBeats #DeepHouseHindiRemix #HindiSongsWithBassAndBeats #120BPM #AfroHouse #ClubBangers #LateNightDriveMusic #CarBassMix #IndianFusion #ViralSong2026 #BassBoosted #shreyaghoshal",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/wE7QEsQ9IPI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/wE7QEsQ9IPI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/wE7QEsQ9IPI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/wE7QEsQ9IPI/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/wE7QEsQ9IPI/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "tags": [
+          "kalyani",
+          "teri kalyani",
+          "kalyani song",
+          "kalyani remix",
+          "deep house x afro grooves",
+          "deep house hindi song remix",
+          "hindi songs with bass and beats",
+          "120 bpm",
+          "supasonic beats",
+          "kalyani deep house",
+          "kalyani afro house",
+          "kalyani malayalam hindi remix",
+          "120 bpm deep house",
+          "afro grooves playlist",
+          "hindi songs with bass",
+          "car bass hindi songs",
+          "late night drive music",
+          "bass boosted hindi songs",
+          "indian fusion club mix",
+          "female vocal deep house",
+          "club bangers 2026",
+          "shreya Ghoshal"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "KALYANI | Deep House x Afro Grooves • Hindi Songs With Bass And Beats (120 BPM) | Supasonic Beats",
+          "description": "KALYANI is a hypnotic 120 BPM Deep House x Afro Grooves club mix by Supasonic Beats. Crafted for lovers of Deep House Hindi song remixes and Hindi songs with bass and beats, this Indian fusion banger blends massive rolling car sub-bass, organic Afro percussions, and airy Hindi-Malayalam female vocal hooks—built for late-night highway drives, house parties, and underground club vibes.\n\nPlug in your earphones, turn up the car subwoofers, and let the \"Teri Kalyani\" groove run on loop!\n\n⏱️ Track Timestamps:\n00:00 - Instant Sub-Bass & Atmospheric Vocal Intro\n00:35 - Main Chorus & 120 BPM Afro-Deep House Drop (Teri Kalyani)\n02:30 - Midnight Highway Club Outro Groove\n\n🎧 Perfect For:\n• Late Night Highway & City Car Drives (2 AM Loop Vibes)\n• Car Subwoofer & Heavy Bass Boosted Audio Testing\n• Viral Reels, Shorts & Royal Desi Aesthetic Edits\n• House Parties, VIP Clubbing & Lounge Nights\n• High-Energy Gym, Workout & 120 BPM Cardio Sessions\n\n💿 Song Information:\n• Track Title: Kalyani (Teri Kalyani - Deep House x Afro Grooves)\n• Artist / Producer: Supasonic Beats\n• Genre: Deep House x Afro Grooves x Indian Fusion Club Mix\n• Tempo: 120 BPM (Heavy Car Sub-Bass Groove)\n• Language: Hindi x Malayalam Fusion\n• Vocal Style: Airy, Natural & Reverb-Rich Female Vocals\n• Release Year: 2026\n\n📜 Official Lyrics Highlight:\n\"Kya guroor, choor hua, kyun jaane na...\nYe suroor, huzoor, tera hi hai saara...\nKho jaayein bas, teri hi, teri hi, teri raahein...\nAb haasil dil ko, ho hi gayi... Teri Kalyani...\"\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your ultimate destination for next-gen Deep House Hindi Song Remixes, Afro Grooves, Commercial Dance Pop, and Hindi Songs With Bass And Beats. We fuse infectious global club beats and heavy car sub-bass with soulful Indian melodies to create high-retention bangers for night riders, party lovers, and bass enthusiasts.\n\n🔔 Subscribe & Turn on Notifications so you never miss a beat:\nhttps://www.youtube.com/@SupasonicBeatsOfficial\n\n👍 Enjoyed the vibe? Hit the LIKE button, SHARE it with your night-drive squad, and drop a comment below!\n\n🔍 Related Search Terms & Viral Vibes:\nkalyani, teri kalyani, kalyani song, kalyani remix, kalyani deep house, kalyani afro house, deep house x afro grooves playlist, deep house hindi song remix, hindi songs with bass and beats, 120 bpm hindi club mix, shreya ghoshal, kalyani malayalam hindi song, kalyani car bass mix, supasonic beats, late night drive music hindi, bass boosted hindi songs, indian fusion deep house 2026.\n\n#Kalyani #TeriKalyani #DeepHouse #AfroGrooves #SupasonicBeats #DeepHouseHindiRemix #HindiSongsWithBassAndBeats #120BPM #AfroHouse #ClubBangers #LateNightDriveMusic #CarBassMix #IndianFusion #ViralSong2026 #BassBoosted #shreyaghoshal"
+        }
+      },
+      "contentDetails": {
+        "duration": "PT3M3S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": true
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "923",
+        "likeCount": "3",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "1"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "E9cqf1oBFMvJ7DSVktHpQqv7vJk",
+      "id": "Ossd36BQPzs",
+      "snippet": {
+        "publishedAt": "2026-10-19T23:07:34Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "Paas Aa | Hindi Afro House x Deep House | Supasonic Beats",
+        "description": "Paas Aa | Hindi Afro House x Deep House | Supasonic Beats\n\nPaas Aa ko apni late-night music rotation mein jagah do. Hindi house music, romantic club vibes aur after-hours listening pasand karne walon ke liye Supasonic Beats ki yeh release hai.\n\n🎧 Track: Paas Aa\n🎵 Artist: Supasonic Beats\n💿 Version: Extended Audio\n\nNight-drive playlist ho, evening headphones session ya house-music mood—Paas Aa suno aur apna favourite moment timestamp ke saath comment karo.\n\n🎶 Explore more from Supasonic Beats:\n• Aao Paas https://youtu.be/UOxQN6_46Ek\n• Bhar Le Tu https://youtu.be/lQl3dRGivOI\n• Dheere Se https://youtu.be/siluURGPUBE\n• Aadhi Raat https://youtu.be/1_rcI_jlL2Q\n• Parchaiyon https://youtu.be/auEcj73axMA\n\nMade for late-night drives, rooftop sessions and romantic evenings—Paas Aa brings Hindi house music into your after-hours playlist.\n\nPerfect for: Hindi Afro House • Deep House • Hindi House Music • Romantic House • Late Night Vibes • Night Drive Music • Club Groove • Hindi Electronic Music\n\nChannel par in songs ko explore karo:\nhttps://www.youtube.com/@SupasonicBeatsOfficial\n\nSubscribe for more Hindi Afro House, Deep House and Hindi electronic music.\n\n#PaasAa #SupasonicBeats #HindiAfroHouse #HindiDeepHouse #AfroHouse #DeepHouse #HindiHouseMusic #HindiElectronicMusic #DesiHouse #HindiClubMusic #LateNightMusic #NightDriveMusic",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Ossd36BQPzs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Ossd36BQPzs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Ossd36BQPzs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/Ossd36BQPzs/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/Ossd36BQPzs/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          },
+          "qhd": {
+            "url": "https://i.ytimg.com/vi/Ossd36BQPzs/qhddefault.jpg",
+            "width": 2560,
+            "height": 1440
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "tags": [
+          "paas aa",
+          "paas aa song",
+          "paas aa extended",
+          "पास आ",
+          "pass aa",
+          "supasonic beats",
+          "supasonicbeatsofficial",
+          "hindi afro house",
+          "hindi deep house",
+          "afro house",
+          "deep house",
+          "hindi house music",
+          "hindi electronic music",
+          "indian house music",
+          "desi house",
+          "hindi club music",
+          "romantic house",
+          "hindi romantic songs",
+          "deep bass",
+          "club groove",
+          "hypnotic house",
+          "melodic house",
+          "chill house",
+          "lounge music",
+          "late night vibes",
+          "romantic club music",
+          "night drive music",
+          "vocal house"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "Paas Aa | Hindi Afro House x Deep House | Supasonic Beats",
+          "description": "Paas Aa | Hindi Afro House x Deep House | Supasonic Beats\n\nPaas Aa ko apni late-night music rotation mein jagah do. Hindi house music, romantic club vibes aur after-hours listening pasand karne walon ke liye Supasonic Beats ki yeh release hai.\n\n🎧 Track: Paas Aa\n🎵 Artist: Supasonic Beats\n💿 Version: Extended Audio\n\nNight-drive playlist ho, evening headphones session ya house-music mood—Paas Aa suno aur apna favourite moment timestamp ke saath comment karo.\n\n🎶 Explore more from Supasonic Beats:\n• Aao Paas https://youtu.be/UOxQN6_46Ek\n• Bhar Le Tu https://youtu.be/lQl3dRGivOI\n• Dheere Se https://youtu.be/siluURGPUBE\n• Aadhi Raat https://youtu.be/1_rcI_jlL2Q\n• Parchaiyon https://youtu.be/auEcj73axMA\n\nMade for late-night drives, rooftop sessions and romantic evenings—Paas Aa brings Hindi house music into your after-hours playlist.\n\nPerfect for: Hindi Afro House • Deep House • Hindi House Music • Romantic House • Late Night Vibes • Night Drive Music • Club Groove • Hindi Electronic Music\n\nChannel par in songs ko explore karo:\nhttps://www.youtube.com/@SupasonicBeatsOfficial\n\nSubscribe for more Hindi Afro House, Deep House and Hindi electronic music.\n\n#PaasAa #SupasonicBeats #HindiAfroHouse #HindiDeepHouse #AfroHouse #DeepHouse #HindiHouseMusic #HindiElectronicMusic #DesiHouse #HindiClubMusic #LateNightMusic #NightDriveMusic"
+        }
+      },
+      "contentDetails": {
+        "duration": "PT3M21S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": true
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "803",
+        "likeCount": "14",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "5"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "BB3cjHoiJ-vdDVWJZiPRXlrD2qU",
+      "id": "oHTNSFCF7Uc",
+      "snippet": {
+        "publishedAt": "2026-09-26T19:41:08Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "DANGEROUS ADRENALINE - Aggressive Brazilian Phonk 🏎️ (Bass Boosted Drift Music)",
+        "description": "DANGEROUS ADRENALINE is a relentless, ultra-heavy Brazilian Phonk and Aggressive Drift Bass anthem by Supasonic Beats. Built with destructive 808 sub-bass glides, distorted cowbell leads, and dark adrenaline-surging montagem textures, this 2:58 track is designed for midnight highway drifting, extreme gym PR lifts, and viral drift car edits.\n\nCrank up the car subwoofers, hit the pedal, and feel the adrenaline explode! 🏎️💨🔊🔥\n\n⏱️ Track Timestamps (02:58 Extreme Bass Mix):\n00:00 - Dark Menacing Intro & Drift Build-Up\n00:36 - Destructive 808 Bass Drop (Adrenaline Surge)\n01:30 - Peak Adrenaline & Heavy Cowbell Climax\n02:15 - Final Distorted Climax Drop\n02:40 - Extreme Bass Drift Outro (02:58)\n\n🎧 Perfect For:\n• Extreme Gym PR Lifts, High-Intensity Cardio & Powerlifting\n• Midnight Highway Drifting, Burnouts & Car Enthusiast Meets\n• Viral Automotive TikToks, Reels & YouTube Shorts\n• Gaming Montages (Forza, Need for Speed, GTA, Valorant)\n• Subwoofer Audio Testing & Bass Demonstrations\n\n💿 Track Information:\n• Track Title: Dangerous Adrenaline\n• Artist / Producer: Supasonic Beats\n• Genre: Brazilian Phonk / Drift Phonk / Montagem\n• Tempo / BPM: 128 BPM\n• Vibe: Aggressive, Distorted Bass, Adrenaline, Drift\n• Duration: 02:58\n• Release Year: 2026\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎵 PRODUCTION & CREDITS:\n• Music, Composition & Sound Design: Supasonic Beats\n• Mix & Master: Supasonic Beats Studio\n• Label & Copyright: Supasonic Beats Official\n\n📌 CONNECT WITH SUPASONIC BEATS:\n• YouTube: https://www.youtube.com/@SupasonicBeatsOfficial\n• Instagram: https://instagram.com/supasonicbeats\n• Facebook: https://facebook.com/supasonicbeats\n• TikTok: https://tiktok.com/@supasonicbeats\n\n🔔 Subscribe & hit the bell icon to never miss an official drop!\n🎧 Best experienced with maximum volume & car subwoofers.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your home for aggressive Brazilian phonk, heavy drift bass, and ultra bass-boosted anthems.\n\n🔍 Related Search Terms & Viral Vibes:\ndangerous adrenaline, aggressive brazilian phonk, drift phonk 2026, bass boosted drift music, gym workout phonk, montagem phonk, car edit song, supasonic beats, ultra bass boosted, 128 bpm phonk.\n\n#DangerousAdrenaline #BrazilianPhonk #DriftPhonk #Montagem #SupasonicBeats #BassBoosted #GymPhonk #CarEdit #TiktokPhonk #DriftMusic",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/oHTNSFCF7Uc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/oHTNSFCF7Uc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/oHTNSFCF7Uc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/oHTNSFCF7Uc/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/oHTNSFCF7Uc/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "tags": [
+          "brazilian phonk",
+          "brazilian phonk music",
+          "dangerous adrenaline",
+          "dangerous adrenaline phonk",
+          "phonk",
+          "drift phonk",
+          "montagem",
+          "aggressive brazilian phonk",
+          "best brazilian phonk",
+          "brazilian phonk 2026",
+          "gym phonk",
+          "car drift music",
+          "phonk bass boosted",
+          "tiktok phonk",
+          "viral phonk",
+          "montagem phonk",
+          "phonk playlist",
+          "dark phonk",
+          "hard phonk",
+          "phonk remix",
+          "slowed phonk",
+          "sigma phonk",
+          "phonk workout",
+          "bass boosted phonk 2026",
+          "phonk music video",
+          "aura phonk",
+          "phonk mix",
+          "chill phonk mix",
+          "phonk music"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "DANGEROUS ADRENALINE - Aggressive Brazilian Phonk 🏎️ (Bass Boosted Drift Music)",
+          "description": "DANGEROUS ADRENALINE is a relentless, ultra-heavy Brazilian Phonk and Aggressive Drift Bass anthem by Supasonic Beats. Built with destructive 808 sub-bass glides, distorted cowbell leads, and dark adrenaline-surging montagem textures, this 2:58 track is designed for midnight highway drifting, extreme gym PR lifts, and viral drift car edits.\n\nCrank up the car subwoofers, hit the pedal, and feel the adrenaline explode! 🏎️💨🔊🔥\n\n⏱️ Track Timestamps (02:58 Extreme Bass Mix):\n00:00 - Dark Menacing Intro & Drift Build-Up\n00:36 - Destructive 808 Bass Drop (Adrenaline Surge)\n01:30 - Peak Adrenaline & Heavy Cowbell Climax\n02:15 - Final Distorted Climax Drop\n02:40 - Extreme Bass Drift Outro (02:58)\n\n🎧 Perfect For:\n• Extreme Gym PR Lifts, High-Intensity Cardio & Powerlifting\n• Midnight Highway Drifting, Burnouts & Car Enthusiast Meets\n• Viral Automotive TikToks, Reels & YouTube Shorts\n• Gaming Montages (Forza, Need for Speed, GTA, Valorant)\n• Subwoofer Audio Testing & Bass Demonstrations\n\n💿 Track Information:\n• Track Title: Dangerous Adrenaline\n• Artist / Producer: Supasonic Beats\n• Genre: Brazilian Phonk / Drift Phonk / Montagem\n• Tempo / BPM: 128 BPM\n• Vibe: Aggressive, Distorted Bass, Adrenaline, Drift\n• Duration: 02:58\n• Release Year: 2026\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎵 PRODUCTION & CREDITS:\n• Music, Composition & Sound Design: Supasonic Beats\n• Mix & Master: Supasonic Beats Studio\n• Label & Copyright: Supasonic Beats Official\n\n📌 CONNECT WITH SUPASONIC BEATS:\n• YouTube: https://www.youtube.com/@SupasonicBeatsOfficial\n• Instagram: https://instagram.com/supasonicbeats\n• Facebook: https://facebook.com/supasonicbeats\n• TikTok: https://tiktok.com/@supasonicbeats\n\n🔔 Subscribe & hit the bell icon to never miss an official drop!\n🎧 Best experienced with maximum volume & car subwoofers.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your home for aggressive Brazilian phonk, heavy drift bass, and ultra bass-boosted anthems.\n\n🔍 Related Search Terms & Viral Vibes:\ndangerous adrenaline, aggressive brazilian phonk, drift phonk 2026, bass boosted drift music, gym workout phonk, montagem phonk, car edit song, supasonic beats, ultra bass boosted, 128 bpm phonk.\n\n#DangerousAdrenaline #BrazilianPhonk #DriftPhonk #Montagem #SupasonicBeats #BassBoosted #GymPhonk #CarEdit #TiktokPhonk #DriftMusic"
+        }
+      },
+      "contentDetails": {
+        "duration": "PT2M58S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": true
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "784",
+        "likeCount": "5",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "2"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "aEIcYQEAvdbSoFSb0aO9k0zOvdg",
+      "id": "M3iloxXb9TI",
+      "snippet": {
+        "publishedAt": "2026-10-23T09:00:59Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "So Swaezy - Swaezy Swaezy | Party Rap x Dance Pop x Club Mix | Yo Yo Honey Singh Style | Full Song",
+        "description": "SWAEZY SWAEZY (So Swaezy Vibe) is a high-energy Party Rap x Dance Pop and Afro-Club Banger by Supasonic Beats. Inspired by the infectious street-party bounce of Yo Yo Honey Singh and Hommie Dilliwaala's \"So Swaezy\" era, this full song brings heavy car sub-bass, Jamaican dancehall claps, and non-stop desi party rap flows.\n\nTurn up the car woofers, hit the dance floor, and let the Swaezy party vibe take over your night!\n\n⏱️ Track Highlights:\n00:00 - Clap To The Beat (Dancehall Club Intro)\n00:15 - Masti Mein Mast Malang (Verse 1)\n00:40 - Main Hook Drop (Swaezy Swaezy)\n01:00 - Desi Party Groove & Bass Drop\n01:45 - High-Energy Rap Verse (Fast Flow)\n02:30 - Final Swaezy Club Climax & Outro\n\n🎧 Perfect For:\n• Late Night Car Drives & Heavy Subwoofer Bass Testing\n• House Parties, VIP Clubbing & Dance Floors\n• Gym Workout, Cardio & High-Energy Hype Sessions\n• Fans of Yo Yo Honey Singh, Hommie Dilliwaala & Desi Hip-Hop Party Bangers\n\n💿 Song Information:\n• Track Title: Swaezy Swaezy (So Swaezy Party Mix)\n• Artist / Producer: Supasonic Beats\n• Genre: Party Rap x Dance Pop x Afro Club Bounce\n• Vibe: Desi Hip-Hop, Club Banger, Car Bass Mix\n• Release Year: 2026\n\n⚡ About Supasonic Beats:\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your destination for high-energy Desi Party Rap, Afro House, Deep House, Dance Pop, and Late Night Car Bass Bangers. \n\n🔔 Subscribe & Turn on Notifications so you never miss a banger:\nhttps://www.youtube.com/@SupasonicBeatsOfficial\n\n🔍 Related Search Terms & Vibes:\nso swaezy, swaezy swaezy, so swaezy yo yo honey singh, hommie dilliwaala new song, so swaezy full song, so swaezy club mix, so swaezy bass boosted, yo yo honey singh new song 2026, party rap x dance pop, trip kare masti mein mast malang, jaane jaana vekho meri jaan mangdi, clap to the beat honey singh, supasonic beats, hindi party songs 2026, car bass boosted songs.\n\n#SoSwaezy #SwaezySwaezy #YoYoHoneySingh #HommieDilliwaala #PartyRap #DancePop #SupasonicBeats #ClubBangers #FullSong #DesiHipHop #CarBassMix #HoneySinghNewSong #PartySongs2026 #LateNightDrive",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/M3iloxXb9TI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/M3iloxXb9TI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/M3iloxXb9TI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/M3iloxXb9TI/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/M3iloxXb9TI/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "tags": [
+          "so swaezy",
+          "swaezy swaezy",
+          "yo yo honey singh",
+          "hommie dilliwaala",
+          "so swaezy full song",
+          "so swaezy honey singh",
+          "swaezy swaezy full song",
+          "party rap x dance pop",
+          "supasonic beats",
+          "so swaezy remix",
+          "so swaezy bass boosted",
+          "yo yo honey singh new song",
+          "hommie dilliwaala so swaezy",
+          "trip kare masti mein mast malang",
+          "hindi party rap song",
+          "club bangers 2026",
+          "desi hip hop party song",
+          "car bass mix"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "So Swaezy - Swaezy Swaezy | Party Rap x Dance Pop x Club Mix | Yo Yo Honey Singh Style | Full Song",
+          "description": "SWAEZY SWAEZY (So Swaezy Vibe) is a high-energy Party Rap x Dance Pop and Afro-Club Banger by Supasonic Beats. Inspired by the infectious street-party bounce of Yo Yo Honey Singh and Hommie Dilliwaala's \"So Swaezy\" era, this full song brings heavy car sub-bass, Jamaican dancehall claps, and non-stop desi party rap flows.\n\nTurn up the car woofers, hit the dance floor, and let the Swaezy party vibe take over your night!\n\n⏱️ Track Highlights:\n00:00 - Clap To The Beat (Dancehall Club Intro)\n00:15 - Masti Mein Mast Malang (Verse 1)\n00:40 - Main Hook Drop (Swaezy Swaezy)\n01:00 - Desi Party Groove & Bass Drop\n01:45 - High-Energy Rap Verse (Fast Flow)\n02:30 - Final Swaezy Club Climax & Outro\n\n🎧 Perfect For:\n• Late Night Car Drives & Heavy Subwoofer Bass Testing\n• House Parties, VIP Clubbing & Dance Floors\n• Gym Workout, Cardio & High-Energy Hype Sessions\n• Fans of Yo Yo Honey Singh, Hommie Dilliwaala & Desi Hip-Hop Party Bangers\n\n💿 Song Information:\n• Track Title: Swaezy Swaezy (So Swaezy Party Mix)\n• Artist / Producer: Supasonic Beats\n• Genre: Party Rap x Dance Pop x Afro Club Bounce\n• Vibe: Desi Hip-Hop, Club Banger, Car Bass Mix\n• Release Year: 2026\n\n⚡ About Supasonic Beats:\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your destination for high-energy Desi Party Rap, Afro House, Deep House, Dance Pop, and Late Night Car Bass Bangers. \n\n🔔 Subscribe & Turn on Notifications so you never miss a banger:\nhttps://www.youtube.com/@SupasonicBeatsOfficial\n\n🔍 Related Search Terms & Vibes:\nso swaezy, swaezy swaezy, so swaezy yo yo honey singh, hommie dilliwaala new song, so swaezy full song, so swaezy club mix, so swaezy bass boosted, yo yo honey singh new song 2026, party rap x dance pop, trip kare masti mein mast malang, jaane jaana vekho meri jaan mangdi, clap to the beat honey singh, supasonic beats, hindi party songs 2026, car bass boosted songs.\n\n#SoSwaezy #SwaezySwaezy #YoYoHoneySingh #HommieDilliwaala #PartyRap #DancePop #SupasonicBeats #ClubBangers #FullSong #DesiHipHop #CarBassMix #HoneySinghNewSong #PartySongs2026 #LateNightDrive"
+        },
+        "defaultAudioLanguage": "hi"
+      },
+      "contentDetails": {
+        "duration": "PT2M46S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": true
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "769",
+        "likeCount": "4",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "6"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "fgqkb_fUPB4VU-NKnOu-KSMc0Fs",
+      "id": "7GwuH6YKY00",
+      "snippet": {
+        "publishedAt": "2026-10-12T20:25:22Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "Dikha Tera Move! Latest Viral Dance Song | Official Music Video",
+        "description": "DIKHA TERA MOVE is an electrifying Commercial Hindi Dance Pop and Club Banger by Supasonic Beats. Built with explosive beats, sharp rhythmic hooks, and high-octane energy, this official music video features an electrifying dance performance that moves from the stage straight to the party floor.\n\nTurn up the volume, challenge your squad, and show your best dance moves! ⚡🔥🕺\n\n⏱️ Track Timestamps (03:05 Official Video Mix):\n00:00 - High-Energy Dance Intro & Beat Tease\n00:42 - Main Hook & Explosive Pop Drop (Dikha Tera Move!)\n01:35 - Rhythm Transition & Stage Choreography Groove\n02:15 - Final High-Energy Dance Floor Climax\n02:45 - Powerful Outro Beat (03:05)\n\n🎧 Perfect For:\n• Dance Choreography, Dance Covers & Studio Routines\n• Viral Instagram Reels, TikToks & YouTube Shorts Challenges\n• Party Playlists, Club DJ Sets & College Fests\n• High-Intensity Workout, Cardio & Zumba Energy\n• Road Trips & Party Drives\n\n💿 Song Information:\n• Track Title: Dikha Tera Move!\n• Artist / Producer: Supasonic Beats\n• Genre: Commercial Dance Pop / Club Anthem\n• Tempo / BPM: 128 BPM\n• Vibe: High Energy, Electrifying, Choreography Banger\n• Duration: 03:05\n• Release Year: 2026\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎵 PRODUCTION & CREDITS:\n• Music, Composition & Arrangement: Supasonic Beats\n• Mix & Master: Supasonic Beats Studio\n• Label & Copyright: Supasonic Beats Official\n\n📌 CONNECT WITH SUPASONIC BEATS:\n• YouTube: https://www.youtube.com/@SupasonicBeatsOfficial\n• Instagram: https://instagram.com/supasonicbeats\n• Facebook: https://facebook.com/supasonicbeats\n• TikTok: https://tiktok.com/@supasonicbeats\n\n🔔 Subscribe & hit the bell icon to never miss an official drop!\n🎧 Best experienced with quality headphones / subwoofers.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your destination for high-energy modern Hindi dance tracks, viral electronic beats, and cinematic visual music journeys.\n\n🔍 Related Search Terms & Viral Vibes:\ndikha tera move, dikha tera move song, latest viral dance song, hindi party song 2026, dance choreography songs hindi, club bangers hindi, supasonic beats, high energy dance song, viral reel audio.\n\n#DikhaTeraMove #HindiPartySong #SupasonicBeats #ViralDanceSong #DanceChoreography #ClubBangers #PartyAnthem2026 #OfficialMusicVideo",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/7GwuH6YKY00/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/7GwuH6YKY00/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/7GwuH6YKY00/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/7GwuH6YKY00/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/7GwuH6YKY00/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "tags": [
+          "Dikha Tera Move",
+          "dance sequence",
+          "official music video",
+          "Supasonic Beats",
+          "choreography",
+          "dikha tera move",
+          "dikha tera move song",
+          "dikha tera move supasonic beats",
+          "supasonic beats",
+          "hindi party song",
+          "hindi dance song",
+          "hindi club song",
+          "party music",
+          "dance music",
+          "desi party song",
+          "hindi pop",
+          "club dance music",
+          "Latest Viral Dance Song",
+          "latest trending songs 2026",
+          "top hindi party songs",
+          "new song",
+          "new hindi song",
+          "new bollywood song",
+          "new dance song",
+          "new dance song 2026",
+          "music video"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "Dikha Tera Move! Latest Viral Dance Song | Official Music Video",
+          "description": "DIKHA TERA MOVE is an electrifying Commercial Hindi Dance Pop and Club Banger by Supasonic Beats. Built with explosive beats, sharp rhythmic hooks, and high-octane energy, this official music video features an electrifying dance performance that moves from the stage straight to the party floor.\n\nTurn up the volume, challenge your squad, and show your best dance moves! ⚡🔥🕺\n\n⏱️ Track Timestamps (03:05 Official Video Mix):\n00:00 - High-Energy Dance Intro & Beat Tease\n00:42 - Main Hook & Explosive Pop Drop (Dikha Tera Move!)\n01:35 - Rhythm Transition & Stage Choreography Groove\n02:15 - Final High-Energy Dance Floor Climax\n02:45 - Powerful Outro Beat (03:05)\n\n🎧 Perfect For:\n• Dance Choreography, Dance Covers & Studio Routines\n• Viral Instagram Reels, TikToks & YouTube Shorts Challenges\n• Party Playlists, Club DJ Sets & College Fests\n• High-Intensity Workout, Cardio & Zumba Energy\n• Road Trips & Party Drives\n\n💿 Song Information:\n• Track Title: Dikha Tera Move!\n• Artist / Producer: Supasonic Beats\n• Genre: Commercial Dance Pop / Club Anthem\n• Tempo / BPM: 128 BPM\n• Vibe: High Energy, Electrifying, Choreography Banger\n• Duration: 03:05\n• Release Year: 2026\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎵 PRODUCTION & CREDITS:\n• Music, Composition & Arrangement: Supasonic Beats\n• Mix & Master: Supasonic Beats Studio\n• Label & Copyright: Supasonic Beats Official\n\n📌 CONNECT WITH SUPASONIC BEATS:\n• YouTube: https://www.youtube.com/@SupasonicBeatsOfficial\n• Instagram: https://instagram.com/supasonicbeats\n• Facebook: https://facebook.com/supasonicbeats\n• TikTok: https://tiktok.com/@supasonicbeats\n\n🔔 Subscribe & hit the bell icon to never miss an official drop!\n🎧 Best experienced with quality headphones / subwoofers.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n⚡ About Supasonic Beats (Channel Info):\nWelcome to Supasonic Beats (@SupasonicBeatsOfficial) — your destination for high-energy modern Hindi dance tracks, viral electronic beats, and cinematic visual music journeys.\n\n🔍 Related Search Terms & Viral Vibes:\ndikha tera move, dikha tera move song, latest viral dance song, hindi party song 2026, dance choreography songs hindi, club bangers hindi, supasonic beats, high energy dance song, viral reel audio.\n\n#DikhaTeraMove #HindiPartySong #SupasonicBeats #ViralDanceSong #DanceChoreography #ClubBangers #PartyAnthem2026 #OfficialMusicVideo"
+        }
+      },
+      "contentDetails": {
+        "duration": "PT3M5S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "false",
+        "licensedContent": false,
+        "contentRating": {},
+        "projection": "rectangular",
+        "hasCustomThumbnail": true
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "public",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false,
+        "selfDeclaredMadeForKids": false
+      },
+      "statistics": {
+        "viewCount": "748",
+        "likeCount": "6",
+        "dislikeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "2"
+      }
+    }
+  ],
+  "totalPublic": 64,
+  "totalPrivate": 2
+}

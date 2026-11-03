@@ -1,0 +1,103 @@
+{
+  "portfolio": {
+    "startingBalance": 10000,
+    "currentBalance": 16450,
+    "totalPnL": 6450,
+    "pnlPercentage": 64.5,
+    "winRate": 80.0,
+    "totalTrades": 5,
+    "winningTrades": 4,
+    "losingTrades": 1
+  },
+  "settledTrades": [
+    {
+      "tradeId": "TRD-001",
+      "videoTitle": "AAO NA [120 BPM]",
+      "type": "CALL (BUY)",
+      "targetStrike": 500,
+      "actualSettled": 2501,
+      "stake": 1000,
+      "pnl": 3000,
+      "pnlPct": 300.0,
+      "result": "SUPER_WIN",
+      "settledDate": "2026-10-31",
+      "verdict": "🔥 Mega Outperformed (+400% vs Target)"
+    },
+    {
+      "tradeId": "TRD-002",
+      "videoTitle": "OBSESSION [85 BPM]",
+      "type": "CALL (BUY)",
+      "targetStrike": 250,
+      "actualSettled": 43,
+      "stake": 1000,
+      "pnl": -800,
+      "pnlPct": -80.0,
+      "result": "LOSS",
+      "settledDate": "2026-10-31",
+      "verdict": "🛑 Underperformed (Tempo mismatch)"
+    },
+    {
+      "tradeId": "TRD-003",
+      "videoTitle": "KALYANI [120 BPM]",
+      "type": "CALL (BUY)",
+      "targetStrike": 600,
+      "actualSettled": 1206,
+      "stake": 1000,
+      "pnl": 1010,
+      "pnlPct": 101.0,
+      "result": "WIN",
+      "settledDate": "2026-11-01",
+      "verdict": "🎯 Outperformed (+101% vs Target)"
+    },
+    {
+      "tradeId": "TRD-004",
+      "videoTitle": "DEEDAR DE [124 BPM]",
+      "type": "CALL (BUY)",
+      "targetStrike": 400,
+      "actualSettled": 4618,
+      "stake": 1000,
+      "pnl": 2500,
+      "pnlPct": 250.0,
+      "result": "JACKPOT_WIN",
+      "settledDate": "2026-11-02",
+      "verdict": "🚀 Historic Breakout (All-Time High)"
+    },
+    {
+      "tradeId": "TRD-005",
+      "videoTitle": "ZARA ZARA [124 BPM]",
+      "type": "CALL (BUY)",
+      "targetStrike": 500,
+      "actualSettled": 582,
+      "stake": 1000,
+      "pnl": 740,
+      "pnlPct": 74.0,
+      "result": "WIN",
+      "settledDate": "2026-11-03",
+      "verdict": "🎯 Exact Bullseye Match (Day 3 Target Hit)"
+    }
+  ],
+  "activePositions": [
+    {
+      "tradeId": "TRD-006",
+      "videoTitle": "MAJBOOR [122 BPM]",
+      "type": "CALL (BUY)",
+      "targetStrike": 620,
+      "currentViews": 395,
+      "stake": 1000,
+      "targetDate": "2026-11-04 (Tomorrow)",
+      "status": "OPEN",
+      "thesis": "Fastest Day 2 pace on channel. Expected to cross 620 target easily."
+    },
+    {
+      "tradeId": "TRD-007",
+      "videoTitle": "TU MIL JAAYE [120 BPM]",
+      "type": "CALL (BUY)",
+      "targetStrike": 90,
+      "currentViews": 4,
+      "stake": 500,
+      "targetDate": "2026-11-04 (Tomorrow)",
+      "status": "OPEN",
+      "thesis": "Seed audience test during tonight's 8:30-11:30 PM peak window."
+    }
+  ]
+}

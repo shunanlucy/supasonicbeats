@@ -1,0 +1,643 @@
+{
+  "playlists": [
+    {
+      "kind": "youtube#playlist",
+      "etag": "pc1r5FNozuuZHUL3_qvakILFxjA",
+      "id": "PLbZzJNigKX4c",
+      "snippet": {
+        "publishedAt": "2026-10-15T14:14:36.795006316Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "Romantic Late Night Drive Hindi Songs 2026 | Dekh Le, Nadaaniyan, Jo Tum Mere Ho & Chill R&B",
+        "description": "Best Romantic Hindi Pop, Afro-Bollywood R&B, and Late Night Couple Drive songs of 2026. Starting with \"Dekh Le\" by Supasonic Beats, blended with the smoothest midnight romantic tracks for late night drives with your favorite person.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/S0OJkppKO4E/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/S0OJkppKO4E/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/S0OJkppKO4E/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/S0OJkppKO4E/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/S0OJkppKO4E/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "localized": {
+          "title": "Romantic Late Night Drive Hindi Songs 2026 | Dekh Le, Nadaaniyan, Jo Tum Mere Ho & Chill R&B",
+          "description": "Best Romantic Hindi Pop, Afro-Bollywood R&B, and Late Night Couple Drive songs of 2026. Starting with \"Dekh Le\" by Supasonic Beats, blended with the smoothest midnight romantic tracks for late night drives with your favorite person."
+        }
+      },
+      "contentDetails": {
+        "itemCount": 4
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "-lgBMvSoNpDk_zg1_oFm1qCRkcs",
+      "id": "PLBb4kUJU_mMA",
+      "snippet": {
+        "publishedAt": "2026-10-04T07:34:49.180853078Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "Official Music Video by Supasonic Beats",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/siluURGPUBE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/siluURGPUBE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/siluURGPUBE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/siluURGPUBE/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/siluURGPUBE/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "localized": {
+          "title": "Official Music Video by Supasonic Beats",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 9
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "VnLGAbmeJEs893b2DvIV967_nY0",
+      "id": "PLFK3WEIo5tDQ",
+      "snippet": {
+        "publishedAt": "2026-10-01T18:30:32.495862Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "Brazilian Phonk & Drift Bass (Gym / Car)",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1imWPqCofZU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1imWPqCofZU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1imWPqCofZU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/1imWPqCofZU/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/1imWPqCofZU/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "localized": {
+          "title": "Brazilian Phonk & Drift Bass (Gym / Car)",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 6
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "YzoN7hhKqEwU1dU17WPfHGARlG0",
+      "id": "PLXkSul_-ihzw",
+      "snippet": {
+        "publishedAt": "2026-10-01T18:22:29.363814433Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "Hindi Indie Pop & Cozy Evening Vibes 2026 | Chai, Rainy Window & Acoustic Chill Songs",
+        "description": "Warm Hindi Indie Pop, Feel Good Acoustic Vibes, and Cozy Evening songs for your daily chai breaks, sunset drives, and rainy window moments. If you love soulful Indian Indie music, breezy guitar melodies, and romantic bedroom pop like Nadaaniyan and Tu Aur Main, hit play and relax.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/rC8QB0BZ9EU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/rC8QB0BZ9EU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/rC8QB0BZ9EU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/rC8QB0BZ9EU/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/rC8QB0BZ9EU/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "localized": {
+          "title": "Hindi Indie Pop & Cozy Evening Vibes 2026 | Chai, Rainy Window & Acoustic Chill Songs",
+          "description": "Warm Hindi Indie Pop, Feel Good Acoustic Vibes, and Cozy Evening songs for your daily chai breaks, sunset drives, and rainy window moments. If you love soulful Indian Indie music, breezy guitar melodies, and romantic bedroom pop like Nadaaniyan and Tu Aur Main, hit play and relax."
+        }
+      },
+      "contentDetails": {
+        "itemCount": 23
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "lhuFQMG8yJs7cPHSAWuRQk_g2sw",
+      "id": "PLDXRhagS08Yg",
+      "snippet": {
+        "publishedAt": "2026-10-01T18:19:45.966853193Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "Midnight Lo-Fi & Hindi Deep House 2026 | Late Night Car Bass & Moving On Mix",
+        "description": "Plug in your earphones and get lost in the best Midnight Lo-Fi, Hindi Deep House, and Soulful Chill Car Bass tracks by Supasonic Beats. Perfect for 2 AM empty highway drives, moving on from old memories, and late night overthinking sessions. Featuring Bahne Do, Ruk Ja Na, and more midnight vibes.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1Mg56Wyc56U/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1Mg56Wyc56U/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1Mg56Wyc56U/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/1Mg56Wyc56U/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/1Mg56Wyc56U/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "localized": {
+          "title": "Midnight Lo-Fi & Hindi Deep House 2026 | Late Night Car Bass & Moving On Mix",
+          "description": "Plug in your earphones and get lost in the best Midnight Lo-Fi, Hindi Deep House, and Soulful Chill Car Bass tracks by Supasonic Beats. Perfect for 2 AM empty highway drives, moving on from old memories, and late night overthinking sessions. Featuring Bahne Do, Ruk Ja Na, and more midnight vibes."
+        }
+      },
+      "contentDetails": {
+        "itemCount": 10
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "bNS8uGykukD_7x2S2DVzOBrOIto",
+      "id": "PLHPIrqI0ExDQ",
+      "snippet": {
+        "publishedAt": "2026-10-01T18:17:01.966471613Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "Dark Anime Violin & Epic Trap Beats (OST)",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/auEcj73axMA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/auEcj73axMA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/auEcj73axMA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/auEcj73axMA/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/auEcj73axMA/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "localized": {
+          "title": "Dark Anime Violin & Epic Trap Beats (OST)",
+          "description": ""
+        }
+      },
+      "contentDetails": {
+        "itemCount": 5
+      }
+    },
+    {
+      "kind": "youtube#playlist",
+      "etag": "sMiVuwQ5vn5htlAGxfX_uYSRsZs",
+      "id": "PLC0E0nc0ygp4",
+      "snippet": {
+        "publishedAt": "2026-10-01T18:14:07.693497044Z",
+        "channelId": "UCM1yIAO_tvDGWOYi3JcyacA",
+        "title": "Late Night Car Drive Songs Hindi 2026 | Non-Stop Night Highway & Car Bass Playlist",
+        "description": "The ultimate Late Night Car Drive Songs Hindi playlist for 2026. Roll the windows down and enjoy heavy Hindi car bass, slap house grooves, and romantic night drive music. Built for car subwoofers, long highway roadtrips, and midnight city cruising by Supasonic Beats.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/UjthtKkgwWU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/UjthtKkgwWU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/UjthtKkgwWU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/UjthtKkgwWU/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/UjthtKkgwWU/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          },
+          "qhd": {
+            "url": "https://i.ytimg.com/vi/UjthtKkgwWU/qhddefault.jpg",
+            "width": 2560,
+            "height": 1440
+          }
+        },
+        "channelTitle": "Supasonic Beats",
+        "localized": {
+          "title": "Late Night Car Drive Songs Hindi 2026 | Non-Stop Night Highway & Car Bass Playlist",
+          "description": "The ultimate Late Night Car Drive Songs Hindi playlist for 2026. Roll the windows down and enjoy heavy Hindi car bass, slap house grooves, and romantic night drive music. Built for car subwoofers, long highway roadtrips, and midnight city cruising by Supasonic Beats."
+        }
+      },
+      "contentDetails": {
+        "itemCount": 21
+      }
+    }
+  ],
+  "videos": [
+    {
+      "id": "87ndOuq346I",
+      "title": "OBSESSION [85 BPM] - Hindi Indi R&B x Acoustic Pop Duet | Supasonic Beats",
+      "publishedAt": "2026-10-26T16:39:31Z"
+    },
+    {
+      "id": "wE7QEsQ9IPI",
+      "title": "KALYANI | Deep House x Afro Grooves • Hindi Songs With Bass And Beats (120 BPM) | Supasonic Beats",
+      "publishedAt": "2026-10-26T10:37:26Z"
+    },
+    {
+      "id": "UjthtKkgwWU",
+      "title": "AAO NA | Hindi Deep House Remix X Bass And Beats | Supasonic Beats [120 BPM]",
+      "publishedAt": "2026-10-25T20:30:00Z"
+    },
+    {
+      "id": "rC8QB0BZ9EU",
+      "title": "IN THE NIGHT (No Control) | Afro House x Deep House x Club Bangers | Supasonic Beats [126 BPM]",
+      "publishedAt": "2026-10-24T21:07:24Z"
+    },
+    {
+      "id": "SQzOlmY413Y",
+      "title": "This beat is illegal. 😮‍💨🔊#SwaezySwaezy #NewMusic #BeatDrop #Shorts #Viral",
+      "publishedAt": "2026-10-24T16:45:54Z"
+    },
+    {
+      "id": "1Mg56Wyc56U",
+      "title": "AADAT | Afro Beats x Deep House x Club Bangers | Supasonic Beats",
+      "publishedAt": "2026-10-23T21:21:18Z"
+    },
+    {
+      "id": "M3iloxXb9TI",
+      "title": "So Swaezy - Swaezy Swaezy | Party Rap x Dance Pop x Club Mix | Yo Yo Honey Singh Style | Full Song",
+      "publishedAt": "2026-10-23T09:00:59Z"
+    },
+    {
+      "id": "1suK9qPK_ds",
+      "title": "RAAT MERI | Hindi Afro House x Deep House x Dance Pop | Supasonic Beats [130 BPM]",
+      "publishedAt": "2026-10-22T21:47:09Z"
+    },
+    {
+      "id": "1v5PsqhH95k",
+      "title": "Kaisa Nasha | Hindi Afro House x Dance Pop | Supasonic Beats",
+      "publishedAt": "2026-10-22T07:16:41Z"
+    },
+    {
+      "id": "2JGI6vn2kW8",
+      "title": "SUN LE | Afro House x Deep House Mix | Supasonic Beats | New Hindi Electronic Fusion",
+      "publishedAt": "2026-10-20T21:30:38Z"
+    },
+    {
+      "id": "QOpKrEf6icU",
+      "title": "Wait for the drop! 🎧✨ Paas Aa - Supasonic Beats #afrohouse #deephouse",
+      "publishedAt": "2026-10-20T14:18:18Z"
+    },
+    {
+      "id": "Ossd36BQPzs",
+      "title": "Paas Aa | Hindi Afro House x Deep House | Supasonic Beats",
+      "publishedAt": "2026-10-19T23:07:34Z"
+    },
+    {
+      "id": "1imWPqCofZU",
+      "title": "BEHNE DO (बहने दो) ⚡ Dark Phonk & Heavy Trance Bass (Official Audio) | Supasonic Beats",
+      "publishedAt": "2026-10-19T08:33:14Z"
+    },
+    {
+      "id": "WmbdSt55IaM",
+      "title": "The Perfect Late Night Drive Mix 🚗 Hindi Deep House & Car Bass",
+      "publishedAt": "2026-10-18T14:41:13Z"
+    },
+    {
+      "id": "S0OJkppKO4E",
+      "title": "HINDI ROMANTIC SONGS (VOL. 2) 🌧️ Chai, Rain & Acoustic Chill Jukebox | Supasonic Beats",
+      "publishedAt": "2026-10-17T20:46:05Z"
+    },
+    {
+      "id": "eI4HRGiY970",
+      "title": "POV: Chai, Thandi Hawa & Woh... ☕🌧️ | NADAANIYAN #Shorts #RomanticSongs #CozyVibes",
+      "publishedAt": "2026-10-17T10:21:37Z"
+    },
+    {
+      "id": "lQl3dRGivOI",
+      "title": "Bhar Le Tu | Hindi Deep House x Club Bangers | Supasonic Beats",
+      "publishedAt": "2026-10-17T06:00:28Z"
+    },
+    {
+      "id": "VNefAyeFHmk",
+      "title": "NADAANIYAN | Cozy Acoustic Evening • Hindi Indie Pop Chill Mix",
+      "publishedAt": "2026-10-16T13:15:39Z"
+    },
+    {
+      "id": "rxR1mz-GO8s",
+      "title": "POV: 2 AM, Empty Highway & Her... 🌙🚗 | Dekh Le #Shorts #LateNightDrive",
+      "publishedAt": "2026-10-16T06:19:33Z"
+    },
+    {
+      "id": "7OuzjB6EPN0",
+      "title": "Dekh Le | Bollywood Romantic Pop x Late Night Chill (Official Audio) • Supasonic Beats",
+      "publishedAt": "2026-10-16T02:30:09Z"
+    },
+    {
+      "id": "e_cPaNofiZI",
+      "title": "BAHNE DO | Hindi Deep House • Late Night Car Drive & Moving On Mix",
+      "publishedAt": "2026-10-15T13:30:36Z"
+    },
+    {
+      "id": "auEcj73axMA",
+      "title": "PARCHAIYON | Hindi Afro Pop x Deep House | Late Night Drive & Car Bass Mix | Supasonic Beats",
+      "publishedAt": "2026-10-15T09:07:21Z"
+    },
+    {
+      "id": "opj6VHo_Zy8",
+      "title": "UP Wali Laiki (यूपी वाली लइकी) | Desi Party Song | Supasonic Beats",
+      "publishedAt": "2026-10-14T10:30:27Z"
+    },
+    {
+      "id": "iut9X8Ix4nA",
+      "title": "Dikha Tera Move 🔥 | Hindi Party Song #Shorts #Viral #trending",
+      "publishedAt": "2026-10-13T04:55:23Z"
+    },
+    {
+      "id": "7GwuH6YKY00",
+      "title": "Dikha Tera Move! Latest Viral Dance Song | Official Music Video",
+      "publishedAt": "2026-10-12T20:25:22Z"
+    },
+    {
+      "id": "-g8fK9gsZVQ",
+      "title": "Porsche vs Lamborghini 🔥 MIDNIGHT HITS #Shorts",
+      "publishedAt": "2026-10-11T12:31:14Z"
+    },
+    {
+      "id": "sO6YUvwUNK4",
+      "title": "MIDNIGHT HITS | Porsche vs Lamborghini | Official Music Video",
+      "publishedAt": "2026-10-11T12:30:39Z"
+    },
+    {
+      "id": "qAGp1Wl4u_c",
+      "title": "Where Swords Fall Silent | Fantasy Music Visualizer | Supasonic Beats",
+      "publishedAt": "2026-10-11T03:30:17Z"
+    },
+    {
+      "id": "vF3lNr3OI5Q",
+      "title": "Naye Safar Pe — Late Night Deep House | Supasonic Beats",
+      "publishedAt": "2026-10-10T13:15:33Z"
+    },
+    {
+      "id": "_NmzlW_ShEw",
+      "title": "Dark Mode Activated 🔴🔥 | NIGHT STALKER — Aggressive Phonk #Shorts",
+      "publishedAt": "2026-10-10T10:32:47Z"
+    },
+    {
+      "id": "DM_UioIEB5g",
+      "title": "NIGHT STALKER — Aggressive Drift Phonk | Mereoleona Inspired",
+      "publishedAt": "2026-10-10T03:42:08Z"
+    },
+    {
+      "id": "2aPvnJhNpJI",
+      "title": "Desi Ya Videsi—Naache Hum 💃🔥 #Shorts",
+      "publishedAt": "2026-10-09T15:40:03Z"
+    },
+    {
+      "id": "5gYV3nQ9StI",
+      "title": "Naache Hum 💃 | Desi Meets Videsi | Supasonic Beats",
+      "publishedAt": "2026-10-09T13:15:00Z"
+    },
+    {
+      "id": "jl78kqrXgV4",
+      "title": "Who Dances Better? 😎🔥 | Quién Baila Mejor #viralshorts #viral",
+      "publishedAt": "2026-10-09T06:39:57Z"
+    },
+    {
+      "id": "p6YK4sfjeWw",
+      "title": "Quién Baila Mejor | Baila Conmigo 🔥 Dance Party | Supasonic Beats",
+      "publishedAt": "2026-10-09T06:35:11Z"
+    },
+    {
+      "id": "vVO783865lo",
+      "title": "Uska Ek Hug, Dil Ki Taal Badal De ❤️ | Teri Meri Taal #Shorts",
+      "publishedAt": "2026-10-08T06:26:10Z"
+    },
+    {
+      "id": "PaI4diPdXmg",
+      "title": "Teri Meri Taal ❤️ | Hindi Romantic Song | Supasonic Beats",
+      "publishedAt": "2026-10-08T04:03:33Z"
+    },
+    {
+      "id": "M-JVYUUEQdE",
+      "title": "Subha Se Pahle | Hindi Romantic Dance Pop | Supasonic Beats",
+      "publishedAt": "2026-10-07T13:28:12Z"
+    },
+    {
+      "id": "ShsxTprTgeU",
+      "title": "Tu Hi Meri 🖤🎷 | Woh khayaalon se jaata hi nahi… #Shorts",
+      "publishedAt": "2026-10-07T06:45:31Z"
+    },
+    {
+      "id": "2QoQNFlGpQ4",
+      "title": "Tu Hi Meri | Hindi Romantic R&B Song | Saxophone Vibes",
+      "publishedAt": "2026-10-07T05:56:33Z"
+    },
+    {
+      "id": "vA5StwqtM6I",
+      "title": "Hindi Romantic Songs Playlist ❤️ | Thahar Gaya, Tu Aur Main & More | Supasonic Beats",
+      "publishedAt": "2026-10-06T04:04:33Z"
+    },
+    {
+      "id": "aePKivjFERI",
+      "title": "Jo Keh Na Sake – Supasonic Beats | Hindi Romantic Song | Official Music Video",
+      "publishedAt": "2026-10-05T06:52:39Z"
+    },
+    {
+      "id": "v9AF3lPZvMU",
+      "title": "Sadkein Khaali Hain, Raftaar Tez 🏎️💨 #Shorts #LateNightDrive #CarBass",
+      "publishedAt": "2026-10-04T10:20:35Z"
+    },
+    {
+      "id": "9_20DjPV7qI",
+      "title": "TU AUR MAIN - Romantic Hindi Song (Official Music Audio) by Supasonic Beats.",
+      "publishedAt": "2026-10-04T04:43:02Z"
+    },
+    {
+      "id": "ykEBfSwoG6Q",
+      "title": "Ruk Ja Na 🌍 | Hindi Deep House • Scenic Travel Music Video | Supasonic Beats",
+      "publishedAt": "2026-10-03T16:49:05Z"
+    },
+    {
+      "id": "RAVOtcc279E",
+      "title": "LATE NIGHT DRIVE (1 HOUR) - Hindi Car Bass & Chill R&B Mix",
+      "publishedAt": "2026-10-03T13:18:42Z"
+    },
+    {
+      "id": "XYG2qEHecSI",
+      "title": "REDLINE - Aggressive Brazilian Drift Phonk (Ultra Bass Boosted)",
+      "publishedAt": "2026-10-02T09:12:02Z"
+    },
+    {
+      "id": "irCBMM06lHI",
+      "title": "Aao Paas 🔥 Late Night Luxury Deep House Vibes 🎧 #Shorts #DeepHouse",
+      "publishedAt": "2026-10-02T04:19:34Z"
+    },
+    {
+      "id": "1_rcI_jlL2Q",
+      "title": "AADHI RAAT - Late Night Hindi Car Bass (Official Music Video)",
+      "publishedAt": "2026-10-01T22:39:01Z"
+    },
+    {
+      "id": "k8GXrpfRhww",
+      "title": "Warm Tide 🌅 Afro Deep House | Sunset & Chill Vibes (Extended)",
+      "publishedAt": "2026-10-01T05:53:58Z"
+    },
+    {
+      "id": "r58HTbAFSPM",
+      "title": "Thahar Gaya | Hindi Sad Song | Supasonic Beats (Official Audio)",
+      "publishedAt": "2026-10-01T01:30:38Z"
+    },
+    {
+      "id": "6O7SxWnfZqE",
+      "title": "Paas Ho Tum | Hindi Lo-Fi Song | Supasonic Beats (Official Audio)",
+      "publishedAt": "2026-09-30T21:01:48Z"
+    },
+    {
+      "id": "UOxQN6_46Ek",
+      "title": "Aao Paas - Official Music Video | Late Night Luxury Deep House & Car Bass (4K)",
+      "publishedAt": "2026-09-30T02:15:43Z"
+    },
+    {
+      "id": "MKWQZFX-lBY",
+      "title": "TRIAL OF DESIRE — Hypnotic Dark Royal Violin Trap Beat (Game of Thrones Style)",
+      "publishedAt": "2026-09-29T13:30:08Z"
+    },
+    {
+      "id": "iIpg99QCQv4",
+      "title": "Tere Saath Zara | Best Romantic Song of the Season",
+      "publishedAt": "2026-09-29T05:00:36Z"
+    },
+    {
+      "id": "siluURGPUBE",
+      "title": "Supasonic Beats - DHEERE SE [Official Music Video] | Late Night Hindi R&B / Car Bass",
+      "publishedAt": "2026-09-28T20:35:33Z"
+    },
+    {
+      "id": "5YyGY9_ob-0",
+      "title": "VIOLIN FURY — Epic Dark Anime Violin Music (Anime Music Video) | Supasonic Beats",
+      "publishedAt": "2026-09-28T15:01:57Z"
+    },
+    {
+      "id": "vdTnCgca6y0",
+      "title": "La Nuit Nous Porte – Supasonic Beats | Slowed + Reverb | French Ambient Pop",
+      "publishedAt": "2026-09-28T05:30:05Z"
+    },
+    {
+      "id": "D1938DdTc0s",
+      "title": "MONTAGEM - BLOOD FLOW 🩸 (Brazilian Phonk Music) | Ultra Bass Boosted",
+      "publishedAt": "2026-09-27T20:52:32Z"
+    },
+    {
+      "id": "qHiRbIchRf4",
+      "title": "Uddne De | Supasonic Beats | Official Audio",
+      "publishedAt": "2026-09-27T13:30:08Z"
+    },
+    {
+      "id": "oHTNSFCF7Uc",
+      "title": "DANGEROUS ADRENALINE - Aggressive Brazilian Phonk 🏎️ (Bass Boosted Drift Music)",
+      "publishedAt": "2026-09-26T19:41:08Z"
+    },
+    {
+      "id": "m-2THHbN79Q",
+      "title": "Fiesta De Noche (Raat Ki Fiesta) | Supasonic Beats",
+      "publishedAt": "2026-09-25T22:42:07Z"
+    }
+  ]
+}
