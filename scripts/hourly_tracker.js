@@ -15,6 +15,51 @@ if (fs.existsSync(envPath)) {
 
 const TOKEN_PATH = path.join(rootDir, "data", "tokens.json");
 const SNAPSHOT_PATH = path.join(rootDir, "data", "hourly_snapshots.json");
+const CHAT_FILE = path.join(rootDir, "data", "telegram_chat.json");
+const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || "9149806319:AAF1BKIZwOJIeYEZaM7YZKXhohC0sdGUJSo";
+
+async function sendTelegramAlert(text) {
+  if (!BOT_TOKEN) return;
+
+  let chatId = null;
+  if (fs.existsSync(CHAT_FILE)) {
+    try {
+      chatId = JSON.parse(fs.readFileSync(CHAT_FILE, "utf-8")).chatId;
+    } catch (e) {}
+  }
+
+  // Auto-discover chatId if missing
+  if (!chatId) {
+    try {
+      const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/getUpdates`);
+      const json = await res.json();
+      if (json.ok && Array.isArray(json.result) && json.result.length > 0) {
+        const last = json.result[json.result.length - 1];
+        chatId = last.message?.chat?.id || last.channel_post?.chat?.id;
+        if (chatId) {
+          fs.writeFileSync(CHAT_FILE, JSON.stringify({ chatId: String(chatId), lastUpdated: new Date().toISOString() }, null, 2));
+        }
+      }
+    } catch (e) {}
+  }
+
+  if (chatId) {
+    try {
+      await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text,
+          parse_mode: "Markdown",
+        }),
+      });
+      console.log("📲 Telegram alert dispatched to chat:", chatId);
+    } catch (e) {
+      console.warn("Could not dispatch Telegram alert:", e.message);
+    }
+  }
+}
 
 function getOAuthClient() {
   const clientId = process.env.GOOGLE_CLIENT_ID;
@@ -58,32 +103,36 @@ async function recordSnapshot() {
     const totalVideos = parseInt(channel.statistics?.videoCount || "0", 10);
 
     // 2. Fetch latest uploads
-    const uploadsId = channel.contentDetails?.relatedPlaylists?.uploads;
+    const uploadsPlaylistId = channel.contentDetails?.relatedPlaylists?.uploads;
     let videoSnapshots = [];
-    if (uploadsId) {
+
+    if (uploadsPlaylistId) {
       const playlistRes = await youtube.playlistItems.list({
-        part: ["contentDetails"],
-        playlistId: uploadsId,
+        part: ["snippet", "contentDetails"],
+        playlistId: uploadsPlaylistId,
         maxResults: 15,
       });
 
-      const ids = (playlistRes.data.items || []).map((i) => i.contentDetails?.videoId).filter(Boolean);
-      if (ids.length > 0) {
-        const vidRes = await youtube.videos.list({
+      const videoIds = playlistRes.data.items
+        ?.map((item) => item.contentDetails?.videoId)
+        .filter(Boolean);
+
+      if (videoIds.length > 0) {
+        const videosRes = await youtube.videos.list({
           part: ["snippet", "statistics"],
-          id: ids,
+          id: videoIds,
         });
 
-        videoSnapshots = (vidRes.data.items || []).map((v) => ({
+        videoSnapshots = (videosRes.data.items || []).map((v) => ({
           id: v.id,
-          title: v.snippet?.title || "",
+          title: v.snippet?.title,
           views: parseInt(v.statistics?.viewCount || "0", 10),
           likes: parseInt(v.statistics?.likeCount || "0", 10),
         }));
       }
     }
 
-    // 3. Load snapshot history
+    // 3. Load previous history to calculate deltas
     let history = [];
     if (fs.existsSync(SNAPSHOT_PATH)) {
       try {
@@ -94,25 +143,28 @@ async function recordSnapshot() {
     }
 
     const now = new Date();
-    const istTime = new Date(now.getTime() + 5.5 * 60 * 60 * 1000).toISOString().replace("Z", "+05:30");
+    const istTime = new Date(now.getTime() + 5.5 * 3600 * 1000).toISOString().replace("Z", "+05:30");
 
     let deltaViews = 0;
-    let elapsedMinutes = 0;
+    let elapsedMinutes = 30;
     let viewsPerHourRate = 0;
     let topMovers = [];
 
     if (history.length > 0) {
-      const last = history[history.length - 1];
-      deltaViews = Math.max(0, currentTotalViews - last.totalViews);
-      elapsedMinutes = Math.max(1, Math.round((now.getTime() - new Date(last.timestampUTC).getTime()) / (1000 * 60)));
+      const prev = history[history.length - 1];
+      const prevTime = new Date(prev.timestampUTC);
+      const diffMs = now.getTime() - prevTime.getTime();
+      elapsedMinutes = Math.max(1, Math.round(diffMs / 60000));
+
+      deltaViews = Math.max(0, currentTotalViews - prev.totalViews);
       viewsPerHourRate = Math.round((deltaViews / elapsedMinutes) * 60);
 
-      // Track individual video deltas
-      if (last.topVideos && Array.isArray(last.topVideos)) {
-        const lastMap = new Map(last.topVideos.map((v) => [v.id, v.views]));
+      // Calculate track-level movers
+      if (prev.topVideos && Array.isArray(prev.topVideos)) {
+        const prevMap = new Map(prev.topVideos.map((v) => [v.id, v.views]));
         topMovers = videoSnapshots
           .map((v) => {
-            const prevViews = lastMap.get(v.id) || v.views;
+            const prevViews = prevMap.get(v.id) || v.views;
             return {
               id: v.id,
               title: v.title,
@@ -155,7 +207,7 @@ async function recordSnapshot() {
     };
 
     history.push(snapshot);
-    if (history.length > 200) history = history.slice(-200); // keep last 200 snapshots (~4-7 days)
+    if (history.length > 200) history = history.slice(-200);
 
     fs.writeFileSync(SNAPSHOT_PATH, JSON.stringify(history, null, 2));
 
@@ -171,6 +223,18 @@ async function recordSnapshot() {
       });
     }
     console.log("==================================================");
+
+    // If velocity surge (viewsPerHourRate >= 40 v/hr), send Telegram alert!
+    if (viewsPerHourRate >= 40) {
+      const topMoverStr = topMovers[0] ? `${topMovers[0].title.slice(0, 35)} (+${topMovers[0].delta} views)` : "Catalog circulation surge";
+      await sendTelegramAlert(`⚡ *SUPASONIC BEATS • VELOCITY PEAK SURGE!* 🎧🔥\n\nRate: \`${viewsPerHourRate} views/hour\` (${peakLabel})\nTotal Views: \`${currentTotalViews.toLocaleString()}\`\nTop Mover: *${topMoverStr}*\n\n👉 Live Radar: https://supasonicbeats.vercel.app`);
+    }
+
+    // Check if Bhar Le Tu crossed 1,000 views
+    const bharLeTu = videoSnapshots.find((v) => v.id === "lQl3dRGivOI");
+    if (bharLeTu && bharLeTu.views >= 1000) {
+      await sendTelegramAlert(`👑 *BOSS BATTLE WON! BHAR LE TU HIT 1,000 VIEWS!* 🏆\n\nBhar Le Tu is now Supasonic Beats' 5th Official Boss Track!\nTarget for Level 3 Boss Quests unlocked.\n👉 Check App: https://supasonicbeats.vercel.app`);
+    }
   } catch (error) {
     console.error("Hourly tracker error:", error.message);
   }
@@ -180,7 +244,7 @@ async function recordSnapshot() {
 const isWatch = process.argv.includes("--watch");
 
 if (isWatch) {
-  console.log("🚀 Starting Supasonic Beats Hourly Tracker Daemon (Every 30 Minutes)...");
+  console.log("🚀 Starting Supasonic Beats Hourly Tracker Daemon with Telegram Alerts...");
   recordSnapshot();
   setInterval(recordSnapshot, 30 * 60 * 1000); // every 30 mins
 } else {
