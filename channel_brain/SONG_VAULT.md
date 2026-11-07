@@ -92,3 +92,17 @@ This document records every track produced, the creative Suno / sound prompts us
   - Afro House Hits 2026 (`PLGsy_WOUS550`)
   - Late Night Deep House Drive (`PLC0E0nc0ygp4`)
 - **Metadata Title:** `JAADU | Chill Afro House • Deep House Remix 2026 | Supasonic Beats [124 BPM]`
+
+### 14. SCENE (Suriya x Sushin Shyam Inspired — Uploaded)
+- **Video ID:** `Tm-B06J5IRk` | **Status:** Private (Launch Ready)
+- **Duration:** 03:21 (201.15s) | **BPM:** 124 BPM
+- **First Drop:** 00:41 (Heavy 124 BPM Afro House Drop) | **Second Drop:** 02:09 (High-Energy Tribal Sub-Bass Drop)
+- **Loudness:** -12.2 LUFS | **True Peak:** +0.2 dBFS | **Dynamic Range (LRA):** 8.1 LU
+- **Audio Master:** `/home/shunan/scene_master_clean.wav` (Surgery: Cut front 12.35s teaser/false starts, cut tail after 213.50s, 500ms smooth fade-out)
+- **Visuals & Thumbnail:** High-contrast 4K nightclub aesthetic featuring Suriya (curly hair, beard, charismatic smile, maroon tee) with bold yellow 3D distressed text `SCENE` + `AFRO HOUSE X CLUB BANGERS` badge.
+- **Style:** Afro House x Club Bangers • South Street Swagger meets Modern Club Mix
+- **Target Audience:** *SCENE* movie lovers (Suriya, Sushin Shyam, Jithu Madhavan), Afro House & Indian Deep House listeners.
+- **Playlists Assigned:**
+  - Afro House Hits 2026 (`PLGsy_WOUS550`)
+  - Late Night Deep House Drive (`PLC0E0nc0ygp4`)
+- **Metadata Title:** `SCENE | Afro House x Club Bangers • Suriya • Sushin Shyam Vibe | Supasonic Beats [124 BPM]`
