@@ -78,3 +78,17 @@ This document records every track produced, the creative Suno / sound prompts us
 - **Audio Master:** `/home/shunan/sajnaa_master.wav`
 - **Suno Prompt Formula:**
   > *High-energy Bollywood Afro House 124 BPM, seductive emotional male-female duet vocals, instant hypnotic hook, punchy kick, warm rolling analog 808 sub-bass, afro shakers, modern club production, euphoric dancefloor climax.*
+
+### 13. JAADU (Master Cut — Uploaded)
+- **Video ID:** `6pqnbAnFkgk` | **Status:** Private (Launch Ready)
+- **Duration:** 03:23 | **BPM:** 124 BPM
+- **First Drop:** 00:59 (68.5% sub-bass energy) | **Second Drop:** 02:00 (72.7% sub-bass energy)
+- **Loudness:** -13.6 LUFS | **Peak:** 0.0 dBFS | **True Dynamic Range:** Clean 124 BPM Afro bounce
+- **Audio Master:** `/home/shunan/jaadu_version1_cropped_8s.wav` (Surgery: Cropped initial 8.12s noisy teaser, 15ms micro fade-in)
+- **Vocals:** Aesthetic, soulful charismatic solo male vocalist (Zero AI-nasal artifacts, expressive Hindi delivery)
+- **Style:** Chill Afro House • Deep House Remix 2026 • Bollywood Late Night Car Bass
+- **Target Competitors:** Singularity Beats (`Jaadu` 616K), Dhun Music Vibes (`Saheba` 746K, `Aao Na` 1.4M)
+- **Playlists Assigned:**
+  - Afro House Hits 2026 (`PLGsy_WOUS550`)
+  - Late Night Deep House Drive (`PLC0E0nc0ygp4`)
+- **Metadata Title:** `JAADU | Chill Afro House • Deep House Remix 2026 | Supasonic Beats [124 BPM]`
