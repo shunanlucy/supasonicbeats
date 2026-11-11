@@ -8,24 +8,23 @@
 
 ---
 
-## 📈 Live Metrics Snapshot (Updated: 08 Nov 2026, 07:22 PM IST)
-- **Subscribers:** **81** *(Solid community foundation! 🚀)*
-- **Total Channel Views:** **33,309+**
-- **Total Tracks / Videos:** **70**
+## 📈 Live Metrics Snapshot (Updated: 11 Nov 2026, 07:50 AM IST)
+- **Subscribers:** **91** *(Just 9 subs away from the 100 Milestone! 🚀)*
+- **Total Channel Views:** **37,070+** *(+3,761 views explosive organic surge!)*
+- **Total Tracks / Videos:** **72**
 - **Key Milestones & Growth:**
-  - `DEEDAR DE`: **4,838 views** (All-time channel leader)
-  - `AAO NA`: **2,563 views**
-  - `RAAT BAKI`: **2,195 views** *(MASSIVE SURGE: Crossed 2K milestone today! +954 views in 48h! 🔥)*
-  - `IN THE NIGHT`: **1,769 views**
-  - `MAJBOOR (Duet Version)`: **1,400 views** *(Retention & watch-time champion)*
-  - `KALYANI`: **1,221 views**
-  - `BHAR LE TU`: **1,000 views**
-  - `DIL LAGA LIYA`: **1,000 views** *(1K+ Milestone)*
-  - `TU MIL JAAYE`: **779 views**
-  - `ZARA ZARA`: **745 views**
-  - `SAJNA` (`SYnlWSTJLqQ`): **663 views** *(HUGE SURGE: Tripled from 212 to 663 views today! 🚀)*
-  - `SCENE` (`Tm-B06J5IRk`): **PUBLIC** *(Published Sunday Prime Time 6:15 PM IST, indexing now)*
-  - `JAADU` (`6pqnbAnFkgk`): Master uploaded, metadata primed (03:23, 124 BPM, Private in vault)
+  - `DEEDAR DE`: **5,284 views** *(Crossed 5,000+ views milestone! 👑)*
+  - `RAAT BAKI`: **3,545 views** *(VIRAL EXPLOSION: Surged from 2,195 to 3,545! +1,350 views in 48h! Now #2 All-time hit! 🔥)*
+  - `AAO NA`: **2,629 views**
+  - `IN THE NIGHT`: **2,079 views** *(Crossed 2,000+ views milestone! 🏆)*
+  - `MAJBOOR (Duet Version)`: **1,467 views** *(Steady high-retention champion)*
+  - `KALYANI`: **1,239 views**
+  - `DIL LAGA LIYA`: **1,048 views**
+  - `BHAR LE TU`: **1,011 views**
+  - `SAJNA` (`SYnlWSTJLqQ`): **911 views** *(Just 89 views away from 1K Club! 🚀)*
+  - `MAHIYA` (`CvjFWuVTzGo`): **449 views** *(Published 09 Nov, strong early traction!)*
+  - `SCENE` (`Tm-B06J5IRk`): **441 views** *(Steady club engagement)*
+  - `JAADU` (`6pqnbAnFkgk`): **136 views** *(Published 10 Nov, indexing cleanly)*
 
 ---
 

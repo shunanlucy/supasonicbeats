@@ -2340,5 +2340,153 @@
         "likes": 8
       }
     ]
+  },
+  {
+    "timestampUTC": "2026-11-08T14:06:32.413Z",
+    "timestampIST": "2026-11-08T19:36:32.413+05:30",
+    "totalViews": 33309,
+    "subscribers": 82,
+    "totalVideos": 70,
+    "deltaViewsSinceLast": 4216,
+    "elapsedMinutes": 6130,
+    "viewsPerHourRate": 41,
+    "peakStatus": "MODERATE",
+    "peakLabel": "📈 MODERATE WARMUP (25-49 v/hr)",
+    "topMovers": [
+      {
+        "id": "u9kx5lpIoZs",
+        "title": "TU MIL JAAYE | Deep House x Club Bangers | King - Shah Rukh Khan | Afro House Remix [120 BPM]",
+        "currentViews": 779,
+        "delta": 528
+      },
+      {
+        "id": "h7sJw_li4F0",
+        "title": "MAJBOOR (Duet Version) | Chill Afro House • Deep House Remix 2026 | Supasonic Beats [122 BPM]",
+        "currentViews": 1400,
+        "delta": 388
+      },
+      {
+        "id": "o68amPUakwU",
+        "title": "DIL LAGA LIYA | Deep House Mix Bollywood Songs | Afro House Remix [124 BPM]",
+        "currentViews": 1007,
+        "delta": 142
+      },
+      {
+        "id": "nBKbQOTXR5A",
+        "title": "18 Minutes of Non-Stop Hindi Afro House Mix | Bollywood Deep House x Car Bass | Supasonic Beats",
+        "currentViews": 235,
+        "delta": 82
+      },
+      {
+        "id": "pgJIMI4Ihzw",
+        "title": "ZARA ZARA | Deep House x Hindi Deep Bass | GTA VI Inspired | Supasonic Beats [124 BPM]",
+        "currentViews": 752,
+        "delta": 76
+      },
+      {
+        "id": "fUa9G_l3VkM",
+        "title": "CHURA LIYA | Deep House x Club Bangers | Afro House | Supasonic Beats [124 BPM]",
+        "currentViews": 484,
+        "delta": 31
+      },
+      {
+        "id": "_-zIwkH1XuU",
+        "title": "AAO NA 🎧🔥 | Deep House Remix × Bass & Beats | Supasonic Beats #Shorts",
+        "currentViews": 74,
+        "delta": 8
+      }
+    ],
+    "topVideos": [
+      {
+        "id": "Tm-B06J5IRk",
+        "title": "SCENE | Afro House x Club Bangers • Suriya • Sushin Shyam Vibe | Supasonic Beats [124 BPM]",
+        "views": 1,
+        "likes": 1
+      },
+      {
+        "id": "K0YwE2CZns0",
+        "title": "This Afro House Drop Hits Different at 2 AM 🌙🚗 #Shorts #AfroHouse #Sajna #LateNightDrive",
+        "views": 7,
+        "likes": 0
+      },
+      {
+        "id": "SYnlWSTJLqQ",
+        "title": "SAJNA | Chill Afro House • Deep House Remix 2026 | Supasonic Beats [124 BPM]",
+        "views": 663,
+        "likes": 2
+      },
+      {
+        "id": "6pqnbAnFkgk",
+        "title": "JAADU | Chill Afro House • Deep House Remix 2026 | Supasonic Beats [124 BPM]",
+        "views": 0,
+        "likes": 0
+      },
+      {
+        "id": "cW84M99yJA4",
+        "title": "NAZREIN | Chill Afro House • Deep House Remix 2026 | Supasonic Beats [122 BPM]",
+        "views": 187,
+        "likes": 7
+      },
+      {
+        "id": "iXySpPM-wOc",
+        "title": "RAAT BAKI | Chill Afro House • Deep House Remix 2026 | Supasonic Beats [122 BPM]",
+        "views": 2223,
+        "likes": 15
+      },
+      {
+        "id": "u9kx5lpIoZs",
+        "title": "TU MIL JAAYE | Deep House x Club Bangers | King - Shah Rukh Khan | Afro House Remix [120 BPM]",
+        "views": 779,
+        "likes": 9
+      },
+      {
+        "id": "h7sJw_li4F0",
+        "title": "MAJBOOR (Duet Version) | Chill Afro House • Deep House Remix 2026 | Supasonic Beats [122 BPM]",
+        "views": 1400,
+        "likes": 8
+      },
+      {
+        "id": "nBKbQOTXR5A",
+        "title": "18 Minutes of Non-Stop Hindi Afro House Mix | Bollywood Deep House x Car Bass | Supasonic Beats",
+        "views": 235,
+        "likes": 1
+      },
+      {
+        "id": "pgJIMI4Ihzw",
+        "title": "ZARA ZARA | Deep House x Hindi Deep Bass | GTA VI Inspired | Supasonic Beats [124 BPM]",
+        "views": 752,
+        "likes": 6
+      },
+      {
+        "id": "o68amPUakwU",
+        "title": "DIL LAGA LIYA | Deep House Mix Bollywood Songs | Afro House Remix [124 BPM]",
+        "views": 1007,
+        "likes": 7
+      },
+      {
+        "id": "tkr8sk4CaAY",
+        "title": "OBSESSION 🤍 | Soulful Duet × Acoustic Pop | Supasonic Beats #Shorts",
+        "views": 0,
+        "likes": 0
+      },
+      {
+        "id": "fUa9G_l3VkM",
+        "title": "CHURA LIYA | Deep House x Club Bangers | Afro House | Supasonic Beats [124 BPM]",
+        "views": 484,
+        "likes": 5
+      },
+      {
+        "id": "_-zIwkH1XuU",
+        "title": "AAO NA 🎧🔥 | Deep House Remix × Bass & Beats | Supasonic Beats #Shorts",
+        "views": 74,
+        "likes": 0
+      },
+      {
+        "id": "efzaRuhZAeU",
+        "title": "RAAT MERI 💃🔥 | Hindi Afro House × Dance Pop | Supasonic Beats #Shortsp",
+        "views": 141,
+        "likes": 0
+      }
+    ]
   }
 ]
