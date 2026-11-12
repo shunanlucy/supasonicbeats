@@ -8,25 +8,26 @@
 
 ---
 
-## 📈 Live Metrics Snapshot (Updated: 12 Nov 2026, 03:30 PM IST)
-- **Subscribers:** **93** *(Just 7 subs away from the 100 Century Milestone! 🚀)*
-- **Total Channel Views:** **39,016+** *(Crossed 39,000 views! +1,946 views added in 24h!)*
-- **Total Catalog Videos:** **73** (Public)
+## 📈 Live Metrics Snapshot (Updated: 12 Nov 2026, 11:30 PM IST)
+- **Subscribers:** **94** *(Just 6 subs away from the 100 Century Milestone! 🚀)*
+- **Total Channel Views:** **39,417+** *(+401 views in the last 8 hours alone! Just 583 away from 40K! 🔥)*
+- **Total Catalog Videos:** **74** (Public)
 - **Key Milestones & Growth:**
   - `DEEDAR DE`: **5,365 views** *(All-time channel king! 👑)*
-  - `RAAT BAKI`: **3,589 views** *(Solid #2 all-time track! 🔥)*
+  - `RAAT BAKI`: **3,599 views** *(Almost 3.6K, solid #2 all-time hit! 🔥)*
   - `AAO NA`: **2,652 views**
   - `IN THE NIGHT`: **2,085 views**
-  - `MAJBOOR (Duet Version)`: **1,484 views**
+  - `MAJBOOR (Duet Version)`: **1,494 views** *(Approaching 1.5K)*
   - `KALYANI`: **1,241 views**
   - `DIL LAGA LIYA`: **1,082 views**
   - `BHAR LE TU`: **1,012 views**
-  - `SAJNA` (`SYnlWSTJLqQ`): **949 views** *(Just 51 views away from the 1K Club! 🚀)*
-  - `JAADU` (`6pqnbAnFkgk`): **699 views** *(MASSIVE SURGE: +563 views in 24h! From 136 to 699! ⚡)*
-  - `SCENE` (`Tm-B06J5IRk`): **502 views** *(Crossed 500 milestone!)*
-  - `MAHIYA` (`CvjFWuVTzGo`): **493 views**
-  - `NAZREIN` (`cW84M99yJA4`): **346 views**
-  - `DILBAR` (`TKQLLuDHwCo`): **156 views** *(Published 11 Nov, clean early accumulation! 🆕)*
+  - `SAJNA` (`SYnlWSTJLqQ`): **959 views** *(Just 41 views away from the 1K Club! 🚀)*
+  - `JAADU` (`6pqnbAnFkgk`): **804 views** *(MASSIVE VELOCITY: Jumped to 804 views, up from 136 yesterday morning! ⚡)*
+  - `MAHIYA` (`CvjFWuVTzGo`): **554 views** *(Crossed 500 milestone!)*
+  - `SCENE` (`Tm-B06J5IRk`): **520 views** *(Solid club engagement)*
+  - `NAZREIN` (`cW84M99yJA4`): **360 views**
+  - `DILBAR` (`TKQLLuDHwCo`): **318 views** *(More than doubled in 8 hours! 📈)*
+  - `SUNO NA` (`Bab-NbmO3_E`): **Fresh Release!** *(Published 12 Nov, 08:19 PM IST, 22 SEO tags, 124 BPM Club Banger 🆕)*
 
 ---
 

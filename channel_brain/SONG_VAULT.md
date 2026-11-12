@@ -12,9 +12,9 @@ This document records every track produced, the creative Suno / sound prompts us
 - **Why It Blew Up:** Iconic Bollywood nostalgic hook ("Deedar De"), high-energy drop, hypnotic tribal groove that fits dance club playlists. All-time channel king! 👑
 
 ### 2. RAAT BAKI
-- **Video ID:** `iXySpPM-wOc` | **Views:** 3,589 | **Status:** Public
+- **Video ID:** `iXySpPM-wOc` | **Views:** 3,599 | **Status:** Public
 - **BPM:** 122 BPM | **Style:** Chill Afro House • Deep House Remix 2026
-- **Why It Blew Up:** Massive viral surge (+1,350+ views in 72 hours!). Passed AAO NA to become the #2 all-time track on the channel. Nostalgic Hindi melody blended with hypnotic modern Afro club swing. 🔥
+- **Why It Blew Up:** Massive viral surge (+1,400+ views in 72 hours!). Passed AAO NA to become the #2 all-time track on the channel. Nostalgic Hindi melody blended with hypnotic modern Afro club swing. 🔥
 
 ### 3. AAO NA
 - **Video ID:** `UjthtKkgwWU` | **Views:** 2,652 | **Status:** Public
@@ -31,7 +31,7 @@ This document records every track produced, the creative Suno / sound prompts us
 ## 🔥 Tier 2: 1K+ Organic Club Hits (1,000 – 2,000 Views)
 
 ### 5. MAJBOOR (Duet Version)
-- **Video ID:** `h7sJw_li4F0` | **Views:** 1,484 | **Status:** Public
+- **Video ID:** `h7sJw_li4F0` | **Views:** 1,494 | **Status:** Public
 - **BPM:** 122 BPM | **Key:** Minor | **Drop Timing:** 26.0s
 - **Loudness:** -13.8 LUFS | **Sub-Bass Energy:** 52.5% | **LRA:** 7.6 LU
 - **Master Audio:** `/home/shunan/majboor.wav`
@@ -57,42 +57,50 @@ This document records every track produced, the creative Suno / sound prompts us
 - **Video ID:** `1v5PsqhH95k` | **Views:** 992 *(Just 8 views away from 1K!)* | **BPM:** 122 BPM
 
 ### 10. SAJNA
-- **Video ID:** `SYnlWSTJLqQ` | **Status:** Public | **Views:** 949 *(Surged from 212 ➔ 663 ➔ 911 ➔ 949! Just 51 views away from 1K club! 🚀)*
+- **Video ID:** `SYnlWSTJLqQ` | **Status:** Public | **Views:** 959 *(Surged from 212 ➔ 663 ➔ 911 ➔ 949 ➔ 959! Just 41 views away from 1K club! 🚀)*
 - **Duration:** 03:46 | **BPM:** 124.2 BPM
 - **Drop Timing:** **22.5 sec** (Cropped initial 24s intro for instant hook)
 - **Loudness:** **-14.4 LUFS** | **Peak:** +0.1 dBFS | **RMS Drop:** -14.5 dBFS
 
 ### 11. TU MIL JAAYE (King x SRK Afro Mix)
-- **Video ID:** `u9kx5lpIoZs` | **Views:** 839 | **BPM:** 120 BPM
+- **Video ID:** `u9kx5lpIoZs` | **Views:** 844 | **BPM:** 120 BPM
 
 ### 12. JAADU
 - **Video ID:** `6pqnbAnFkgk` | **Status:** Public *(Published 10 Nov 2026)*
-- **Views:** **699** *(MASSIVE VELOCITY: Jumped from 136 to 699 in 24 hours! +563 views! ⚡)*
+- **Views:** **804** *(MASSIVE VELOCITY: Jumped to 804 views, up from 136 yesterday morning! ⚡)*
 - **Duration:** 03:23 | **BPM:** 124 BPM
 - **Style:** Chill Afro House • Deep House Remix 2026 • Bollywood Late Night Car Bass
 
-### 13. SCENE (Suriya x Sushin Shyam Inspired)
+### 13. MAHIYA
+- **Video ID:** `CvjFWuVTzGo` | **Status:** Public *(Published 09 Nov 2026)*
+- **Views:** **554** *(Crossed 500 milestone!)* | **BPM:** 100 BPM
+- **Style:** Best Hindi Beats Songs For Dance • Deep Bass Boosted Remix 2026
+
+### 14. SCENE (Suriya x Sushin Shyam Inspired)
 - **Video ID:** `Tm-B06J5IRk` | **Status:** Public *(Published 08 Nov 2026)*
-- **Views:** **502** *(Crossed 500 milestone!)* | **BPM:** 124 BPM
+- **Views:** **520** *(Crossed 500 milestone!)* | **BPM:** 124 BPM
 - **Style:** Afro House x Club Bangers • South Street Swagger meets Modern Club Mix
 
 ---
 
 ## 🚀 Tier 4: Latest Releases & Pipeline
 
-### 14. MAHIYA
-- **Video ID:** `CvjFWuVTzGo` | **Status:** Public *(Published 09 Nov 2026)*
-- **Views:** 493 | **Likes:** 5 | **BPM:** 100 BPM
-- **Style:** Best Hindi Beats Songs For Dance • Deep Bass Boosted Remix 2026
-
 ### 15. NAZREIN
 - **Video ID:** `cW84M99yJA4` | **Status:** Public *(Published 06 Nov 2026)*
-- **Views:** 346 | **BPM:** 121 BPM
+- **Views:** 360 | **BPM:** 121 BPM
 
-### 16. DILBAR (NEWEST RELEASE)
+### 16. DILBAR
 - **Video ID:** `TKQLLuDHwCo` | **Status:** Public *(Published 11 Nov 2026)*
-- **Views:** **156** | **Likes:** 1 | **BPM:** 124 BPM
+- **Views:** **318** *(More than doubled in 8 hours!)* | **Likes:** 2 | **BPM:** 124 BPM
 - **Duration:** 03:22
-- **Audio Master:** Solo aesthetic Indian female vocals, modern 124 BPM Afro House swing, deep 45Hz rolling 808 sub-bass, zero robotic autotune.
-- **Thumbnail:** Bold Crimson Velvet Noir with golden-yellow high-contrast lighting inspired by Dhun Music Vibes' `Madhosh`.
+- **Audio Master:** Solo aesthetic Indian female vocals, modern 124 BPM Afro House swing, deep 45Hz rolling 808 sub-bass.
+- **Thumbnail:** Bold Crimson Velvet Noir with golden-yellow high-contrast lighting.
 - **Title:** `DILBAR | Deep House Mix • Indian Afro House 2026 [124 BPM]`
+
+### 17. SUNO NA (FRESH NEW RELEASE)
+- **Video ID:** `Bab-NbmO3_E` | **Status:** Public *(Published 12 Nov 2026, 08:19 PM IST)*
+- **Views:** Freshly Indexing | **BPM:** 124 BPM
+- **Duration:** 03:10
+- **Audio Style:** High-Energy Nightclub Tech House x Afro Tech Club Banger • Naal Nachna & Shararat Playful Attitude
+- **SEO Packaging:** 22 Optimized Tags targeting Singularity Beats (2.3M) and Dhun Music Vibes (288K) recommendation overlap
+- **Title:** `SUNO NA | Afro House x Club Bangers | Deep House | Supasonic Beats [124 BPM]`
