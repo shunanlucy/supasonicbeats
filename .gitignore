@@ -48,3 +48,5 @@ fonts/*.jpg
 fonts/*.png
 !channel_brain/**
 competitor_thumbs/
+.vercel
+.env*
