@@ -20,8 +20,11 @@ build
 # Local env files & tokens
 .env*.local
 .env
-data/tokens.json
+*tokens.json
+*credentials.json
 client_secret*.json
+**/tokens.json
+**/credentials.json
 
 # TypeScript cache
 *.tsbuildinfo
@@ -30,3 +33,18 @@ next-env.d.ts
 # Binaries & logs
 bin/
 *.log
+__pycache__/
+*.pyc
+tools/youtube-marketing-skills/
+scripts/reauth_server.py
+
+# Root temporary audio, crop & test image binaries
+/*.wav
+/*.mp3
+/*.png
+/*.jpg
+/*.txt
+fonts/*.jpg
+fonts/*.png
+!channel_brain/**
+competitor_thumbs/

@@ -8,26 +8,30 @@
 
 ---
 
-## 📈 Live Metrics Snapshot (Updated: 12 Nov 2026, 11:30 PM IST)
-- **Subscribers:** **94** *(Just 6 subs away from the 100 Century Milestone! 🚀)*
-- **Total Channel Views:** **39,417+** *(+401 views in the last 8 hours alone! Just 583 away from 40K! 🔥)*
-- **Total Catalog Videos:** **74** (Public)
+## 📈 Live Metrics Snapshot (Updated: 18 Nov 2026, 09:55 AM IST)
+- **Subscribers:** **114** *(🚀 EXPLOSIVE SURGE: +9 organic subscribers in 24 hours!)*
+- **Total Channel Views:** **46,000+** *(Channel growth in high gear! 🔥)*
+- **Total Catalog Videos:** **78** (Public) + **20** Shorts
 - **Key Milestones & Growth:**
-  - `DEEDAR DE`: **5,365 views** *(All-time channel king! 👑)*
-  - `RAAT BAKI`: **3,599 views** *(Almost 3.6K, solid #2 all-time hit! 🔥)*
-  - `AAO NA`: **2,652 views**
+  - `DEEDAR DE` (`BuvPDZawk9M`): **5,700 views** *(All-time channel king! 👑)*
+  - `RAAT BAKI` (`iXySpPM-wOc`): **3,717 views** *(Solid #2 all-time hit! 🔥)*
+  - `MADHOSH` (`ZhYEBZDrTcc`): **1,970 views** & 15+ likes *(💥 EXPLODING HIT: Doubled views overnight from 1,013 to 1,970! Cruising past 2K!)*
+  - `AAO NA` (`nK_eWfB8Y_E`): **2,682 views**
   - `IN THE NIGHT`: **2,085 views**
-  - `MAJBOOR (Duet Version)`: **1,494 views** *(Approaching 1.5K)*
-  - `KALYANI`: **1,241 views**
-  - `DIL LAGA LIYA`: **1,082 views**
+  - `MAJBOOR (Duet Version)` (`h7sJw_li4F0`): **1,558 views**
+  - `JAADU` (`6pqnbAnFkgk`): **1,357 views**
+  - `KALYANI`: **1,250 views**
+  - `MAHIYA` (`CvjFWuVTzGo`): **1,162 views**
+  - `DIL LAGA LIYA`: **1,144 views**
+  - `SAJNA` (`SYnlWSTJLqQ`): **1,139 views**
   - `BHAR LE TU`: **1,012 views**
-  - `SAJNA` (`SYnlWSTJLqQ`): **959 views** *(Just 41 views away from the 1K Club! 🚀)*
-  - `JAADU` (`6pqnbAnFkgk`): **804 views** *(MASSIVE VELOCITY: Jumped to 804 views, up from 136 yesterday morning! ⚡)*
-  - `MAHIYA` (`CvjFWuVTzGo`): **554 views** *(Crossed 500 milestone!)*
-  - `SCENE` (`Tm-B06J5IRk`): **520 views** *(Solid club engagement)*
-  - `NAZREIN` (`cW84M99yJA4`): **360 views**
-  - `DILBAR` (`TKQLLuDHwCo`): **318 views** *(More than doubled in 8 hours! 📈)*
-  - `SUNO NA` (`Bab-NbmO3_E`): **Fresh Release!** *(Published 12 Nov, 08:19 PM IST, 22 SEO tags, 124 BPM Club Banger 🆕)*
+  - `TABAAHI` (`Blo8rGHLS-4`): **676 views** *(🔥 Cohort 2 Browse Surge: +404 views in 24h, pacing towards 1K!)*
+  - `SCENE` (`Tm-B06J5IRk`): **707 views**
+  - `KABHI SHAAM DHALE` (`KKsSqxcl0oM`): **607 views**
+  - `DILBAR` (`TKQLLuDHwCo`): **553 views**
+  - `SUNO NA` (`Bab-NbmO3_E`): **443 views**
+  - `NAZREIN` (`cW84M99yJA4`): **421 views**
+  - `LABON KO` (`_pwySZOdvfw`): **392 views**
 
 ---
 

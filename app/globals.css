@@ -3,46 +3,145 @@
 @tailwind utilities;
 
 :root {
-  --background: #090a0f;
-  --foreground: #f1f5f9;
+  --background: #0f0f0f;
+  --foreground: #f1f1f1;
+  --yt-red: #ff0000;
+  --yt-red-hover: #cc0000;
+  --yt-surface: #181818;
+  --yt-card: #212121;
+  --yt-card-hover: #2a2a2a;
+  --yt-elevated: #282828;
+  --yt-border: #303030;
+  --yt-text-primary: #f1f1f1;
+  --yt-text-secondary: #aaaaaa;
+  --yt-text-tertiary: #717171;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   overflow-x: hidden;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Custom glowing effects */
-.glow-cyan {
-  box-shadow: 0 0 25px -5px rgba(0, 242, 254, 0.25);
+/* YouTube Theme Utility Classes */
+.yt-bg {
+  background-color: #0f0f0f;
 }
 
-.glow-purple {
-  box-shadow: 0 0 25px -5px rgba(157, 78, 221, 0.25);
+.yt-surface {
+  background-color: #181818;
 }
 
-.glow-pink {
-  box-shadow: 0 0 25px -5px rgba(255, 0, 127, 0.25);
+.yt-card {
+  background-color: #212121;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.glow-emerald {
-  box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.25);
+.yt-card:hover {
+  background-color: #262626;
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Custom scrollbars */
+.yt-elevated {
+  background-color: #282828;
+}
+
+.yt-border {
+  border-color: #303030;
+}
+
+/* YouTube Red Accent Glows */
+.yt-red-glow {
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.35);
+}
+
+.yt-red-badge {
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
+/* YouTube Style Chips / Pills */
+.yt-chip {
+  background-color: #272727;
+  color: #f1f1f1;
+  transition: all 0.15s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.yt-chip:hover {
+  background-color: #3f3f3f;
+  color: #ffffff;
+}
+
+.yt-chip-active {
+  background-color: #f1f1f1;
+  color: #0f0f0f;
+  font-weight: 700;
+}
+
+/* YouTube Subscribe Buttons */
+.yt-subscribe-btn {
+  background-color: #ff0000;
+  color: #ffffff;
+  font-weight: 700;
+  transition: all 0.15s ease-in-out;
+}
+
+.yt-subscribe-btn:hover {
+  background-color: #cc0000;
+}
+
+.yt-subscribe-btn-white {
+  background-color: #f1f1f1;
+  color: #0f0f0f;
+  font-weight: 700;
+  transition: all 0.15s ease-in-out;
+}
+
+.yt-subscribe-btn-white:hover {
+  background-color: #d9d9d9;
+}
+
+/* Glassmorphism hybrid with YouTube Dark tones */
+.ios-glass {
+  background: rgba(24, 24, 24, 0.85);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+.ios-glass-card {
+  background: #212121;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.ios-glass-pill {
+  background: #272727;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ios-glass-red {
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.25) 0%, rgba(185, 28, 28, 0.12) 100%);
+  border: 1px solid rgba(255, 0, 0, 0.45);
+}
+
+/* YouTube Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0d1117;
+  background: #0f0f0f;
 }
 ::-webkit-scrollbar-thumb {
-  background: #21262d;
-  border-radius: 4px;
+  background: #3f3f3f;
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #30363d;
+  background: #717171;
 }

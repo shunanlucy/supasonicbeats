@@ -7,12 +7,12 @@ This document records every track produced, the creative Suno / sound prompts us
 ## 🏆 Tier 1: Mega Hits (> 2,000 Views)
 
 ### 1. DEEDAR DE
-- **Video ID:** `BuvPDZawk9M` | **Views:** 5,365 | **Status:** Public
+- **Video ID:** `BuvPDZawk9M` | **Views:** 5,653 | **Status:** Public
 - **BPM:** 124 BPM | **Style:** Afro Progressive x Deep House Club Bangers
 - **Why It Blew Up:** Iconic Bollywood nostalgic hook ("Deedar De"), high-energy drop, hypnotic tribal groove that fits dance club playlists. All-time channel king! 👑
 
 ### 2. RAAT BAKI
-- **Video ID:** `iXySpPM-wOc` | **Views:** 3,599 | **Status:** Public
+- **Video ID:** `iXySpPM-wOc` | **Views:** 3,674 | **Status:** Public
 - **BPM:** 122 BPM | **Style:** Chill Afro House • Deep House Remix 2026
 - **Why It Blew Up:** Massive viral surge (+1,400+ views in 72 hours!). Passed AAO NA to become the #2 all-time track on the channel. Nostalgic Hindi melody blended with hypnotic modern Afro club swing. 🔥
 
@@ -49,34 +49,53 @@ This document records every track produced, the creative Suno / sound prompts us
 - **Video ID:** `lQl3dRGivOI` | **Views:** 1,012 | **Status:** Public
 - **BPM:** 124 BPM | **Style:** Hindi Deep House Remix x Bass & Beats Club Banger
 
----
+### 9. MADHOSH (💥 MASSIVE SURGE: NEARLY 2,000 VIEWS!)
+- **Video ID:** `ZhYEBZDrTcc` | **Status:** Public *(Published 15 Nov 2026)*
+- **Views:** **1,970** *(🔥 DOUBLED OVERNIGHT: Smashed 1,970 views, +957 in 24 hours! On the doorstep of 2K!)* | **Likes:** 15+ | **BPM:** 124 BPM
+- **Duration:** 03:13
+- **Audio Master:** Natural breathy female playback lead (Version 1 Master), +3.2dB 50Hz rolling sub-bass, 4x4 club banger drive, -13.9 LUFS YouTube standard.
+- **Why It Blew Up:** Exact winning Deedar De formula + #1 trending keyword in Indian Afro House + 8% CTR.
 
-## ⚡ Tier 3: Rising Performers (500 – 1,000 Views)
-
-### 9. Kaisa Nasha
-- **Video ID:** `1v5PsqhH95k` | **Views:** 992 *(Just 8 views away from 1K!)* | **BPM:** 122 BPM
-
-### 10. SAJNA
-- **Video ID:** `SYnlWSTJLqQ` | **Status:** Public | **Views:** 959 *(Surged from 212 ➔ 663 ➔ 911 ➔ 949 ➔ 959! Just 41 views away from 1K club! 🚀)*
-- **Duration:** 03:46 | **BPM:** 124.2 BPM
-- **Drop Timing:** **22.5 sec** (Cropped initial 24s intro for instant hook)
-- **Loudness:** **-14.4 LUFS** | **Peak:** +0.1 dBFS | **RMS Drop:** -14.5 dBFS
-
-### 11. TU MIL JAAYE (King x SRK Afro Mix)
-- **Video ID:** `u9kx5lpIoZs` | **Views:** 844 | **BPM:** 120 BPM
-
-### 12. JAADU
+### 10. JAADU
 - **Video ID:** `6pqnbAnFkgk` | **Status:** Public *(Published 10 Nov 2026)*
-- **Views:** **804** *(MASSIVE VELOCITY: Jumped to 804 views, up from 136 yesterday morning! ⚡)*
+- **Views:** **1,357** *(Steady momentum: 1,357 views! ⚡)*
 - **Duration:** 03:23 | **BPM:** 124 BPM
 - **Style:** Chill Afro House • Deep House Remix 2026 • Bollywood Late Night Car Bass
 
-### 13. MAHIYA
+### 11. MAHIYA
 - **Video ID:** `CvjFWuVTzGo` | **Status:** Public *(Published 09 Nov 2026)*
-- **Views:** **554** *(Crossed 500 milestone!)* | **BPM:** 100 BPM
+- **Views:** **1,162** *(Cruising past 1.1K!)* | **BPM:** 100 BPM
 - **Style:** Best Hindi Beats Songs For Dance • Deep Bass Boosted Remix 2026
 
-### 14. SCENE (Suriya x Sushin Shyam Inspired)
+### 12. SAJNA
+- **Video ID:** `SYnlWSTJLqQ` | **Status:** Public | **Views:** **1,139** *(Crossed 1.1K!)* | **BPM:** 124.2 BPM
+
+---
+
+## ⚡ Tier 3: Rising Performers & Active Breakouts (200 – 1,000 Views)
+
+### 13. TABAAHI (🔥 SECONDARY BROWSE BREAKOUT: 676 VIEWS!)
+- **Video ID:** `Blo8rGHLS-4` | **Status:** Public *(Published 16 Nov 2026)*
+- **Views:** **676** *(Surged from 272 to 676 views, +404 overnight! Trajectory pacing towards 1K!)* | **BPM:** 124 BPM
+- **Duration:** 03:19
+- **Audio Master:** Version 1 Master (`tabaahi_version1_master.wav`), 124.0 BPM 4x4 club kick, Honey Singh melodic lead + Badshah solo baritone rap drop + sweet female vocal bridge.
+- **Why It's Trending:** Star-power artist synergy ("Honey Singh x Badshah Vibe"), high-CTR VIP nightclub visual, explosive 17s drop.
+
+### 14. HAAL-E-DIL (🎧 MASTERED & READY FOR LAUNCH)
+- **Status:** Studio Master Ready (Audio: `/home/shunan/haledil_version1_master.wav`, 03:27 | 124 BPM)
+- **Style:** Emraan Hashmi Murder 2 Nostalgia • 124 BPM Deep Afro House Club Banger
+- **Thumbnail:** 2 AM Luxury Car Passenger Seat POV Formula (The 1.2M - 1.4M view formula).
+
+### 13. Kaisa Nasha
+- **Video ID:** `1v5PsqhH95k` | **Views:** 992 *(Just 8 views away from 1K!)* | **BPM:** 122 BPM
+
+### 14. SAJNA
+- **Video ID:** `SYnlWSTJLqQ` | **Status:** Public | **Views:** 1,070 *(Crossed 1K!)* | **BPM:** 124.2 BPM
+
+### 15. TU MIL JAAYE (King x SRK Afro Mix)
+- **Video ID:** `u9kx5lpIoZs` | **Views:** 844 | **BPM:** 120 BPM
+
+### 15. SCENE (Suriya x Sushin Shyam Inspired)
 - **Video ID:** `Tm-B06J5IRk` | **Status:** Public *(Published 08 Nov 2026)*
 - **Views:** **520** *(Crossed 500 milestone!)* | **BPM:** 124 BPM
 - **Style:** Afro House x Club Bangers • South Street Swagger meets Modern Club Mix
@@ -104,3 +123,18 @@ This document records every track produced, the creative Suno / sound prompts us
 - **Audio Style:** High-Energy Nightclub Tech House x Afro Tech Club Banger • Naal Nachna & Shararat Playful Attitude
 - **SEO Packaging:** 22 Optimized Tags targeting Singularity Beats (2.3M) and Dhun Music Vibes (288K) recommendation overlap
 - **Title:** `SUNO NA | Afro House x Club Bangers | Deep House | Supasonic Beats [124 BPM]`
+
+### 18. KAALI RAAT
+- **Video ID:** `lcqS1aTRGDk` | **Status:** Public *(Published 18 Nov 2026)*
+- **Views:** **573+** | **BPM:** 125.5 BPM
+- **Duration:** 03:56
+- **Style:** Indian Afro House x Raga Techno x Deep House Club Banger
+- **Title:** `KAALI RAAT | Indian Afro House x Raga Techno x Deep House | Supasonic Beats [125 BPM]`
+
+### 19. NASHA (Extended Club Mix)
+- **Video ID:** `x9WfEe6WG5E` | **Status:** Private *(Uploaded 19 Nov 2026, 05:52 PM IST)*
+- **Duration:** 06:48 (Part 1: 0:00–3:22 | Part 2: 3:22–6:48)
+- **BPM:** 125 BPM
+- **Style:** Indian Deep House x Club Bangers x Melodic Bass (Continuous 2-Part Mix)
+- **Title:** `NASHA (Extended Club Mix) | Indian Deep House x Club Bangers | Supasonic Beats [125 BPM]`
+- **SEO Targeting:** Singularity Beats (Khuleaam), Nomadic Beats (Nasha), Clover Beats (Kaali Bijli), FLIPMODE.
