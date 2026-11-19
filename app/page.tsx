@@ -23,6 +23,7 @@ import {
   FileText,
   Zap,
   BookOpen,
+  Bell,
 } from "lucide-react";
 import TopRecentVideosCarousel from "@/components/TopRecentVideosCarousel";
 import VideoFeed from "@/components/VideoFeed";
@@ -171,85 +172,178 @@ export default function ChannelWebsite() {
         </div>
       )}
 
-      {/* Main Content Area */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex-1 w-full space-y-6">
-        {/* TOP SECTION: Instead of static YouTube Channel Header, Top Recent 5 Videos Cinema Player with Side Carousel */}
-        <TopRecentVideosCarousel
-          onOpenSEO={(post) => setSelectedVideoForSEO(post)}
-          onOpenTip={(post) => setSelectedTipToRead(post)}
-        />
+      {/* Professional Sticky Top Navigation Bar (Sleek on Laptop & Mobile) */}
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Main Bar */}
+          <div className="flex items-center justify-between h-16 gap-3">
+            {/* Left: Brand Identity */}
+            <div className="flex items-center gap-3 flex-shrink-0">
+              <div className="w-9 h-9 rounded-full bg-[#ff0000] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                <Play className="w-4 h-4 fill-current translate-x-0.2" />
+              </div>
+              <div className="flex flex-col">
+                <div className="flex items-center gap-1.5">
+                  <span className="font-black text-gray-900 text-sm sm:text-base tracking-tight">
+                    SUPASONIC BEATS
+                  </span>
+                  <span className="text-[#065fd4] text-xs font-bold" title="Verified Artist">✓</span>
+                  <span className="text-[9px] px-1 py-0.2 bg-gray-100 text-gray-700 font-semibold rounded">IN</span>
+                </div>
+                <span className="text-[11px] text-gray-500 hidden sm:inline">
+                  Official Studio Hub • 124 BPM Hindi Afro House
+                </span>
+              </div>
+            </div>
 
-        {/* Clean Bright Category Navigation Tabs */}
-        <nav aria-label="Portal Navigation Tabs" className="bg-white p-2 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-between gap-3 overflow-x-auto no-scrollbar">
-          <div className="flex items-center gap-1.5 flex-wrap">
+            {/* Center (Desktop/Laptop): Segmented Professional Navigation Tabs */}
+            <nav aria-label="Desktop Navigation" className="hidden lg:flex items-center gap-1 bg-gray-100/80 p-1 rounded-xl border border-gray-200">
+              <button
+                onClick={() => setActiveTab("feed")}
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
+                  activeTab === "feed"
+                    ? "bg-white text-gray-900 shadow-sm border border-gray-200/60"
+                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-200/50"
+                }`}
+              >
+                <Music className={`w-3.5 h-3.5 ${activeTab === "feed" ? "text-[#ff0000]" : ""}`} />
+                <span>Beats Catalog</span>
+                <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-semibold ${
+                  activeTab === "feed" ? "bg-red-50 text-[#ff0000]" : "bg-gray-200 text-gray-600"
+                }`}>
+                  {posts.filter((p) => p.type === "release").length || 64}
+                </span>
+              </button>
+
+              <button
+                onClick={() => setActiveTab("tips")}
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
+                  activeTab === "tips"
+                    ? "bg-white text-gray-900 shadow-sm border border-gray-200/60"
+                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-200/50"
+                }`}
+              >
+                <BookOpen className={`w-3.5 h-3.5 ${activeTab === "tips" ? "text-[#ff0000]" : ""}`} />
+                <span>Producer Vault</span>
+              </button>
+
+              <button
+                onClick={() => setActiveTab("seo")}
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
+                  activeTab === "seo"
+                    ? "bg-white text-gray-900 shadow-sm border border-gray-200/60"
+                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-200/50"
+                }`}
+              >
+                <Sparkles className={`w-3.5 h-3.5 ${activeTab === "seo" ? "text-amber-500" : ""}`} />
+                <span>SEO Generator</span>
+              </button>
+
+              <button
+                onClick={() => setActiveTab("competitors")}
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
+                  activeTab === "competitors"
+                    ? "bg-white text-gray-900 shadow-sm border border-gray-200/60"
+                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-200/50"
+                }`}
+              >
+                <Trophy className={`w-3.5 h-3.5 ${activeTab === "competitors" ? "text-amber-500" : ""}`} />
+                <span>Leaderboard</span>
+              </button>
+            </nav>
+
+            {/* Right: Actions (Subscribe + Sync + Add Post) */}
+            <div className="flex items-center gap-2">
+              <a
+                href="https://www.youtube.com/@SupasonicBeatsOfficial?sub_confirmation=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:flex px-3.5 py-2 rounded-full bg-[#ff0000] hover:bg-[#cc0000] text-white font-bold text-xs items-center gap-1.5 shadow-sm active:scale-95 transition-all"
+              >
+                <Bell className="w-3.5 h-3.5 fill-current" />
+                <span>Subscribe ({channelInfo?.statistics?.subscriberCount || "114+"})</span>
+              </a>
+
+              <button
+                onClick={() => fetchFeedData(true)}
+                disabled={syncing}
+                className="p-2 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold transition-colors"
+                title="Sync Live Channel Data"
+              >
+                <RefreshCw className={`w-3.5 h-3.5 ${syncing ? "animate-spin text-[#ff0000]" : ""}`} />
+              </button>
+
+              <button
+                onClick={() => setIsNewPostModalOpen(true)}
+                className="px-3 sm:px-3.5 py-2 rounded-xl bg-gray-900 hover:bg-black text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-sm active:scale-95"
+              >
+                <PlusCircle className="w-3.5 h-3.5 text-[#ff0000]" />
+                <span className="hidden sm:inline">Add Post</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Secondary Bar: Horizontal Scrollable Category Tabs (Touch Friendly) */}
+          <nav aria-label="Mobile Navigation" className="flex lg:hidden items-center gap-1.5 py-2 overflow-x-auto no-scrollbar border-t border-gray-100">
             <button
               onClick={() => setActiveTab("feed")}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 flex-shrink-0 ${
                 activeTab === "feed"
                   ? "bg-[#ff0000] text-white shadow-sm"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
-              <Music className="w-3.5 h-3.5" />
-              <span>Full Video Catalog ({posts.filter((p) => p.type === "release").length || 78})</span>
+              <Music className="w-3 h-3" />
+              <span>Beats ({posts.filter((p) => p.type === "release").length || 64})</span>
             </button>
 
             <button
               onClick={() => setActiveTab("tips")}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 flex-shrink-0 ${
                 activeTab === "tips"
                   ? "bg-[#ff0000] text-white shadow-sm"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
-              <BookOpen className="w-3.5 h-3.5" />
-              <span>Producer Tips & Secrets</span>
+              <BookOpen className="w-3 h-3" />
+              <span>Producer Vault</span>
             </button>
 
             <button
               onClick={() => setActiveTab("seo")}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 flex-shrink-0 ${
                 activeTab === "seo"
                   ? "bg-[#ff0000] text-white shadow-sm"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>High SEO Sound Generator</span>
+              <Sparkles className="w-3 h-3" />
+              <span>SEO Generator</span>
             </button>
 
             <button
               onClick={() => setActiveTab("competitors")}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 flex-shrink-0 ${
                 activeTab === "competitors"
                   ? "bg-[#ff0000] text-white shadow-sm"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
-              <Trophy className="w-3.5 h-3.5" />
-              <span>Competitor Chart Rankings</span>
+              <Trophy className="w-3 h-3" />
+              <span>Leaderboard</span>
             </button>
-          </div>
+          </nav>
+        </div>
+      </header>
 
-          <div className="flex items-center gap-2 flex-shrink-0">
-            <button
-              onClick={() => fetchFeedData(true)}
-              disabled={syncing}
-              className="p-2 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold transition-colors"
-              title="Sync Live Channel Data"
-            >
-              <RefreshCw className={`w-3.5 h-3.5 ${syncing ? "animate-spin text-[#ff0000]" : ""}`} />
-            </button>
-
-            <button
-              onClick={() => setIsNewPostModalOpen(true)}
-              className="px-3.5 py-2 rounded-xl bg-gray-900 hover:bg-black text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-sm"
-            >
-              <PlusCircle className="w-3.5 h-3.5 text-[#ff0000]" />
-              <span className="hidden sm:inline">Add Post</span>
-            </button>
-          </div>
-        </nav>
+      {/* Main Content Area */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex-1 w-full space-y-6">
+        {/* TOP SECTION: Netflix / Prime Video Style Side-by-Side Horizontal Hero Carousel (Latest 5 Widescreen Videos) */}
+        <TopRecentVideosCarousel
+          onOpenSEO={(post) => setSelectedVideoForSEO(post)}
+          onOpenTip={(post) => setSelectedTipToRead(post)}
+          onPlayVideo={(post) => setSelectedVideoToPlay(post)}
+        />
 
         {/* Tab 1: Video Releases & Beat Downloads */}
         {activeTab === "feed" && (

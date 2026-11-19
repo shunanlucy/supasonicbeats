@@ -62,8 +62,8 @@ export default function GoogleStyleAdBanner({
       key: "G Minor",
       genre: "Deep House",
       views: 2682,
-      videoId: "nK_eWfB8Y_E",
-      posterUrl: "https://i.ytimg.com/vi/nK_eWfB8Y_E/hqdefault.jpg",
+      videoId: "UjthtKkgwWU",
+      posterUrl: "https://i.ytimg.com/vi/UjthtKkgwWU/hqdefault.jpg",
     },
     {
       id: "ad-madhosh",
