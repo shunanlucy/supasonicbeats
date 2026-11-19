@@ -399,10 +399,14 @@ export function getAllFeedPosts(): FeedPost[] {
     const title = v.title || "SUPASONIC BEATS TRACK";
 
     // STRICTLY FILTER OUT ANY SHORTS - ONLY 16:9 FULL VIDEOS LIKE YOUTUBE
+    const lowerTitle = title.toLowerCase();
     if (
-      title.toLowerCase().includes("#shorts") ||
-      title.toLowerCase().includes("#short") ||
-      title.toLowerCase().includes("shorts")
+      lowerTitle.includes("#shorts") ||
+      lowerTitle.includes("#short") ||
+      lowerTitle.includes("shorts") ||
+      lowerTitle.includes("teaser") ||
+      lowerTitle.includes("pov:") ||
+      lowerTitle.includes("wait for the drop")
     ) {
       return; // Skip shorts!
     }

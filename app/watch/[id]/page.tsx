@@ -79,44 +79,45 @@ export default function WatchPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const id = (params?.id as string) || "87ndOuq346I";
+  const idParam = params?.id as string;
   const fromShort = searchParams?.get("from");
 
   const [currentTrack, setCurrentTrack] = useState<WatchTrack | null>(null);
+  const [loading, setLoading] = useState(true);
   const [ourRecommendations, setOurRecommendations] = useState<WatchTrack[]>([]);
   const [competitorRecommendations, setCompetitorRecommendations] = useState<CompetitorRecommendation[]>([]);
-  const [loading, setLoading] = useState(true);
   const [copiedLink, setCopiedLink] = useState(false);
   const [copiedTags, setCopiedTags] = useState(false);
   const [liked, setLiked] = useState(false);
   const [likesCount, setLikesCount] = useState(0);
-  const [showFullDesc, setShowFullDesc] = useState(false);
 
   useEffect(() => {
+    if (!idParam) return;
+
     setLoading(true);
-    fetch(`/api/watch/${id}`)
+    fetch(`/api/watch/${idParam}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.success && data.track) {
           setCurrentTrack(data.track);
-          setLikesCount(data.track.likes || 420);
+          setLikesCount(data.track.likes || 480);
           setOurRecommendations(data.ourRecommendations || []);
           setCompetitorRecommendations(data.competitorRecommendations || []);
         }
       })
-      .catch((e) => console.warn("Failed to load watch track:", e))
+      .catch((e) => console.error("Error loading watch track:", e))
       .finally(() => setLoading(false));
-  }, [id]);
+  }, [idParam]);
 
   const handleDownload = (type: "mp3" | "wav" | "cover") => {
     if (!currentTrack) return;
     const link = document.createElement("a");
     if (type === "mp3") {
-      link.href = currentTrack.mp3DownloadUrl || "/audio/clover_clip.mp3";
+      link.href = currentTrack.mp3DownloadUrl || currentTrack.audioUrl || "/audio/clover_clip.mp3";
       link.download = `${currentTrack.title.replace(/[/\\?%*:|"<>]/g, "-")}_320kbps.mp3`;
     } else if (type === "wav") {
-      link.href = currentTrack.wavDownloadUrl || "/audio/clover_clip.mp3";
-      link.download = `${currentTrack.title.replace(/[/\\?%*:|"<>]/g, "-")}_Studio_Master.wav`;
+      link.href = currentTrack.wavDownloadUrl || currentTrack.audioUrl || "/audio/clover_clip.mp3";
+      link.download = `${currentTrack.title.replace(/[/\\?%*:|"<>]/g, "-")}_StudioMaster.wav`;
     } else if (type === "cover") {
       link.href = currentTrack.coverDownloadUrl || currentTrack.thumbnail;
       link.download = `${currentTrack.title.replace(/[/\\?%*:|"<>]/g, "-")}_Cover_4K.jpg`;
@@ -154,10 +155,10 @@ export default function WatchPage() {
 
   if (loading && !currentTrack) {
     return (
-      <div className="min-h-screen bg-[#0f0f0f] text-[#f1f1f1] flex flex-col items-center justify-center p-6">
-        <div className="w-10 h-10 rounded-full border-4 border-[#303030] border-t-[#ff0000] animate-spin" />
-        <p className="mt-4 text-xs font-semibold tracking-wider text-[#aaaaaa] uppercase">
-          Loading YouTube Cinema Player & Stems...
+      <div className="min-h-screen bg-[#f8f9fa] text-gray-800 flex flex-col items-center justify-center p-6">
+        <div className="w-10 h-10 rounded-full border-4 border-gray-200 border-t-[#ff0000] animate-spin" />
+        <p className="mt-4 text-xs font-semibold tracking-wider text-gray-600 uppercase">
+          Loading Cinema Player & Stems...
         </p>
       </div>
     );
@@ -165,11 +166,11 @@ export default function WatchPage() {
 
   if (!currentTrack) {
     return (
-      <div className="min-h-screen bg-[#0f0f0f] text-white flex flex-col items-center justify-center p-6 text-center">
+      <div className="min-h-screen bg-[#f8f9fa] text-gray-900 flex flex-col items-center justify-center p-6 text-center">
         <h2 className="text-2xl font-bold mb-2 text-[#ff0000]">Track Not Found</h2>
-        <p className="text-[#aaaaaa] text-sm mb-6">The video you are looking for is not in the active catalog.</p>
+        <p className="text-gray-600 text-sm mb-6">The video you are looking for is not in the active catalog.</p>
         <Link href="/" className="px-5 py-2.5 rounded-full bg-[#ff0000] hover:bg-[#cc0000] font-bold text-xs text-white">
-          Back to YouTube Channel Hub
+          Back to Channel Portal
         </Link>
       </div>
     );
@@ -200,29 +201,29 @@ export default function WatchPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0f0f0f] text-[#f1f1f1] flex flex-col">
+    <div className="min-h-screen bg-[#f8f9fa] text-[#0f0f0f] flex flex-col selection:bg-[#ff0000] selection:text-white">
       {/* High SEO Video Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
       />
 
-      {/* 1. YouTube Top Navigation Bar */}
-      <header className="sticky top-0 z-50 w-full bg-[#0f0f0f] border-b border-[#282828] px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-4">
+      {/* 1. YouTube Top Navigation Bar (Bright Style) */}
+      <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-4 shadow-sm">
         <div className="flex items-center gap-3">
           <Link
             href="/"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#272727] hover:bg-[#3f3f3f] text-[#f1f1f1] text-xs font-semibold transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-semibold transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span className="hidden sm:inline">Back to Channel</span>
           </Link>
 
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-5.5 rounded-md bg-[#ff0000] flex items-center justify-center shadow-md shadow-red-900/30">
+            <div className="w-8 h-5.5 rounded-md bg-[#ff0000] flex items-center justify-center shadow-sm">
               <Play className="w-3 h-3 text-white fill-current translate-x-0.2" />
             </div>
-            <span className="text-sm font-black text-[#f1f1f1] tracking-tight group-hover:text-white hidden sm:inline">
+            <span className="text-sm font-black text-gray-900 tracking-tight group-hover:text-black hidden sm:inline">
               SUPASONIC BEATS
             </span>
           </Link>
@@ -230,10 +231,10 @@ export default function WatchPage() {
 
         <div className="flex items-center gap-2.5">
           <a
-            href="https://www.youtube.com/@supasonicbeats?sub_confirmation=1"
+            href="https://www.youtube.com/@SupasonicBeatsOfficial?sub_confirmation=1"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-1.5 rounded-full bg-[#ff0000] hover:bg-[#cc0000] text-white font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-md shadow-red-900/40 active:scale-95 transition-all"
+            className="px-4 py-1.5 rounded-full bg-[#ff0000] hover:bg-[#cc0000] text-white font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-sm active:scale-95 transition-all"
           >
             <Play className="w-3 h-3 fill-current" />
             <span>SUBSCRIBE</span>
@@ -241,13 +242,13 @@ export default function WatchPage() {
         </div>
       </header>
 
-      {/* 2. Main YouTube Watch Layout (Player on Left, Up Next Recommendations on Right) */}
+      {/* 2. Main Watch Layout (Player on Left, Up Next Recommendations on Right) */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 w-full flex-1">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
           {/* Main Column (Player, Title, Channel Bar, Action Bar, Description, Ads) */}
           <section aria-label="Cinema Player & Track Details" className="lg:col-span-8 space-y-4">
             {/* 16:9 Responsive Cinema Player */}
-            <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-black border border-[#282828] shadow-2xl">
+            <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-black border border-gray-200 shadow-md">
               <iframe
                 src={`https://www.youtube.com/embed/${currentTrack.videoId}?autoplay=1&rel=0&modestbranding=1`}
                 title={`${currentTrack.title} - SUPASONIC BEATS`}
@@ -259,15 +260,15 @@ export default function WatchPage() {
 
             {/* Video Title */}
             <div className="space-y-3">
-              <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-[#f1f1f1] tracking-tight leading-snug">
+              <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 tracking-tight leading-snug">
                 {currentTrack.title}
               </h1>
 
-              {/* YouTube Channel Info Bar & Action Pills */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-[#282828]">
+              {/* Channel Info Bar & Action Pills */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-gray-200">
                 {/* Channel Profile + Subscribe */}
                 <div className="flex items-center gap-3">
-                  <Link href="/" className="w-10 h-10 rounded-full overflow-hidden bg-[#272727] flex-shrink-0 border border-[#303030]">
+                  <Link href="/" className="w-10 h-10 rounded-full overflow-hidden bg-gray-100 flex-shrink-0 border border-gray-200 shadow-sm">
                     <img
                       src="/channel_avatar.jpg"
                       alt="SUPASONIC BEATS"
@@ -277,36 +278,36 @@ export default function WatchPage() {
 
                   <div>
                     <div className="flex items-center gap-1">
-                      <Link href="/" className="text-sm font-bold text-[#f1f1f1] hover:text-white transition-colors">
+                      <Link href="/" className="text-sm font-bold text-gray-900 hover:text-black transition-colors">
                         SUPASONIC BEATS
                       </Link>
-                      <span className="w-3.5 h-3.5 rounded-full bg-[#aaaaaa] text-black flex items-center justify-center text-[9px] font-black">
+                      <span className="text-[#065fd4] text-xs font-black">
                         ✓
                       </span>
                     </div>
-                    <div className="text-xs text-[#aaaaaa]">47 subscribers • Official Artist Channel</div>
+                    <div className="text-xs text-gray-500">114+ subscribers • 46,000+ views</div>
                   </div>
 
                   <a
-                    href="https://www.youtube.com/@supasonicbeats?sub_confirmation=1"
+                    href="https://www.youtube.com/@SupasonicBeatsOfficial?sub_confirmation=1"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="ml-2 px-4 py-2 rounded-full bg-white hover:bg-[#d9d9d9] text-black text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-md active:scale-95 transition-all"
+                    className="ml-2 px-4 py-2 rounded-full bg-gray-900 hover:bg-black text-white text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-sm active:scale-95 transition-all"
                   >
-                    <Bell className="w-3.5 h-3.5 fill-black" />
+                    <Bell className="w-3.5 h-3.5 fill-white" />
                     <span>Subscribe</span>
                   </a>
                 </div>
 
-                {/* YouTube Action Bar Pills */}
+                {/* Action Bar Pills */}
                 <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
                   {/* Like Button */}
                   <button
                     onClick={toggleLike}
-                    className={`px-3.5 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-colors ${
+                    className={`px-3.5 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm ${
                       liked
                         ? "bg-[#ff0000] text-white"
-                        : "bg-[#272727] hover:bg-[#3f3f3f] text-[#f1f1f1]"
+                        : "bg-gray-100 hover:bg-gray-200 text-gray-800"
                     }`}
                   >
                     <ThumbsUp className={`w-3.5 h-3.5 ${liked ? "fill-current" : ""}`} />
@@ -316,16 +317,16 @@ export default function WatchPage() {
                   {/* Share Button */}
                   <button
                     onClick={handleCopyLink}
-                    className="px-3.5 py-1.5 rounded-full bg-[#272727] hover:bg-[#3f3f3f] text-[#f1f1f1] text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                    className="px-3.5 py-1.5 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm"
                   >
-                    {copiedLink ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Share2 className="w-3.5 h-3.5" />}
+                    {copiedLink ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Share2 className="w-3.5 h-3.5" />}
                     <span>{copiedLink ? "Copied" : "Share"}</span>
                   </button>
 
                   {/* Download MP3 (320kbps) */}
                   <button
                     onClick={() => handleDownload("mp3")}
-                    className="px-3.5 py-1.5 rounded-full bg-[#272727] hover:bg-[#3f3f3f] text-[#3ea6ff] text-xs font-semibold flex items-center gap-1.5 transition-colors whitespace-nowrap"
+                    className="px-3.5 py-1.5 rounded-full bg-blue-50 hover:bg-blue-100 text-[#065fd4] border border-blue-200 text-xs font-semibold flex items-center gap-1.5 transition-colors whitespace-nowrap shadow-sm"
                   >
                     <FileAudio className="w-3.5 h-3.5" />
                     <span>320k MP3</span>
@@ -334,7 +335,7 @@ export default function WatchPage() {
                   {/* Download WAV Master */}
                   <button
                     onClick={() => handleDownload("wav")}
-                    className="px-3.5 py-1.5 rounded-full bg-[#272727] hover:bg-[#3f3f3f] text-[#ff4e45] text-xs font-semibold flex items-center gap-1.5 transition-colors whitespace-nowrap"
+                    className="px-3.5 py-1.5 rounded-full bg-red-50 hover:bg-red-100 text-[#ff0000] border border-red-200 text-xs font-semibold flex items-center gap-1.5 transition-colors whitespace-nowrap shadow-sm"
                   >
                     <Disc className="w-3.5 h-3.5" />
                     <span>Studio WAV</span>
@@ -343,57 +344,57 @@ export default function WatchPage() {
                   {/* Copy Tags */}
                   <button
                     onClick={handleCopyTags}
-                    className="px-3.5 py-1.5 rounded-full bg-[#272727] hover:bg-[#3f3f3f] text-amber-400 text-xs font-semibold flex items-center gap-1.5 transition-colors whitespace-nowrap"
+                    className="px-3.5 py-1.5 rounded-full bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 text-xs font-semibold flex items-center gap-1.5 transition-colors whitespace-nowrap shadow-sm"
                   >
-                    {copiedTags ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Tag className="w-3.5 h-3.5" />}
+                    {copiedTags ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Tag className="w-3.5 h-3.5" />}
                     <span>{copiedTags ? "Tags Copied" : "SEO Tags"}</span>
                   </button>
                 </div>
               </div>
             </div>
 
-            {/* YouTube Expandable Description Box */}
-            <div className="p-4 rounded-2xl bg-[#212121] border border-[#282828] text-xs md:text-sm text-[#f1f1f1] space-y-3">
+            {/* Expandable Description Box (Bright Style) */}
+            <div className="p-4 rounded-2xl bg-white border border-gray-200 text-xs md:text-sm text-gray-900 space-y-3 shadow-sm">
               {/* Metadata Stats Header */}
-              <div className="flex flex-wrap items-center gap-2 font-bold text-xs text-[#f1f1f1]">
+              <div className="flex flex-wrap items-center gap-2 font-bold text-xs text-gray-800">
                 <span>{currentTrack.views.toLocaleString()} views</span>
                 <span>•</span>
                 <span>{currentTrack.formattedDate}</span>
                 <span>•</span>
-                <span className="text-[#3ea6ff] font-mono">#HindiAfroHouse</span>
-                <span className="text-[#3ea6ff] font-mono">#DesiEDM</span>
-                <span className="text-[#3ea6ff] font-mono">#124BPM</span>
+                <span className="text-[#065fd4] font-mono">#HindiAfroHouse</span>
+                <span className="text-[#065fd4] font-mono">#DesiEDM</span>
+                <span className="text-[#065fd4] font-mono">#124BPM</span>
               </div>
 
               {/* Bio & Details */}
-              <p className="leading-relaxed text-[#aaaaaa]">
+              <p className="leading-relaxed text-gray-600">
                 {currentTrack.caption}
               </p>
 
               {/* Musical Specifications */}
               <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-xs">
-                <span className="px-2 py-0.5 rounded bg-[#181818] border border-[#303030] text-[#f1f1f1]">
+                <span className="px-2 py-0.5 rounded bg-gray-100 text-gray-800">
                   Tempo: <strong>{currentTrack.bpm} BPM</strong>
                 </span>
-                <span className="px-2 py-0.5 rounded bg-[#181818] border border-[#303030] text-[#f1f1f1]">
+                <span className="px-2 py-0.5 rounded bg-gray-100 text-gray-800">
                   Key: <strong>{currentTrack.key}</strong>
                 </span>
-                <span className="px-2 py-0.5 rounded bg-[#181818] border border-[#303030] text-[#ff4e45]">
+                <span className="px-2 py-0.5 rounded bg-red-50 text-[#ff0000]">
                   Genre: <strong>{currentTrack.subgenre}</strong>
                 </span>
-                <span className="px-2 py-0.5 rounded bg-[#181818] border border-[#303030] text-emerald-400">
+                <span className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700">
                   Audio: <strong>320kbps MP3 & 24-bit WAV</strong>
                 </span>
               </div>
 
-              {/* Expandable SEO Details & Tag Cloud */}
+              {/* SEO Details & Tag Cloud */}
               {currentTrack.seoData && (
-                <div className="pt-2 border-t border-[#282828] space-y-2">
-                  <div className="flex items-center justify-between text-xs font-bold text-[#aaaaaa]">
+                <div className="pt-2 border-t border-gray-100 space-y-2">
+                  <div className="flex items-center justify-between text-xs font-bold text-gray-700">
                     <span>High SEO Sound Tags ({currentTrack.seoData.tagList.length} tags)</span>
                     <button
                       onClick={handleCopyTags}
-                      className="text-[#3ea6ff] hover:underline flex items-center gap-1 font-semibold"
+                      className="text-[#065fd4] hover:underline flex items-center gap-1 font-semibold"
                     >
                       {copiedTags ? "✓ Copied to clipboard" : "Copy All Tags"}
                     </button>
@@ -403,7 +404,7 @@ export default function WatchPage() {
                     {currentTrack.seoData.tagList.map((tag, i) => (
                       <span
                         key={i}
-                        className="px-2 py-0.5 rounded bg-[#181818] border border-[#303030] text-[11px] text-[#aaaaaa] font-mono"
+                        className="px-2 py-0.5 rounded bg-gray-100 text-[11px] text-gray-700 font-mono"
                       >
                         #{tag}
                       </span>
@@ -420,14 +421,14 @@ export default function WatchPage() {
             <SubscribeAdPoster variant="billboard" />
           </section>
 
-          {/* Right Column: YouTube Up Next Recommendations Sidebar */}
+          {/* Right Column: Up Next Recommendations Sidebar */}
           <aside aria-label="Up Next Recommendations" className="lg:col-span-4 space-y-5">
             {/* 1. Official Releases from SUPASONIC BEATS (Prominently Highlighted) */}
-            <div className="p-4 rounded-2xl bg-[#181818] border border-[#ff0000]/40 space-y-3.5">
-              <div className="flex items-center justify-between border-b border-[#282828] pb-2">
+            <div className="p-4 rounded-2xl bg-white border-2 border-red-100 shadow-sm space-y-3.5">
+              <div className="flex items-center justify-between border-b border-gray-100 pb-2">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#ff0000] animate-ping" />
-                  <h2 className="text-xs font-black text-[#f1f1f1] uppercase tracking-wider">
+                  <h2 className="text-xs font-black text-gray-900 uppercase tracking-wider">
                     ★ Up Next from SUPASONIC BEATS
                   </h2>
                 </div>
@@ -441,9 +442,9 @@ export default function WatchPage() {
                   <Link
                     key={rec.id}
                     href={`/watch/${rec.videoId}`}
-                    className="flex gap-2.5 p-2 rounded-xl bg-[#212121] hover:bg-[#282828] border border-[#303030] hover:border-[#ff0000]/50 transition-all duration-150 group block"
+                    className="flex gap-2.5 p-2 rounded-xl bg-gray-50/70 hover:bg-gray-100 border border-gray-200 hover:border-red-300 transition-all duration-150 group block"
                   >
-                    <div className="relative w-28 sm:w-32 aspect-video rounded-lg overflow-hidden bg-black flex-shrink-0">
+                    <div className="relative w-28 sm:w-32 aspect-video rounded-lg overflow-hidden bg-black flex-shrink-0 shadow-sm">
                       <img
                         src={rec.thumbnail}
                         alt={`${rec.title} - SUPASONIC BEATS`}
@@ -455,16 +456,16 @@ export default function WatchPage() {
                     </div>
 
                     <div className="flex-1 min-w-0 flex flex-col justify-between py-0.5">
-                      <h3 className="text-xs font-bold text-[#f1f1f1] group-hover:text-white line-clamp-2 leading-tight">
+                      <h3 className="text-xs font-bold text-gray-900 group-hover:text-black line-clamp-2 leading-tight">
                         {rec.title}
                       </h3>
-                      <div className="text-[10px] text-[#aaaaaa]">
-                        <div className="text-[10px] text-[#aaaaaa] flex items-center gap-1">
+                      <div className="text-[10px] text-gray-500">
+                        <div className="flex items-center gap-1 font-semibold text-gray-700">
                           <span>SUPASONIC BEATS</span>
-                          <span className="text-[9px]">✓</span>
+                          <span className="text-[#065fd4] text-[9px]">✓</span>
                         </div>
-                        <div className="flex items-center gap-1.5 text-[#717171] mt-0.5">
-                          <span className="text-[#3ea6ff] font-mono">{rec.bpm} BPM</span>
+                        <div className="flex items-center gap-1.5 text-gray-500 mt-0.5">
+                          <span className="text-[#065fd4] font-mono font-semibold">{rec.bpm} BPM</span>
                           <span>•</span>
                           <span>{rec.views.toLocaleString()} views</span>
                         </div>
@@ -475,37 +476,37 @@ export default function WatchPage() {
               </div>
             </div>
 
-            {/* 2. Google Display Ad 300x250 Medium Rectangle (YouTube Sidebar Standard) */}
+            {/* 2. Google Display Ad 300x250 Medium Rectangle */}
             <GoogleStyleAdBanner format="rectangle" />
 
-            {/* 3. Related Competitor Benchmark Tracks (With Exact Keywords & Tags) */}
-            <div className="p-4 rounded-2xl bg-[#181818] border border-[#282828] space-y-3">
-              <div className="flex items-center justify-between border-b border-[#282828] pb-2">
+            {/* 3. Related Competitor Benchmark Tracks */}
+            <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm space-y-3">
+              <div className="flex items-center justify-between border-b border-gray-100 pb-2">
                 <div className="flex items-center gap-1.5">
-                  <Trophy className="w-3.5 h-3.5 text-yellow-400" />
-                  <h3 className="text-xs font-bold text-[#aaaaaa] uppercase tracking-wider">
+                  <Trophy className="w-3.5 h-3.5 text-amber-500" />
+                  <h3 className="text-xs font-bold text-gray-700 uppercase tracking-wider">
                     Competitor Niche Benchmarks
                   </h3>
                 </div>
-                <span className="text-[10px] text-[#717171]">Industry Top</span>
+                <span className="text-[10px] text-gray-400">Industry Top</span>
               </div>
 
               <div className="space-y-2.5">
                 {competitorRecommendations.map((comp) => (
                   <div
                     key={comp.id}
-                    className="p-3 rounded-xl bg-[#212121] border border-[#282828] space-y-1.5"
+                    className="p-3 rounded-xl bg-gray-50 border border-gray-200 space-y-1.5"
                   >
                     <div className="flex items-start justify-between gap-2">
                       <div className="min-w-0">
-                        <div className="text-[10px] font-bold text-[#aaaaaa]">
+                        <div className="text-[10px] font-bold text-gray-500">
                           {comp.channelName}
                         </div>
-                        <h4 className="text-xs font-medium text-[#f1f1f1] line-clamp-2 leading-tight mt-0.5">
+                        <h4 className="text-xs font-medium text-gray-900 line-clamp-2 leading-tight mt-0.5">
                           {comp.title}
                         </h4>
                       </div>
-                      <span className="text-[11px] font-bold text-emerald-400 font-mono flex-shrink-0">
+                      <span className="text-[11px] font-bold text-emerald-600 font-mono flex-shrink-0">
                         {comp.viewsFormatted}
                       </span>
                     </div>
@@ -515,14 +516,14 @@ export default function WatchPage() {
                       {comp.tags.slice(0, 3).map((tag, idx) => (
                         <span
                           key={idx}
-                          className="px-1.5 py-0.2 rounded text-[9px] bg-[#181818] text-[#717171] font-mono"
+                          className="px-1.5 py-0.2 rounded text-[9px] bg-white border border-gray-200 text-gray-600 font-mono"
                         >
                           #{tag}
                         </span>
                       ))}
                     </div>
 
-                    <p className="text-[10px] text-[#717171] italic">
+                    <p className="text-[10px] text-gray-500 italic">
                       💡 {comp.tacticalNote}
                     </p>
                   </div>

@@ -24,7 +24,7 @@ import {
   Zap,
   BookOpen,
 } from "lucide-react";
-import ChannelHeader from "@/components/ChannelHeader";
+import TopRecentVideosCarousel from "@/components/TopRecentVideosCarousel";
 import VideoFeed from "@/components/VideoFeed";
 import CompetitorLeaderboard from "@/components/CompetitorLeaderboard";
 import SEOGeneratorTab from "@/components/SEOGeneratorTab";
@@ -153,8 +153,8 @@ export default function ChannelWebsite() {
   const latestPost = posts.length > 0 ? posts[0] : null;
 
   return (
-    <div className="min-h-screen bg-[#0f0f0f] text-[#f1f1f1] flex flex-col selection:bg-[#ff0000] selection:text-white">
-      {/* Dynamic Notification Pill Banner (YouTube Drop Alerts) */}
+    <div className="min-h-screen bg-[#f8f9fa] text-[#0f0f0f] flex flex-col selection:bg-[#ff0000] selection:text-white">
+      {/* Dynamic Notification Pill Banner (Drop Alerts) */}
       <NotificationBanner
         latestPost={latestPost}
         onOpenPost={(post) => {
@@ -165,44 +165,111 @@ export default function ChannelWebsite() {
 
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed top-16 right-6 z-50 px-4 py-2.5 rounded-xl bg-[#212121] text-white font-bold text-xs shadow-2xl flex items-center gap-2 animate-in fade-in slide-in-from-top-4 duration-200 border border-[#ff0000]/40">
-          <Sparkles className="w-4 h-4 text-amber-400" />
+        <div className="fixed top-16 right-6 z-50 px-4 py-2.5 rounded-xl bg-white text-gray-900 font-bold text-xs shadow-xl flex items-center gap-2 animate-in fade-in slide-in-from-top-4 duration-200 border border-red-200">
+          <Sparkles className="w-4 h-4 text-amber-500" />
           <span>{toastMessage}</span>
         </div>
       )}
 
-      {/* Main YouTube Channel Header */}
-      <ChannelHeader
-        channel={channelInfo}
-        totalPosts={posts.length}
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        onSync={() => fetchFeedData(true)}
-        syncing={syncing}
-        onOpenNewPost={() => setIsNewPostModalOpen(true)}
-      />
-
       {/* Main Content Area */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full space-y-6">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex-1 w-full space-y-6">
+        {/* TOP SECTION: Instead of static YouTube Channel Header, Top Recent 5 Videos Cinema Player with Side Carousel */}
+        <TopRecentVideosCarousel
+          onOpenSEO={(post) => setSelectedVideoForSEO(post)}
+          onOpenTip={(post) => setSelectedTipToRead(post)}
+        />
+
+        {/* Clean Bright Category Navigation Tabs */}
+        <nav aria-label="Portal Navigation Tabs" className="bg-white p-2 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-between gap-3 overflow-x-auto no-scrollbar">
+          <div className="flex items-center gap-1.5 flex-wrap">
+            <button
+              onClick={() => setActiveTab("feed")}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+                activeTab === "feed"
+                  ? "bg-[#ff0000] text-white shadow-sm"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              }`}
+            >
+              <Music className="w-3.5 h-3.5" />
+              <span>Full Video Catalog ({posts.filter((p) => p.type === "release").length || 78})</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab("tips")}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+                activeTab === "tips"
+                  ? "bg-[#ff0000] text-white shadow-sm"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              }`}
+            >
+              <BookOpen className="w-3.5 h-3.5" />
+              <span>Producer Tips & Secrets</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab("seo")}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+                activeTab === "seo"
+                  ? "bg-[#ff0000] text-white shadow-sm"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              }`}
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>High SEO Sound Generator</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab("competitors")}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+                activeTab === "competitors"
+                  ? "bg-[#ff0000] text-white shadow-sm"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              }`}
+            >
+              <Trophy className="w-3.5 h-3.5" />
+              <span>Competitor Chart Rankings</span>
+            </button>
+          </div>
+
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <button
+              onClick={() => fetchFeedData(true)}
+              disabled={syncing}
+              className="p-2 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold transition-colors"
+              title="Sync Live Channel Data"
+            >
+              <RefreshCw className={`w-3.5 h-3.5 ${syncing ? "animate-spin text-[#ff0000]" : ""}`} />
+            </button>
+
+            <button
+              onClick={() => setIsNewPostModalOpen(true)}
+              className="px-3.5 py-2 rounded-xl bg-gray-900 hover:bg-black text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-sm"
+            >
+              <PlusCircle className="w-3.5 h-3.5 text-[#ff0000]" />
+              <span className="hidden sm:inline">Add Post</span>
+            </button>
+          </div>
+        </nav>
+
         {/* Tab 1: Video Releases & Beat Downloads */}
         {activeTab === "feed" && (
           <div className="space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-[#282828]">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-gray-200">
               <div>
-                <h2 className="text-xl md:text-2xl font-bold text-[#f1f1f1] flex items-center gap-2">
+                <h2 className="text-xl md:text-2xl font-bold text-gray-900 flex items-center gap-2">
                   <Music className="w-5 h-5 text-[#ff0000]" />
-                  Latest Uploads & Video Posts Feed
+                  Full Video Releases & Beat Masters Feed
                 </h2>
-                <p className="text-xs text-[#aaaaaa] mt-0.5">
-                  Stream high-definition beats, download lossless master audio (320kbps MP3 / WAV), and view viral SEO metadata.
+                <p className="text-xs text-gray-600 mt-0.5">
+                  16:9 widescreen video catalog matching @SupasonicBeatsOfficial. Free 320kbps MP3s, studio WAV stems & viral sound tags.
                 </p>
               </div>
 
               <button
                 onClick={() => setIsNewPostModalOpen(true)}
-                className="self-start sm:self-center px-4 py-2 rounded-full bg-white hover:bg-[#d9d9d9] text-black font-bold text-xs flex items-center gap-1.5 transition-all shadow-md active:scale-95"
+                className="self-start sm:self-center px-4 py-2 rounded-full bg-[#ff0000] hover:bg-[#cc0000] text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-sm active:scale-95"
               >
-                <PlusCircle className="w-4 h-4 text-[#ff0000]" />
+                <PlusCircle className="w-4 h-4" />
                 Upload / Add New Post
               </button>
             </div>
@@ -234,20 +301,20 @@ export default function ChannelWebsite() {
         {/* Tab 2: Tips & Tricks Stream */}
         {activeTab === "tips" && (
           <div className="space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-[#282828]">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-gray-200">
               <div>
-                <h2 className="text-xl md:text-2xl font-bold text-[#f1f1f1] flex items-center gap-2">
+                <h2 className="text-xl md:text-2xl font-bold text-gray-900 flex items-center gap-2">
                   <BookOpen className="w-5 h-5 text-[#ff0000]" />
                   Producer Tips, Tricks & Studio Masterclasses
                 </h2>
-                <p className="text-xs text-[#aaaaaa] mt-0.5">
+                <p className="text-xs text-gray-600 mt-0.5">
                   Exclusive sound design secrets, 124 BPM mix guides, and YouTube algorithm growth playbooks.
                 </p>
               </div>
 
               <button
                 onClick={() => setIsNewPostModalOpen(true)}
-                className="self-start sm:self-center px-4 py-2 rounded-full bg-[#ff0000] hover:bg-[#cc0000] text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-md active:scale-95"
+                className="self-start sm:self-center px-4 py-2 rounded-full bg-[#ff0000] hover:bg-[#cc0000] text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-sm active:scale-95"
               >
                 <PlusCircle className="w-4 h-4" />
                 Share a New Tip
@@ -288,12 +355,12 @@ export default function ChannelWebsite() {
         {/* Tab 4: Competitor Chart Rankings */}
         {activeTab === "competitors" && (
           <div className="space-y-6">
-            <div className="pb-2 border-b border-[#282828]">
-              <h2 className="text-xl md:text-2xl font-bold text-[#f1f1f1] flex items-center gap-2">
-                <Trophy className="w-5 h-5 text-yellow-400" />
+            <div className="pb-2 border-b border-gray-200">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 flex items-center gap-2">
+                <Trophy className="w-5 h-5 text-amber-500" />
                 Hindi Afro House & Desi EDM Competitor Leaderboard
               </h2>
-              <p className="text-xs text-[#aaaaaa] mt-0.5">
+              <p className="text-xs text-gray-600 mt-0.5">
                 Market share tracking, breakout velocity, and tactical opportunities to outrank competitors.
               </p>
             </div>
@@ -314,37 +381,37 @@ export default function ChannelWebsite() {
       {/* Google Display AdSense Sticky Bottom Anchor Ad */}
       <GoogleStyleAdBanner format="anchor" />
 
-      {/* YouTube Style Dark Footer */}
-      <footer className="mt-16 border-t border-[#282828] bg-[#0f0f0f] py-8 text-xs text-[#aaaaaa]">
+      {/* Clean Bright Modern Footer */}
+      <footer className="mt-16 border-t border-gray-200 bg-white py-8 text-xs text-gray-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full overflow-hidden bg-[#272727] border border-[#303030]">
+            <div className="w-8 h-8 rounded-full overflow-hidden bg-gray-100 border border-gray-200">
               <img src="/channel_avatar.jpg" alt="Supasonic Beats" className="w-full h-full object-cover" />
             </div>
             <div>
-              <span className="font-bold text-[#f1f1f1]">SUPASONIC BEATS</span> • Official YouTube Music Portal
-              <div className="text-[11px] text-[#717171]">Instagram • TikTok • Facebook • YouTube</div>
+              <span className="font-bold text-gray-900">SUPASONIC BEATS</span> • Official YouTube Music Portal
+              <div className="text-[11px] text-gray-500">Instagram • TikTok • Facebook • YouTube</div>
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-6 text-[#aaaaaa]">
-            <button onClick={() => setActiveTab("feed")} className="hover:text-white transition-colors">
+          <div className="flex flex-wrap items-center gap-6 text-gray-600 font-medium">
+            <button onClick={() => setActiveTab("feed")} className="hover:text-black transition-colors">
               Releases & Audio
             </button>
-            <button onClick={() => setActiveTab("tips")} className="hover:text-white transition-colors">
+            <button onClick={() => setActiveTab("tips")} className="hover:text-black transition-colors">
               Tips & Tricks
             </button>
-            <button onClick={() => setActiveTab("seo")} className="hover:text-white transition-colors">
+            <button onClick={() => setActiveTab("seo")} className="hover:text-black transition-colors">
               SEO Generator
             </button>
-            <button onClick={() => setActiveTab("competitors")} className="hover:text-white transition-colors">
+            <button onClick={() => setActiveTab("competitors")} className="hover:text-black transition-colors">
               Competitor Rankings
             </button>
             <a
               href="https://www.youtube.com/@SupasonicBeatsOfficial?sub_confirmation=1"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#ff0000] hover:text-[#ff4e45] font-bold flex items-center gap-1"
+              className="text-[#ff0000] hover:text-[#cc0000] font-bold flex items-center gap-1"
             >
               YouTube Subscribe <ExternalLink className="w-3 h-3" />
             </a>

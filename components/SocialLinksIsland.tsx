@@ -74,15 +74,15 @@ export default function SocialLinksIsland() {
     <section aria-label="Official Social Ecosystem" className="space-y-3.5 my-8">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-sm md:text-base font-bold text-[#f1f1f1] flex items-center gap-2">
+          <h2 className="text-sm md:text-base font-bold text-gray-900 flex items-center gap-2">
             <Share2 className="w-4 h-4 text-[#ff0000]" />
             Official Social & Community Hub
           </h2>
-          <p className="text-xs text-[#aaaaaa]">
+          <p className="text-xs text-gray-500">
             Connect with SUPASONIC BEATS across YouTube, Instagram, TikTok & Facebook.
           </p>
         </div>
-        <span className="text-[10px] font-bold text-[#717171] uppercase tracking-wider hidden sm:inline">
+        <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider hidden sm:inline">
           Official Handles
         </span>
       </div>
@@ -94,20 +94,20 @@ export default function SocialLinksIsland() {
             href={s.url}
             target="_blank"
             rel="noopener noreferrer"
-            className={`p-3.5 rounded-2xl bg-[#181818] border border-[#282828] ${s.borderHover} transition-all duration-200 group block active:scale-95`}
+            className={`p-3.5 rounded-2xl bg-white border border-gray-200 ${s.borderHover} hover:shadow-md transition-all duration-200 group block active:scale-95`}
           >
             <div className="flex items-center justify-between mb-2.5">
               <div className={`w-9 h-9 rounded-xl bg-gradient-to-tr ${s.color} text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform`}>
                 {s.icon}
               </div>
-              <span className="p-1 rounded-lg bg-[#272727] text-[#aaaaaa] group-hover:text-white transition-colors">
+              <span className="p-1 rounded-lg bg-gray-100 text-gray-500 group-hover:text-black transition-colors">
                 <ExternalLink className="w-3 h-3" />
               </span>
             </div>
 
-            <div className="text-xs font-bold text-[#f1f1f1] flex items-center gap-1.5">
+            <div className="text-xs font-bold text-gray-900 flex items-center gap-1.5">
               <span>{s.name}</span>
-              <span className="w-3 h-3 rounded-full bg-[#aaaaaa] text-black flex items-center justify-center text-[8px] font-black">
+              <span className="w-3 h-3 rounded-full bg-gray-200 text-gray-800 flex items-center justify-center text-[8px] font-black">
                 ✓
               </span>
             </div>
@@ -116,7 +116,7 @@ export default function SocialLinksIsland() {
               {s.handle}
             </div>
 
-            <p className="text-[11px] text-[#717171] mt-1.5 line-clamp-1">
+            <p className="text-[11px] text-gray-500 mt-1.5 line-clamp-1">
               {s.role}
             </p>
           </a>

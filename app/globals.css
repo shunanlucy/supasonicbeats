@@ -3,18 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --background: #0f0f0f;
-  --foreground: #f1f1f1;
+  --background: #f8f9fa;
+  --foreground: #0f0f0f;
   --yt-red: #ff0000;
   --yt-red-hover: #cc0000;
-  --yt-surface: #181818;
-  --yt-card: #212121;
-  --yt-card-hover: #2a2a2a;
-  --yt-elevated: #282828;
-  --yt-border: #303030;
-  --yt-text-primary: #f1f1f1;
-  --yt-text-secondary: #aaaaaa;
-  --yt-text-tertiary: #717171;
+  --yt-surface: #ffffff;
+  --yt-card: #ffffff;
+  --yt-card-hover: #f3f4f6;
+  --yt-elevated: #ffffff;
+  --yt-border: #e5e7eb;
+  --yt-text-primary: #0f0f0f;
+  --yt-text-secondary: #606060;
+  --yt-text-tertiary: #909090;
 }
 
 body {
@@ -26,36 +26,39 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* YouTube Theme Utility Classes */
+/* Bright Theme Utility Classes */
 .yt-bg {
-  background-color: #0f0f0f;
+  background-color: #f8f9fa;
 }
 
 .yt-surface {
-  background-color: #181818;
+  background-color: #ffffff;
 }
 
 .yt-card {
-  background-color: #212121;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .yt-card:hover {
-  background-color: #262626;
-  border-color: rgba(255, 255, 255, 0.15);
+  background-color: #ffffff;
+  border-color: #d1d5db;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .yt-elevated {
-  background-color: #282828;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .yt-border {
-  border-color: #303030;
+  border-color: #e5e7eb;
 }
 
 /* YouTube Red Accent Glows */
 .yt-red-glow {
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.35);
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.25);
 }
 
 .yt-red-badge {
@@ -65,20 +68,20 @@ body {
 
 /* YouTube Style Chips / Pills */
 .yt-chip {
-  background-color: #272727;
-  color: #f1f1f1;
+  background-color: #f2f2f2;
+  color: #0f0f0f;
   transition: all 0.15s ease-in-out;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid #e5e7eb;
 }
 
 .yt-chip:hover {
-  background-color: #3f3f3f;
-  color: #ffffff;
+  background-color: #e5e5e5;
+  color: #000000;
 }
 
 .yt-chip-active {
-  background-color: #f1f1f1;
-  color: #0f0f0f;
+  background-color: #0f0f0f;
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -95,53 +98,52 @@ body {
 }
 
 .yt-subscribe-btn-white {
-  background-color: #f1f1f1;
-  color: #0f0f0f;
+  background-color: #0f0f0f;
+  color: #ffffff;
   font-weight: 700;
-  transition: all 0.15s ease-in-out;
 }
 
 .yt-subscribe-btn-white:hover {
-  background-color: #d9d9d9;
+  background-color: #272727;
 }
 
-/* Glassmorphism hybrid with YouTube Dark tones */
+/* Bright Glassmorphism */
 .ios-glass {
-  background: rgba(24, 24, 24, 0.85);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
 .ios-glass-card {
-  background: #212121;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
 .ios-glass-pill {
-  background: #272727;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
 }
 
 .ios-glass-red {
-  background: linear-gradient(135deg, rgba(255, 0, 0, 0.25) 0%, rgba(185, 28, 28, 0.12) 100%);
-  border: 1px solid rgba(255, 0, 0, 0.45);
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.08) 0%, rgba(239, 68, 68, 0.04) 100%);
+  border: 1px solid rgba(255, 0, 0, 0.2);
 }
 
-/* YouTube Scrollbar */
+/* Bright Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f0f0f;
+  background: #f1f3f4;
 }
 ::-webkit-scrollbar-thumb {
-  background: #3f3f3f;
+  background: #c1c7cd;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #717171;
+  background: #9aa0a6;
 }

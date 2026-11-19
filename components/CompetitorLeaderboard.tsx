@@ -42,7 +42,7 @@ export default function CompetitorLeaderboard({
 
   const allCompetitors = [...competitors];
   if (!allCompetitors.some((c) => c.isSupasonic)) {
-    allCompetitors.splice(7, 0, supasonicStanding);
+    allCompetitors.splice(5, 0, supasonicStanding);
   }
 
   const filtered = allCompetitors.filter((c) => {
@@ -60,45 +60,44 @@ export default function CompetitorLeaderboard({
     <div className="space-y-6">
       {/* Top Industry Chart Banner */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5">
-        <div className="p-4 rounded-2xl bg-[#181818] border border-[#282828]">
-          <div className="flex items-center gap-1.5 text-[#3ea6ff] text-xs font-bold uppercase tracking-wider mb-1">
+        <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm">
+          <div className="flex items-center gap-1.5 text-[#065fd4] text-xs font-bold uppercase tracking-wider mb-1">
             <Target className="w-3.5 h-3.5" /> Producers Tracked
           </div>
-          <div className="text-xl md:text-2xl font-bold text-[#f1f1f1]">{nicheStats.totalTrackedChannels} Channels</div>
-          <p className="text-[11px] text-[#aaaaaa] mt-0.5">Hindi Afro House Niche</p>
+          <div className="text-xl md:text-2xl font-bold text-gray-900">{nicheStats.totalTrackedChannels} Channels</div>
+          <p className="text-[11px] text-gray-500 mt-0.5">Hindi Afro House Niche</p>
         </div>
 
-        <div className="p-4 rounded-2xl bg-[#181818] border border-[#282828]">
-          <div className="flex items-center gap-1.5 text-[#ff4e45] text-xs font-bold uppercase tracking-wider mb-1">
+        <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm">
+          <div className="flex items-center gap-1.5 text-[#ff0000] text-xs font-bold uppercase tracking-wider mb-1">
             <Zap className="w-3.5 h-3.5" /> Golden Tempo
           </div>
-          <div className="text-xl md:text-2xl font-bold text-[#f1f1f1]">{nicheStats.avgBPM}</div>
-          <p className="text-[11px] text-[#aaaaaa] mt-0.5">Peak Club & Drive Tempo</p>
+          <div className="text-xl md:text-2xl font-bold text-gray-900">{nicheStats.avgBPM}</div>
+          <p className="text-[11px] text-gray-500 mt-0.5">Peak Club & Drive Tempo</p>
         </div>
 
-        <div className="p-4 rounded-2xl bg-[#181818] border border-[#282828]">
-          <div className="flex items-center gap-1.5 text-pink-400 text-xs font-bold uppercase tracking-wider mb-1">
+        <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm">
+          <div className="flex items-center gap-1.5 text-pink-600 text-xs font-bold uppercase tracking-wider mb-1">
             <Flame className="w-3.5 h-3.5" /> Top Genre
           </div>
-          <div className="text-lg md:text-xl font-bold text-[#f1f1f1] truncate">Hindi Afro House</div>
-          <p className="text-[11px] text-[#aaaaaa] mt-0.5">Deep House & Club Beats</p>
+          <div className="text-lg md:text-xl font-bold text-gray-900 truncate">Hindi Afro House</div>
+          <p className="text-[11px] text-gray-500 mt-0.5">Deep House & Club Beats</p>
         </div>
 
-        <div className="p-4 rounded-2xl bg-[#181818] border border-[#282828]">
-          <div className="flex items-center gap-1.5 text-yellow-400 text-xs font-bold uppercase tracking-wider mb-1">
+        <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm">
+          <div className="flex items-center gap-1.5 text-amber-500 text-xs font-bold uppercase tracking-wider mb-1">
             <Trophy className="w-3.5 h-3.5" /> Fastest Velocity
           </div>
-          <div className="text-lg md:text-xl font-bold text-[#f1f1f1]">1.42M in 14d</div>
-          <p className="text-[11px] text-[#aaaaaa] mt-0.5">Dhun Music Vibes (Aao Na)</p>
+          <div className="text-lg md:text-xl font-bold text-gray-900">1.42M in 14d</div>
+          <p className="text-[11px] text-gray-500 mt-0.5">Dhun Music Vibes (Aao Na)</p>
         </div>
       </div>
 
       {/* Supasonic Beats Official Standing Card */}
-      <div className="p-5 md:p-6 rounded-2xl bg-[#181818] border border-[#ff0000]/40 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-[#ff0000]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="p-5 md:p-6 rounded-3xl bg-gradient-to-r from-red-50/80 via-white to-amber-50/40 border-2 border-red-200 shadow-sm relative overflow-hidden">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5 relative z-10">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-full p-0.5 bg-[#0f0f0f] border-2 border-[#303030] shadow-xl flex-shrink-0">
+            <div className="w-14 h-14 rounded-full p-0.5 bg-white border-2 border-red-300 shadow-md flex-shrink-0">
               <img
                 src="/channel_avatar.jpg"
                 alt="Supasonic Beats"
@@ -107,17 +106,17 @@ export default function CompetitorLeaderboard({
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-black shadow-sm">
-                  CHART RANK #8
+                <span className="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[#ff0000] text-white shadow-sm">
+                  CHART RANK #{supasonicStanding.rank || 6}
                 </span>
-                <span className="text-xs text-emerald-400 font-bold flex items-center gap-1">
+                <span className="text-xs text-emerald-700 font-bold flex items-center gap-1">
                   <TrendingUp className="w-3.5 h-3.5" /> High Velocity Upside
                 </span>
               </div>
-              <h2 className="text-lg md:text-xl font-bold text-[#f1f1f1] mt-1">
+              <h2 className="text-lg md:text-xl font-bold text-gray-900 mt-1">
                 SUPASONIC BEATS vs Industry Competitors
               </h2>
-              <p className="text-xs text-[#aaaaaa] mt-1 max-w-xl leading-relaxed">
+              <p className="text-xs text-gray-600 mt-1 max-w-xl leading-relaxed">
                 {supasonicStanding.tacticalGap}
               </p>
             </div>
@@ -125,10 +124,10 @@ export default function CompetitorLeaderboard({
 
           <div className="flex items-center gap-2.5">
             <a
-              href="https://www.youtube.com/@supasonicbeats?sub_confirmation=1"
+              href="https://www.youtube.com/@SupasonicBeatsOfficial?sub_confirmation=1"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 rounded-full bg-[#ff0000] hover:bg-[#cc0000] text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-md shadow-red-900/40 active:scale-95 transition-all"
+              className="px-5 py-2.5 rounded-full bg-[#ff0000] hover:bg-[#cc0000] text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-sm active:scale-95 transition-all"
             >
               <Play className="w-3.5 h-3.5 fill-current" />
               Subscribe to Boost Rank
@@ -138,24 +137,24 @@ export default function CompetitorLeaderboard({
       </div>
 
       {/* Search and Filters */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-3.5 rounded-2xl bg-[#181818] border border-[#282828]">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-3.5 rounded-2xl bg-white border border-gray-200 shadow-sm">
         <div className="relative flex-1">
-          <Search className="w-4 h-4 text-[#717171] absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             placeholder="Search competitor channel, breakout track, or tempo..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 rounded-xl bg-[#121212] border border-[#303030] text-[#f1f1f1] placeholder-[#717171] text-xs focus:outline-none focus:border-[#3ea6ff]"
+            className="w-full pl-10 pr-4 py-2 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-500 text-xs focus:outline-none focus:border-[#065fd4]"
           />
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="text-xs text-[#aaaaaa]">Tempo:</span>
+          <span className="text-xs text-gray-600 font-medium">Tempo:</span>
           <select
             value={filterBpm}
             onChange={(e) => setFilterBpm(e.target.value)}
-            className="px-3 py-2 rounded-xl bg-[#121212] border border-[#303030] text-[#f1f1f1] text-xs font-medium focus:outline-none"
+            className="px-3 py-2 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-xs font-semibold focus:outline-none"
           >
             <option value="all">All Tempos</option>
             <option value="124">124 BPM (Golden Tempo)</option>
@@ -177,10 +176,10 @@ export default function CompetitorLeaderboard({
               onClick={() => setSelectedCompetitor(isSelected ? null : comp)}
               className={`p-4 rounded-2xl transition-all duration-200 cursor-pointer ${
                 isSupasonic
-                  ? "bg-[#212121] border border-[#ff0000]/60 shadow-lg"
+                  ? "bg-red-50/70 border-2 border-red-300 shadow-sm"
                   : isSelected
-                  ? "bg-[#212121] border border-[#3ea6ff]/60"
-                  : "bg-[#181818] border border-[#282828] hover:border-[#383838]"
+                  ? "bg-blue-50/50 border border-blue-300 shadow-sm"
+                  : "bg-white border border-gray-200 hover:border-gray-300 hover:shadow-sm"
               }`}
             >
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3.5">
@@ -196,7 +195,7 @@ export default function CompetitorLeaderboard({
                         ? "bg-amber-600 text-white"
                         : isSupasonic
                         ? "bg-[#ff0000] text-white"
-                        : "bg-[#272727] text-[#aaaaaa]"
+                        : "bg-gray-100 text-gray-700"
                     }`}
                   >
                     #{comp.rank}
@@ -204,7 +203,7 @@ export default function CompetitorLeaderboard({
 
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="text-sm font-bold text-[#f1f1f1] flex items-center gap-1.5">
+                      <h3 className="text-sm font-bold text-gray-900 flex items-center gap-1.5">
                         {comp.name}
                         {isSupasonic && (
                           <span className="px-2 py-0.2 rounded-full text-[9px] font-bold bg-[#ff0000] text-white">
@@ -212,34 +211,34 @@ export default function CompetitorLeaderboard({
                           </span>
                         )}
                       </h3>
-                      <span className="text-[11px] px-2 py-0.2 rounded bg-[#272727] text-[#3ea6ff] font-mono">
+                      <span className="text-[11px] px-2 py-0.2 rounded bg-gray-100 text-gray-700 font-mono font-semibold">
                         {comp.dominantBPM}
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-3 text-xs text-[#aaaaaa] mt-0.5">
+                    <div className="flex items-center gap-3 text-xs text-gray-500 mt-0.5">
                       <span>
-                        <strong className="text-[#f1f1f1]">{comp.subscribers}</strong> subscribers
+                        <strong className="text-gray-900 font-bold">{comp.subscribers}</strong> subscribers
                       </span>
                       <span>•</span>
                       <span>
-                        <strong className="text-[#f1f1f1]">{comp.totalViews}</strong> views
+                        <strong className="text-gray-900 font-bold">{comp.totalViews}</strong> views
                       </span>
                     </div>
                   </div>
                 </div>
 
                 {/* Top Breakout Video */}
-                <div className="flex items-center gap-3 p-2.5 rounded-xl bg-[#121212] border border-[#282828] flex-1 max-w-xl">
-                  <div className="w-7 h-7 rounded-lg bg-[#272727] flex items-center justify-center flex-shrink-0">
+                <div className="flex items-center gap-3 p-2.5 rounded-xl bg-gray-50 border border-gray-200 flex-1 max-w-xl">
+                  <div className="w-7 h-7 rounded-lg bg-white border border-gray-200 flex items-center justify-center flex-shrink-0 shadow-sm">
                     <Flame className="w-3.5 h-3.5 text-[#ff0000]" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-[10px] uppercase tracking-wider text-[#aaaaaa] font-semibold flex items-center justify-between">
+                    <div className="text-[10px] uppercase tracking-wider text-gray-500 font-semibold flex items-center justify-between">
                       <span>Top Breakout Track</span>
-                      <span className="text-emerald-400 font-mono">{comp.topBreakout.viewsFormatted} views</span>
+                      <span className="text-emerald-700 font-mono font-bold">{comp.topBreakout.viewsFormatted} views</span>
                     </div>
-                    <p className="text-xs font-medium text-[#f1f1f1] truncate mt-0.5" title={comp.topBreakout.title}>
+                    <p className="text-xs font-semibold text-gray-900 truncate mt-0.5" title={comp.topBreakout.title}>
                       {comp.topBreakout.title}
                     </p>
                   </div>
@@ -247,7 +246,7 @@ export default function CompetitorLeaderboard({
 
                 {/* Tactical link */}
                 <div className="flex items-center gap-1.5 self-end lg:self-center">
-                  <span className="text-xs text-[#aaaaaa] hover:text-[#f1f1f1] font-semibold flex items-center gap-1">
+                  <span className="text-xs text-gray-600 hover:text-black font-semibold flex items-center gap-1">
                     {isSelected ? "Hide Insights" : "Tactical Gap"}
                     <ArrowUpRight className={`w-3.5 h-3.5 transition-transform ${isSelected ? "rotate-90" : ""}`} />
                   </span>
@@ -256,30 +255,30 @@ export default function CompetitorLeaderboard({
 
               {/* Expandable Intelligence Panel */}
               {isSelected && (
-                <div className="mt-4 pt-4 border-t border-[#282828] grid grid-cols-1 md:grid-cols-2 gap-3 animate-in fade-in duration-200">
-                  <div className="p-3.5 rounded-xl bg-[#121212] border border-[#282828]">
-                    <div className="flex items-center gap-2 text-xs font-bold text-[#3ea6ff] mb-1.5">
+                <div className="mt-4 pt-4 border-t border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-3 animate-in fade-in duration-200">
+                  <div className="p-3.5 rounded-xl bg-white border border-gray-200 shadow-sm">
+                    <div className="flex items-center gap-2 text-xs font-bold text-[#065fd4] mb-1.5">
                       <Sparkles className="w-3.5 h-3.5" /> Tactical Market Gap (How to Outrank)
                     </div>
-                    <p className="text-xs text-[#aaaaaa] leading-relaxed">
+                    <p className="text-xs text-gray-600 leading-relaxed">
                       {comp.tacticalGap}
                     </p>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-[#121212] border border-[#282828]">
-                    <div className="flex items-center gap-2 text-xs font-bold text-[#ff4e45] mb-1.5">
+                  <div className="p-3.5 rounded-xl bg-white border border-gray-200 shadow-sm">
+                    <div className="flex items-center gap-2 text-xs font-bold text-[#ff0000] mb-1.5">
                       <Zap className="w-3.5 h-3.5" /> Title Pattern & Aesthetic
                     </div>
-                    <div className="text-xs text-[#aaaaaa] space-y-1">
+                    <div className="text-xs text-gray-600 space-y-1">
                       <div>
-                        <span className="text-[#717171] font-medium">Formula:</span>{" "}
-                        <code className="text-[11px] text-[#f1f1f1] bg-[#272727] px-1 py-0.5 rounded font-mono">
+                        <span className="text-gray-500 font-medium">Formula:</span>{" "}
+                        <code className="text-[11px] text-gray-900 bg-gray-100 px-1 py-0.5 rounded font-mono">
                           {comp.titlePattern}
                         </code>
                       </div>
                       <div>
-                        <span className="text-[#717171] font-medium">Visual Style:</span>{" "}
-                        <span className="text-[#f1f1f1]">{comp.thumbnailStyle}</span>
+                        <span className="text-gray-500 font-medium">Visual Style:</span>{" "}
+                        <span className="text-gray-900 font-medium">{comp.thumbnailStyle}</span>
                       </div>
                     </div>
                   </div>

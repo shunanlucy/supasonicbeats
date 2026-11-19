@@ -22,7 +22,6 @@ export const metadata: Metadata = {
     "Hindi Dance Music Instrumental",
     "Afro Desi Fusion",
     "Royalty Free Indian Beats",
-    "YouTube Shorts Trending Audio",
     "DJ Club Remix Beats",
     "Bollywood Dance Beats",
     "Late Night Drive Beats",
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
     "Dhun Music Vibes Style",
     "Hindi Club Master Stems",
   ],
-  authors: [{ name: "SUPASONIC BEATS", url: "https://www.youtube.com/@supasonicbeats" }],
+  authors: [{ name: "SUPASONIC BEATS", url: "https://www.youtube.com/@SupasonicBeatsOfficial" }],
   creator: "SUPASONIC BEATS",
   publisher: "SUPASONIC BEATS",
   formatDetection: {
@@ -142,7 +141,7 @@ export default function RootLayout({
           "Indian Club Beats",
         ],
         "sameAs": [
-          "https://www.youtube.com/@supasonicbeats",
+          "https://www.youtube.com/@SupasonicBeatsOfficial",
           "https://www.instagram.com/supasonicbeats",
           "https://www.tiktok.com/@supasonicbeats",
           "https://www.facebook.com/supasonicbeats",
@@ -152,14 +151,14 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="hi" className="dark">
+    <html lang="hi" className="light">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen bg-[#0f0f0f] text-[#f1f1f1] antialiased selection:bg-[#ff0000] selection:text-white">
+      <body className="min-h-screen bg-[#f8f9fa] text-[#0f0f0f] antialiased selection:bg-[#ff0000] selection:text-white">
         {children}
       </body>
     </html>
