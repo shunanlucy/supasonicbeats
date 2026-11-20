@@ -132,7 +132,7 @@ export default function VideoFeed({
 
   return (
     <section aria-label="Video Posts Feed" className="space-y-5">
-      {/* 1. YouTube Style Bright Search & Filter Chips Bar */}
+      {/* 1. YouTube Style Bright Search & Filter Chips Bar (Liquid Glass) */}
       <div className="space-y-3">
         {/* Bright Search Input */}
         <div className="relative w-full">
@@ -142,7 +142,7 @@ export default function VideoFeed({
             placeholder="Search catalog by title, 124 BPM, Hindi Afro House, musical key..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-9 py-2.5 rounded-full bg-white border border-gray-300 text-gray-900 placeholder-gray-500 text-xs focus:outline-none focus:border-[#065fd4] transition-colors shadow-sm"
+            className="w-full pl-10 pr-9 py-2.5 rounded-full liquid-glass border border-white/80 text-gray-900 placeholder-gray-400 text-xs focus:outline-none focus:ring-2 focus:ring-sky-400/30 transition-all shadow-sm"
           />
           {searchQuery && (
             <button
@@ -154,7 +154,7 @@ export default function VideoFeed({
           )}
         </div>
 
-        {/* Bright Chips Row */}
+        {/* Liquid Frosted Chips Row */}
         <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
           {subgenres.map((chip) => {
             const isActive = selectedGenre === chip.value;
@@ -162,10 +162,10 @@ export default function VideoFeed({
               <button
                 key={chip.value}
                 onClick={() => setSelectedGenre(chip.value)}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all whitespace-nowrap shadow-sm ${
+                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap active:scale-95 ${
                   isActive
-                    ? "bg-gray-900 text-white font-bold"
-                    : "bg-white text-gray-800 hover:bg-gray-100 border border-gray-200"
+                    ? "liquid-btn-red shadow-md shadow-red-500/25 font-bold"
+                    : "liquid-pill text-gray-700 hover:text-black"
                 }`}
               >
                 {chip.label}
@@ -175,7 +175,7 @@ export default function VideoFeed({
         </div>
       </div>
 
-      {/* 2. Bright Video Grid with Microdata Schema */}
+      {/* 2. Liquid Glass Video Grid with Microdata Schema */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {filteredPosts.map((post, idx) => {
           const isPlaying = currentlyPlayingId === post.id;
@@ -191,11 +191,11 @@ export default function VideoFeed({
                 </div>
               )}
 
-              {/* Semantic YouTube Video Card Article (Bright Style) */}
+              {/* Semantic YouTube Video Card Article (Liquid Glass Style) */}
               <article
                 itemScope
                 itemType={isTip ? "https://schema.org/Article" : "https://schema.org/MusicRecording"}
-                className="group flex flex-col rounded-2xl bg-white border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all duration-200 overflow-hidden"
+                className="group flex flex-col rounded-3xl liquid-card overflow-hidden hover:border-white transition-all duration-300"
               >
                 <meta itemProp="name" content={post.title} />
                 <meta itemProp="duration" content="PT3M24S" />
@@ -205,25 +205,25 @@ export default function VideoFeed({
                 {isTip ? (
                   <div
                     onClick={() => onOpenTip(post)}
-                    className="p-5 bg-gradient-to-br from-red-50/60 via-amber-50/40 to-white cursor-pointer min-h-[170px] flex flex-col justify-between border-b border-gray-100"
+                    className="p-5 bg-gradient-to-br from-red-500/10 via-amber-500/5 to-white/70 cursor-pointer min-h-[170px] flex flex-col justify-between border-b border-white/60"
                   >
                     <div className="space-y-1.5">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#ff0000] px-2 py-0.5 rounded bg-red-100 inline-block">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#ff3b30] px-2.5 py-0.5 rounded-full liquid-badge inline-block">
                         {post.tipCategory || "Producer Masterclass"}
                       </span>
-                      <h3 className="text-sm md:text-base font-bold text-gray-900 group-hover:text-[#ff0000] transition-colors line-clamp-2">
+                      <h3 className="text-sm md:text-base font-bold text-gray-900 group-hover:text-[#ff3b30] transition-colors line-clamp-2">
                         {post.title}
                       </h3>
                     </div>
                     <div className="flex items-center justify-between text-xs text-gray-600 font-semibold pt-3">
                       <span>Read Full Studio Guide</span>
-                      <ArrowUpRight className="w-4 h-4 text-[#ff0000] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      <ArrowUpRight className="w-4 h-4 text-[#ff3b30] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </div>
                   </div>
                 ) : (
                   <div
                     onClick={() => handleCardClick(post)}
-                    className="relative aspect-video w-full bg-gray-100 cursor-pointer overflow-hidden group/media"
+                    className="relative aspect-video w-full bg-gray-900 cursor-pointer overflow-hidden group/media"
                   >
                     <img
                       src={post.thumbnail}
@@ -236,42 +236,42 @@ export default function VideoFeed({
                     />
 
                     {/* YouTube Timestamp Duration Badge */}
-                    <div className="absolute bottom-1.5 right-1.5 px-1.5 py-0.5 rounded bg-black/90 text-white font-mono text-[10px] font-bold">
+                    <div className="absolute bottom-1.5 right-1.5 px-1.5 py-0.5 rounded-md bg-black/85 text-white font-mono text-[10px] font-bold">
                       {post.duration || "3:24"}
                     </div>
 
                     {/* Top Badges: BPM & Key */}
                     <div className="absolute top-2 left-2 flex gap-1 z-10">
-                      <span className="px-1.5 py-0.5 rounded bg-black/85 text-white font-mono text-[9px] font-bold">
+                      <span className="px-1.5 py-0.5 rounded-md bg-black/80 text-white font-mono text-[9px] font-bold">
                         {post.bpm} BPM
                       </span>
-                      <span className="px-1.5 py-0.5 rounded bg-black/85 text-gray-300 font-mono text-[9px] font-bold">
+                      <span className="px-1.5 py-0.5 rounded-md bg-black/80 text-gray-300 font-mono text-[9px] font-bold">
                         {post.key}
                       </span>
                     </div>
 
                     {post.isNewRelease && (
                       <div className="absolute top-2 right-2 z-10">
-                        <span className="px-2 py-0.5 rounded bg-[#ff0000] text-white font-bold text-[9px] tracking-wider uppercase shadow-md">
+                        <span className="px-2 py-0.5 rounded-md bg-[#ff3b30] text-white font-bold text-[9px] tracking-wider uppercase shadow-md border border-white/20">
                           NEW
                         </span>
                       </div>
                     )}
 
                     {/* YouTube Play Icon Hover Button */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/media:opacity-100 transition-opacity bg-black/25">
-                      <div className="w-12 h-12 rounded-full bg-[#ff0000] text-white flex items-center justify-center shadow-xl scale-95 group-hover/media:scale-100 transition-transform">
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/media:opacity-100 transition-opacity bg-black/30 backdrop-blur-[1px]">
+                      <div className="w-12 h-12 rounded-full liquid-btn-red text-white flex items-center justify-center shadow-xl scale-95 group-hover/media:scale-100 transition-transform">
                         <Play className="w-5 h-5 fill-current translate-x-0.5" />
                       </div>
                     </div>
                   </div>
                 )}
 
-                {/* Card Details (Bright Style: Avatar + Title + Stats) */}
-                <div className="p-3.5 flex-1 flex flex-col justify-between">
+                {/* Card Details (Liquid Glass Style: Avatar + Title + Stats) */}
+                <div className="p-4 flex-1 flex flex-col justify-between">
                   <div className="flex gap-3">
                     {/* Circular Channel Avatar */}
-                    <div className="w-9 h-9 rounded-full overflow-hidden bg-gray-100 flex-shrink-0 border border-gray-200">
+                    <div className="w-9 h-9 rounded-2xl overflow-hidden bg-gray-100 flex-shrink-0 border border-white/80 shadow-sm">
                       <img
                         src="/channel_avatar.jpg"
                         alt="SUPASONIC BEATS"
@@ -283,14 +283,14 @@ export default function VideoFeed({
                     <div className="min-w-0 flex-1">
                       <h3
                         onClick={() => handleCardClick(post)}
-                        className="text-xs md:text-sm font-bold text-gray-900 hover:text-black line-clamp-2 leading-snug cursor-pointer"
+                        className="text-xs md:text-sm font-bold text-gray-900 hover:text-black line-clamp-2 leading-snug cursor-pointer transition-colors"
                         title={post.title}
                       >
                         {post.title}
                       </h3>
 
                       <div className="flex items-center gap-1 text-[11px] text-gray-600 mt-1">
-                        <span className="hover:text-gray-900 transition-colors">SUPASONIC BEATS</span>
+                        <span className="hover:text-gray-900 transition-colors font-medium">SUPASONIC BEATS</span>
                         <span className="text-[10px] font-black text-[#065fd4]">✓</span>
                       </div>
 
@@ -302,14 +302,14 @@ export default function VideoFeed({
                     </div>
                   </div>
 
-                  {/* YouTube Action Bar Underneath */}
-                  <div className="mt-3.5 pt-2.5 border-t border-gray-100 flex items-center justify-between gap-1.5">
+                  {/* Liquid Action Bar Underneath */}
+                  <div className="mt-3.5 pt-2.5 border-t border-white/60 flex items-center justify-between gap-1.5">
                     {isTip ? (
                       <button
                         onClick={() => onOpenTip(post)}
-                        className="w-full py-1.5 px-3 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-900 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+                        className="w-full py-1.5 px-3 rounded-full liquid-pill text-gray-900 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all hover:bg-white"
                       >
-                        <BookOpen className="w-3.5 h-3.5 text-[#ff0000]" />
+                        <BookOpen className="w-3.5 h-3.5 text-[#ff3b30]" />
                         <span>Read Tip</span>
                       </button>
                     ) : (
@@ -317,7 +317,7 @@ export default function VideoFeed({
                         {/* Stream / Watch */}
                         <button
                           onClick={() => handleCardClick(post)}
-                          className="flex-1 py-1.5 px-2.5 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-900 text-xs font-semibold flex items-center justify-center gap-1 transition-colors"
+                          className="flex-1 py-1.5 px-2.5 rounded-full liquid-pill text-gray-900 text-xs font-semibold flex items-center justify-center gap-1 transition-all hover:bg-white active:scale-95"
                         >
                           <Play className="w-3 h-3 fill-current text-gray-800" />
                           <span>Watch</span>
@@ -330,7 +330,7 @@ export default function VideoFeed({
                               e.stopPropagation();
                               setDownloadMenuOpenId(isDownloadOpen ? null : post.id);
                             }}
-                            className="py-1.5 px-3 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-900 text-xs font-semibold flex items-center gap-1 transition-colors"
+                            className="py-1.5 px-3 rounded-full liquid-pill text-gray-900 text-xs font-semibold flex items-center gap-1 transition-all hover:bg-white active:scale-95"
                           >
                             <Download className="w-3 h-3 text-gray-700" />
                             <span>Download</span>
@@ -340,38 +340,38 @@ export default function VideoFeed({
                           {isDownloadOpen && (
                             <div
                               onClick={(e) => e.stopPropagation()}
-                              className="absolute bottom-full mb-2 right-0 w-48 rounded-xl bg-white border border-gray-200 p-1.5 shadow-xl z-50 text-left"
+                              className="absolute bottom-full mb-2 right-0 w-48 rounded-2xl liquid-glass border border-white/90 p-1.5 shadow-2xl z-50 text-left animate-in fade-in zoom-in-95 duration-150"
                             >
-                              <div className="text-[10px] font-bold text-gray-500 px-2 py-1 uppercase tracking-wider border-b border-gray-100 mb-1">
+                              <div className="text-[10px] font-bold text-gray-500 px-2 py-1 uppercase tracking-wider border-b border-white/50 mb-1">
                                 Direct Studio Master
                               </div>
                               <button
                                 onClick={(e) => handleDownload(post, "mp3", e)}
-                                className="w-full text-left px-2 py-1.5 rounded-lg text-xs font-medium text-gray-800 hover:bg-gray-100 flex items-center gap-2 transition-colors"
+                                className="w-full text-left px-2.5 py-1.5 rounded-xl text-xs font-medium text-gray-800 hover:bg-white/80 flex items-center gap-2 transition-colors"
                               >
                                 <FileAudio className="w-3.5 h-3.5 text-[#065fd4]" />
                                 <div>
-                                  <div>Audio MP3</div>
+                                  <div className="font-bold">Audio MP3</div>
                                   <div className="text-[9px] text-gray-500">320 kbps High Quality</div>
                                 </div>
                               </button>
                               <button
                                 onClick={(e) => handleDownload(post, "wav", e)}
-                                className="w-full text-left px-2 py-1.5 rounded-lg text-xs font-medium text-gray-800 hover:bg-gray-100 flex items-center gap-2 transition-colors"
+                                className="w-full text-left px-2.5 py-1.5 rounded-xl text-xs font-medium text-gray-800 hover:bg-white/80 flex items-center gap-2 transition-colors"
                               >
-                                <Disc className="w-3.5 h-3.5 text-[#ff0000]" />
+                                <Disc className="w-3.5 h-3.5 text-[#ff3b30]" />
                                 <div>
-                                  <div>Studio WAV Master</div>
+                                  <div className="font-bold">Studio WAV Master</div>
                                   <div className="text-[9px] text-gray-500">24-bit Lossless</div>
                                 </div>
                               </button>
                               <button
                                 onClick={(e) => handleDownload(post, "cover", e)}
-                                className="w-full text-left px-2 py-1.5 rounded-lg text-xs font-medium text-gray-800 hover:bg-gray-100 flex items-center gap-2 transition-colors"
+                                className="w-full text-left px-2.5 py-1.5 rounded-xl text-xs font-medium text-gray-800 hover:bg-white/80 flex items-center gap-2 transition-colors"
                               >
                                 <ImageIcon className="w-3.5 h-3.5 text-pink-600" />
                                 <div>
-                                  <div>4K Artwork Cover</div>
+                                  <div className="font-bold">4K Artwork Cover</div>
                                   <div className="text-[9px] text-gray-500">1920x1080 High Res</div>
                                 </div>
                               </button>

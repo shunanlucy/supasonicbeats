@@ -94,7 +94,7 @@ export default function SocialLinksIsland() {
             href={s.url}
             target="_blank"
             rel="noopener noreferrer"
-            className={`p-3.5 rounded-2xl bg-white border border-gray-200 ${s.borderHover} hover:shadow-md transition-all duration-200 group block active:scale-95`}
+            className={`p-4 rounded-3xl liquid-card ${s.borderHover} hover:shadow-xl transition-all duration-300 group block active:scale-95`}
           >
             <div className="flex items-center justify-between mb-2.5">
               <div className={`w-9 h-9 rounded-xl bg-gradient-to-tr ${s.color} text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform`}>

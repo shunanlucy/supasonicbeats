@@ -3,147 +3,173 @@
 @tailwind utilities;
 
 :root {
-  --background: #f8f9fa;
-  --foreground: #0f0f0f;
-  --yt-red: #ff0000;
-  --yt-red-hover: #cc0000;
-  --yt-surface: #ffffff;
-  --yt-card: #ffffff;
-  --yt-card-hover: #f3f4f6;
-  --yt-elevated: #ffffff;
-  --yt-border: #e5e7eb;
-  --yt-text-primary: #0f0f0f;
-  --yt-text-secondary: #606060;
-  --yt-text-tertiary: #909090;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --yt-red: #ff3b30;
+  --yt-red-hover: #e00000;
+  --liquid-border: rgba(255, 255, 255, 0.85);
+  --liquid-specular: rgba(255, 255, 255, 0.95);
+  --liquid-shadow: rgba(15, 23, 42, 0.06);
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", "Roboto", sans-serif;
   overflow-x: hidden;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Bright Theme Utility Classes */
-.yt-bg {
-  background-color: #f8f9fa;
+/* ========================================================
+   APPLE IPHONE WATER & LIQUID GLASSMORPHISM SUITE
+   ======================================================== */
+
+/* Living Water Ambient Canvas */
+.water-ambient-bg {
+  background: radial-gradient(circle at 50% 0%, rgba(224, 242, 254, 0.6) 0%, rgba(248, 250, 252, 0.8) 50%, #f8fafc 100%);
 }
 
-.yt-surface {
-  background-color: #ffffff;
+/* Primary Liquid Glass Container (Frosted Water Droplet Surface) */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    0 10px 30px -5px rgba(15, 23, 42, 0.05),
+    0 2px 8px -2px rgba(15, 23, 42, 0.03),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.95);
 }
 
-.yt-card {
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+/* Liquid Glass Cards (Convex Surface Tension with Specular Highlights) */
+.liquid-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-top-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 8px 24px -4px rgba(15, 23, 42, 0.04),
+    0 2px 6px -1px rgba(15, 23, 42, 0.02),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.yt-card:hover {
-  background-color: #ffffff;
-  border-color: #d1d5db;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+.liquid-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.95);
+  transform: translateY(-3px);
+  box-shadow: 
+    0 20px 40px -8px rgba(15, 23, 42, 0.08),
+    0 6px 12px -2px rgba(15, 23, 42, 0.04),
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 1);
 }
 
-.yt-elevated {
-  background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+/* Liquid Pill Capsules (iOS Segmented Controls & Control Center Pills) */
+.liquid-pill {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    0 2px 8px 0 rgba(15, 23, 42, 0.03),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.yt-border {
-  border-color: #e5e7eb;
+.liquid-pill:hover {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    0 4px 12px 0 rgba(15, 23, 42, 0.06),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 1);
 }
 
-/* YouTube Red Accent Glows */
-.yt-red-glow {
-  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.25);
-}
-
-.yt-red-badge {
-  background-color: #ff0000;
-  color: #ffffff;
-}
-
-/* YouTube Style Chips / Pills */
-.yt-chip {
-  background-color: #f2f2f2;
-  color: #0f0f0f;
-  transition: all 0.15s ease-in-out;
-  border: 1px solid #e5e7eb;
-}
-
-.yt-chip:hover {
-  background-color: #e5e5e5;
-  color: #000000;
-}
-
-.yt-chip-active {
-  background-color: #0f0f0f;
-  color: #ffffff;
-  font-weight: 700;
-}
-
-/* YouTube Subscribe Buttons */
-.yt-subscribe-btn {
-  background-color: #ff0000;
-  color: #ffffff;
-  font-weight: 700;
-  transition: all 0.15s ease-in-out;
-}
-
-.yt-subscribe-btn:hover {
-  background-color: #cc0000;
-}
-
-.yt-subscribe-btn-white {
-  background-color: #0f0f0f;
-  color: #ffffff;
-  font-weight: 700;
-}
-
-.yt-subscribe-btn-white:hover {
-  background-color: #272727;
-}
-
-/* Bright Glassmorphism */
-.ios-glass {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-}
-
-.ios-glass-card {
+/* Liquid Pill Active State */
+.liquid-pill-active {
   background: #ffffff;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  color: #0f172a;
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 
+    0 4px 14px -2px rgba(15, 23, 42, 0.08),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 1);
 }
 
-.ios-glass-pill {
-  background: #f3f4f6;
-  border: 1px solid #e5e7eb;
+/* Apple Liquid Gloss Red Button (iOS Action Button with Top Highlight) */
+.liquid-btn-red {
+  background: linear-gradient(135deg, #ff3b30 0%, #e00000 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 
+    0 4px 16px -2px rgba(255, 59, 48, 0.35),
+    0 2px 6px -1px rgba(255, 59, 48, 0.2),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.ios-glass-red {
-  background: linear-gradient(135deg, rgba(255, 0, 0, 0.08) 0%, rgba(239, 68, 68, 0.04) 100%);
-  border: 1px solid rgba(255, 0, 0, 0.2);
+.liquid-btn-red:hover {
+  background: linear-gradient(135deg, #ff453a 0%, #cc0000 100%);
+  box-shadow: 
+    0 8px 24px -2px rgba(255, 59, 48, 0.45),
+    0 3px 8px -1px rgba(255, 59, 48, 0.25),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
 }
 
-/* Bright Scrollbar */
+.liquid-btn-red:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(255, 59, 48, 0.3);
+}
+
+/* Translucent Water Ripple Glow */
+.water-ripple-glow {
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.8),
+    0 8px 32px rgba(56, 189, 248, 0.15),
+    inset 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+/* Water Droplet Badge */
+.liquid-badge {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+/* iOS Translucent Fluid Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f3f4;
+  background: rgba(241, 245, 249, 0.5);
+  backdrop-filter: blur(10px);
 }
 ::-webkit-scrollbar-thumb {
-  background: #c1c7cd;
+  background: rgba(148, 163, 184, 0.45);
   border-radius: 9999px;
+  border: 1.5px solid transparent;
+  background-clip: padding-box;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #9aa0a6;
+  background: rgba(100, 116, 139, 0.65);
+}
+
+/* Animations for Water Caustics Drift */
+@keyframes waterPulse {
+  0%, 100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.08) translate(15px, -15px);
+    opacity: 0.55;
+  }
+}
+
+.animate-water-pulse {
+  animation: waterPulse 9s ease-in-out infinite;
 }

@@ -58,9 +58,9 @@ export default function CompetitorLeaderboard({
 
   return (
     <div className="space-y-6">
-      {/* Top Industry Chart Banner */}
+      {/* Top Industry Chart Banner (Liquid Cards) */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5">
-        <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm">
+        <div className="p-4 rounded-3xl liquid-card">
           <div className="flex items-center gap-1.5 text-[#065fd4] text-xs font-bold uppercase tracking-wider mb-1">
             <Target className="w-3.5 h-3.5" /> Producers Tracked
           </div>
@@ -68,15 +68,15 @@ export default function CompetitorLeaderboard({
           <p className="text-[11px] text-gray-500 mt-0.5">Hindi Afro House Niche</p>
         </div>
 
-        <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm">
-          <div className="flex items-center gap-1.5 text-[#ff0000] text-xs font-bold uppercase tracking-wider mb-1">
+        <div className="p-4 rounded-3xl liquid-card">
+          <div className="flex items-center gap-1.5 text-[#ff3b30] text-xs font-bold uppercase tracking-wider mb-1">
             <Zap className="w-3.5 h-3.5" /> Golden Tempo
           </div>
           <div className="text-xl md:text-2xl font-bold text-gray-900">{nicheStats.avgBPM}</div>
           <p className="text-[11px] text-gray-500 mt-0.5">Peak Club & Drive Tempo</p>
         </div>
 
-        <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm">
+        <div className="p-4 rounded-3xl liquid-card">
           <div className="flex items-center gap-1.5 text-pink-600 text-xs font-bold uppercase tracking-wider mb-1">
             <Flame className="w-3.5 h-3.5" /> Top Genre
           </div>
@@ -84,7 +84,7 @@ export default function CompetitorLeaderboard({
           <p className="text-[11px] text-gray-500 mt-0.5">Deep House & Club Beats</p>
         </div>
 
-        <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm">
+        <div className="p-4 rounded-3xl liquid-card">
           <div className="flex items-center gap-1.5 text-amber-500 text-xs font-bold uppercase tracking-wider mb-1">
             <Trophy className="w-3.5 h-3.5" /> Fastest Velocity
           </div>
@@ -93,20 +93,20 @@ export default function CompetitorLeaderboard({
         </div>
       </div>
 
-      {/* Supasonic Beats Official Standing Card */}
-      <div className="p-5 md:p-6 rounded-3xl bg-gradient-to-r from-red-50/80 via-white to-amber-50/40 border-2 border-red-200 shadow-sm relative overflow-hidden">
+      {/* Supasonic Beats Official Standing Card (Liquid Glass with Convex Depth) */}
+      <div className="p-5 md:p-6 rounded-3xl liquid-glass border border-white/90 shadow-[0_16px_40px_rgba(15,23,42,0.06),inset_0_1px_2px_rgba(255,255,255,1)] relative overflow-hidden">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5 relative z-10">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-full p-0.5 bg-white border-2 border-red-300 shadow-md flex-shrink-0">
+            <div className="w-14 h-14 rounded-2xl p-0.5 liquid-glass border border-red-300 shadow-md flex-shrink-0">
               <img
                 src="/channel_avatar.jpg"
                 alt="Supasonic Beats"
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-cover rounded-xl"
               />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[#ff0000] text-white shadow-sm">
+                <span className="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider liquid-btn-red shadow-sm">
                   CHART RANK #{supasonicStanding.rank || 6}
                 </span>
                 <span className="text-xs text-emerald-700 font-bold flex items-center gap-1">
@@ -127,7 +127,7 @@ export default function CompetitorLeaderboard({
               href="https://www.youtube.com/@SupasonicBeatsOfficial?sub_confirmation=1"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 rounded-full bg-[#ff0000] hover:bg-[#cc0000] text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-sm active:scale-95 transition-all"
+              className="px-5 py-2.5 rounded-full liquid-btn-red font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-md shadow-red-500/25 active:scale-95 transition-all"
             >
               <Play className="w-3.5 h-3.5 fill-current" />
               Subscribe to Boost Rank
@@ -136,8 +136,8 @@ export default function CompetitorLeaderboard({
         </div>
       </div>
 
-      {/* Search and Filters */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-3.5 rounded-2xl bg-white border border-gray-200 shadow-sm">
+      {/* Search and Filters (Liquid Pill Capsule) */}
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-3.5 rounded-2xl liquid-pill">
         <div className="relative flex-1">
           <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
@@ -174,12 +174,12 @@ export default function CompetitorLeaderboard({
             <div
               key={comp.name}
               onClick={() => setSelectedCompetitor(isSelected ? null : comp)}
-              className={`p-4 rounded-2xl transition-all duration-200 cursor-pointer ${
+              className={`p-4 rounded-3xl transition-all duration-300 cursor-pointer ${
                 isSupasonic
-                  ? "bg-red-50/70 border-2 border-red-300 shadow-sm"
+                  ? "liquid-glass border-2 border-red-400/80 shadow-md shadow-red-500/10"
                   : isSelected
-                  ? "bg-blue-50/50 border border-blue-300 shadow-sm"
-                  : "bg-white border border-gray-200 hover:border-gray-300 hover:shadow-sm"
+                  ? "liquid-glass border-2 border-sky-400/80 shadow-md shadow-sky-500/10"
+                  : "liquid-card hover:border-white"
               }`}
             >
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3.5">

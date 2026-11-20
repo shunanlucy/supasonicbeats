@@ -201,27 +201,34 @@ export default function WatchPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8f9fa] text-[#0f0f0f] flex flex-col selection:bg-[#ff0000] selection:text-white">
+    <div className="min-h-screen bg-[#f8fafc] text-[#0f172a] relative overflow-hidden flex flex-col selection:bg-[#ff3b30] selection:text-white">
+      {/* Living Water Ambient Layer (Apple iPhone Theme) */}
+      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden select-none">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-[#f0f9ff]/50 to-[#fdf2f8]/40" />
+        <div className="absolute -top-40 -left-40 w-[32rem] h-[32rem] rounded-full bg-cyan-200/25 blur-[120px] animate-water-pulse" />
+        <div className="absolute top-1/3 -right-40 w-[36rem] h-[36rem] rounded-full bg-sky-200/20 blur-[140px] animate-water-pulse [animation-delay:3s]" />
+      </div>
+
       {/* High SEO Video Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
       />
 
-      {/* 1. YouTube Top Navigation Bar (Bright Style) */}
-      <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-4 shadow-sm">
+      {/* 1. YouTube Top Navigation Bar (Liquid Glass Style) */}
+      <header className="sticky top-0 z-50 w-full bg-white/70 backdrop-blur-2xl border-b border-white/60 px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-4 shadow-[0_4px_30px_rgba(15,23,42,0.03),inset_0_1px_1px_rgba(255,255,255,0.9)]">
         <div className="flex items-center gap-3">
           <Link
             href="/"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-semibold transition-colors"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full liquid-pill text-gray-800 text-xs font-semibold transition-all hover:bg-white"
           >
             <ArrowLeft className="w-4 h-4" />
             <span className="hidden sm:inline">Back to Channel</span>
           </Link>
 
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-5.5 rounded-md bg-[#ff0000] flex items-center justify-center shadow-sm">
-              <Play className="w-3 h-3 text-white fill-current translate-x-0.2" />
+            <div className="w-8 h-8 rounded-2xl bg-gradient-to-tr from-[#ff3b30] to-[#e00000] flex items-center justify-center shadow-md shadow-red-500/25 border border-white/30">
+              <Play className="w-3.5 h-3.5 text-white fill-current translate-x-0.2" />
             </div>
             <span className="text-sm font-black text-gray-900 tracking-tight group-hover:text-black hidden sm:inline">
               SUPASONIC BEATS
@@ -234,7 +241,7 @@ export default function WatchPage() {
             href="https://www.youtube.com/@SupasonicBeatsOfficial?sub_confirmation=1"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-1.5 rounded-full bg-[#ff0000] hover:bg-[#cc0000] text-white font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-sm active:scale-95 transition-all"
+            className="px-4 py-2 rounded-full liquid-btn-red font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-md shadow-red-500/25 active:scale-95 transition-all"
           >
             <Play className="w-3 h-3 fill-current" />
             <span>SUBSCRIBE</span>
@@ -247,15 +254,17 @@ export default function WatchPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
           {/* Main Column (Player, Title, Channel Bar, Action Bar, Description, Ads) */}
           <section aria-label="Cinema Player & Track Details" className="lg:col-span-8 space-y-4">
-            {/* 16:9 Responsive Cinema Player */}
-            <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-black border border-gray-200 shadow-md">
-              <iframe
-                src={`https://www.youtube.com/embed/${currentTrack.videoId}?autoplay=1&rel=0&modestbranding=1`}
-                title={`${currentTrack.title} - SUPASONIC BEATS`}
-                className="w-full h-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+            {/* 16:9 Responsive Cinema Player in Liquid Glass Frame */}
+            <div className="p-1.5 sm:p-2 rounded-3xl liquid-glass border border-white/80 shadow-[0_16px_40px_rgba(15,23,42,0.06),inset_0_1px_2px_rgba(255,255,255,0.95)]">
+              <div className="relative aspect-video w-full rounded-2xl sm:rounded-[22px] overflow-hidden bg-black shadow-inner">
+                <iframe
+                  src={`https://www.youtube.com/embed/${currentTrack.videoId}?autoplay=1&rel=0&modestbranding=1`}
+                  title={`${currentTrack.title} - SUPASONIC BEATS`}
+                  className="w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
             </div>
 
             {/* Video Title */}
@@ -353,8 +362,8 @@ export default function WatchPage() {
               </div>
             </div>
 
-            {/* Expandable Description Box (Bright Style) */}
-            <div className="p-4 rounded-2xl bg-white border border-gray-200 text-xs md:text-sm text-gray-900 space-y-3 shadow-sm">
+            {/* Expandable Description Box (Liquid Glass Style) */}
+            <div className="p-5 rounded-3xl liquid-card text-xs md:text-sm text-gray-900 space-y-3.5">
               {/* Metadata Stats Header */}
               <div className="flex flex-wrap items-center gap-2 font-bold text-xs text-gray-800">
                 <span>{currentTrack.views.toLocaleString()} views</span>
@@ -373,23 +382,23 @@ export default function WatchPage() {
 
               {/* Musical Specifications */}
               <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-xs">
-                <span className="px-2 py-0.5 rounded bg-gray-100 text-gray-800">
+                <span className="px-2.5 py-1 rounded-full liquid-badge text-gray-800">
                   Tempo: <strong>{currentTrack.bpm} BPM</strong>
                 </span>
-                <span className="px-2 py-0.5 rounded bg-gray-100 text-gray-800">
+                <span className="px-2.5 py-1 rounded-full liquid-badge text-gray-800">
                   Key: <strong>{currentTrack.key}</strong>
                 </span>
-                <span className="px-2 py-0.5 rounded bg-red-50 text-[#ff0000]">
+                <span className="px-2.5 py-1 rounded-full liquid-badge text-[#ff3b30]">
                   Genre: <strong>{currentTrack.subgenre}</strong>
                 </span>
-                <span className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700">
+                <span className="px-2.5 py-1 rounded-full liquid-badge text-emerald-700">
                   Audio: <strong>320kbps MP3 & 24-bit WAV</strong>
                 </span>
               </div>
 
               {/* SEO Details & Tag Cloud */}
               {currentTrack.seoData && (
-                <div className="pt-2 border-t border-gray-100 space-y-2">
+                <div className="pt-2 border-t border-white/60 space-y-2">
                   <div className="flex items-center justify-between text-xs font-bold text-gray-700">
                     <span>High SEO Sound Tags ({currentTrack.seoData.tagList.length} tags)</span>
                     <button
@@ -404,7 +413,7 @@ export default function WatchPage() {
                     {currentTrack.seoData.tagList.map((tag, i) => (
                       <span
                         key={i}
-                        className="px-2 py-0.5 rounded bg-gray-100 text-[11px] text-gray-700 font-mono"
+                        className="px-2.5 py-0.5 rounded-full liquid-badge text-[11px] text-gray-700 font-mono"
                       >
                         #{tag}
                       </span>
@@ -423,16 +432,16 @@ export default function WatchPage() {
 
           {/* Right Column: Up Next Recommendations Sidebar */}
           <aside aria-label="Up Next Recommendations" className="lg:col-span-4 space-y-5">
-            {/* 1. Official Releases from SUPASONIC BEATS (Prominently Highlighted) */}
-            <div className="p-4 rounded-2xl bg-white border-2 border-red-100 shadow-sm space-y-3.5">
-              <div className="flex items-center justify-between border-b border-gray-100 pb-2">
+            {/* 1. Official Releases from SUPASONIC BEATS (Liquid Frosted Glass) */}
+            <div className="p-4 sm:p-5 rounded-3xl liquid-glass border border-white/90 shadow-[0_12px_32px_rgba(15,23,42,0.05),inset_0_1px_2px_rgba(255,255,255,1)] space-y-3.5">
+              <div className="flex items-center justify-between border-b border-white/60 pb-2">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#ff0000] animate-ping" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#ff3b30] animate-ping" />
                   <h2 className="text-xs font-black text-gray-900 uppercase tracking-wider">
                     ★ Up Next from SUPASONIC BEATS
                   </h2>
                 </div>
-                <span className="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-[#ff0000] text-white shadow-sm">
+                <span className="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full liquid-btn-red shadow-sm">
                   OFFICIAL
                 </span>
               </div>
@@ -442,9 +451,9 @@ export default function WatchPage() {
                   <Link
                     key={rec.id}
                     href={`/watch/${rec.videoId}`}
-                    className="flex gap-2.5 p-2 rounded-xl bg-gray-50/70 hover:bg-gray-100 border border-gray-200 hover:border-red-300 transition-all duration-150 group block"
+                    className="flex gap-2.5 p-2 rounded-2xl liquid-pill hover:bg-white transition-all duration-200 group block"
                   >
-                    <div className="relative w-28 sm:w-32 aspect-video rounded-lg overflow-hidden bg-black flex-shrink-0 shadow-sm">
+                    <div className="relative w-28 sm:w-32 aspect-video rounded-xl overflow-hidden bg-black flex-shrink-0 shadow-sm border border-white/50">
                       <img
                         src={rec.thumbnail}
                         alt={`${rec.title} - SUPASONIC BEATS`}

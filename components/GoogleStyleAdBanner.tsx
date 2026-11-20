@@ -143,9 +143,9 @@ export default function GoogleStyleAdBanner({
   // 1. Google 300x250 Medium Rectangle Ad (For Watch Page / Sidebars)
   if (format === "rectangle") {
     return (
-      <aside aria-label="Advertisement" className={`relative w-full max-w-[340px] mx-auto rounded-2xl bg-white border border-gray-200 overflow-hidden shadow-sm p-3.5 space-y-2.5 ${className}`}>
+      <aside aria-label="Advertisement" className={`relative w-full max-w-[340px] mx-auto rounded-3xl liquid-card overflow-hidden p-4 space-y-3 ${className}`}>
         {/* Top Google Ad Label Bar */}
-        <div className="flex items-center justify-between border-b border-gray-100 pb-1.5 px-1">
+        <div className="flex items-center justify-between border-b border-white/60 pb-1.5 px-1">
           <GoogleAdTag />
           <span className="text-[10px] text-gray-400 font-mono">300x250</span>
         </div>
@@ -153,7 +153,7 @@ export default function GoogleStyleAdBanner({
         {/* 16:9 Widescreen Video Slot */}
         <Link
           href={`/watch/${currentItem.videoId}`}
-          className="relative aspect-video w-full rounded-xl overflow-hidden bg-black block group shadow-sm"
+          className="relative aspect-video w-full rounded-2xl overflow-hidden bg-black block group shadow-sm border border-white/40"
         >
           <img
             src={currentItem.posterUrl}
@@ -162,13 +162,13 @@ export default function GoogleStyleAdBanner({
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
           <div className="absolute top-2 left-2 flex gap-1">
-            <span className="px-1.5 py-0.5 rounded bg-black/85 text-white font-mono text-[9px] font-bold">
+            <span className="px-1.5 py-0.5 rounded-md bg-black/85 text-white font-mono text-[9px] font-bold">
               {currentItem.bpm} BPM
             </span>
           </div>
           <div className="absolute bottom-2 left-2 right-2 flex items-center justify-between text-white text-[11px] font-bold">
             <span className="truncate">{currentItem.title}</span>
-            <span className="text-white bg-[#ff0000] px-2 py-0.5 rounded font-mono text-[10px]">Play ▶</span>
+            <span className="text-white liquid-btn-red px-2.5 py-0.5 rounded-full font-mono text-[10px]">Play ▶</span>
           </div>
         </Link>
 
@@ -197,7 +197,7 @@ export default function GoogleStyleAdBanner({
             href={subscribeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full py-2.5 px-4 rounded-full bg-[#ff0000] hover:bg-[#cc0000] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all text-center"
+            className="w-full py-2.5 px-4 rounded-full liquid-btn-red font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 active:scale-95 transition-all text-center"
           >
             <Play className="w-3.5 h-3.5 fill-current" />
             SUBSCRIBE ON YOUTUBE
@@ -211,9 +211,9 @@ export default function GoogleStyleAdBanner({
   // 2. Google Large Billboard Display Ad (970x250 In-Feed / In-Page)
   if (format === "billboard") {
     return (
-      <aside aria-label="Advertisement" className={`relative w-full rounded-3xl bg-white border border-gray-200 overflow-hidden shadow-sm p-4 md:p-6 my-6 ${className}`}>
+      <aside aria-label="Advertisement" className={`relative w-full rounded-3xl liquid-card overflow-hidden p-5 md:p-6 my-6 ${className}`}>
         {/* Top Google Ad Label Bar */}
-        <div className="flex items-center justify-between border-b border-gray-100 pb-2 mb-4">
+        <div className="flex items-center justify-between border-b border-white/60 pb-2 mb-4">
           <div className="flex items-center gap-2">
             <GoogleAdTag />
             <span className="text-[10px] text-gray-400 font-mono hidden md:inline">970x250 Billboard</span>
@@ -227,7 +227,7 @@ export default function GoogleStyleAdBanner({
           {/* 16:9 Showcase Slot */}
           <Link
             href={`/watch/${currentItem.videoId}`}
-            className="md:col-span-4 relative aspect-video rounded-2xl overflow-hidden bg-black block group shadow-sm"
+            className="md:col-span-4 relative aspect-video rounded-2xl overflow-hidden bg-black block group shadow-sm border border-white/40"
           >
             <img
               src={currentItem.posterUrl}
@@ -246,7 +246,7 @@ export default function GoogleStyleAdBanner({
             </div>
 
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-11 h-11 rounded-full bg-[#ff0000] text-white flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+              <div className="w-11 h-11 rounded-full liquid-btn-red text-white flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                 <Play className="w-5 h-5 fill-current translate-x-0.5" />
               </div>
             </div>
@@ -283,7 +283,7 @@ export default function GoogleStyleAdBanner({
               href={subscribeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3 px-4 rounded-full bg-[#ff0000] hover:bg-[#cc0000] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all text-center"
+              className="w-full py-3 px-4 rounded-full liquid-btn-red font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 active:scale-95 transition-all text-center shadow-md shadow-red-500/25"
             >
               <Play className="w-3.5 h-3.5 fill-current" />
               SUBSCRIBE NOW
@@ -291,7 +291,7 @@ export default function GoogleStyleAdBanner({
             </a>
             <Link
               href={`/watch/${currentItem.videoId}`}
-              className="w-full py-2.5 px-4 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold text-xs flex items-center justify-center gap-1.5 transition-all text-center"
+              className="w-full py-2.5 px-4 rounded-full liquid-pill text-gray-900 font-semibold text-xs flex items-center justify-center gap-1.5 transition-all text-center hover:bg-white"
             >
               Watch Video & Stems
             </Link>
@@ -301,16 +301,16 @@ export default function GoogleStyleAdBanner({
     );
   }
 
-  // 3. Google Sticky Bottom Anchor Ad (Clean Bright)
+  // 3. Google Sticky Bottom Anchor Ad (Liquid Glass iPhone Style)
   if (format === "anchor") {
     if (collapsed) {
       return (
         <aside aria-label="Bottom Ad Tab" className="fixed bottom-0 left-1/2 -translate-x-1/2 z-50">
           <button
             onClick={() => setCollapsed(false)}
-            className="px-4 py-1.5 rounded-t-xl bg-white border-t border-x border-gray-200 text-gray-700 hover:text-black text-[10px] font-bold flex items-center gap-1.5 shadow-lg"
+            className="px-4 py-1.5 rounded-t-2xl liquid-glass border-t border-x border-white/80 text-gray-700 hover:text-black text-[10px] font-bold flex items-center gap-1.5 shadow-xl"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ff0000] animate-ping" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#ff3b30] animate-ping" />
             Ad: Subscribe to Supasonic Beats ▲
           </button>
         </aside>
@@ -318,7 +318,7 @@ export default function GoogleStyleAdBanner({
     }
 
     return (
-      <aside aria-label="Sticky Advertisement" className="fixed bottom-0 inset-x-0 z-50 w-full bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg px-4 py-2">
+      <aside aria-label="Sticky Advertisement" className="fixed bottom-0 inset-x-0 z-50 w-full liquid-glass border-t border-white/80 shadow-[0_-4px_30px_rgba(15,23,42,0.06),inset_0_1px_1.5px_rgba(255,255,255,0.9)] px-4 py-2.5">
         <div className="max-w-5xl mx-auto flex items-center justify-between gap-3">
           {/* Left Media & Channel Info */}
           <div className="flex items-center gap-3 min-w-0">
@@ -336,14 +336,14 @@ export default function GoogleStyleAdBanner({
             {/* Video preview */}
             <Link
               href={`/watch/${currentItem.videoId}`}
-              className="relative w-16 sm:w-20 aspect-video rounded-lg overflow-hidden bg-black flex-shrink-0 border border-gray-200 group"
+              className="relative w-16 sm:w-20 aspect-video rounded-xl overflow-hidden bg-black flex-shrink-0 border border-white/50 group shadow-sm"
             >
               <img
                 src={currentItem.posterUrl}
                 alt={currentItem.title}
                 className="w-full h-full object-cover"
               />
-              <span className="absolute bottom-0 right-0 font-mono text-[8px] bg-black/85 px-1 text-white font-bold">
+              <span className="absolute bottom-0 right-0 font-mono text-[8px] bg-black/85 px-1 text-white font-bold rounded-tl-md">
                 {currentItem.bpm} BPM
               </span>
             </Link>
@@ -366,7 +366,7 @@ export default function GoogleStyleAdBanner({
               href={subscribeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2 rounded-full bg-[#ff0000] hover:bg-[#cc0000] text-white font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-sm active:scale-95 transition-all"
+              className="px-5 py-2 rounded-full liquid-btn-red font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 active:scale-95 transition-all shadow-md shadow-red-500/25"
             >
               <Play className="w-3 h-3 fill-current" />
               SUBSCRIBE
@@ -378,11 +378,11 @@ export default function GoogleStyleAdBanner({
     );
   }
 
-  // 4. Default: Standard Google Leaderboard Ad (728x90)
+  // 4. Default: Standard Google Leaderboard Ad (728x90 Liquid Glass)
   return (
-    <aside aria-label="Advertisement" className={`relative w-full max-w-5xl mx-auto rounded-3xl bg-white border border-gray-200 overflow-hidden shadow-sm p-3.5 my-5 ${className}`}>
+    <aside aria-label="Advertisement" className={`relative w-full max-w-5xl mx-auto rounded-3xl liquid-card overflow-hidden p-3.5 my-5 ${className}`}>
       {/* Top Google Ad Label Bar */}
-      <div className="flex items-center justify-between border-b border-gray-100 pb-1.5 mb-2">
+      <div className="flex items-center justify-between border-b border-white/60 pb-1.5 mb-2">
         <div className="flex items-center gap-2">
           <GoogleAdTag />
           <span className="text-[10px] text-gray-400 font-mono hidden sm:inline">728x90 Leaderboard</span>
@@ -396,7 +396,7 @@ export default function GoogleStyleAdBanner({
         {/* Left: Video Media */}
         <Link
           href={`/watch/${currentItem.videoId}`}
-          className="relative w-24 sm:w-32 aspect-video rounded-xl overflow-hidden bg-black flex-shrink-0 border border-gray-200 group shadow-sm"
+          className="relative w-24 sm:w-32 aspect-video rounded-xl overflow-hidden bg-black flex-shrink-0 border border-white/40 group shadow-sm"
         >
           <img
             src={currentItem.posterUrl}
@@ -434,7 +434,7 @@ export default function GoogleStyleAdBanner({
             href={subscribeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 sm:px-5 py-2 rounded-full bg-[#ff0000] hover:bg-[#cc0000] text-white font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-sm active:scale-95 transition-all text-center"
+            className="px-4 sm:px-5 py-2 rounded-full liquid-btn-red font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 active:scale-95 transition-all text-center shadow-md shadow-red-500/25"
           >
             <Play className="w-3 h-3 fill-current" />
             <span className="hidden sm:inline">SUBSCRIBE</span>
