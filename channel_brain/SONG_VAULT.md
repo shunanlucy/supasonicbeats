@@ -4,6 +4,18 @@ This document records every track produced, the creative Suno / sound prompts us
 
 ---
 
+## ⚡ Active Launch & Newest Releases (23 Nov 2026)
+
+### 0. AB AAJA (🔥 BRAND NEW RELEASE)
+- **Video ID:** `2wip8JYV7tQ` | **Status:** Private / Scheduled for Peak Window | **Published:** 23 Nov 2026
+- **BPM:** 128 BPM | **Key:** D Minor | **Drop Timing:** 15.8s
+- **Loudness:** -12.3 to -13.5 LUFS | **Duration:** 03:24
+- **Style:** Indian Afro House x Club Bangers x Deep House (Tocame Latin Bounce Inspired)
+- **Master Audio:** `/home/shunan/Downloads/abaaja_capcut_compatible.wav`
+- **Why It's Positioned to Win:** Fast 15.8s drop, bilingual flirty lyrics, 128 BPM Tocame-inspired bouncy offbeat bass and staccato brass stabs. Mastered specifically for car subwoofers and VIP club dancefloors.
+
+---
+
 ## 🏆 Tier 1: Mega Hits (> 2,000 Views)
 
 ### 1. DEEDAR DE
@@ -132,9 +144,37 @@ This document records every track produced, the creative Suno / sound prompts us
 - **Title:** `KAALI RAAT | Indian Afro House x Raga Techno x Deep House | Supasonic Beats [125 BPM]`
 
 ### 19. NASHA (Extended Club Mix)
-- **Video ID:** `x9WfEe6WG5E` | **Status:** Private *(Uploaded 19 Nov 2026, 05:52 PM IST)*
+- **Video ID:** `x9WfEe6WG5E` | **Status:** Public *(Published 19 Nov 2026)* | **Views:** 350+
 - **Duration:** 06:48 (Part 1: 0:00–3:22 | Part 2: 3:22–6:48)
 - **BPM:** 125 BPM
 - **Style:** Indian Deep House x Club Bangers x Melodic Bass (Continuous 2-Part Mix)
 - **Title:** `NASHA (Extended Club Mix) | Indian Deep House x Club Bangers | Supasonic Beats [125 BPM]`
 - **SEO Targeting:** Singularity Beats (Khuleaam), Nomadic Beats (Nasha), Clover Beats (Kaali Bijli), FLIPMODE.
+
+### 20. SAHEBA (Extended Club Mix)
+- **Video ID:** `cOTpVBWmL3U` | **Status:** Public *(Published 20 Nov 2026)* | **Views:** 158+
+- **Duration:** 06:57 (Part 1 [Winning Master]: 0:00–3:31 | Part 2 [VIP Club Cut]: 3:31–6:57)
+- **BPM:** 124 BPM
+- **Style:** Indian Afro House x Deep House x Club Groove (Continuous 2-Part Extended Mix)
+- **Title:** `SAHEBA (Extended Club Mix) | Indian Afro House x Deep House | Supasonic Beats [124 BPM]`
+- **SEO Targeting:** Dhun Music Vibes (Saheba / Kaho Na), Singularity Beats (Tantra / Khuleaam), Nomadic Beats (Lafz / Nasha), Clover Beats (Saanjh Ka Nasha / Kaali Bijli), FLIPMODE.
+- **Playlists Added:** `Hindi Afro House & Deep House 2026`, `Late Night Highway Car Drive 2026 [124 BPM]`, `Late Night Car Drive Songs Hindi 2026`.
+
+### 21. SAJAN SAJAN
+- **Video ID:** `dscqPBwW8bw` | **Status:** Public *(Published 21 Nov 2026)* | **Views:** 229+
+- **Duration:** 03:30
+- **BPM:** 125 BPM
+- **Style:** Indian Deep House x Club Bangers (Intense Action Noir / Desi Batman Aesthetic)
+- **Title:** `SAJAN SAJAN | Indian Deep House x Club Bangers | Supasonic Beats [125 BPM]`
+- **SEO Targeting:** Desi Batman, Abhishek Mehra (Sajan Sajan 7.6M), Singularity Beats, Nomadic Beats, Clover Beats.
+- **Playlists Added:** `Hindi Afro House & Deep House 2026`, `Late Night Highway Car Drive 2026 [124 BPM]`, `Late Night Car Drive Songs Hindi 2026`.
+
+### 22. KAHO NA KAHO
+- **Video ID:** `OAxXnaUsiZw` | **Status:** Private *(Uploaded 22 Nov 2026, 06:15 PM IST)*
+- **Duration:** 04:00 (Trimmed & Mastered: 0:00 instant start, 17s extra loop cropped, -13.6 LUFS)
+- **BPM:** 130 BPM
+- **Style:** Indian Afro House x Club Bangers x Raga Techno (High-Energy Euphoric Red Nightclub Aesthetic)
+- **Title:** `KAHO NA KAHO | Indian Afro House x Club Bangers x Raga Techno | Supasonic Beats [130 BPM]`
+- **SEO Targeting:** Amir Jamal (Kaho Na Kaho / Murder), Dhun Music Vibes, Singularity Beats, Clover Beats, Nomadic Beats.
+- **Playlists Added:** `Hindi Afro House & Deep House 2026`, `Late Night Highway Car Drive 2026`, `Late Night Car Drive Hindi Songs`.
+

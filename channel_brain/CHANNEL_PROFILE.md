@@ -8,30 +8,35 @@
 
 ---
 
-## 📈 Live Metrics Snapshot (Updated: 18 Nov 2026, 09:55 AM IST)
-- **Subscribers:** **114** *(🚀 EXPLOSIVE SURGE: +9 organic subscribers in 24 hours!)*
-- **Total Channel Views:** **46,000+** *(Channel growth in high gear! 🔥)*
-- **Total Catalog Videos:** **78** (Public) + **20** Shorts
+## 📈 Live Metrics Snapshot (Updated: 22 Nov 2026, 06:35 PM IST)
+- **Subscribers:** **134** *(🚀 RECORD SURGE: +10 organic subscribers in 36 hours! +20 since 18 Nov!)*
+- **Total Catalog Views:** **57,739** *(Real-Time Catalog Sum, +11,700 views since Nov 18!)*
+- **Public Views (Analytics):** **55,458**
+- **Total Catalog Videos:** **95** (86 Public) + **23** Shorts
+- **1K+ Milestone Club:** **17 Tracks** (100% Afro House / Deep House)
 - **Key Milestones & Growth:**
-  - `DEEDAR DE` (`BuvPDZawk9M`): **5,700 views** *(All-time channel king! 👑)*
-  - `RAAT BAKI` (`iXySpPM-wOc`): **3,717 views** *(Solid #2 all-time hit! 🔥)*
-  - `MADHOSH` (`ZhYEBZDrTcc`): **1,970 views** & 15+ likes *(💥 EXPLODING HIT: Doubled views overnight from 1,013 to 1,970! Cruising past 2K!)*
-  - `AAO NA` (`nK_eWfB8Y_E`): **2,682 views**
-  - `IN THE NIGHT`: **2,085 views**
-  - `MAJBOOR (Duet Version)` (`h7sJw_li4F0`): **1,558 views**
-  - `JAADU` (`6pqnbAnFkgk`): **1,357 views**
-  - `KALYANI`: **1,250 views**
-  - `MAHIYA` (`CvjFWuVTzGo`): **1,162 views**
-  - `DIL LAGA LIYA`: **1,144 views**
-  - `SAJNA` (`SYnlWSTJLqQ`): **1,139 views**
-  - `BHAR LE TU`: **1,012 views**
-  - `TABAAHI` (`Blo8rGHLS-4`): **676 views** *(🔥 Cohort 2 Browse Surge: +404 views in 24h, pacing towards 1K!)*
-  - `SCENE` (`Tm-B06J5IRk`): **707 views**
-  - `KABHI SHAAM DHALE` (`KKsSqxcl0oM`): **607 views**
-  - `DILBAR` (`TKQLLuDHwCo`): **553 views**
-  - `SUNO NA` (`Bab-NbmO3_E`): **443 views**
-  - `NAZREIN` (`cW84M99yJA4`): **421 views**
-  - `LABON KO` (`_pwySZOdvfw`): **392 views**
+  - `DEEDAR DE` (`BuvPDZawk9M`): **5,840 views** *(All-time channel king! Inching toward 6K! 👑)*
+  - `RAAT BAKI` (`iXySpPM-wOc`): **3,874 views** *(Solid #2 all-time hit! Headed to 4K! 🔥)*
+  - `MADHOSH` (`ZhYEBZDrTcc`): **3,788 views** *(Crossed 3.7K, massive retention driver!)*
+  - `AAO NA` (`UjthtKkgwWU`): **2,731 views** *(Channel Retention King - 35.7% APV)*
+  - `IN THE NIGHT` (`rC8QB0BZ9EU`): **2,126 views**
+  - `KAALI RAAT` (`lcqS1aTRGDk`): **2,097 views** *(🔥 Crossed 2K Milestone today!)*
+  - `TABAAHI` (`Blo8rGHLS-4`): **1,713 views**
+  - `MAJBOOR (Duet Version)` (`h7sJw_li4F0`): **1,585 views**
+  - `JAADU` (`6pqnbAnFkgk`): **1,496 views**
+  - `KALYANI` (`wE7QEsQ9IPI`): **1,272 views**
+  - `MAHIYA` (`CvjFWuVTzGo`): **1,192 views**
+  - `DIL LAGA LIYA`: **1,155 views**
+  - `SAJNA` (`SYnlWSTJLqQ`): **1,148 views**
+  - `BHAR LE TU`: **1,025 views**
+  - `SAJAN SAJAN` (`dscqPBwW8bw`): **384 views** *(🔥 Surging! +155 views in 5 hours, #2 search rank)*
+  - `SAHEBA (Extended Club Mix)` (`cOTpVBWmL3U`): **456 views**
+  - `KAHO NA KAHO` (`OAxXnaUsiZw`): **LIVE PUBLIC** *(130 BPM Indian Afro House x Club Bangers x Raga Techno)*
+- **Tracks Nearing 1K Club:**
+  - `So Swaezy` (`M3iloxXb9TI`): **973 views** *(Only 27 views to 1K!)*
+  - `TU MIL JAAYE` (`u9kx5lpIoZs`): **939 views** *(Only 61 views to 1K!)*
+  - `ZARA ZARA` (`pgJIMI4Ihzw`): **895 views** *(Only 105 views to 1K!)*
+  - `LABON KO` (`_pwySZOdvfw`): **875 views** *(Only 125 views to 1K!)*
 
 ---
 

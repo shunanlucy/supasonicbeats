@@ -107,6 +107,17 @@ const initialProducerTips: FeedPost[] = [
 // Official Live Channel Hit Releases (100% In-Sync With YouTube Channel @SupasonicBeatsOfficial)
 export const officialChannelReleases = [
   {
+    videoId: "2wip8JYV7tQ",
+    title: "AB AAJA | Indian Afro House x Club Bangers x Deep House | Supasonic Beats [128 BPM]",
+    views: 150,
+    likes: 25,
+    comments: 5,
+    bpm: 128,
+    key: "D Minor",
+    subgenre: "Indian Afro House",
+    caption: "🔥 BRAND NEW RELEASE! AB AAJA in 128 BPM. Seductive bilingual vocals, bouncy offbeat bass, and Tocame-inspired brass drops. Mastered for VIP clubs and car subwoofers.",
+  },
+  {
     videoId: "87ndOuq346I",
     title: "OBSESSION [85 BPM] - Hindi Indi R&B x Acoustic Pop Duet | Supasonic Beats",
     views: 480,
