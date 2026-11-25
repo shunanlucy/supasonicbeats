@@ -18,6 +18,8 @@ import SubscribeUnlockModal from "./SubscribeUnlockModal";
 
 interface TopRecentVideosCarouselProps {
   releases?: FeedPost[];
+  activeTab?: string;
+  onSelectTab?: (tab: "home" | "releases" | "vault" | "license") => void;
   onOpenSEO?: (post: FeedPost) => void;
   onOpenTip?: (post: FeedPost) => void;
   onPlayVideo?: (post: FeedPost) => void;
@@ -27,10 +29,11 @@ interface TopRecentVideosCarouselProps {
 
 export default function TopRecentVideosCarousel({
   releases = [],
+  activeTab = "home",
+  onSelectTab,
   subscriberCount = "141+",
   videoCount = "98",
 }: TopRecentVideosCarouselProps) {
-  // Public Fallback (Only PUBLIC releases while live feed initializes)
   const fallbackPublic5 = [
     {
       id: "vid-aajphir",
@@ -40,14 +43,14 @@ export default function TopRecentVideosCarousel({
       subgenre: "Deep House",
       bpm: 125,
       key: "D Minor",
-      viewsFormatted: "New Release",
-      views: 120,
-      duration: "03:18",
-      badge: "Featured Release",
+      viewsFormatted: "353+ views",
+      views: 353,
+      duration: "3:18",
+      badge: "Latest Upload",
       thumbnail: "https://i.ytimg.com/vi/UzLfMApeA-4/maxresdefault.jpg",
       hqThumbnail: "https://i.ytimg.com/vi/UzLfMApeA-4/hqdefault.jpg",
       caption:
-        "Classic Hindi sensual groove transformed into a sleek 125 BPM Deep House club mix crafted for late-night highway drives.",
+        "Classic Hindi sensual groove transformed into a 125 BPM Deep House club mix crafted for late-night highway drives.",
     },
     {
       id: "vid-abaaja",
@@ -57,10 +60,10 @@ export default function TopRecentVideosCarousel({
       subgenre: "VIP Club Bounce",
       bpm: 128,
       key: "D Minor",
-      viewsFormatted: "624+ Views",
-      views: 624,
-      duration: "03:24",
-      badge: "Trending Fast",
+      viewsFormatted: "724+ views",
+      views: 724,
+      duration: "3:24",
+      badge: "Trending",
       thumbnail: "https://i.ytimg.com/vi/2wip8JYV7tQ/maxresdefault.jpg",
       hqThumbnail: "https://i.ytimg.com/vi/2wip8JYV7tQ/hqdefault.jpg",
       caption:
@@ -74,9 +77,9 @@ export default function TopRecentVideosCarousel({
       subgenre: "Raga Techno",
       bpm: 130,
       key: "F# Minor",
-      viewsFormatted: "341+ Views",
-      views: 341,
-      duration: "04:00",
+      viewsFormatted: "356+ views",
+      views: 356,
+      duration: "4:00",
       badge: "Club Edition",
       thumbnail: "https://i.ytimg.com/vi/OAxXnaUsiZw/maxresdefault.jpg",
       hqThumbnail: "https://i.ytimg.com/vi/OAxXnaUsiZw/hqdefault.jpg",
@@ -91,10 +94,10 @@ export default function TopRecentVideosCarousel({
       subgenre: "Desi Deep House",
       bpm: 125,
       key: "E Minor",
-      viewsFormatted: "496+ Views",
-      views: 496,
-      duration: "03:30",
-      badge: "Fan Favorite",
+      viewsFormatted: "510+ views",
+      views: 510,
+      duration: "3:30",
+      badge: "Popular",
       thumbnail: "https://i.ytimg.com/vi/dscqPBwW8bw/maxresdefault.jpg",
       hqThumbnail: "https://i.ytimg.com/vi/dscqPBwW8bw/hqdefault.jpg",
       caption:
@@ -108,10 +111,10 @@ export default function TopRecentVideosCarousel({
       subgenre: "Extended Club Mix",
       bpm: 124,
       key: "F Minor",
-      viewsFormatted: "507+ Views",
-      views: 507,
-      duration: "06:57",
-      badge: "Extended Set",
+      viewsFormatted: "508+ views",
+      views: 508,
+      duration: "6:57",
+      badge: "Extended Mix",
       thumbnail: "https://i.ytimg.com/vi/cOTpVBWmL3U/maxresdefault.jpg",
       hqThumbnail: "https://i.ytimg.com/vi/cOTpVBWmL3U/hqdefault.jpg",
       caption:
@@ -119,14 +122,17 @@ export default function TopRecentVideosCarousel({
     },
   ];
 
-  // Dynamically derive the latest 5 PUBLIC releases from live API whenever available
   const latest5Videos =
     releases && releases.length > 0
       ? releases.slice(0, 5).map((r, i) => {
           const parts = r.title.split("|").map((s) => s.trim());
           const cleanName = parts[0].replace(/\[.*?\]/g, "").trim();
-          const subTitle = parts.slice(1).filter((p) => p !== "Supasonic Beats").join(" x ") || r.subgenre;
-          const badges = ["Featured Release", "Latest Drop", "Trending Track", "Club Edition", "Fan Favorite"];
+          const subTitle =
+            parts
+              .slice(1)
+              .filter((p) => !p.toLowerCase().includes("supasonic"))
+              .join(" · ") || r.subgenre;
+          const badges = ["Latest Upload", "Trending", "Club Mix", "Popular", "Extended"];
           const vidId = r.videoId || r.id;
           return {
             id: r.id,
@@ -136,10 +142,10 @@ export default function TopRecentVideosCarousel({
             subgenre: r.subgenre,
             bpm: r.bpm,
             key: r.key,
-            viewsFormatted: `${r.views.toLocaleString()}+ Views`,
+            viewsFormatted: `${r.views.toLocaleString()} views`,
             views: r.views,
-            duration: r.duration || "03:24",
-            badge: badges[i] || "Official Release",
+            duration: r.duration || "3:24",
+            badge: badges[i] || "Release",
             thumbnail:
               vidId === "Wqdt2D61_Ss"
                 ? "/thumbs/raat_ka_nasha.jpg"
@@ -187,7 +193,7 @@ export default function TopRecentVideosCarousel({
     if (isPaused || inlinePlayingId !== null) return;
     autoPlayTimerRef.current = setInterval(() => {
       nextSlide();
-    }, 6000);
+    }, 6500);
     return () => {
       if (autoPlayTimerRef.current) clearInterval(autoPlayTimerRef.current);
     };
@@ -213,57 +219,121 @@ export default function TopRecentVideosCarousel({
     setIsPaused(false);
   };
 
+  const activeItem = latest5Videos[currentIndex] || latest5Videos[0];
+
   return (
     <section
-      aria-label="Latest 5 Releases Showcase"
-      className="w-full space-y-4"
+      aria-label="YouTube Channel Showcase and Featured Releases"
+      className="w-full space-y-5"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Editorial Artist Identity Header Strip */}
-      <div className="liquid-glass rounded-2xl sm:rounded-3xl px-4 sm:px-5 py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <div className="flex items-center gap-3 min-w-0">
-          <div className="w-10 h-10 rounded-2xl overflow-hidden bg-slate-100 border border-white/90 shadow-sm flex-shrink-0">
-            <img
-              src="/channel_avatar.jpg"
-              alt="Supasonic Beats"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="min-w-0">
-            <div className="flex items-center gap-1.5">
-              <h1 className="font-bold text-[#0b0f19] text-sm sm:text-base tracking-tight truncate">
-                SUPASONIC BEATS
-              </h1>
-              <CheckCircle2 className="w-3.5 h-3.5 text-sky-600 flex-shrink-0" />
+      {/* 1. AUTHENTIC YOUTUBE CHANNEL HEADER (Banner + Profile Row + Channel Tabs) */}
+      <div className="space-y-4">
+        {/* Clean Rounded Widescreen Channel Banner (Matching YouTube Desktop/App) */}
+        <div className="relative w-full h-24 sm:h-36 md:h-44 rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900">
+          <img
+            src="/channel_banner.jpg"
+            alt="Supasonic Beats Channel Banner"
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
+
+        {/* YouTube Channel Avatar + Metadata + Subscribe Row */}
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 px-1">
+          <div className="flex items-center gap-4 min-w-0 flex-1">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden bg-[#f2f2f2] flex-shrink-0 border border-black/10">
+              <img
+                src="/channel_avatar.jpg"
+                alt="SUPASONIC BEATS"
+                className="w-full h-full object-cover"
+              />
             </div>
-            <p className="text-[11px] sm:text-xs text-slate-600 truncate">
-              <span className="sm:hidden">{subscriberCount} Subscribers · {videoCount} Releases</span>
-              <span className="hidden sm:inline">@SupasonicBeatsOfficial · {subscriberCount} Subscribers · {videoCount} Releases</span>
-            </p>
+
+            <div className="min-w-0 space-y-1">
+              <div className="flex items-center gap-1.5">
+                <h1 className="text-xl sm:text-2xl md:text-[28px] font-bold text-[#0f0f0f] tracking-tight truncate">
+                  SUPASONIC BEATS
+                </h1>
+                <CheckCircle2 className="w-4 h-4 text-[#606060] flex-shrink-0" />
+              </div>
+
+              <div className="text-xs sm:text-sm text-[#606060] flex flex-wrap items-center gap-x-1.5 gap-y-0.5">
+                <span className="font-medium text-[#0f0f0f]">@SupasonicBeatsOfficial</span>
+                <span>•</span>
+                <span>{subscriberCount} subscribers</span>
+                <span>•</span>
+                <span>{videoCount} videos</span>
+              </div>
+
+              <p className="text-xs text-[#606060] line-clamp-1 max-w-xl hidden sm:block">
+                Official studio portal for 124–128 BPM Hindi Afro House, Deep House &amp; Car Audio Masters.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <a
+              href={subscribeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 rounded-full yt-btn-dark font-medium text-xs sm:text-sm flex items-center gap-2"
+            >
+              <Bell className="w-4 h-4" />
+              <span>Subscribe</span>
+            </a>
+
+            <a
+              href="https://www.youtube.com/@SupasonicBeatsOfficial"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2.5 rounded-full yt-chip font-medium text-xs sm:text-sm flex items-center gap-1.5"
+            >
+              <span>YouTube</span>
+              <ExternalLink className="w-3.5 h-3.5 text-[#606060]" />
+            </a>
           </div>
         </div>
 
-        <a
-          href={subscribeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="self-start sm:self-center px-4 py-2 rounded-full liquid-btn-red font-semibold text-xs flex items-center gap-1.5 flex-shrink-0"
-        >
-          <Bell className="w-3.5 h-3.5" />
-          <span>Subscribe on YouTube</span>
-          <ExternalLink className="w-3 h-3 opacity-80" />
-        </a>
+        {/* Authentic YouTube Channel Navigation Underline Tabs */}
+        {onSelectTab && (
+          <div className="flex items-center gap-6 border-b border-black/10 overflow-x-auto no-scrollbar px-1">
+            {[
+              { id: "home", label: "Home" },
+              { id: "releases", label: "Videos" },
+              { id: "vault", label: "Studio Vault" },
+              { id: "license", label: "Creators & Stems" },
+            ].map((t) => {
+              const isActive = activeTab === t.id;
+              return (
+                <button
+                  key={t.id}
+                  onClick={() => onSelectTab(t.id as any)}
+                  className={`pb-3 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
+                    isActive
+                      ? "border-[#0f0f0f] text-[#0f0f0f] font-semibold"
+                      : "border-transparent text-[#606060] hover:text-[#0f0f0f]"
+                  }`}
+                >
+                  {t.label}
+                </button>
+              );
+            })}
+          </div>
+        )}
       </div>
 
-      {/* UNBLOCKED SPLIT-EDITORIAL HERO CAROUSEL (100% Clear Artwork on All Screens!) */}
+      {/* 2. YOUTUBE CHANNEL SPOTLIGHT ("For You" / Ambient Split Carousel Player) */}
       <div
-        className="liquid-glass rounded-[28px] p-2.5 sm:p-3.5 space-y-3 overflow-hidden"
+        className="relative rounded-2xl bg-[#f9f9f9] border border-black/[0.06] p-3 sm:p-4 space-y-4 overflow-hidden"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        <div className="overflow-hidden w-full">
+        {/* Subtle YouTube Ambient Glow matched to active video */}
+        <div className="pointer-events-none absolute -top-24 left-10 w-80 h-60 rounded-full bg-rose-500/[0.06] blur-3xl animate-water-pulse" />
+
+        <div className="relative z-10 overflow-hidden w-full">
           <div
             className="flex transition-transform duration-500 ease-out w-full"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -274,10 +344,10 @@ export default function TopRecentVideosCarousel({
               return (
                 <div
                   key={item.id}
-                  className="w-full flex-shrink-0 grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-6 items-center"
+                  className="w-full flex-shrink-0 grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-center"
                 >
-                  {/* Left: Pure 16:9 Artwork / YouTube Embed (ZERO Overlays Blocking the Image!) */}
-                  <div className="lg:col-span-7 relative aspect-video w-full rounded-[20px] overflow-hidden bg-slate-950 shadow-sm border border-white/50">
+                  {/* Unobstructed 16:9 YouTube Player / Artwork Frame */}
+                  <div className="lg:col-span-6 xl:col-span-5 relative aspect-video w-full rounded-xl overflow-hidden bg-black">
                     {isPlayingThis ? (
                       <iframe
                         src={`https://www.youtube-nocookie.com/embed/${item.videoId}?autoplay=1&rel=0&modestbranding=1`}
@@ -294,103 +364,93 @@ export default function TopRecentVideosCarousel({
                         <img
                           src={item.thumbnail}
                           alt={item.title}
-                          className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover/art:scale-[1.02]"
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover/art:scale-[1.02]"
                           onError={(e) => {
                             (e.target as HTMLImageElement).src = item.hqThumbnail;
                           }}
                         />
-
-                        {/* Subtle Play Pill on Hover Only — Never Clutters Image on Mobile */}
-                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/art:opacity-100 transition-opacity bg-black/20">
-                          <div className="w-12 h-12 rounded-full liquid-btn-red flex items-center justify-center shadow-xl">
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/art:opacity-100 transition-opacity bg-black/25">
+                          <div className="w-12 h-12 rounded-full bg-black/80 text-white flex items-center justify-center">
                             <Play className="w-5 h-5 fill-current translate-x-0.5" />
                           </div>
                         </div>
-
-                        {/* Single Discreet Duration Pill */}
-                        <span className="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-md text-white font-mono text-[11px] font-medium border border-white/15">
+                        <span className="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-black/80 text-white font-mono text-[11px] font-medium">
                           {item.duration}
                         </span>
                       </div>
                     )}
                   </div>
 
-                  {/* Right (or Below on Mobile): Clean Editorial Info Panel */}
-                  <div className="lg:col-span-5 flex flex-col justify-between px-1.5 sm:px-2 lg:py-3 lg:pr-3 space-y-4">
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2 flex-wrap text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-                        <span className="text-[#ff3b30]">{item.badge}</span>
-                        <span>·</span>
-                        <span className="font-mono text-slate-700">{item.bpm} BPM</span>
-                        <span>·</span>
-                        <span className="font-mono text-slate-700">{item.key}</span>
+                  {/* YouTube Channel Trailer / Featured Details Column */}
+                  <div className="lg:col-span-6 xl:col-span-7 flex flex-col justify-between space-y-3">
+                    <div className="space-y-1.5">
+                      <div className="flex items-center gap-2 text-xs font-medium text-[#606060]">
+                        <span className="px-2 py-0.5 rounded bg-[#ff0033]/10 text-[#ff0033] font-semibold text-[11px]">
+                          {item.badge}
+                        </span>
+                        <span>•</span>
+                        <span>{item.viewsFormatted}</span>
+                        <span>•</span>
+                        <span className="font-mono">{item.bpm} BPM</span>
                       </div>
 
-                      <div>
-                        <h2 className="text-xl sm:text-2xl lg:text-[26px] font-bold text-[#0b0f19] tracking-tight leading-tight">
-                          {item.title}
-                        </h2>
-                        <p className="text-xs sm:text-sm font-medium text-slate-500 mt-0.5">
-                          {item.subtitle}
-                        </p>
-                      </div>
+                      <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#0f0f0f] leading-snug">
+                        {item.title}
+                      </h2>
 
-                      <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed line-clamp-2 sm:line-clamp-3 pt-1">
+                      <p className="text-xs text-[#606060] font-medium">{item.subtitle}</p>
+
+                      <p className="text-xs sm:text-sm text-[#606060] leading-relaxed line-clamp-2 pt-1 max-w-2xl">
                         {item.caption}
                       </p>
                     </div>
 
-                    {/* Clean Actions */}
-                    <div className="space-y-2.5 pt-1">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <button
-                          onClick={() => setInlinePlayingId(item.videoId)}
-                          className="flex-1 sm:flex-none px-5 py-2.5 rounded-full liquid-btn-red font-semibold text-xs flex items-center justify-center gap-2"
-                        >
-                          <Play className="w-3.5 h-3.5 fill-current" />
-                          <span>Play on YouTube</span>
-                        </button>
+                    <div className="flex flex-wrap items-center gap-2 pt-1">
+                      <button
+                        onClick={() => setInlinePlayingId(item.videoId)}
+                        className="px-4 py-2 rounded-full liquid-btn-red font-medium text-xs sm:text-sm flex items-center gap-1.5"
+                      >
+                        <Play className="w-3.5 h-3.5 fill-current" />
+                        <span>Play</span>
+                      </button>
 
-                        <Link
-                          href={`/watch/${item.videoId}`}
-                          className="px-4 py-2.5 rounded-full liquid-pill text-[#0b0f19] font-semibold text-xs flex items-center gap-1.5"
-                        >
-                          <span>Details &amp; Stems</span>
-                          <ArrowUpRight className="w-3.5 h-3.5 text-slate-500" />
-                        </Link>
-                      </div>
+                      <Link
+                        href={`/watch/${item.videoId}`}
+                        className="px-4 py-2 rounded-full yt-chip font-medium text-xs sm:text-sm flex items-center gap-1"
+                      >
+                        <span>Watch Page</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 text-[#606060]" />
+                      </Link>
 
-                      <div className="flex items-center gap-2">
-                        <button
-                          onClick={() =>
-                            setUnlockModal({
-                              isOpen: true,
-                              trackTitle: item.title,
-                              formatLabel: "320 kbps Stereo MP3",
-                              filename: `${item.title.replace(/\s+/g, "_")}_320kbps_SUPASONIC.mp3`,
-                            })
-                          }
-                          className="px-3.5 py-1.5 rounded-full liquid-pill text-slate-700 hover:text-[#0b0f19] font-medium text-[11px] flex items-center gap-1.5"
-                        >
-                          <Download className="w-3 h-3 text-[#ff3b30]" />
-                          <span>Download MP3</span>
-                        </button>
+                      <button
+                        onClick={() =>
+                          setUnlockModal({
+                            isOpen: true,
+                            trackTitle: item.title,
+                            formatLabel: "320 kbps Stereo MP3",
+                            filename: `${item.title.replace(/\s+/g, "_")}_320kbps_SUPASONIC.mp3`,
+                          })
+                        }
+                        className="px-3.5 py-2 rounded-full yt-chip font-medium text-xs flex items-center gap-1.5"
+                      >
+                        <Download className="w-3.5 h-3.5 text-[#ff0033]" />
+                        <span>MP3</span>
+                      </button>
 
-                        <button
-                          onClick={() =>
-                            setUnlockModal({
-                              isOpen: true,
-                              trackTitle: item.title,
-                              formatLabel: "Studio 48kHz Master WAV",
-                              filename: `${item.title.replace(/\s+/g, "_")}_StudioMaster_SUPASONIC.wav`,
-                            })
-                          }
-                          className="px-3.5 py-1.5 rounded-full liquid-pill text-slate-700 hover:text-[#0b0f19] font-medium text-[11px] flex items-center gap-1.5"
-                        >
-                          <Sliders className="w-3 h-3 text-slate-600" />
-                          <span>Car / DJ WAV</span>
-                        </button>
-                      </div>
+                      <button
+                        onClick={() =>
+                          setUnlockModal({
+                            isOpen: true,
+                            trackTitle: item.title,
+                            formatLabel: "Studio 48kHz Master WAV",
+                            filename: `${item.title.replace(/\s+/g, "_")}_StudioMaster_SUPASONIC.wav`,
+                          })
+                        }
+                        className="px-3.5 py-2 rounded-full yt-chip font-medium text-xs flex items-center gap-1.5"
+                      >
+                        <Sliders className="w-3.5 h-3.5 text-[#606060]" />
+                        <span>WAV</span>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -399,45 +459,45 @@ export default function TopRecentVideosCarousel({
           </div>
         </div>
 
-        {/* Bottom Track Switcher & Prev/Next Bar */}
-        <div className="pt-2 border-t border-white/70 space-y-2.5">
-          <div className="flex items-center justify-between px-1">
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-              Latest 5 Releases ({currentIndex + 1} / {latest5Videos.length})
+        {/* Bottom YouTube Shelf Track Selector (Locked 16:9 Ratios, No Vertical Stretching) */}
+        <div className="pt-3 border-t border-black/[0.06] space-y-2.5">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-semibold text-[#0f0f0f]">
+              Recent Releases ({currentIndex + 1} / {latest5Videos.length})
             </span>
 
             <div className="flex items-center gap-1.5">
               <button
                 onClick={prevSlide}
-                aria-label="Previous release"
-                className="p-1.5 rounded-full liquid-pill text-slate-700 hover:text-[#0b0f19]"
+                aria-label="Previous video"
+                className="p-1.5 rounded-full yt-chip text-[#0f0f0f]"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
               <button
                 onClick={nextSlide}
-                aria-label="Next release"
-                className="p-1.5 rounded-full liquid-pill text-slate-700 hover:text-[#0b0f19]"
+                aria-label="Next video"
+                className="p-1.5 rounded-full yt-chip text-[#0f0f0f]"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
           </div>
 
-          <div className="flex items-start md:grid md:grid-cols-5 gap-2.5 overflow-x-auto no-scrollbar pb-1">
+          <div className="flex items-start md:grid md:grid-cols-5 gap-3 overflow-x-auto no-scrollbar pb-1">
             {latest5Videos.map((video, idx) => {
               const isActive = currentIndex === idx;
               return (
                 <button
                   key={video.id}
                   onClick={() => goToSlide(idx)}
-                  className={`flex flex-col items-stretch justify-start w-[144px] sm:w-[162px] md:w-full h-auto text-left p-2 rounded-2xl transition-all duration-200 flex-shrink-0 ${
+                  className={`flex flex-col items-stretch justify-start w-[152px] sm:w-[175px] md:w-full h-auto text-left rounded-xl p-1.5 transition-all flex-shrink-0 ${
                     isActive
-                      ? "bg-white/95 ring-1 ring-[#ff3b30]/70 shadow-sm"
-                      : "liquid-pill opacity-85 hover:opacity-100"
+                      ? "bg-white ring-1 ring-[#0f0f0f] shadow-sm"
+                      : "hover:bg-white/80 opacity-85 hover:opacity-100"
                   }`}
                 >
-                  <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-900 mb-1.5 flex-shrink-0">
+                  <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black mb-1.5 flex-shrink-0">
                     <img
                       src={video.thumbnail}
                       alt={video.title}
@@ -446,14 +506,17 @@ export default function TopRecentVideosCarousel({
                         (e.target as HTMLImageElement).src = video.hqThumbnail;
                       }}
                     />
+                    <span className="absolute bottom-1 right-1 px-1 py-0.2 rounded bg-black/80 text-white font-mono text-[10px]">
+                      {video.duration}
+                    </span>
                   </div>
-                  <div className="w-full flex items-center justify-between gap-1 px-0.5">
-                    <span className={`text-[11px] font-semibold truncate ${isActive ? "text-[#0b0f19]" : "text-slate-700"}`}>
-                      {idx + 1}. {video.title}
-                    </span>
-                    <span className="text-[10px] font-mono text-slate-500 flex-shrink-0">
-                      {video.bpm}
-                    </span>
+                  <div className="w-full px-0.5 space-y-0.5">
+                    <div className="text-xs font-semibold text-[#0f0f0f] truncate">
+                      {video.title}
+                    </div>
+                    <div className="text-[11px] text-[#606060] truncate">
+                      {video.viewsFormatted} • {video.bpm} BPM
+                    </div>
                   </div>
                 </button>
               );
@@ -462,7 +525,6 @@ export default function TopRecentVideosCarousel({
         </div>
       </div>
 
-      {/* Subscribe-to-Unlock Download Sheet */}
       {unlockModal && (
         <SubscribeUnlockModal
           isOpen={unlockModal.isOpen}

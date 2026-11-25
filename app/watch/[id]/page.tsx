@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import {
-  Play,
   Share2,
   Check,
   Disc,
@@ -14,6 +13,12 @@ import {
   CheckCircle2,
   Bell,
   ThumbsUp,
+  Sliders,
+  ExternalLink,
+  Copy,
+  ChevronDown,
+  ChevronUp,
+  Lock,
 } from "lucide-react";
 import SubscribeAdPoster from "@/components/SubscribeAdPoster";
 import SocialLinksIsland from "@/components/SocialLinksIsland";
@@ -56,12 +61,15 @@ export default function WatchPage() {
   const idParam = params?.id as string;
 
   const [currentTrack, setCurrentTrack] = useState<WatchTrack | null>(null);
+  const [unavailableError, setUnavailableError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [ourRecommendations, setOurRecommendations] = useState<WatchTrack[]>([]);
+  const [descExpanded, setDescExpanded] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
   const [copiedTags, setCopiedTags] = useState(false);
   const [liked, setLiked] = useState(false);
   const [likesCount, setLikesCount] = useState(0);
+  const [upNextFilter, setUpNextFilter] = useState<"all" | "same_bpm">("all");
   const [unlockModal, setUnlockModal] = useState<{
     isOpen: boolean;
     trackTitle: string;
@@ -72,23 +80,42 @@ export default function WatchPage() {
 
   useEffect(() => {
     if (!idParam) return;
+    let active = true;
     setLoading(true);
+    setUnavailableError(null);
+
     fetch(`/api/watch/${idParam}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success && data.track) {
+      .then(async (res) => {
+        const data = await res.json();
+        if (!active) return;
+        if (res.ok && data.success && data.track) {
           setCurrentTrack(data.track);
           setLikesCount(data.track.likes || 480);
           setOurRecommendations(data.ourRecommendations || []);
+        } else {
+          setCurrentTrack(null);
+          setUnavailableError(data.error || "Track is private or unavailable.");
         }
       })
-      .catch((e) => console.error("Error loading watch track:", e))
-      .finally(() => setLoading(false));
+      .catch((e) => {
+        console.error("Error loading watch track:", e);
+        if (active) setUnavailableError("Unable to load track.");
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
+
+    return () => {
+      active = false;
+    };
   }, [idParam]);
 
   const openDownloadFunnel = (type: "mp3" | "wav") => {
     if (!currentTrack) return;
-    const cleanName = currentTrack.title.split("|")[0].trim().replace(/[^a-zA-Z0-9]/g, "_");
+    const cleanName = currentTrack.title
+      .split("|")[0]
+      .trim()
+      .replace(/[^a-zA-Z0-9]/g, "_");
     setUnlockModal({
       isOpen: true,
       trackTitle: currentTrack.title.split("|")[0].trim(),
@@ -102,352 +129,492 @@ export default function WatchPage() {
   };
 
   const handleCopyLink = () => {
-    if (!currentTrack) return;
-    const url = typeof window !== "undefined" ? window.location.href : currentTrack.youtubeUrl || "";
-    navigator.clipboard.writeText(url);
+    if (typeof window === "undefined") return;
+    navigator.clipboard.writeText(window.location.href);
     setCopiedLink(true);
     setTimeout(() => setCopiedLink(false), 2000);
   };
 
   const handleCopyTags = () => {
-    if (!currentTrack?.seoData?.tagsString) return;
-    navigator.clipboard.writeText(currentTrack.seoData.tagsString);
+    if (!currentTrack) return;
+    const tags =
+      currentTrack.seoData?.tagsString ||
+      `${currentTrack.subgenre}, ${currentTrack.bpm} BPM, ${currentTrack.key}, Supasonic Beats, 52Hz car sub bass, Indian Afro House`;
+    navigator.clipboard.writeText(tags);
     setCopiedTags(true);
     setTimeout(() => setCopiedTags(false), 2000);
   };
 
-  const toggleLike = () => {
-    if (liked) {
-      setLiked(false);
-      setLikesCount((prev) => prev - 1);
-    } else {
-      setLiked(true);
-      setLikesCount((prev) => prev + 1);
-    }
+  const handleToggleLike = () => {
+    setLiked((prev) => {
+      setLikesCount((c) => (prev ? Math.max(0, c - 1) : c + 1));
+      return !prev;
+    });
   };
 
-  if (loading && !currentTrack) {
-    return (
-      <div className="min-h-screen water-ambient-bg text-slate-700 flex flex-col items-center justify-center p-6">
-        <div className="w-8 h-8 rounded-full border-2 border-slate-200 border-t-[#ff3b30] animate-spin" />
-        <p className="mt-3 text-xs font-medium tracking-wider text-slate-500 uppercase">
-          Loading Track
-        </p>
-      </div>
-    );
-  }
-
-  if (!currentTrack) {
-    return (
-      <div className="min-h-screen water-ambient-bg text-[#0b0f19] flex flex-col items-center justify-center p-6 text-center">
-        <h2 className="text-xl font-bold mb-2 text-[#ff3b30]">Track Not Found</h2>
-        <p className="text-slate-600 text-xs mb-5">
-          The release you requested is not in the catalog.
-        </p>
-        <Link href="/" className="px-5 py-2.5 rounded-full liquid-btn-red font-semibold text-xs">
-          Back to Catalog
-        </Link>
-      </div>
-    );
-  }
-
-  const videoSchema = {
-    "@context": "https://schema.org",
-    "@type": ["VideoObject", "MusicRecording"],
-    name: currentTrack.title,
-    description:
-      currentTrack.caption ||
-      `${currentTrack.title} produced by SUPASONIC BEATS.`,
-    thumbnailUrl: [currentTrack.thumbnail],
-    uploadDate: currentTrack.publishedAt,
-    duration: "PT3M24S",
-    embedUrl: `https://www.youtube.com/embed/${currentTrack.videoId}`,
-    interactionStatistic: {
-      "@type": "InteractionCounter",
-      interactionType: { "@type": "WatchAction" },
-      userInteractionCount: currentTrack.views,
-    },
-    byArtist: {
-      "@type": "MusicGroup",
-      name: "SUPASONIC BEATS",
-      url: "https://supasonicbeats.vercel.app",
-    },
-    inLanguage: "hi",
-    isFamilyFriendly: true,
+  const formatViews = (views: number) => {
+    if (views >= 1000000) return `${(views / 1000000).toFixed(1)}M views`;
+    if (views >= 1000) return `${(views / 1000).toFixed(1)}K views`;
+    return `${views} views`;
   };
+
+  const filteredUpNext =
+    upNextFilter === "same_bpm" && currentTrack
+      ? ourRecommendations.filter(
+          (r) => Math.abs((r.bpm || 124) - (currentTrack.bpm || 124)) <= 6
+        )
+      : ourRecommendations;
 
   return (
-    <div className="min-h-screen water-ambient-bg text-[#0b0f19] relative overflow-x-hidden flex flex-col selection:bg-[#ff3b30] selection:text-white">
-      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden select-none">
-        <div className="absolute -top-36 -left-32 w-[30rem] h-[30rem] rounded-full bg-sky-200/40 blur-[120px] animate-water-pulse" />
-        <div className="absolute top-1/3 -right-32 w-[34rem] h-[34rem] rounded-full bg-blue-100/45 blur-[130px] animate-water-pulse [animation-delay:4s]" />
-      </div>
+    <div className="min-h-screen bg-white text-[#0f0f0f] flex flex-col">
+      {/* ================================================================ */}
+      {/* YOUTUBE WATCH TOP HEADER (56px Sticky Frosted Bar)               */}
+      {/* ================================================================ */}
+      <header className="sticky top-0 z-40 h-14 yt-frosted-bar border-b border-black/[0.06] px-3 sm:px-5 flex items-center justify-between gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+          <Link
+            href="/"
+            className="p-2 -ml-1 rounded-full hover:bg-[#f2f2f2] text-[#0f0f0f] transition-colors flex-shrink-0"
+            aria-label="Back to channel"
+          >
+            <ArrowLeft className="w-5 h-5" />
+          </Link>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
-      />
+          <Link href="/" className="flex items-center gap-2 group flex-shrink-0">
+            <span className="w-8 h-[22px] rounded-[6px] bg-[#ff0033] flex items-center justify-center group-hover:bg-[#d9002b] transition-colors">
+              <svg className="w-3.5 h-3.5 text-white fill-current ml-0.5" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </span>
+            <span className="text-[16px] sm:text-[18px] font-bold tracking-tight text-[#0f0f0f]">
+              Supasonic
+            </span>
+          </Link>
+        </div>
 
-      {/* Sticky Liquid Glass Header */}
-      <header className="sticky top-0 z-40 px-3 sm:px-6 lg:px-8 pt-2 pb-1">
-        <div className="max-w-7xl mx-auto liquid-glass rounded-2xl px-4 py-2.5 flex items-center justify-between gap-3">
-          <div className="flex items-center gap-3 min-w-0">
-            <Link
-              href="/"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full liquid-pill text-[#0b0f19] text-xs font-semibold flex-shrink-0"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Catalog</span>
-            </Link>
-
-            <Link href="/" className="flex items-center gap-2 min-w-0">
-              <div className="w-8 h-8 rounded-xl liquid-btn-red flex items-center justify-center flex-shrink-0">
-                <Play className="w-3.5 h-3.5 fill-current translate-x-0.5" />
-              </div>
-              <span className="text-sm font-bold text-[#0b0f19] tracking-tight hidden sm:inline truncate">
-                SUPASONIC BEATS
-              </span>
-            </Link>
-          </div>
+        <div className="flex items-center gap-2 flex-shrink-0">
+          <Link
+            href="/studio"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#f2f2f2] hover:bg-[#e5e5e5] text-[13px] font-medium text-[#0f0f0f] transition-colors"
+          >
+            <Sliders className="w-3.5 h-3.5" />
+            <span>Studio</span>
+          </Link>
 
           <a
             href="https://www.youtube.com/@SupasonicBeatsOfficial?sub_confirmation=1"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 rounded-full liquid-btn-red font-semibold text-xs flex items-center gap-1.5 flex-shrink-0"
+            className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 rounded-full bg-[#0f0f0f] hover:bg-[#272727] text-white text-[12px] sm:text-[13px] font-semibold transition-colors"
           >
-            <Bell className="w-3.5 h-3.5" />
+            <Bell className="w-3.5 h-3.5 hidden sm:block" />
             <span>Subscribe</span>
           </a>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-5 w-full flex-1">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
-          {/* Primary Cinema Column */}
-          <section aria-label="Player and Track Info" className="lg:col-span-8 space-y-5">
-            <div className="p-2 rounded-[26px] liquid-glass">
-              <div className="relative aspect-video w-full rounded-[18px] overflow-hidden bg-slate-950 shadow-sm">
-                <iframe
-                  src={`https://www.youtube.com/embed/${currentTrack.videoId}?autoplay=1&rel=0&modestbranding=1`}
-                  title={`${currentTrack.title} - SUPASONIC BEATS`}
-                  className="w-full h-full border-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+      {/* ================================================================ */}
+      {/* LOADING SKELETON                                                 */}
+      {/* ================================================================ */}
+      {loading && (
+        <div className="max-w-[1600px] w-full mx-auto px-3 sm:px-6 lg:px-8 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6 animate-pulse">
+          <div className="lg:col-span-8 space-y-4">
+            <div className="w-full aspect-video rounded-xl bg-[#f2f2f2]" />
+            <div className="h-6 bg-[#f2f2f2] rounded w-3/4" />
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#f2f2f2]" />
+                <div className="h-4 w-36 bg-[#f2f2f2] rounded" />
               </div>
+              <div className="h-9 w-48 bg-[#f2f2f2] rounded-full" />
             </div>
+            <div className="h-28 bg-[#f2f2f2] rounded-xl" />
+          </div>
+          <div className="lg:col-span-4 space-y-3">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="flex gap-2.5">
+                <div className="w-40 aspect-video rounded-lg bg-[#f2f2f2] flex-shrink-0" />
+                <div className="flex-1 space-y-2 py-1">
+                  <div className="h-4 bg-[#f2f2f2] rounded w-full" />
+                  <div className="h-3 bg-[#f2f2f2] rounded w-2/3" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
-            <div className="space-y-4">
-              <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-[#0b0f19] tracking-tight leading-snug">
-                {currentTrack.title}
-              </h1>
+      {/* ================================================================ */}
+      {/* PRIVATE / NOT FOUND GUARD                                        */}
+      {/* ================================================================ */}
+      {!loading && !currentTrack && (
+        <div className="flex-1 flex items-center justify-center px-4 py-16">
+          <div className="max-w-md w-full rounded-2xl bg-[#f2f2f2] p-6 sm:p-8 text-center space-y-4">
+            <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto shadow-xs">
+              <Lock className="w-5 h-5 text-[#606060]" />
+            </div>
+            <h1 className="text-lg font-bold text-[#0f0f0f]">
+              Track Not Public Yet
+            </h1>
+            <p className="text-sm text-[#606060]">
+              {unavailableError ||
+                "This release is currently private or scheduled. It will appear automatically as soon as it is published on YouTube."}
+            </p>
+            <Link
+              href="/"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#0f0f0f] hover:bg-[#272727] text-white text-sm font-semibold transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              <span>Browse Public Catalog</span>
+            </Link>
+          </div>
+        </div>
+      )}
 
-              {/* Channel Attribution + Action Bar */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3 border-b border-white/80">
-                <div className="flex items-center gap-3">
-                  <Link
-                    href="/"
-                    className="w-10 h-10 rounded-full overflow-hidden border border-white shadow-sm flex-shrink-0"
-                  >
-                    <img
-                      src="/channel_avatar.jpg"
-                      alt="SUPASONIC BEATS"
-                      className="w-full h-full object-cover"
-                    />
-                  </Link>
+      {/* ================================================================ */}
+      {/* YOUTUBE WATCH VIEWPORT                                           */}
+      {/* ================================================================ */}
+      {!loading && currentTrack && (
+        <main className="max-w-[1600px] w-full mx-auto px-0 sm:px-6 lg:px-8 pt-0 sm:pt-5 pb-14">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            {/* LEFT COLUMN: PLAYER + METADATA + DESCRIPTION (8 cols) */}
+            <div className="lg:col-span-8 min-w-0">
+              {/* Ambient Glow + 16:9 YouTube Player */}
+              <div className="relative">
+                <div
+                  aria-hidden="true"
+                  className="hidden sm:block absolute -inset-4 rounded-3xl opacity-25 blur-3xl pointer-events-none"
+                  style={{
+                    backgroundImage: `url(${
+                      currentTrack.thumbnail ||
+                      `https://i.ytimg.com/vi/${currentTrack.videoId}/hqdefault.jpg`
+                    })`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                />
 
-                  <div>
-                    <div className="flex items-center gap-1">
-                      <Link href="/" className="text-sm font-bold text-[#0b0f19]">
-                        SUPASONIC BEATS
-                      </Link>
-                      <CheckCircle2 className="w-3.5 h-3.5 text-sky-600" />
+                <div className="relative w-full aspect-video sm:rounded-xl overflow-hidden bg-black shadow-lg">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${currentTrack.videoId}?rel=0&modestbranding=1`}
+                    title={currentTrack.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full border-0"
+                  />
+                </div>
+              </div>
+
+              {/* Title, Channel & Action Pills */}
+              <div className="px-3 sm:px-0 mt-3 sm:mt-4">
+                <h1 className="text-base sm:text-[20px] font-bold text-[#0f0f0f] leading-snug">
+                  {currentTrack.title}
+                </h1>
+
+                {/* Channel & Action Pill Row */}
+                <div className="mt-3 flex flex-col md:flex-row md:items-center justify-between gap-3">
+                  {/* Channel Identity + Subscribe */}
+                  <div className="flex items-center justify-between md:justify-start gap-3">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <img
+                        src="/channel_avatar.jpg"
+                        alt="Supasonic Beats"
+                        className="w-10 h-10 rounded-full object-cover border border-black/10 flex-shrink-0"
+                      />
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-1">
+                          <span className="text-[15px] font-bold text-[#0f0f0f] truncate">
+                            Supasonic Beats
+                          </span>
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#606060] flex-shrink-0" />
+                        </div>
+                        <p className="text-xs text-[#606060] truncate">
+                          @SupasonicBeatsOfficial
+                        </p>
+                      </div>
                     </div>
-                    <div className="text-xs text-slate-500">
-                      141+ subscribers · 59K+ views
-                    </div>
+
+                    <a
+                      href="https://www.youtube.com/@SupasonicBeatsOfficial?sub_confirmation=1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 rounded-full bg-[#0f0f0f] hover:bg-[#272727] text-white text-[13px] font-semibold flex-shrink-0 transition-colors"
+                    >
+                      Subscribe
+                    </a>
                   </div>
 
-                  <a
-                    href="https://www.youtube.com/@SupasonicBeatsOfficial?sub_confirmation=1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ml-2 px-4 py-2 rounded-full liquid-btn-red text-xs font-semibold flex items-center gap-1.5"
-                  >
-                    <Bell className="w-3.5 h-3.5" />
-                    <span>Subscribe</span>
-                  </a>
-                </div>
+                  {/* YouTube Scrollable Action Pills */}
+                  <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 md:pb-0">
+                    {/* Combined Like + Share pill */}
+                    <div className="inline-flex items-center rounded-full bg-[#f2f2f2] divide-x divide-black/10 flex-shrink-0">
+                      <button
+                        onClick={handleToggleLike}
+                        className={`inline-flex items-center gap-1.5 pl-3.5 pr-3 py-2 text-[13px] font-medium rounded-l-full hover:bg-[#e5e5e5] transition-colors ${
+                          liked ? "text-[#ff0033] font-semibold" : "text-[#0f0f0f]"
+                        }`}
+                      >
+                        <ThumbsUp
+                          className={`w-4 h-4 ${liked ? "fill-current" : ""}`}
+                        />
+                        <span>{likesCount.toLocaleString()}</span>
+                      </button>
 
-                <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
-                  <button
-                    onClick={toggleLike}
-                    className={`px-3.5 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all ${
-                      liked ? "liquid-btn-red" : "liquid-pill text-slate-800"
-                    }`}
-                  >
-                    <ThumbsUp className={`w-3.5 h-3.5 ${liked ? "fill-current" : ""}`} />
-                    <span>{likesCount.toLocaleString()}</span>
-                  </button>
+                      <button
+                        onClick={handleCopyLink}
+                        className="inline-flex items-center gap-1.5 pl-3 pr-3.5 py-2 text-[13px] font-medium rounded-r-full hover:bg-[#e5e5e5] text-[#0f0f0f] transition-colors"
+                      >
+                        {copiedLink ? (
+                          <>
+                            <Check className="w-4 h-4 text-emerald-600" />
+                            <span>Copied</span>
+                          </>
+                        ) : (
+                          <>
+                            <Share2 className="w-4 h-4" />
+                            <span>Share</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
 
-                  <button
-                    onClick={handleCopyLink}
-                    className="px-3.5 py-1.5 rounded-full liquid-pill text-slate-800 text-xs font-semibold flex items-center gap-1.5"
-                  >
-                    {copiedLink ? (
-                      <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    ) : (
-                      <Share2 className="w-3.5 h-3.5" />
-                    )}
-                    <span>{copiedLink ? "Copied" : "Share"}</span>
-                  </button>
+                    <button
+                      onClick={() => openDownloadFunnel("mp3")}
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#f2f2f2] hover:bg-[#e5e5e5] text-[13px] font-medium text-[#0f0f0f] flex-shrink-0 transition-colors"
+                    >
+                      <Disc className="w-4 h-4 text-[#0f0f0f]" />
+                      <span>320k MP3</span>
+                    </button>
 
-                  <button
-                    onClick={() => openDownloadFunnel("mp3")}
-                    className="px-3.5 py-1.5 rounded-full liquid-pill text-[#0b0f19] text-xs font-semibold flex items-center gap-1.5 whitespace-nowrap"
-                  >
-                    <FileAudio className="w-3.5 h-3.5 text-sky-600" />
-                    <span>320k MP3</span>
-                  </button>
+                    <button
+                      onClick={() => openDownloadFunnel("wav")}
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#ff0033] hover:bg-[#d9002b] text-white text-[13px] font-semibold flex-shrink-0 transition-colors"
+                    >
+                      <FileAudio className="w-4 h-4" />
+                      <span>Studio WAV</span>
+                    </button>
 
-                  <button
-                    onClick={() => openDownloadFunnel("wav")}
-                    className="px-3.5 py-1.5 rounded-full liquid-pill text-[#0b0f19] text-xs font-semibold flex items-center gap-1.5 whitespace-nowrap"
-                  >
-                    <Disc className="w-3.5 h-3.5 text-[#ff3b30]" />
-                    <span>Studio WAV</span>
-                  </button>
-
-                  {currentTrack.seoData && (
                     <button
                       onClick={handleCopyTags}
-                      className="px-3.5 py-1.5 rounded-full liquid-pill text-slate-700 text-xs font-semibold flex items-center gap-1.5 whitespace-nowrap"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#f2f2f2] hover:bg-[#e5e5e5] text-[13px] font-medium text-[#0f0f0f] flex-shrink-0 transition-colors"
                     >
                       {copiedTags ? (
-                        <Check className="w-3.5 h-3.5 text-emerald-600" />
+                        <>
+                          <Check className="w-4 h-4 text-emerald-600" />
+                          <span>Tags Copied</span>
+                        </>
                       ) : (
-                        <Tag className="w-3.5 h-3.5 text-slate-500" />
+                        <>
+                          <Tag className="w-4 h-4" />
+                          <span>Tags</span>
+                        </>
                       )}
-                      <span>{copiedTags ? "Tags Copied" : "Tags"}</span>
                     </button>
+                  </div>
+                </div>
+
+                {/* YouTube Expandable Description & Audio Spec Box */}
+                <div className="mt-3 rounded-xl bg-[#f2f2f2] p-3.5 sm:p-4 text-[13px] text-[#0f0f0f]">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-semibold mb-1.5">
+                    <span>{formatViews(currentTrack.views || 0)}</span>
+                    <span>{currentTrack.formattedDate}</span>
+                    <span className="text-[#065fd4]">
+                      #{currentTrack.subgenre.replace(/\s+/g, "")}
+                    </span>
+                    <span className="text-[#606060] font-medium">
+                      {currentTrack.bpm} BPM • {currentTrack.key} • {currentTrack.duration}
+                    </span>
+                  </div>
+
+                  <p
+                    className={`text-[#0f0f0f] whitespace-pre-line leading-relaxed ${
+                      descExpanded ? "" : "line-clamp-2"
+                    }`}
+                  >
+                    {currentTrack.caption}
+                  </p>
+
+                  {descExpanded && (
+                    <div className="mt-3 pt-3 border-t border-black/[0.08] space-y-3">
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                        <div className="rounded-lg bg-white px-3 py-2">
+                          <span className="block text-[10px] font-semibold uppercase text-[#606060]">
+                            Tempo
+                          </span>
+                          <span className="text-xs font-bold">{currentTrack.bpm} BPM</span>
+                        </div>
+                        <div className="rounded-lg bg-white px-3 py-2">
+                          <span className="block text-[10px] font-semibold uppercase text-[#606060]">
+                            Musical Key
+                          </span>
+                          <span className="text-xs font-bold">{currentTrack.key}</span>
+                        </div>
+                        <div className="rounded-lg bg-white px-3 py-2">
+                          <span className="block text-[10px] font-semibold uppercase text-[#606060]">
+                            Mood
+                          </span>
+                          <span className="text-xs font-bold truncate block">
+                            {currentTrack.mood}
+                          </span>
+                        </div>
+                        <div className="rounded-lg bg-white px-3 py-2">
+                          <span className="block text-[10px] font-semibold uppercase text-[#606060]">
+                            Mastering
+                          </span>
+                          <span className="text-xs font-bold">52Hz Car Sub</span>
+                        </div>
+                      </div>
+
+                      {currentTrack.seoData?.tagList &&
+                        currentTrack.seoData.tagList.length > 0 && (
+                          <div className="space-y-1.5">
+                            <div className="flex items-center justify-between">
+                              <span className="text-xs font-semibold text-[#606060]">
+                                Creator & Search Tags
+                              </span>
+                              <button
+                                onClick={handleCopyTags}
+                                className="inline-flex items-center gap-1 text-xs font-semibold text-[#065fd4] hover:underline"
+                              >
+                                <Copy className="w-3 h-3" />
+                                <span>Copy all tags</span>
+                              </button>
+                            </div>
+                            <div className="flex flex-wrap gap-1.5">
+                              {currentTrack.seoData.tagList.slice(0, 12).map((t) => (
+                                <span
+                                  key={t}
+                                  className="px-2.5 py-1 rounded-full bg-white text-[11px] font-medium text-[#0f0f0f]"
+                                >
+                                  {t}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                      <div className="flex flex-wrap items-center gap-3 pt-1">
+                        <a
+                          href={
+                            currentTrack.youtubeUrl ||
+                            `https://www.youtube.com/watch?v=${currentTrack.videoId}`
+                          }
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#ff0033] hover:underline"
+                        >
+                          <span>Watch directly on YouTube</span>
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      </div>
+                    </div>
                   )}
+
+                  <button
+                    onClick={() => setDescExpanded((prev) => !prev)}
+                    className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-[#0f0f0f] hover:underline"
+                  >
+                    {descExpanded ? (
+                      <>
+                        <span>Show less</span>
+                        <ChevronUp className="w-3.5 h-3.5" />
+                      </>
+                    ) : (
+                      <>
+                        <span>...more</span>
+                        <ChevronDown className="w-3.5 h-3.5" />
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                {/* Below-Player Clean Showcase & Subscribe Banner */}
+                <div className="mt-6 space-y-5">
+                  <GoogleStyleAdBanner
+                    format="leaderboard"
+                    releases={ourRecommendations.slice(0, 6).map((r) => ({
+                      id: r.id,
+                      videoId: r.videoId,
+                      title: r.title,
+                      bpm: r.bpm,
+                      key: r.key,
+                      subgenre: r.subgenre,
+                      thumbnail: r.thumbnail,
+                    }))}
+                  />
+                  <SubscribeAdPoster />
                 </div>
               </div>
             </div>
 
-            {/* Track Notes & Audio Spec Card */}
-            <div className="p-5 sm:p-6 rounded-3xl liquid-glass text-xs md:text-sm text-[#0b0f19] space-y-4">
-              <div className="flex flex-wrap items-center gap-2 font-semibold text-xs text-slate-700">
-                <span>{currentTrack.views.toLocaleString()} views</span>
-                <span>·</span>
-                <span>{currentTrack.formattedDate}</span>
-                <span>·</span>
-                <span className="text-[#ff3b30] font-mono">{currentTrack.subgenre}</span>
-              </div>
-
-              <p className="leading-relaxed text-slate-600">{currentTrack.caption}</p>
-
-              <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-xs">
-                <span className="px-3 py-1 rounded-full liquid-badge text-slate-800">
-                  Tempo: <strong>{currentTrack.bpm} BPM</strong>
-                </span>
-                <span className="px-3 py-1 rounded-full liquid-badge text-slate-800">
-                  Key: <strong>{currentTrack.key}</strong>
-                </span>
-                <span className="px-3 py-1 rounded-full liquid-badge text-slate-800">
-                  Format: <strong>320k MP3 / 48kHz WAV</strong>
-                </span>
-              </div>
-
-              {currentTrack.seoData && (
-                <div className="pt-3 border-t border-white/70 space-y-2">
-                  <div className="flex items-center justify-between text-xs font-semibold text-slate-600">
-                    <span>Sound Tags ({currentTrack.seoData.tagList.length})</span>
-                    <button
-                      onClick={handleCopyTags}
-                      className="text-sky-600 hover:underline font-semibold"
-                    >
-                      {copiedTags ? "Copied" : "Copy All"}
-                    </button>
-                  </div>
-                  <div className="flex flex-wrap gap-1.5 max-h-28 overflow-y-auto pt-0.5">
-                    {currentTrack.seoData.tagList.map((tag, i) => (
-                      <span
-                        key={i}
-                        className="px-2.5 py-0.5 rounded-full liquid-badge text-[11px] text-slate-600 font-mono"
-                      >
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
+            {/* RIGHT COLUMN: AUTHENTIC YOUTUBE "UP NEXT" LIST (4 cols) */}
+            <aside className="lg:col-span-4 px-3 sm:px-0 space-y-3">
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
+                  <button
+                    onClick={() => setUpNextFilter("all")}
+                    className={`yt-chip ${
+                      upNextFilter === "all" ? "yt-chip-active" : ""
+                    }`}
+                  >
+                    All from Supasonic
+                  </button>
+                  <button
+                    onClick={() => setUpNextFilter("same_bpm")}
+                    className={`yt-chip ${
+                      upNextFilter === "same_bpm" ? "yt-chip-active" : ""
+                    }`}
+                  >
+                    Matching {currentTrack.bpm} BPM
+                  </button>
                 </div>
-              )}
-            </div>
-
-            <GoogleStyleAdBanner format="leaderboard" />
-            <SubscribeAdPoster variant="billboard" subscriberCount="141+" />
-          </section>
-
-          {/* Right Sidebar: Up Next Strictly Keeps Listeners Inside Supasonic Beats */}
-          <aside aria-label="Up Next from Supasonic Beats" className="lg:col-span-4 space-y-5">
-            <div className="p-4 sm:p-5 rounded-3xl liquid-glass space-y-3.5">
-              <div className="flex items-center justify-between border-b border-white/70 pb-2.5">
-                <h2 className="text-xs font-bold text-[#0b0f19] uppercase tracking-wider">
-                  Up Next · Supasonic Beats
-                </h2>
-                <span className="text-[10px] font-semibold text-[#ff3b30] uppercase tracking-wider">
-                  Queue
-                </span>
               </div>
 
-              <div className="space-y-2.5">
-                {ourRecommendations.map((rec) => (
+              <div className="space-y-3">
+                {filteredUpNext.map((rec) => (
                   <Link
                     key={rec.id}
                     href={`/watch/${rec.videoId}`}
-                    className="flex gap-3 p-2 rounded-2xl liquid-pill hover:bg-white transition-all group"
+                    className="flex gap-2.5 group items-start rounded-xl hover:bg-[#f2f2f2]/70 p-1 -m-1 transition-colors"
                   >
-                    <div className="relative w-28 sm:w-32 aspect-video rounded-xl overflow-hidden bg-slate-950 flex-shrink-0">
+                    {/* Locked 16:9 Mini Thumbnail (Zero overlay clutter) */}
+                    <div className="relative w-40 sm:w-44 aspect-video rounded-lg overflow-hidden bg-slate-100 flex-shrink-0">
                       <img
-                        src={rec.thumbnail}
+                        src={
+                          rec.thumbnail ||
+                          `https://i.ytimg.com/vi/${rec.videoId}/hqdefault.jpg`
+                        }
                         alt={rec.title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).src = `https://i.ytimg.com/vi/${rec.videoId}/hqdefault.jpg`;
-                        }}
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                        loading="lazy"
                       />
-                      <span className="absolute bottom-1 right-1 font-mono text-[9px] bg-black/60 backdrop-blur-md px-1 rounded text-white">
-                        {rec.duration || "3:24"}
+                      <span className="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/80 text-white text-[10px] font-semibold">
+                        {rec.duration || "3:20"}
                       </span>
                     </div>
 
-                    <div className="flex-1 min-w-0 flex flex-col justify-between py-0.5">
-                      <h3 className="text-xs font-bold text-[#0b0f19] group-hover:text-[#ff3b30] line-clamp-2 leading-tight transition-colors">
+                    {/* Clean 2-Line Metadata */}
+                    <div className="flex-1 min-w-0 py-0.5">
+                      <h3 className="text-[13px] sm:text-[14px] font-semibold text-[#0f0f0f] line-clamp-2 leading-snug group-hover:text-[#065fd4] transition-colors">
                         {rec.title}
                       </h3>
-                      <div className="text-[10px] text-slate-500 space-y-0.5">
-                        <div className="font-mono font-medium text-slate-700">
-                          {rec.bpm} BPM · {rec.key}
-                        </div>
-                        <div>{rec.views.toLocaleString()} views</div>
-                      </div>
+                      <p className="text-[12px] text-[#606060] mt-1 flex items-center gap-1 truncate">
+                        <span>Supasonic Beats</span>
+                        <CheckCircle2 className="w-3 h-3 flex-shrink-0" />
+                      </p>
+                      <p className="text-[12px] text-[#606060] truncate">
+                        {formatViews(rec.views || 0)} • {rec.bpm} BPM • {rec.key}
+                      </p>
                     </div>
                   </Link>
                 ))}
               </div>
-            </div>
+            </aside>
+          </div>
+        </main>
+      )}
 
-            <div className="sticky top-20">
-              <SubscribeAdPoster variant="compact" subscriberCount="141+" />
-            </div>
-          </aside>
-        </div>
-
-        <div className="mt-10">
-          <SocialLinksIsland />
-        </div>
-      </main>
+      <SocialLinksIsland />
 
       {unlockModal && (
         <SubscribeUnlockModal
