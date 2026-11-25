@@ -549,34 +549,45 @@ export default function WatchPage() {
 
             {/* RIGHT COLUMN: AUTHENTIC YOUTUBE "UP NEXT" LIST (4 cols) */}
             <aside className="lg:col-span-4 px-3 sm:px-0 space-y-3">
-              <div className="flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
-                  <button
-                    onClick={() => setUpNextFilter("all")}
-                    className={`yt-chip ${
-                      upNextFilter === "all" ? "yt-chip-active" : ""
-                    }`}
-                  >
-                    All from Supasonic
-                  </button>
-                  <button
-                    onClick={() => setUpNextFilter("same_bpm")}
-                    className={`yt-chip ${
-                      upNextFilter === "same_bpm" ? "yt-chip-active" : ""
-                    }`}
-                  >
-                    Matching {currentTrack.bpm} BPM
-                  </button>
-                </div>
+              <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-0.5">
+                <button
+                  onClick={() => setUpNextFilter("all")}
+                  className={`px-3.5 py-1.5 rounded-lg text-[13px] font-medium whitespace-nowrap flex-shrink-0 ${
+                    upNextFilter === "all" ? "yt-chip-active" : "yt-chip"
+                  }`}
+                >
+                  All from Supasonic
+                </button>
+                <button
+                  onClick={() => setUpNextFilter("same_bpm")}
+                  className={`px-3.5 py-1.5 rounded-lg text-[13px] font-medium whitespace-nowrap flex-shrink-0 ${
+                    upNextFilter === "same_bpm" ? "yt-chip-active" : "yt-chip"
+                  }`}
+                >
+                  Matching {currentTrack.bpm} BPM
+                </button>
               </div>
 
-              <div className="space-y-3">
-                {filteredUpNext.map((rec) => (
-                  <Link
-                    key={rec.id}
-                    href={`/watch/${rec.videoId}`}
-                    className="flex gap-2.5 group items-start rounded-xl hover:bg-[#f2f2f2]/70 p-1 -m-1 transition-colors"
-                  >
+              <div className="space-y-2.5">
+                {filteredUpNext.length === 0 ? (
+                  <div className="rounded-xl bg-[#f2f2f2] p-4 text-center space-y-2">
+                    <p className="text-xs text-[#606060]">
+                      No tracks found near {currentTrack.bpm} BPM in the current queue.
+                    </p>
+                    <button
+                      onClick={() => setUpNextFilter("all")}
+                      className="px-3.5 py-1.5 rounded-lg yt-chip-active text-xs font-medium"
+                    >
+                      Show all releases
+                    </button>
+                  </div>
+                ) : (
+                  filteredUpNext.map((rec) => (
+                    <Link
+                      key={rec.id}
+                      href={`/watch/${rec.videoId}`}
+                      className="flex gap-2.5 group items-start rounded-xl hover:bg-[#f2f2f2]/80 p-1.5 -mx-1.5 transition-colors"
+                    >
                     {/* Locked 16:9 Mini Thumbnail (Zero overlay clutter) */}
                     <div className="relative w-40 sm:w-44 aspect-video rounded-lg overflow-hidden bg-slate-100 flex-shrink-0">
                       <img
@@ -607,7 +618,7 @@ export default function WatchPage() {
                       </p>
                     </div>
                   </Link>
-                ))}
+                )))}
               </div>
             </aside>
           </div>

@@ -84,6 +84,12 @@ body {
 .yt-chip-active {
   background: #0f0f0f;
   color: #ffffff;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.yt-chip-active:hover {
+  background: #272727;
+  color: #ffffff;
 }
 
 .liquid-pill {
