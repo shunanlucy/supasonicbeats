@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import GlobalMusicProvider from "@/components/GlobalMusicProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://supasonicbeats.com"),
@@ -159,7 +160,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-[#f8f9fa] text-[#0f0f0f] antialiased selection:bg-[#ff0000] selection:text-white">
-        {children}
+        <GlobalMusicProvider>{children}</GlobalMusicProvider>
       </body>
     </html>
   );

@@ -3,6 +3,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 import Link from "next/link";
 import { FeedPost } from "@/lib/feedEngine";
+import { ChannelPlaylist } from "@/lib/playlists";
 import NotificationBanner from "@/components/NotificationBanner";
 import TopRecentVideosCarousel from "@/components/TopRecentVideosCarousel";
 import VideoFeed from "@/components/VideoFeed";
@@ -29,6 +30,8 @@ import {
   ExternalLink,
   Music2,
   Radio,
+  Disc3,
+  ListMusic,
 } from "lucide-react";
 
 type TabId = "home" | "releases" | "vault" | "license";
@@ -53,9 +56,21 @@ export default function HomePage() {
   const [selectedTipPost, setSelectedTipPost] = useState<FeedPost | null>(null);
   const [selectedSeoPost, setSelectedSeoPost] = useState<FeedPost | null>(null);
   const [copiedCredit, setCopiedCredit] = useState(false);
+  const [channelPlaylists, setChannelPlaylists] = useState<ChannelPlaylist[]>([]);
 
   useEffect(() => {
     let active = true;
+
+    async function loadPlaylists() {
+      try {
+        const res = await fetch("/api/playlists");
+        if (!res.ok) return;
+        const data = await res.json();
+        if (active && Array.isArray(data.playlists)) {
+          setChannelPlaylists(data.playlists);
+        }
+      } catch {}
+    }
 
     async function loadFeed() {
       try {
@@ -91,6 +106,7 @@ export default function HomePage() {
 
     loadFeed();
     loadChannelStats();
+    loadPlaylists();
 
     return () => {
       active = false;
@@ -278,6 +294,14 @@ export default function HomePage() {
               </button>
 
               <Link
+                href="/music"
+                className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full bg-[#ff0033]/10 hover:bg-[#ff0033]/15 text-[12px] sm:text-[13px] font-semibold text-[#ff0033] transition-colors"
+              >
+                <Disc3 className="w-3.5 h-3.5" />
+                <span>Music</span>
+              </Link>
+
+              <Link
                 href="/studio"
                 className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#f2f2f2] hover:bg-[#e5e5e5] text-[13px] font-medium text-[#0f0f0f] transition-colors"
               >
@@ -346,6 +370,15 @@ export default function HomePage() {
                   </button>
                 );
               })}
+
+              <Link
+                href="/music"
+                onClick={() => setMobileDrawerOpen(false)}
+                className="w-full flex items-center gap-4 px-3 py-2.5 rounded-xl text-sm font-semibold text-[#ff0033] bg-[#ff0033]/[0.07] hover:bg-[#ff0033]/[0.12] transition-colors"
+              >
+                <Disc3 className="w-5 h-5 flex-shrink-0" />
+                <span>Music & Playlists</span>
+              </Link>
             </div>
 
             <div className="border-t border-black/[0.08] mx-3 my-2" />
@@ -410,6 +443,20 @@ export default function HomePage() {
                 </button>
               );
             })}
+
+            <Link
+              href="/music"
+              className={`w-full flex ${
+                sidebarExpanded
+                  ? "flex-row items-center gap-5 px-3 py-2.5 rounded-xl text-[14px]"
+                  : "flex-col items-center justify-center gap-1.5 py-3.5 px-1 rounded-xl text-[10px]"
+              } text-[#ff0033] font-semibold hover:bg-[#ff0033]/[0.08] transition-colors`}
+            >
+              <Disc3 className="w-5 h-5 flex-shrink-0" />
+              <span className="truncate">
+                {sidebarExpanded ? "Music & Playlists" : "Music"}
+              </span>
+            </Link>
           </nav>
 
           {sidebarExpanded ? (
@@ -550,6 +597,58 @@ export default function HomePage() {
                 subscriberCount={subscriberCount}
                 videoCount={videoCount}
               />
+
+              {/* Authentic YouTube Home Channel Playlists Shelf */}
+              {channelPlaylists.length > 0 && (
+                <section className="max-w-[1600px] mx-auto px-3 sm:px-6 pt-2 pb-4 border-b border-black/[0.06]">
+                  <div className="flex items-center justify-between gap-3 mb-3">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <ListMusic className="w-5 h-5 text-[#ff0033] flex-shrink-0" />
+                      <h2 className="text-base sm:text-lg font-bold text-[#0f0f0f] truncate">
+                        Channel Playlists • Loop Mode
+                      </h2>
+                    </div>
+                    <Link
+                      href="/music"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#f2f2f2] hover:bg-[#e5e5e5] text-xs font-semibold text-[#0f0f0f] flex-shrink-0 transition-colors"
+                    >
+                      <Disc3 className="w-3.5 h-3.5 text-[#ff0033]" />
+                      <span>Open Music App</span>
+                    </Link>
+                  </div>
+
+                  <div className="flex items-start gap-3.5 overflow-x-auto no-scrollbar pb-2">
+                    {channelPlaylists.map((pl) => (
+                      <Link
+                        key={pl.id}
+                        href={`/music?playlist=${encodeURIComponent(pl.id)}`}
+                        className="w-[210px] sm:w-[235px] flex-shrink-0 group"
+                      >
+                        {/* YouTube Stacked Playlist Card Effect */}
+                        <div className="mx-2 h-1.5 rounded-t-lg bg-black/15" />
+                        <div className="relative aspect-video rounded-xl overflow-hidden bg-slate-100 border border-black/[0.06]">
+                          <img
+                            src={pl.thumbnail}
+                            alt={pl.title}
+                            className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                            loading="lazy"
+                          />
+                          <div className="absolute bottom-1.5 right-1.5 px-2 py-0.5 rounded bg-black/80 text-white text-[10px] font-semibold flex items-center gap-1">
+                            <ListMusic className="w-3 h-3" />
+                            <span>{pl.tracks.length} tracks</span>
+                          </div>
+                        </div>
+                        <h3 className="text-[13px] font-semibold text-[#0f0f0f] line-clamp-2 leading-snug mt-2 group-hover:text-[#ff0033] transition-colors">
+                          {pl.title}
+                        </h3>
+                        <p className="text-[11px] text-[#606060] mt-0.5">
+                          Play playlist on loop
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
 
               <VideoFeed
                 posts={posts}
@@ -711,15 +810,13 @@ export default function HomePage() {
             );
           })}
 
-          <a
-            href="https://www.youtube.com/@SupasonicBeatsOfficial?sub_confirmation=1"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/music"
             className="flex flex-col items-center justify-center gap-0.5 text-[10px] font-semibold text-[#ff0033]"
           >
-            <Bell className="w-5 h-5 stroke-[2]" />
-            <span>Subscribe</span>
-          </a>
+            <Disc3 className="w-5 h-5 stroke-[2]" />
+            <span>Music</span>
+          </Link>
         </div>
       </nav>
 

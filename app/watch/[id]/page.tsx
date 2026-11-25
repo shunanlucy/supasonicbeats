@@ -194,6 +194,14 @@ export default function WatchPage() {
 
         <div className="flex items-center gap-2 flex-shrink-0">
           <Link
+            href="/music"
+            className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full bg-[#ff0033]/10 hover:bg-[#ff0033]/15 text-[12px] sm:text-[13px] font-semibold text-[#ff0033] transition-colors"
+          >
+            <Disc className="w-3.5 h-3.5" />
+            <span>Music</span>
+          </Link>
+
+          <Link
             href="/studio"
             className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#f2f2f2] hover:bg-[#e5e5e5] text-[13px] font-medium text-[#0f0f0f] transition-colors"
           >
