@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAllFeedPosts } from "@/lib/feedEngine";
+import { getPublicFeedPosts, isYouTubeVideoPublic } from "@/lib/feedEngine";
 import { getWatchRecommendations } from "@/lib/recommendations";
 
 export async function GET(
@@ -8,12 +8,19 @@ export async function GET(
 ) {
   try {
     const { id } = await params;
-    const allPosts = getAllFeedPosts();
+    const allPosts = await getPublicFeedPosts();
 
     let track = allPosts.find((p) => p.id === id || p.videoId === id);
 
     if (!track) {
-      // Create fallback if directly requested
+      const isPublic = await isYouTubeVideoPublic(id);
+      if (!isPublic) {
+        return NextResponse.json(
+          { success: false, error: "Track is private or scheduled." },
+          { status: 404 }
+        );
+      }
+
       track = {
         id,
         type: "release",
@@ -39,7 +46,10 @@ export async function GET(
       };
     }
 
-    const { ourRecommendations, competitorRecommendations } = getWatchRecommendations(id);
+    const ourRecommendations = allPosts
+      .filter((p) => p.type === "release" && p.videoId !== id)
+      .slice(0, 8);
+    const { competitorRecommendations } = getWatchRecommendations(id);
 
     return NextResponse.json({
       success: true,

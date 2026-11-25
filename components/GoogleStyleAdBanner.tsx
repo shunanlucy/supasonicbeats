@@ -17,21 +17,31 @@ interface PromoTrackItem {
 interface GoogleStyleAdBannerProps {
   format?: "leaderboard" | "billboard" | "rectangle" | "anchor";
   className?: string;
+  releases?: Array<{
+    id: string;
+    videoId?: string;
+    title: string;
+    bpm: number;
+    key: string;
+    subgenre: string;
+    thumbnail: string;
+  }>;
 }
 
 export default function GoogleStyleAdBanner({
   format = "leaderboard",
   className = "",
+  releases = [],
 }: GoogleStyleAdBannerProps) {
-  const promoTracks: PromoTrackItem[] = [
+  const fallbackPromos: PromoTrackItem[] = [
     {
-      id: "promo-raatkanasha",
-      title: "RAAT KA NASHA",
+      id: "promo-aajphir",
+      title: "AAJ PHIR",
       bpm: 125,
-      key: "F Minor",
-      genre: "Indian Afro House x Raga Techno",
-      videoId: "Wqdt2D61_Ss",
-      posterUrl: "/thumbs/raat_ka_nasha.jpg",
+      key: "D Minor",
+      genre: "Deep House x Club Bangers",
+      videoId: "UzLfMApeA-4",
+      posterUrl: "https://i.ytimg.com/vi/UzLfMApeA-4/hqdefault.jpg",
     },
     {
       id: "promo-abaaja",
@@ -61,6 +71,19 @@ export default function GoogleStyleAdBanner({
       posterUrl: "https://i.ytimg.com/vi/BuvPDZawk9M/hqdefault.jpg",
     },
   ];
+
+  const promoTracks: PromoTrackItem[] =
+    releases && releases.length > 0
+      ? releases.slice(0, 4).map((r) => ({
+          id: `promo-${r.id}`,
+          title: r.title.split("|")[0].trim(),
+          bpm: r.bpm,
+          key: r.key,
+          genre: r.subgenre,
+          videoId: r.videoId || r.id,
+          posterUrl: r.thumbnail,
+        }))
+      : fallbackPromos;
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [dismissed, setDismissed] = useState(false);

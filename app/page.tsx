@@ -163,8 +163,9 @@ export default function ChannelWebsite() {
 
       {/* Main Content Container */}
       <main className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 flex-1 w-full space-y-8">
-        {/* Top Split Editorial Showcase (Latest 5 Widescreen Videos — Unblocked Art) */}
+        {/* Top Split Editorial Showcase (Live Public Releases Only) */}
         <TopRecentVideosCarousel
+          releases={posts.filter((p) => p.type === "release").slice(0, 5)}
           subscriberCount={subCount}
           videoCount={videoCount}
           onPlayVideo={(post) => setSelectedVideoToPlay(post)}
@@ -201,8 +202,11 @@ export default function ChannelWebsite() {
               postTypeFilter="release"
             />
 
-            {/* Single Clean Editorial Ad Slot */}
-            <GoogleStyleAdBanner format="leaderboard" />
+            {/* Single Clean Editorial Ad Slot (Live Public Releases Only) */}
+            <GoogleStyleAdBanner
+              format="leaderboard"
+              releases={posts.filter((p) => p.type === "release").slice(0, 4)}
+            />
 
             <SocialLinksIsland />
           </div>

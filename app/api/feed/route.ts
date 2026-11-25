@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAllFeedPosts, saveNewCustomPost } from "@/lib/feedEngine";
+import { getPublicFeedPosts, saveNewCustomPost } from "@/lib/feedEngine";
 import { fetchChannelData } from "@/lib/youtube";
+
+export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
   try {
@@ -31,15 +33,24 @@ export async function GET(req: NextRequest) {
       }
     }
 
-    const posts = getAllFeedPosts();
+    const posts = await getPublicFeedPosts();
 
-    return NextResponse.json({
-      success: true,
-      channel: channelOverview,
-      posts,
-      totalPosts: posts.length,
-      liveSynced,
-    });
+    return NextResponse.json(
+      {
+        success: true,
+        channel: channelOverview,
+        posts,
+        totalPosts: posts.length,
+        liveSynced,
+      },
+      {
+        headers: {
+          "Cache-Control": refresh
+            ? "no-store"
+            : "public, s-maxage=60, stale-while-revalidate=120",
+        },
+      }
+    );
   } catch (error: any) {
     console.error("Feed API error:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });

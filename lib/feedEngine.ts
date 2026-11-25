@@ -572,6 +572,164 @@ export function getAllFeedPosts(): FeedPost[] {
   return posts;
 }
 
+export async function isYouTubeVideoPublic(videoId: string): Promise<boolean> {
+  try {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 3000);
+    const res = await fetch(
+      `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}&format=json`,
+      { method: "HEAD", signal: controller.signal, cache: "no-store" }
+    );
+    clearTimeout(timer);
+    return res.ok;
+  } catch {
+    return true; // Fail open on transient network timeout so catalog never blanks out
+  }
+}
+
+interface RssVideoItem {
+  videoId: string;
+  title: string;
+  publishedAt: string;
+  views: number;
+  isShort: boolean;
+}
+
+async function fetchPublicYouTubeRss(): Promise<RssVideoItem[]> {
+  try {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 4000);
+    const res = await fetch(
+      "https://www.youtube.com/feeds/videos.xml?channel_id=UCM1yIAO_tvDGWOYi3JcyacA",
+      { signal: controller.signal, cache: "no-store" }
+    );
+    clearTimeout(timer);
+    if (!res.ok) return [];
+    const xml = await res.text();
+    const entries = xml.match(/<entry>[\s\S]*?<\/entry>/g) || [];
+    const results: RssVideoItem[] = [];
+
+    for (const entry of entries) {
+      const idMatch = entry.match(/<yt:videoId>([^<]+)<\/yt:videoId>/);
+      const titleMatch = entry.match(/<title>([^<]+)<\/title>/);
+      const pubMatch = entry.match(/<published>([^<]+)<\/published>/);
+      const linkMatch = entry.match(/<link[^>]+href="([^"]+)"/);
+      const viewsMatch = entry.match(/views="(\d+)"/);
+
+      const videoId = idMatch?.[1]?.trim() || "";
+      const title = titleMatch?.[1]?.trim() || "";
+      const publishedAt = pubMatch?.[1]?.trim() || new Date().toISOString();
+      const href = linkMatch?.[1] || "";
+      const views = viewsMatch ? parseInt(viewsMatch[1], 10) : 0;
+      const lower = title.toLowerCase();
+      const isShort =
+        href.includes("/shorts/") ||
+        lower.includes("#shorts") ||
+        lower.includes("#short") ||
+        lower.includes("teaser");
+
+      if (videoId && title && !isShort) {
+        results.push({ videoId, title, publishedAt, views, isShort });
+      }
+    }
+    return results;
+  } catch {
+    return [];
+  }
+}
+
+export async function getPublicFeedPosts(): Promise<FeedPost[]> {
+  const basePosts = getAllFeedPosts();
+  const rssItems = await fetchPublicYouTubeRss();
+  const rssIds = new Set(rssItems.map((r) => r.videoId));
+  const rssMap = new Map(rssItems.map((r) => [r.videoId, r]));
+
+  // Check newest top-5 release candidates not already confirmed by public RSS
+  const topReleaseCandidates = basePosts
+    .filter((p) => p.type === "release" && p.videoId && !rssIds.has(p.videoId))
+    .slice(0, 5);
+
+  const visibilityChecks = await Promise.all(
+    topReleaseCandidates.map(async (p) => ({
+      id: p.videoId!,
+      isPublic: await isYouTubeVideoPublic(p.videoId!),
+    }))
+  );
+  const blockedPrivateIds = new Set(
+    visibilityChecks.filter((c) => !c.isPublic).map((c) => c.id)
+  );
+
+  // Build existing IDs set (excluding blocked private ones)
+  const filteredBase = basePosts.filter(
+    (p) => !(p.type === "release" && p.videoId && blockedPrivateIds.has(p.videoId))
+  );
+
+  // Sync live view counts & inject any newly published RSS tracks automatically
+  const existingVideoIds = new Set(
+    filteredBase.filter((p) => p.videoId).map((p) => p.videoId!)
+  );
+
+  const newlyDiscoveredPosts: FeedPost[] = [];
+  for (const rss of rssItems) {
+    if (!existingVideoIds.has(rss.videoId)) {
+      const meta = extractBeatMetadata(rss.title, []);
+      const bpm = meta.bpm || 124;
+      const musicalKey = meta.key || "F Minor";
+      const subgenre = meta.genre || "Indian Afro House";
+      const cleanName = rss.title.split("|")[0].trim();
+
+      newlyDiscoveredPosts.push({
+        id: rss.videoId,
+        type: "release",
+        videoId: rss.videoId,
+        title: rss.title,
+        subgenre,
+        bpm,
+        key: musicalKey,
+        mood: "Late Night Drive",
+        publishedAt: rss.publishedAt,
+        formattedDate: "Just Released",
+        views: rss.views,
+        likes: Math.max(1, Math.round(rss.views * 0.04)),
+        comments: Math.max(0, Math.round(rss.views * 0.01)),
+        duration: rss.videoId === "Wqdt2D61_Ss" ? "3:06" : "3:24",
+        thumbnail:
+          rss.videoId === "Wqdt2D61_Ss"
+            ? "/thumbs/raat_ka_nasha.jpg"
+            : `https://i.ytimg.com/vi/${rss.videoId}/maxresdefault.jpg`,
+        audioUrl: "/audio/clover_clip.mp3",
+        wavDownloadUrl: "/audio/clover_clip.mp3",
+        mp3DownloadUrl: "/audio/clover_clip.mp3",
+        coverDownloadUrl:
+          rss.videoId === "Wqdt2D61_Ss"
+            ? "/thumbs/raat_ka_nasha.jpg"
+            : `https://i.ytimg.com/vi/${rss.videoId}/maxresdefault.jpg`,
+        youtubeUrl: `https://www.youtube.com/watch?v=${rss.videoId}`,
+        caption: `${cleanName} — official ${bpm} BPM ${subgenre} master by SUPASONIC BEATS.`,
+        seoData: generateSongMetadata({
+          songName: cleanName || "NEW TRACK",
+          subgenre,
+          bpm: bpm.toString(),
+          key: musicalKey,
+          mood: "Late Night Drive",
+        }),
+        isNewRelease: true,
+      });
+    }
+  }
+
+  // Update views on known posts where RSS reports fresh live views
+  const syncedBase = filteredBase.map((p) => {
+    const rss = p.videoId ? rssMap.get(p.videoId) : undefined;
+    if (rss && rss.views > p.views) {
+      return { ...p, views: rss.views, publishedAt: rss.publishedAt };
+    }
+    return p;
+  });
+
+  return [...newlyDiscoveredPosts, ...syncedBase];
+}
+
 export function saveNewCustomPost(newPostData: {
   type?: "release" | "tip";
   videoId?: string;

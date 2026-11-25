@@ -17,6 +17,7 @@ import { FeedPost } from "@/lib/feedEngine";
 import SubscribeUnlockModal from "./SubscribeUnlockModal";
 
 interface TopRecentVideosCarouselProps {
+  releases?: FeedPost[];
   onOpenSEO?: (post: FeedPost) => void;
   onOpenTip?: (post: FeedPost) => void;
   onPlayVideo?: (post: FeedPost) => void;
@@ -25,28 +26,12 @@ interface TopRecentVideosCarouselProps {
 }
 
 export default function TopRecentVideosCarousel({
+  releases = [],
   subscriberCount = "141+",
   videoCount = "98",
 }: TopRecentVideosCarouselProps) {
-  // Channel's Latest 5 Widescreen Non-Shorts Releases
-  const latest5Videos = [
-    {
-      id: "vid-raatkanasha",
-      videoId: "Wqdt2D61_Ss",
-      title: "RAAT KA NASHA",
-      subtitle: "Indian Afro House x Raga Techno x Deep House",
-      subgenre: "Afro Raga Techno",
-      bpm: 125,
-      key: "F Minor",
-      viewsFormatted: "New Release",
-      views: 100,
-      duration: "03:06",
-      badge: "Featured Release",
-      thumbnail: "/thumbs/raat_ka_nasha.jpg",
-      hqThumbnail: "/thumbs/raat_ka_nasha.jpg",
-      caption:
-        "Intoxicating 125 BPM late-night groove engineered with warm 52Hz car sub-bass, organic afro percussion, and seamless duet vocals.",
-    },
+  // Public Fallback (Only PUBLIC releases while live feed initializes)
+  const fallbackPublic5 = [
     {
       id: "vid-aajphir",
       videoId: "UzLfMApeA-4",
@@ -55,10 +40,10 @@ export default function TopRecentVideosCarousel({
       subgenre: "Deep House",
       bpm: 125,
       key: "D Minor",
-      viewsFormatted: "Latest Drop",
+      viewsFormatted: "New Release",
       views: 120,
       duration: "03:18",
-      badge: "Latest Drop",
+      badge: "Featured Release",
       thumbnail: "https://i.ytimg.com/vi/UzLfMApeA-4/maxresdefault.jpg",
       hqThumbnail: "https://i.ytimg.com/vi/UzLfMApeA-4/hqdefault.jpg",
       caption:
@@ -76,7 +61,7 @@ export default function TopRecentVideosCarousel({
       views: 624,
       duration: "03:24",
       badge: "Trending Fast",
-      thumbnail: "https://i.ytimg.com/vi/2wip8JYV7tQ/hqdefault.jpg",
+      thumbnail: "https://i.ytimg.com/vi/2wip8JYV7tQ/maxresdefault.jpg",
       hqThumbnail: "https://i.ytimg.com/vi/2wip8JYV7tQ/hqdefault.jpg",
       caption:
         "Bilingual VIP club bounce featuring sharp brass stabs, tight four-on-the-floor kick, and bouncy offbeat sub-bass.",
@@ -115,7 +100,58 @@ export default function TopRecentVideosCarousel({
       caption:
         "Nostalgic Bollywood hook paired with driving 125 BPM deep house basslines and wide club reverb.",
     },
+    {
+      id: "vid-saheba",
+      videoId: "cOTpVBWmL3U",
+      title: "SAHEBA (Extended)",
+      subtitle: "Indian Afro House x Deep House",
+      subgenre: "Extended Club Mix",
+      bpm: 124,
+      key: "F Minor",
+      viewsFormatted: "507+ Views",
+      views: 507,
+      duration: "06:57",
+      badge: "Extended Set",
+      thumbnail: "https://i.ytimg.com/vi/cOTpVBWmL3U/maxresdefault.jpg",
+      hqThumbnail: "https://i.ytimg.com/vi/cOTpVBWmL3U/hqdefault.jpg",
+      caption:
+        "Smooth extended club mix built for uninterrupted late-night drives and warm car bass systems.",
+    },
   ];
+
+  // Dynamically derive the latest 5 PUBLIC releases from live API whenever available
+  const latest5Videos =
+    releases && releases.length > 0
+      ? releases.slice(0, 5).map((r, i) => {
+          const parts = r.title.split("|").map((s) => s.trim());
+          const cleanName = parts[0].replace(/\[.*?\]/g, "").trim();
+          const subTitle = parts.slice(1).filter((p) => p !== "Supasonic Beats").join(" x ") || r.subgenre;
+          const badges = ["Featured Release", "Latest Drop", "Trending Track", "Club Edition", "Fan Favorite"];
+          const vidId = r.videoId || r.id;
+          return {
+            id: r.id,
+            videoId: vidId,
+            title: cleanName,
+            subtitle: subTitle,
+            subgenre: r.subgenre,
+            bpm: r.bpm,
+            key: r.key,
+            viewsFormatted: `${r.views.toLocaleString()}+ Views`,
+            views: r.views,
+            duration: r.duration || "03:24",
+            badge: badges[i] || "Official Release",
+            thumbnail:
+              vidId === "Wqdt2D61_Ss"
+                ? "/thumbs/raat_ka_nasha.jpg"
+                : `https://i.ytimg.com/vi/${vidId}/maxresdefault.jpg`,
+            hqThumbnail:
+              vidId === "Wqdt2D61_Ss"
+                ? "/thumbs/raat_ka_nasha.jpg"
+                : `https://i.ytimg.com/vi/${vidId}/hqdefault.jpg`,
+            caption: r.caption,
+          };
+        })
+      : fallbackPublic5;
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
