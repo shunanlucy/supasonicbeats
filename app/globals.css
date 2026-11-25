@@ -3,173 +3,172 @@
 @tailwind utilities;
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  --background: #f5f8fc;
+  --foreground: #0b0f19;
   --yt-red: #ff3b30;
-  --yt-red-hover: #e00000;
-  --liquid-border: rgba(255, 255, 255, 0.85);
-  --liquid-specular: rgba(255, 255, 255, 0.95);
+  --yt-red-hover: #e01e14;
+  --liquid-border: rgba(255, 255, 255, 0.92);
+  --liquid-specular: rgba(255, 255, 255, 1);
   --liquid-shadow: rgba(15, 23, 42, 0.06);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", "Roboto", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", sans-serif;
   overflow-x: hidden;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.014em;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide scrollbars cleanly across mobile horizontal pills & carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* ========================================================
-   APPLE IPHONE WATER & LIQUID GLASSMORPHISM SUITE
+   APPLE CRYSTAL WATER & EDITORIAL LIQUID GLASS SYSTEM
    ======================================================== */
 
-/* Living Water Ambient Canvas */
 .water-ambient-bg {
-  background: radial-gradient(circle at 50% 0%, rgba(224, 242, 254, 0.6) 0%, rgba(248, 250, 252, 0.8) 50%, #f8fafc 100%);
+  background: linear-gradient(160deg, #f6f9fc 0%, #eaf3fb 50%, #f4f7fb 100%);
 }
 
-/* Primary Liquid Glass Container (Frosted Water Droplet Surface) */
+/* Primary Frosted Liquid Glass Surface */
 .liquid-glass {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(28px) saturate(190%);
-  -webkit-backdrop-filter: blur(28px) saturate(190%);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  box-shadow: 
-    0 10px 30px -5px rgba(15, 23, 42, 0.05),
-    0 2px 8px -2px rgba(15, 23, 42, 0.03),
-    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(28px) saturate(185%);
+  -webkit-backdrop-filter: blur(28px) saturate(185%);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 12px 36px -8px rgba(15, 23, 42, 0.06),
+    0 2px 8px -2px rgba(14, 165, 233, 0.05),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 1);
 }
 
-/* Liquid Glass Cards (Convex Surface Tension with Specular Highlights) */
+/* Liquid Glass Cards */
 .liquid-card {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(22px) saturate(180%);
-  -webkit-backdrop-filter: blur(22px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-top-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 
-    0 8px 24px -4px rgba(15, 23, 42, 0.04),
+  background: rgba(255, 255, 255, 0.74);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  border-top-color: rgba(255, 255, 255, 1);
+  box-shadow:
+    0 10px 28px -6px rgba(15, 23, 42, 0.05),
     0 2px 6px -1px rgba(15, 23, 42, 0.02),
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.28s ease;
 }
 
 .liquid-card:hover {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(255, 255, 255, 0.95);
-  transform: translateY(-3px);
-  box-shadow: 
-    0 20px 40px -8px rgba(15, 23, 42, 0.08),
-    0 6px 12px -2px rgba(15, 23, 42, 0.04),
+  background: rgba(255, 255, 255, 0.92);
+  transform: translateY(-2px);
+  box-shadow:
+    0 20px 40px -10px rgba(15, 23, 42, 0.09),
+    0 4px 12px -2px rgba(14, 165, 233, 0.08),
     inset 0 1.5px 2px 0 rgba(255, 255, 255, 1);
 }
 
-/* Liquid Pill Capsules (iOS Segmented Controls & Control Center Pills) */
+/* Liquid Pill Capsules */
 .liquid-pill {
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.62);
   backdrop-filter: blur(18px) saturate(180%);
   -webkit-backdrop-filter: blur(18px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  box-shadow: 
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  box-shadow:
     0 2px 8px 0 rgba(15, 23, 42, 0.03),
     inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .liquid-pill:hover {
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 
-    0 4px 12px 0 rgba(15, 23, 42, 0.06),
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow:
+    0 4px 14px 0 rgba(15, 23, 42, 0.06),
     inset 0 1px 1px 0 rgba(255, 255, 255, 1);
 }
 
-/* Liquid Pill Active State */
 .liquid-pill-active {
   background: #ffffff;
-  color: #0f172a;
-  border-color: rgba(255, 255, 255, 1);
-  box-shadow: 
+  color: #0b0f19;
+  border-color: #ffffff;
+  box-shadow:
     0 4px 14px -2px rgba(15, 23, 42, 0.08),
     inset 0 1px 1px 0 rgba(255, 255, 255, 1);
 }
 
-/* Apple Liquid Gloss Red Button (iOS Action Button with Top Highlight) */
+/* Primary YouTube Gloss Action Pill */
 .liquid-btn-red {
-  background: linear-gradient(135deg, #ff3b30 0%, #e00000 100%);
+  background: linear-gradient(180deg, #ff3b30 0%, #e01e14 100%);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-top-color: rgba(255, 255, 255, 0.45);
-  box-shadow: 
-    0 4px 16px -2px rgba(255, 59, 48, 0.35),
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-top-color: rgba(255, 255, 255, 0.52);
+  box-shadow:
+    0 8px 20px -4px rgba(255, 59, 48, 0.36),
     0 2px 6px -1px rgba(255, 59, 48, 0.2),
-    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45);
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.45);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .liquid-btn-red:hover {
-  background: linear-gradient(135deg, #ff453a 0%, #cc0000 100%);
-  box-shadow: 
-    0 8px 24px -2px rgba(255, 59, 48, 0.45),
+  background: linear-gradient(180deg, #ff453a 0%, #cc160d 100%);
+  box-shadow:
+    0 12px 24px -4px rgba(255, 59, 48, 0.45),
     0 3px 8px -1px rgba(255, 59, 48, 0.25),
-    inset 0 1px 2px 0 rgba(255, 255, 255, 0.6);
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.6);
   transform: translateY(-1px);
 }
 
 .liquid-btn-red:active {
   transform: scale(0.97);
-  box-shadow: 0 2px 6px rgba(255, 59, 48, 0.3);
 }
 
-/* Translucent Water Ripple Glow */
-.water-ripple-glow {
-  box-shadow: 
-    0 0 0 1px rgba(255, 255, 255, 0.8),
-    0 8px 32px rgba(56, 189, 248, 0.15),
-    inset 0 1px 2px rgba(255, 255, 255, 0.9);
-}
-
-/* Water Droplet Badge */
 .liquid-badge {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9);
 }
 
-/* iOS Translucent Fluid Scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(241, 245, 249, 0.5);
-  backdrop-filter: blur(10px);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.45);
+  background: rgba(148, 163, 184, 0.4);
   border-radius: 9999px;
-  border: 1.5px solid transparent;
-  background-clip: padding-box;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(100, 116, 139, 0.65);
 }
 
-/* Animations for Water Caustics Drift */
 @keyframes waterPulse {
   0%, 100% {
-    transform: scale(1) translate(0, 0);
-    opacity: 0.35;
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.38;
   }
   50% {
-    transform: scale(1.08) translate(15px, -15px);
+    transform: translate3d(14px, -12px, 0) scale(1.06);
     opacity: 0.55;
   }
 }
 
 .animate-water-pulse {
-  animation: waterPulse 9s ease-in-out infinite;
+  animation: waterPulse 12s ease-in-out infinite;
 }

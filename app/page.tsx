@@ -1,176 +1,92 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import {
-  Music,
-  Disc,
-  Sparkles,
-  Trophy,
-  TrendingUp,
-  RefreshCw,
-  PlusCircle,
   Play,
-  Download,
-  Share2,
-  Sliders,
-  ExternalLink,
-  Flame,
-  Users,
-  Eye,
-  CheckCircle2,
-  Clock,
-  Radio,
-  FileText,
-  Zap,
+  Music,
   BookOpen,
+  ShieldCheck,
   Bell,
+  ExternalLink,
+  Copy,
+  Check,
+  Sliders,
 } from "lucide-react";
 import TopRecentVideosCarousel from "@/components/TopRecentVideosCarousel";
 import VideoFeed from "@/components/VideoFeed";
-import CompetitorLeaderboard from "@/components/CompetitorLeaderboard";
-import SEOGeneratorTab from "@/components/SEOGeneratorTab";
 import VideoPlayerModal from "@/components/VideoPlayerModal";
 import TipModal from "@/components/TipModal";
 import SEODrawerModal from "@/components/SEODrawerModal";
-import NewPostModal from "@/components/NewPostModal";
 import SubscribeAdPoster from "@/components/SubscribeAdPoster";
 import NotificationBanner from "@/components/NotificationBanner";
 import SocialLinksIsland from "@/components/SocialLinksIsland";
 import GoogleStyleAdBanner from "@/components/GoogleStyleAdBanner";
 import { FeedPost } from "@/lib/feedEngine";
-import { CompetitorItem } from "@/lib/competitorRanking";
 
 export default function ChannelWebsite() {
-  // Navigation tabs: 'feed' | 'tips' | 'seo' | 'competitors'
-  const [activeTab, setActiveTab] = useState<"feed" | "tips" | "seo" | "competitors">("feed");
+  // Public Listener Tabs Only: 'catalog' | 'vault' | 'license'
+  const [activeTab, setActiveTab] = useState<"catalog" | "vault" | "license">("catalog");
 
-  // Feed State
   const [posts, setPosts] = useState<FeedPost[]>([]);
   const [postsLoading, setPostsLoading] = useState<boolean>(true);
   const [channelInfo, setChannelInfo] = useState<any>({
     title: "SUPASONIC BEATS",
     customUrl: "@SupasonicBeatsOfficial",
-    description: "Official Studio Hub • High Energy Hindi Afro House, Desi Deep House & Club Bangers. Free streams, stems & high-quality audio downloads.",
     statistics: {
-      subscriberCount: "114+",
-      viewCount: "46000",
-      videoCount: "78",
+      subscriberCount: "141+",
+      viewCount: "59291",
+      videoCount: "98",
     },
-  });
-  const [syncing, setSyncing] = useState<boolean>(false);
-
-  // Competitor Leaderboard State
-  const [competitors, setCompetitors] = useState<CompetitorItem[]>([]);
-  const [supasonicStanding, setSupasonicStanding] = useState<any>({
-    rank: 6,
-    name: "SUPASONIC BEATS (Official)",
-    channelId: "UCM1yIAO_tvDGWOYi3JcyacA",
-    subscribers: "114+",
-    totalViews: "46K+",
-    dominantBPM: "124 BPM",
-    signatureStyle: "Desi Electronic & Hindi Afro House",
-    tacticalGap: "High release velocity + 124 BPM club drops is the optimal formula to crack the Top 5.",
-    topBreakout: {
-      title: "DEEDAR DE [124 BPM] - Hindi Afro House (5.7K views)",
-      views: 5700,
-      viewsFormatted: "5.7K",
-    },
-    isSupasonic: true,
-  });
-  const [nicheStats, setNicheStats] = useState<any>({
-    totalTrackedChannels: 25,
-    avgBPM: "123.8 BPM",
-    topSubgenre: "Hindi Afro House",
-    highestBreakoutVelocity: "1.42M in 14 days",
   });
 
   // Modals
   const [selectedVideoToPlay, setSelectedVideoToPlay] = useState<FeedPost | null>(null);
   const [selectedTipToRead, setSelectedTipToRead] = useState<FeedPost | null>(null);
   const [selectedVideoForSEO, setSelectedVideoForSEO] = useState<FeedPost | null>(null);
-  const [isNewPostModalOpen, setIsNewPostModalOpen] = useState<boolean>(false);
-
-  // Toast
-  const [toastMessage, setToastMessage] = useState<string | null>(null);
-
-  const showToast = (msg: string) => {
-    setToastMessage(msg);
-    setTimeout(() => setToastMessage(null), 3000);
-  };
+  const [copiedCredit, setCopiedCredit] = useState(false);
 
   useEffect(() => {
-    fetchFeedData(false);
-    fetchCompetitorsData();
+    const loadFeed = async () => {
+      try {
+        setPostsLoading(true);
+        const res = await fetch("/api/feed");
+        const data = await res.json();
+        if (data.success) {
+          setPosts(data.posts || []);
+          if (data.channel) setChannelInfo(data.channel);
+        }
+      } catch (e) {
+        console.warn("Using local catalog fallback:", e);
+      } finally {
+        setPostsLoading(false);
+      }
+    };
+    loadFeed();
   }, []);
 
-  const fetchFeedData = async (refresh: boolean = false) => {
-    try {
-      if (refresh) setSyncing(true);
-      else setPostsLoading(true);
-
-      const res = await fetch(`/api/feed${refresh ? "?refresh=true" : ""}`);
-      const data = await res.json();
-
-      if (data.success) {
-        setPosts(data.posts || []);
-        if (data.channel) setChannelInfo(data.channel);
-        if (refresh) {
-          showToast(data.liveSynced ? "⚡ Live Synced from YouTube Channel!" : "✓ Feed catalog updated successfully!");
-        }
-      }
-    } catch (e) {
-      console.error("Failed to load feed:", e);
-      if (refresh) showToast("Could not sync live, using local catalog");
-    } finally {
-      setPostsLoading(false);
-      setSyncing(false);
-    }
-  };
-
-  const fetchCompetitorsData = async () => {
-    try {
-      const res = await fetch("/api/competitors");
-      const data = await res.json();
-      if (data.success) {
-        setCompetitors(data.topCompetitors || []);
-        if (data.supasonicStanding) setSupasonicStanding(data.supasonicStanding);
-        if (data.nicheStats) setNicheStats(data.nicheStats);
-      }
-    } catch (e) {
-      console.warn("Failed to load competitors:", e);
-    }
-  };
-
-  const handlePostCreated = (newPost: FeedPost) => {
-    setPosts((prev) => [newPost, ...prev]);
-    showToast(newPost.type === "tip" ? "💡 Producer Tip published to stream!" : "🔥 New track published to feed!");
-    if (newPost.type === "tip") {
-      setSelectedTipToRead(newPost);
-    } else {
-      setSelectedVideoForSEO(newPost);
-    }
-  };
-
   const latestPost = posts.length > 0 ? posts[0] : null;
+  const subCount = channelInfo?.statistics?.subscriberCount || "141+";
+  const videoCount = channelInfo?.statistics?.videoCount || "98";
+
+  const copyCreditText = () => {
+    navigator.clipboard.writeText(
+      "Music: SUPASONIC BEATS — https://www.youtube.com/@SupasonicBeatsOfficial"
+    );
+    setCopiedCredit(true);
+    setTimeout(() => setCopiedCredit(false), 2000);
+  };
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-[#0f172a] relative overflow-hidden flex flex-col selection:bg-[#ff3b30] selection:text-white">
-      {/* Living Liquid Water Ambient Layer (Apple iPhone Fluid Water Theme) */}
+    <div className="min-h-screen water-ambient-bg text-[#0b0f19] relative overflow-x-hidden flex flex-col pb-24 lg:pb-0 selection:bg-[#ff3b30] selection:text-white">
+      {/* Subtle Apple Water Caustics Background Layer */}
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden select-none">
-        {/* Soft living water gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-[#f0f9ff]/50 to-[#fdf2f8]/40" />
-
-        {/* Ethereal Floating Liquid Water Orbs (Light Caustics & Water Droplet Refractions) */}
-        <div className="absolute -top-40 -left-40 w-[32rem] h-[32rem] rounded-full bg-cyan-200/25 blur-[120px] animate-water-pulse" />
-        <div className="absolute top-1/4 -right-40 w-[36rem] h-[36rem] rounded-full bg-sky-200/20 blur-[140px] animate-water-pulse [animation-delay:3s]" />
-        <div className="absolute top-2/3 left-[-10%] w-[30rem] h-[30rem] rounded-full bg-rose-200/15 blur-[110px] animate-water-pulse [animation-delay:5s]" />
-        <div className="absolute -bottom-32 right-[15%] w-[32rem] h-[32rem] rounded-full bg-indigo-100/30 blur-[130px] animate-water-pulse [animation-delay:2s]" />
-
-        {/* Delicate Water Surface Caustic Highlight */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-15%,rgba(56,189,248,0.12),rgba(255,255,255,0))]" />
+        <div className="absolute -top-36 -left-32 w-[30rem] h-[30rem] rounded-full bg-sky-200/40 blur-[120px] animate-water-pulse" />
+        <div className="absolute top-1/3 -right-32 w-[34rem] h-[34rem] rounded-full bg-blue-100/45 blur-[130px] animate-water-pulse [animation-delay:4s]" />
+        <div className="absolute -bottom-32 left-[18%] w-[28rem] h-[28rem] rounded-full bg-rose-100/30 blur-[120px] animate-water-pulse [animation-delay:7s]" />
       </div>
 
-      {/* Dynamic Notification Pill Banner (iPhone Dynamic Island Style) */}
+      {/* Non-Colliding Top Notification Capsule */}
       <NotificationBanner
         latestPost={latestPost}
         onOpenPost={(post) => {
@@ -179,212 +95,101 @@ export default function ChannelWebsite() {
         }}
       />
 
-      {/* Toast Notification (Liquid Frosted Glass Capsule) */}
-      {toastMessage && (
-        <div className="fixed top-16 right-6 z-50 px-4 py-2.5 rounded-2xl liquid-glass text-gray-900 font-bold text-xs shadow-xl flex items-center gap-2 animate-in fade-in slide-in-from-top-4 duration-300 border border-white/90">
-          <Sparkles className="w-4 h-4 text-amber-500" />
-          <span>{toastMessage}</span>
-        </div>
-      )}
-
-      {/* Professional Sticky Top Navigation Bar (Liquid Glassmorphism on Laptop & Mobile) */}
-      <header className="sticky top-0 z-40 bg-white/70 backdrop-blur-2xl border-b border-white/60 shadow-[0_4px_30px_rgba(15,23,42,0.03),inset_0_1px_1px_rgba(255,255,255,0.9)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Main Bar */}
-          <div className="flex items-center justify-between h-16 gap-3">
-            {/* Left: Brand Identity */}
-            <div className="flex items-center gap-3 flex-shrink-0">
-              <div className="w-9 h-9 rounded-2xl bg-gradient-to-tr from-[#ff3b30] to-[#e00000] text-white flex items-center justify-center flex-shrink-0 shadow-md shadow-red-500/20 border border-white/30">
-                <Play className="w-4 h-4 fill-current translate-x-0.2" />
+      {/* Sticky Crystal Frosted Navbar (Desktop & Mobile) */}
+      <header className="sticky top-0 z-40 px-3 sm:px-6 lg:px-8 pt-2 pb-1">
+        <div className="max-w-7xl mx-auto liquid-glass rounded-2xl px-4 py-2.5 flex items-center justify-between gap-3">
+          <Link href="/" className="flex items-center gap-2.5 min-w-0">
+            <div className="w-8 h-8 rounded-xl liquid-btn-red flex items-center justify-center flex-shrink-0">
+              <Play className="w-3.5 h-3.5 fill-current translate-x-0.5" />
+            </div>
+            <div className="min-w-0">
+              <div className="font-bold text-[#0b0f19] text-sm tracking-tight truncate">
+                SUPASONIC BEATS
               </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-1.5">
-                  <span className="font-black text-gray-900 text-sm sm:text-base tracking-tight">
-                    SUPASONIC BEATS
-                  </span>
-                  <span className="text-[#065fd4] text-xs font-bold" title="Verified Artist">✓</span>
-                  <span className="text-[9px] px-1.5 py-0.2 liquid-badge text-gray-700 font-semibold rounded-md">IN</span>
-                </div>
-                <span className="text-[11px] text-gray-500 hidden sm:inline">
-                  Official Studio Hub • 124 BPM Hindi Afro House
-                </span>
+              <div className="text-[11px] text-slate-500 hidden sm:block truncate">
+                Official Sound Vault · Afro House &amp; Car Bass
               </div>
             </div>
+          </Link>
 
-            {/* Center (Desktop/Laptop): Segmented Liquid Glass Navigation Tabs */}
-            <nav aria-label="Desktop Navigation" className="hidden lg:flex items-center gap-1.5 bg-white/55 backdrop-blur-xl p-1.5 rounded-2xl border border-white/80 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9),0_2px_8px_rgba(15,23,42,0.02)]">
-              <button
-                onClick={() => setActiveTab("feed")}
-                className={`px-4 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
-                  activeTab === "feed"
-                    ? "liquid-pill-active text-gray-900 shadow-sm"
-                    : "text-gray-600 hover:text-gray-900 hover:bg-white/40"
-                }`}
-              >
-                <Music className={`w-3.5 h-3.5 ${activeTab === "feed" ? "text-[#ff3b30]" : ""}`} />
-                <span>Beats Catalog</span>
-                <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-semibold ${
-                  activeTab === "feed" ? "bg-red-50 text-[#ff3b30]" : "bg-black/5 text-gray-600"
-                }`}>
-                  {posts.filter((p) => p.type === "release").length || 64}
-                </span>
-              </button>
-
-              <button
-                onClick={() => setActiveTab("tips")}
-                className={`px-4 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
-                  activeTab === "tips"
-                    ? "liquid-pill-active text-gray-900 shadow-sm"
-                    : "text-gray-600 hover:text-gray-900 hover:bg-white/40"
-                }`}
-              >
-                <BookOpen className={`w-3.5 h-3.5 ${activeTab === "tips" ? "text-[#ff3b30]" : ""}`} />
-                <span>Producer Vault</span>
-              </button>
-
-              <button
-                onClick={() => setActiveTab("seo")}
-                className={`px-4 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
-                  activeTab === "seo"
-                    ? "liquid-pill-active text-gray-900 shadow-sm"
-                    : "text-gray-600 hover:text-gray-900 hover:bg-white/40"
-                }`}
-              >
-                <Sparkles className={`w-3.5 h-3.5 ${activeTab === "seo" ? "text-amber-500" : ""}`} />
-                <span>SEO Generator</span>
-              </button>
-
-              <button
-                onClick={() => setActiveTab("competitors")}
-                className={`px-4 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
-                  activeTab === "competitors"
-                    ? "liquid-pill-active text-gray-900 shadow-sm"
-                    : "text-gray-600 hover:text-gray-900 hover:bg-white/40"
-                }`}
-              >
-                <Trophy className={`w-3.5 h-3.5 ${activeTab === "competitors" ? "text-amber-500" : ""}`} />
-                <span>Leaderboard</span>
-              </button>
-            </nav>
-
-            {/* Right: Actions (Liquid Red Subscribe + Sync + Add Post) */}
-            <div className="flex items-center gap-2">
-              <a
-                href="https://www.youtube.com/@SupasonicBeatsOfficial?sub_confirmation=1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden sm:flex px-4 py-2 rounded-full liquid-btn-red font-bold text-xs items-center gap-1.5 active:scale-95 transition-all"
-              >
-                <Bell className="w-3.5 h-3.5 fill-current" />
-                <span>Subscribe ({channelInfo?.statistics?.subscriberCount || "114+"})</span>
-              </a>
-
-              <button
-                onClick={() => fetchFeedData(true)}
-                disabled={syncing}
-                className="p-2 rounded-xl liquid-pill text-gray-700 text-xs font-bold transition-all active:scale-95"
-                title="Sync Live Channel Data"
-              >
-                <RefreshCw className={`w-3.5 h-3.5 ${syncing ? "animate-spin text-[#ff3b30]" : ""}`} />
-              </button>
-
-              <button
-                onClick={() => setIsNewPostModalOpen(true)}
-                className="px-3.5 py-2 rounded-xl bg-gray-900/90 hover:bg-black text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-sm active:scale-95 border border-white/20 backdrop-blur-md"
-              >
-                <PlusCircle className="w-3.5 h-3.5 text-[#ff3b30]" />
-                <span className="hidden sm:inline">Add Post</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile Secondary Bar: Horizontal Scrollable Category Tabs (Liquid Glass Capsule Touch Friendly) */}
-          <nav aria-label="Mobile Navigation" className="flex lg:hidden items-center gap-1.5 py-2 overflow-x-auto no-scrollbar border-t border-white/50">
+          {/* Desktop Public Navigation Pills */}
+          <nav
+            aria-label="Primary Navigation"
+            className="hidden lg:flex items-center gap-1 bg-slate-900/5 p-1 rounded-xl"
+          >
             <button
-              onClick={() => setActiveTab("feed")}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 flex-shrink-0 ${
-                activeTab === "feed"
-                  ? "liquid-btn-red shadow-sm"
-                  : "liquid-pill text-gray-700"
+              onClick={() => setActiveTab("catalog")}
+              className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                activeTab === "catalog"
+                  ? "liquid-pill-active"
+                  : "text-slate-600 hover:text-[#0b0f19]"
               }`}
             >
-              <Music className="w-3 h-3" />
-              <span>Beats ({posts.filter((p) => p.type === "release").length || 64})</span>
+              Releases ({posts.filter((p) => p.type === "release").length || 64})
             </button>
-
             <button
-              onClick={() => setActiveTab("tips")}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 flex-shrink-0 ${
-                activeTab === "tips"
-                  ? "liquid-btn-red shadow-sm"
-                  : "liquid-pill text-gray-700"
+              onClick={() => setActiveTab("vault")}
+              className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                activeTab === "vault"
+                  ? "liquid-pill-active"
+                  : "text-slate-600 hover:text-[#0b0f19]"
               }`}
             >
-              <BookOpen className="w-3 h-3" />
-              <span>Producer Vault</span>
+              Studio Vault
             </button>
-
             <button
-              onClick={() => setActiveTab("seo")}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 flex-shrink-0 ${
-                activeTab === "seo"
-                  ? "liquid-btn-red shadow-sm"
-                  : "liquid-pill text-gray-700"
+              onClick={() => setActiveTab("license")}
+              className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                activeTab === "license"
+                  ? "liquid-pill-active"
+                  : "text-slate-600 hover:text-[#0b0f19]"
               }`}
             >
-              <Sparkles className="w-3 h-3" />
-              <span>SEO Generator</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab("competitors")}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 flex-shrink-0 ${
-                activeTab === "competitors"
-                  ? "liquid-btn-red shadow-sm"
-                  : "liquid-pill text-gray-700"
-              }`}
-            >
-              <Trophy className="w-3 h-3" />
-              <span>Leaderboard</span>
+              Creator Use
             </button>
           </nav>
+
+          <a
+            href="https://www.youtube.com/@SupasonicBeatsOfficial?sub_confirmation=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 rounded-full liquid-btn-red font-semibold text-xs flex items-center gap-1.5 flex-shrink-0"
+          >
+            <Bell className="w-3.5 h-3.5" />
+            <span>Subscribe</span>
+          </a>
         </div>
       </header>
 
-      {/* Main Content Area */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex-1 w-full space-y-6">
-        {/* TOP SECTION: Netflix / Prime Video Style Side-by-Side Horizontal Hero Carousel (Latest 5 Widescreen Videos) */}
+      {/* Main Content Container */}
+      <main className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 flex-1 w-full space-y-8">
+        {/* Top Split Editorial Showcase (Latest 5 Widescreen Videos — Unblocked Art) */}
         <TopRecentVideosCarousel
-          onOpenSEO={(post) => setSelectedVideoForSEO(post)}
-          onOpenTip={(post) => setSelectedTipToRead(post)}
+          subscriberCount={subCount}
+          videoCount={videoCount}
           onPlayVideo={(post) => setSelectedVideoToPlay(post)}
         />
 
-        {/* Tab 1: Video Releases & Beat Downloads */}
-        {activeTab === "feed" && (
-          <div className="space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-gray-200">
+        {/* Tab 1: Full Releases Catalog */}
+        {activeTab === "catalog" && (
+          <div className="space-y-8">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 px-1">
               <div>
-                <h2 className="text-xl md:text-2xl font-bold text-gray-900 flex items-center gap-2">
-                  <Music className="w-5 h-5 text-[#ff0000]" />
-                  Full Video Releases & Beat Masters Feed
+                <h2 className="text-lg sm:text-2xl font-bold text-[#0b0f19] tracking-tight">
+                  Audio &amp; Visual Releases
                 </h2>
-                <p className="text-xs text-gray-600 mt-0.5">
-                  16:9 widescreen video catalog matching @SupasonicBeatsOfficial. Free 320kbps MP3s, studio WAV stems & viral sound tags.
+                <p className="text-xs sm:text-sm text-slate-600 mt-0.5">
+                  Watch in HD and unlock 320kbps MP3s or Car-Ready WAV masters.
                 </p>
               </div>
-
               <button
-                onClick={() => setIsNewPostModalOpen(true)}
-                className="self-start sm:self-center px-4 py-2 rounded-full bg-[#ff0000] hover:bg-[#cc0000] text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-sm active:scale-95"
+                onClick={() => setActiveTab("license")}
+                className="self-start sm:self-auto text-xs font-semibold text-[#ff3b30] hover:underline flex items-center gap-1"
               >
-                <PlusCircle className="w-4 h-4" />
-                Upload / Add New Post
+                <ShieldCheck className="w-3.5 h-3.5" />
+                <span>Free for Reels &amp; Vlogs (Usage Terms)</span>
               </button>
             </div>
-
-            {/* Google Display Ad Leaderboard Banner */}
-            <GoogleStyleAdBanner format="leaderboard" />
 
             <VideoFeed
               posts={posts}
@@ -396,42 +201,24 @@ export default function ChannelWebsite() {
               postTypeFilter="release"
             />
 
-            {/* Google Display Ad Billboard Banner */}
-            <GoogleStyleAdBanner format="billboard" />
+            {/* Single Clean Editorial Ad Slot */}
+            <GoogleStyleAdBanner format="leaderboard" />
 
-            {/* Social Links Ecosystem */}
             <SocialLinksIsland />
-
-            {/* Bottom YouTube Subscribe Advertisement Poster */}
-            <SubscribeAdPoster variant="billboard" subscriberCount={channelInfo?.statistics?.subscriberCount || "114+"} />
           </div>
         )}
 
-        {/* Tab 2: Tips & Tricks Stream */}
-        {activeTab === "tips" && (
+        {/* Tab 2: Producer Studio Vault (Tips & Mixing Breakdowns) */}
+        {activeTab === "vault" && (
           <div className="space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-gray-200">
-              <div>
-                <h2 className="text-xl md:text-2xl font-bold text-gray-900 flex items-center gap-2">
-                  <BookOpen className="w-5 h-5 text-[#ff0000]" />
-                  Producer Tips, Tricks & Studio Masterclasses
-                </h2>
-                <p className="text-xs text-gray-600 mt-0.5">
-                  Exclusive sound design secrets, 124 BPM mix guides, and YouTube algorithm growth playbooks.
-                </p>
-              </div>
-
-              <button
-                onClick={() => setIsNewPostModalOpen(true)}
-                className="self-start sm:self-center px-4 py-2 rounded-full bg-[#ff0000] hover:bg-[#cc0000] text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-sm active:scale-95"
-              >
-                <PlusCircle className="w-4 h-4" />
-                Share a New Tip
-              </button>
+            <div className="px-1">
+              <h2 className="text-lg sm:text-2xl font-bold text-[#0b0f19] tracking-tight">
+                Studio Mixing &amp; Production Vault
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 mt-0.5">
+                Low-end bass tuning, -14 LUFS mastering standards, and sound design breakdowns.
+              </p>
             </div>
-
-            {/* Google Display Ad Leaderboard */}
-            <GoogleStyleAdBanner format="leaderboard" />
 
             <VideoFeed
               posts={posts}
@@ -443,92 +230,139 @@ export default function ChannelWebsite() {
               postTypeFilter="tip"
             />
 
-            {/* Social Links Ecosystem */}
-            <SocialLinksIsland />
-
-            {/* Subscribe Poster */}
-            <SubscribeAdPoster variant="billboard" subscriberCount={channelInfo?.statistics?.subscriberCount || "114+"} />
+            <SubscribeAdPoster variant="billboard" subscriberCount={subCount} />
           </div>
         )}
 
-        {/* Tab 3: SEO & Viral Sound Tag Generator */}
-        {activeTab === "seo" && (
+        {/* Tab 3: Creator Use / Reels & DJ License Guide */}
+        {activeTab === "license" && (
           <div className="space-y-6">
-            <GoogleStyleAdBanner format="leaderboard" />
-            <SEOGeneratorTab />
-            <SocialLinksIsland />
-            <SubscribeAdPoster variant="billboard" subscriberCount={channelInfo?.statistics?.subscriberCount || "114+"} />
-          </div>
-        )}
+            <div className="liquid-glass rounded-[28px] p-6 sm:p-8 space-y-5">
+              <div className="space-y-2 max-w-2xl">
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#ff3b30]">
+                  Creator Safe-Use Guide
+                </span>
+                <h2 className="text-xl sm:text-2xl font-bold text-[#0b0f19]">
+                  Use Supasonic Beats in Your Reels, YouTube Vlogs &amp; DJ Sets
+                </h2>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Car enthusiasts, travel vloggers, and independent DJs can feature our 124–128 BPM masters in short-form videos and mixes. Simply credit the official channel in your caption or video description.
+                </p>
+              </div>
 
-        {/* Tab 4: Competitor Chart Rankings */}
-        {activeTab === "competitors" && (
-          <div className="space-y-6">
-            <div className="pb-2 border-b border-gray-200">
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900 flex items-center gap-2">
-                <Trophy className="w-5 h-5 text-amber-500" />
-                Hindi Afro House & Desi EDM Competitor Leaderboard
-              </h2>
-              <p className="text-xs text-gray-600 mt-0.5">
-                Market share tracking, breakout velocity, and tactical opportunities to outrank competitors.
-              </p>
+              <div className="p-4 rounded-2xl bg-white/75 border border-white space-y-2">
+                <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                  Required Credit Line
+                </div>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <code className="text-xs font-mono text-[#0b0f19] break-all">
+                    Music: SUPASONIC BEATS — https://www.youtube.com/@SupasonicBeatsOfficial
+                  </code>
+                  <button
+                    onClick={copyCreditText}
+                    className="self-start sm:self-center px-3.5 py-1.5 rounded-full liquid-pill text-xs font-semibold flex items-center gap-1.5 flex-shrink-0"
+                  >
+                    {copiedCredit ? (
+                      <>
+                        <Check className="w-3.5 h-3.5 text-emerald-600" />
+                        <span>Copied</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-3.5 h-3.5" />
+                        <span>Copy Credit</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
             </div>
 
-            <GoogleStyleAdBanner format="leaderboard" />
-
-            <CompetitorLeaderboard
-              competitors={competitors}
-              supasonicStanding={supasonicStanding}
-              nicheStats={nicheStats}
-            />
-
+            <SubscribeAdPoster variant="billboard" subscriberCount={subCount} />
             <SocialLinksIsland />
           </div>
         )}
       </main>
 
-      {/* Google Display AdSense Sticky Bottom Anchor Ad */}
-      <GoogleStyleAdBanner format="anchor" />
+      {/* Mobile Floating Control-Center Bottom Navigation Dock */}
+      <nav
+        aria-label="Mobile Floating Dock"
+        className="lg:hidden fixed bottom-3 inset-x-4 z-40 flex justify-center pointer-events-none"
+      >
+        <div className="liquid-glass rounded-full px-2 py-1.5 flex items-center gap-1 shadow-xl pointer-events-auto">
+          <button
+            onClick={() => setActiveTab("catalog")}
+            className={`px-3.5 py-2 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all ${
+              activeTab === "catalog" ? "liquid-pill-active" : "text-slate-600"
+            }`}
+          >
+            <Music className="w-3.5 h-3.5" />
+            <span>Catalog</span>
+          </button>
 
-      {/* Clean Bright Modern Footer */}
-      <footer className="mt-16 border-t border-gray-200 bg-white py-8 text-xs text-gray-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <button
+            onClick={() => setActiveTab("vault")}
+            className={`px-3.5 py-2 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all ${
+              activeTab === "vault" ? "liquid-pill-active" : "text-slate-600"
+            }`}
+          >
+            <BookOpen className="w-3.5 h-3.5" />
+            <span>Vault</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab("license")}
+            className={`px-3.5 py-2 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all ${
+              activeTab === "license" ? "liquid-pill-active" : "text-slate-600"
+            }`}
+          >
+            <ShieldCheck className="w-3.5 h-3.5" />
+            <span>Creators</span>
+          </button>
+        </div>
+      </nav>
+
+      {/* Frosted Liquid Glass Footer (With Discreet Creator Studio Link) */}
+      <footer className="mt-10 px-3 sm:px-6 lg:px-8 pb-8">
+        <div className="max-w-7xl mx-auto liquid-glass rounded-3xl px-5 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-600">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full overflow-hidden bg-gray-100 border border-gray-200">
+            <div className="w-8 h-8 rounded-full overflow-hidden border border-white">
               <img src="/channel_avatar.jpg" alt="Supasonic Beats" className="w-full h-full object-cover" />
             </div>
             <div>
-              <span className="font-bold text-gray-900">SUPASONIC BEATS</span> • Official YouTube Music Portal
-              <div className="text-[11px] text-gray-500">Instagram • TikTok • Facebook • YouTube</div>
+              <span className="font-bold text-[#0b0f19]">SUPASONIC BEATS</span> · Official Audio &amp; Music Hub
+              <div className="text-[11px] text-slate-500">YouTube · Instagram · TikTok · Facebook</div>
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-6 text-gray-600 font-medium">
-            <button onClick={() => setActiveTab("feed")} className="hover:text-black transition-colors">
-              Releases & Audio
+          <div className="flex flex-wrap items-center justify-center gap-5 font-medium">
+            <button onClick={() => setActiveTab("catalog")} className="hover:text-[#0b0f19] transition-colors">
+              Releases
             </button>
-            <button onClick={() => setActiveTab("tips")} className="hover:text-black transition-colors">
-              Tips & Tricks
+            <button onClick={() => setActiveTab("vault")} className="hover:text-[#0b0f19] transition-colors">
+              Studio Vault
             </button>
-            <button onClick={() => setActiveTab("seo")} className="hover:text-black transition-colors">
-              SEO Generator
+            <button onClick={() => setActiveTab("license")} className="hover:text-[#0b0f19] transition-colors">
+              Creator Use
             </button>
-            <button onClick={() => setActiveTab("competitors")} className="hover:text-black transition-colors">
-              Competitor Rankings
-            </button>
+            <Link href="/studio" className="text-slate-400 hover:text-slate-700 flex items-center gap-1 transition-colors">
+              <Sliders className="w-3 h-3" />
+              <span>Artist Studio</span>
+            </Link>
             <a
               href="https://www.youtube.com/@SupasonicBeatsOfficial?sub_confirmation=1"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#ff0000] hover:text-[#cc0000] font-bold flex items-center gap-1"
+              className="text-[#ff3b30] font-semibold flex items-center gap-1"
             >
-              YouTube Subscribe <ExternalLink className="w-3 h-3" />
+              <span>Subscribe</span>
+              <ExternalLink className="w-3 h-3" />
             </a>
           </div>
         </div>
       </footer>
 
-      {/* Video Cinema Player Modal */}
+      {/* Modals */}
       {selectedVideoToPlay && (
         <VideoPlayerModal
           post={selectedVideoToPlay}
@@ -537,7 +371,6 @@ export default function ChannelWebsite() {
         />
       )}
 
-      {/* Tip Reader Modal */}
       {selectedTipToRead && (
         <TipModal
           post={selectedTipToRead}
@@ -545,20 +378,12 @@ export default function ChannelWebsite() {
         />
       )}
 
-      {/* SEO & Viral Sound Tags Modal */}
       {selectedVideoForSEO && (
         <SEODrawerModal
           post={selectedVideoForSEO}
           onClose={() => setSelectedVideoForSEO(null)}
         />
       )}
-
-      {/* New Post Modal (Video or Tip) */}
-      <NewPostModal
-        isOpen={isNewPostModalOpen}
-        onClose={() => setIsNewPostModalOpen(false)}
-        onPostCreated={handlePostCreated}
-      />
     </div>
   );
 }
