@@ -718,16 +718,34 @@ export async function getPublicFeedPosts(): Promise<FeedPost[]> {
     }
   }
 
-  // Update views on known posts where RSS reports fresh live views
+  // Update views & publish timestamps from live RSS feed, and sort newest public RSS items first!
   const syncedBase = filteredBase.map((p) => {
     const rss = p.videoId ? rssMap.get(p.videoId) : undefined;
-    if (rss && rss.views > p.views) {
-      return { ...p, views: rss.views, publishedAt: rss.publishedAt };
+    if (rss) {
+      return {
+        ...p,
+        views: Math.max(rss.views, p.views),
+        publishedAt: rss.publishedAt,
+      };
     }
     return p;
   });
 
-  return [...newlyDiscoveredPosts, ...syncedBase];
+  const combined = [...newlyDiscoveredPosts, ...syncedBase];
+  const rssOrderIndex = new Map(rssItems.map((r, i) => [r.videoId, i]));
+
+  // Releases confirmed live in RSS stay strictly ordered newest-first as uploaded on YouTube;
+  // tips & older catalog releases follow cleanly right after.
+  return combined.sort((a, b) => {
+    if (a.type === "tip" && b.type !== "tip") return 1;
+    if (a.type !== "tip" && b.type === "tip") return -1;
+    const idxA = a.videoId ? rssOrderIndex.get(a.videoId) : undefined;
+    const idxB = b.videoId ? rssOrderIndex.get(b.videoId) : undefined;
+    if (idxA !== undefined && idxB !== undefined) return idxA - idxB;
+    if (idxA !== undefined) return -1;
+    if (idxB !== undefined) return 1;
+    return 0;
+  });
 }
 
 export function saveNewCustomPost(newPostData: {
