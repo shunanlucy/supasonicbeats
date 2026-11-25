@@ -4,15 +4,18 @@ This document records every track produced, the creative Suno / sound prompts us
 
 ---
 
-## ⚡ Active Launch & Newest Releases (23 Nov 2026)
+## ⚡ Active Launch & Newest Releases (25 Nov 2026)
 
-### 0. AB AAJA (🔥 BRAND NEW RELEASE)
-- **Video ID:** `2wip8JYV7tQ` | **Status:** Private / Scheduled for Peak Window | **Published:** 23 Nov 2026
-- **BPM:** 128 BPM | **Key:** D Minor | **Drop Timing:** 15.8s
-- **Loudness:** -12.3 to -13.5 LUFS | **Duration:** 03:24
-- **Style:** Indian Afro House x Club Bangers x Deep House (Tocame Latin Bounce Inspired)
-- **Master Audio:** `/home/shunan/Downloads/abaaja_capcut_compatible.wav`
-- **Why It's Positioned to Win:** Fast 15.8s drop, bilingual flirty lyrics, 128 BPM Tocame-inspired bouncy offbeat bass and staccato brass stabs. Mastered specifically for car subwoofers and VIP club dancefloors.
+### 0A. RAAT KA NASHA (🔥 BRAND NEW RELEASE)
+- **Video ID:** `Wqdt2D61_Ss` | **Status:** Private / Ready for Publish | **Published:** 25 Nov 2026
+- **BPM:** 125 BPM | **Key:** F Minor | **First Drop:** 0:40s (Kick-in 0:15s)
+- **Loudness:** -11.7 LUFS / -0.5 dBFS True Peak | **Duration:** 03:06
+- **Style:** Indian Afro House x Raga Techno x Deep House (Gen-Z Aesthetic Club Mix)
+- **Master Audio:** `/home/shunan/Downloads/raatkanasha_capcut_compatible.wav`
+- **Custom Thumbnail:** `/home/shunan/Downloads/raatkanasha_thumbnail.jpg`
+
+### 0B. AB AAJA
+- **Video ID:** `2wip8JYV7tQ` | **Status:** Public | **Views:** 624+ (Nov 23) | **Duration:** 03:24
 
 ---
 
@@ -170,11 +173,21 @@ This document records every track produced, the creative Suno / sound prompts us
 - **Playlists Added:** `Hindi Afro House & Deep House 2026`, `Late Night Highway Car Drive 2026 [124 BPM]`, `Late Night Car Drive Songs Hindi 2026`.
 
 ### 22. KAHO NA KAHO
-- **Video ID:** `OAxXnaUsiZw` | **Status:** Private *(Uploaded 22 Nov 2026, 06:15 PM IST)*
+- **Video ID:** `OAxXnaUsiZw` | **Status:** Public *(Published 22 Nov 2026)* | **Views:** 331+
 - **Duration:** 04:00 (Trimmed & Mastered: 0:00 instant start, 17s extra loop cropped, -13.6 LUFS)
 - **BPM:** 130 BPM
 - **Style:** Indian Afro House x Club Bangers x Raga Techno (High-Energy Euphoric Red Nightclub Aesthetic)
 - **Title:** `KAHO NA KAHO | Indian Afro House x Club Bangers x Raga Techno | Supasonic Beats [130 BPM]`
 - **SEO Targeting:** Amir Jamal (Kaho Na Kaho / Murder), Dhun Music Vibes, Singularity Beats, Clover Beats, Nomadic Beats.
 - **Playlists Added:** `Hindi Afro House & Deep House 2026`, `Late Night Highway Car Drive 2026`, `Late Night Car Drive Hindi Songs`.
+
+### 23. AAJ PHIR
+- **Video ID:** `UzLfMApeA-4` | **Status:** Private *(Uploaded 24 Nov 2026, 05:48 PM IST)*
+- **Duration:** 03:18 (Song 2 Clean Master: 125 BPM, 64.9% Sub-Bass, -14.3 LUFS)
+- **BPM:** 125 BPM
+- **Style:** Indian Deep House x Club Bangers x Afro House (High-Energy Car Subwoofer Bounce)
+- **Title:** `AAJ PHIR | Deep House x Club Bangers | Afro House | Supasonic Beats [125 BPM]`
+- **Algorithm Recommendation Target:** Directly mirrors Dhun Music Vibes (`yTx0_TU62tw` - 5.2K views) in "Up Next / Suggested Videos".
+- **Playlists Added:** `Hindi Afro House & Deep House 2026`, `Late Night Highway Car Drive 2026`, `Late Night Car Drive Hindi Songs`.
+
 
