@@ -42,8 +42,8 @@ export default function TopRecentVideosCarousel({
       views: 100,
       duration: "03:06",
       badge: "Featured Release",
-      thumbnail: "https://i.ytimg.com/vi/Wqdt2D61_Ss/maxresdefault.jpg",
-      hqThumbnail: "https://i.ytimg.com/vi/Wqdt2D61_Ss/hqdefault.jpg",
+      thumbnail: "/thumbs/raat_ka_nasha.jpg",
+      hqThumbnail: "/thumbs/raat_ka_nasha.jpg",
       caption:
         "Intoxicating 125 BPM late-night groove engineered with warm 52Hz car sub-bass, organic afro percussion, and seamless duet vocals.",
     },
@@ -202,7 +202,8 @@ export default function TopRecentVideosCarousel({
               <CheckCircle2 className="w-3.5 h-3.5 text-sky-600 flex-shrink-0" />
             </div>
             <p className="text-[11px] sm:text-xs text-slate-600 truncate">
-              @SupasonicBeatsOfficial · {subscriberCount} Subscribers · {videoCount} Releases
+              <span className="sm:hidden">{subscriberCount} Subscribers · {videoCount} Releases</span>
+              <span className="hidden sm:inline">@SupasonicBeatsOfficial · {subscriberCount} Subscribers · {videoCount} Releases</span>
             </p>
           </div>
         </div>
@@ -252,12 +253,12 @@ export default function TopRecentVideosCarousel({
                     ) : (
                       <div
                         onClick={() => setInlinePlayingId(item.videoId)}
-                        className="relative w-full h-full cursor-pointer group/art"
+                        className="absolute inset-0 w-full h-full cursor-pointer group/art"
                       >
                         <img
                           src={item.thumbnail}
                           alt={item.title}
-                          className="w-full h-full object-cover object-center transition-transform duration-700 group-hover/art:scale-[1.02]"
+                          className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover/art:scale-[1.02]"
                           onError={(e) => {
                             (e.target as HTMLImageElement).src = item.hqThumbnail;
                           }}
@@ -387,30 +388,30 @@ export default function TopRecentVideosCarousel({
             </div>
           </div>
 
-          <div className="flex md:grid md:grid-cols-5 gap-2.5 overflow-x-auto no-scrollbar pb-1">
+          <div className="flex items-start md:grid md:grid-cols-5 gap-2.5 overflow-x-auto no-scrollbar pb-1">
             {latest5Videos.map((video, idx) => {
               const isActive = currentIndex === idx;
               return (
                 <button
                   key={video.id}
                   onClick={() => goToSlide(idx)}
-                  className={`min-w-[145px] md:min-w-0 text-left p-2 rounded-2xl transition-all duration-200 flex-shrink-0 ${
+                  className={`flex flex-col items-stretch justify-start w-[144px] sm:w-[162px] md:w-full h-auto text-left p-2 rounded-2xl transition-all duration-200 flex-shrink-0 ${
                     isActive
                       ? "bg-white/95 ring-1 ring-[#ff3b30]/70 shadow-sm"
-                      : "liquid-pill opacity-80 hover:opacity-100"
+                      : "liquid-pill opacity-85 hover:opacity-100"
                   }`}
                 >
-                  <div className="relative aspect-video rounded-xl overflow-hidden bg-slate-900 mb-1.5">
+                  <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-900 mb-1.5 flex-shrink-0">
                     <img
                       src={video.thumbnail}
                       alt={video.title}
-                      className="w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-cover"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = video.hqThumbnail;
                       }}
                     />
                   </div>
-                  <div className="flex items-center justify-between gap-1 px-0.5">
+                  <div className="w-full flex items-center justify-between gap-1 px-0.5">
                     <span className={`text-[11px] font-semibold truncate ${isActive ? "text-[#0b0f19]" : "text-slate-700"}`}>
                       {idx + 1}. {video.title}
                     </span>

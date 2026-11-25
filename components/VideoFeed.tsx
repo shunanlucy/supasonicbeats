@@ -221,9 +221,11 @@ export default function VideoFeed({
                       src={post.thumbnail}
                       alt={`${post.title} - SUPASONIC BEATS`}
                       itemProp="image"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover/media:scale-[1.03]"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover/media:scale-[1.03]"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = `https://i.ytimg.com/vi/${post.videoId}/hqdefault.jpg`;
+                        (e.target as HTMLImageElement).src = post.videoId === "Wqdt2D61_Ss"
+                          ? "/thumbs/raat_ka_nasha.jpg"
+                          : `https://i.ytimg.com/vi/${post.videoId}/hqdefault.jpg`;
                       }}
                     />
 

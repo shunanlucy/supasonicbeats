@@ -13,9 +13,9 @@ export async function GET(req: NextRequest) {
       customUrl: "@SupasonicBeatsOfficial",
       description: "Official Studio Hub • Hindi Afro House, Desi Deep House & Club Bangers",
       statistics: {
-        subscriberCount: "114+",
-        viewCount: "46000",
-        videoCount: "78",
+        subscriberCount: "141+",
+        viewCount: "59291",
+        videoCount: "98",
       },
     };
 

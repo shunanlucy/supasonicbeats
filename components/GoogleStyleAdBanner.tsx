@@ -31,7 +31,7 @@ export default function GoogleStyleAdBanner({
       key: "F Minor",
       genre: "Indian Afro House x Raga Techno",
       videoId: "Wqdt2D61_Ss",
-      posterUrl: "https://i.ytimg.com/vi/Wqdt2D61_Ss/hqdefault.jpg",
+      posterUrl: "/thumbs/raat_ka_nasha.jpg",
     },
     {
       id: "promo-abaaja",
